@@ -27,10 +27,15 @@ jobs:
       - name: Debug Username and Server Key
         run: |
           echo "Username: ${{ secrets.SF_PREPROD_USERNAME }}"
-          echo "Server Key: ${{ secrets.SF_PREPROD_SERVER_KEY }}"
+      
+      - name: Write private key
+        run: |
+          mkdir -p ./keys/preprod
+          echo "${{ secrets.SF_PREPROD_SERVER_KEY }}" > ./keys/preprod/preprod-server-private.key
 
       - name: Authenticate to Salesforce (JWT)
         run: |
+          mkdir -p ./keys/preprod
           echo "$SF_PREPROD_SERVER_KEY" > ./keys/preprod/preprod-server-private.key
           sfdx auth:jwt:grant \
             --clientid "$SF_PREPROD_CLIENT_ID" \
@@ -43,6 +48,10 @@ jobs:
           SF_PREPROD_SERVER_KEY: ${{ secrets.SF_PREPROD_SERVER_KEY }}
           SF_PREPROD_USERNAME: ${{ secrets.SF_PREPROD_USERNAME }}
           SF_PREPROD_INSTANCE_URL: ${{ secrets.SF_PREPROD_INSTANCE_URL }}
+
+      - name: Verify Authentication
+        run: |
+          sfdx force:org:list
 
       - name: Install project dependencies
         run: |
