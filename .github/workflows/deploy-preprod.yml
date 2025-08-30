@@ -69,10 +69,8 @@ jobs:
             --source-dir force-app/main/default \
             --target-org preprod \
             --test-level RunSpecifiedTests \
-            --runtests "$(cat manifest/testrun.txt | tr '\n' ',' | sed 's/,$//')" \
+            --tests "$(cat manifest/testrun.txt | tr '\n' ',' | sed 's/,$//')" \
             --json
-        env:
-          SF_PREPROD_USERNAME: ${{ secrets.SF_PREPROD_USERNAME }}
 
       - name: Run Apex tests
         run: |
@@ -84,8 +82,6 @@ jobs:
             --test-level RunSpecifiedTests \
             --tests "$(cat manifest/testrun.txt | tr '\n' ',' | sed 's/,$//')" \
             --json
-        env:
-          SF_PREPROD_USERNAME: ${{ secrets.SF_PREPROD_USERNAME }}
 
       - name: Upload test results
         if: always()
