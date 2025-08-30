@@ -21,7 +21,7 @@ jobs:
           node-version: '20.x'
 
       - name: Install Salesforce CLI
-        uses: sfdx-actions/setup-sf@v1
+        uses: sfdx-actions/setup-sfdx@v1
 
       - name: Debug Username and Server Key
         run: |
