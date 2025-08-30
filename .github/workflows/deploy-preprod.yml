@@ -51,9 +51,13 @@ jobs:
           SF_PREPROD_USERNAME: ${{ secrets.SF_PREPROD_USERNAME }}
           SF_PREPROD_INSTANCE_URL: ${{ secrets.SF_PREPROD_INSTANCE_URL }}
 
-      - name: Verify Authentication
+      #- name: Verify Authentication
+      #  run: |
+      #    sf org display --target-org preprod --verbose
+
+      - name: Quick Verification
         run: |
-          sf org display --target-org preprod --verbose
+          echo "Authenticated as: ${{ secrets.SF_PREPROD_USERNAME }}"
 
       - name: Install project dependencies
         run: |
