@@ -1,0 +1,63 @@
+# Deploy to Preprod Org (develop branch)
+name: Deploy to Preprod Org
+
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - name: Install Salesforce CLI
+        run: |
+          npm install --global sfdx-cli
+
+      - name: Authenticate to Salesforce (JWT)
+        run: |
+          echo "$SF_PREPROD_SERVER_KEY" > server.key
+          sfdx auth:jwt:grant \
+            --clientid "$SF_PREPROD_CLIENT_ID" \
+            --jwtkeyfile server.key \
+            --username "$SF_PREPROD_USERNAME" \
+            --instanceurl "$SF_PREPROD_INSTANCE_URL" \
+            --setdefaultdevhubusername
+        env:
+          SF_PREPROD_CLIENT_ID: ${{ secrets.SF_PREPROD_CLIENT_ID }}
+          SF_PREPROD_SERVER_KEY: ${{ secrets.SF_PREPROD_SERVER_KEY }}
+          SF_PREPROD_USERNAME: ${{ secrets.SF_PREPROD_USERNAME }}
+          SF_PREPROD_INSTANCE_URL: ${{ secrets.SF_PREPROD_INSTANCE_URL }}
+
+      - name: Install project dependencies
+        run: |
+          npm ci || true
+
+      - name: Deploy source to org
+        run: |
+          sfdx force:source:deploy -p force-app/main/default -u "$SF_PREPROD_USERNAME" --testlevel RunSpecifiedTests --runtests "$(cat testrun.txt | tr '\n' ',' | sed 's/,$//')" --json
+        env:
+          SF_PREPROD_USERNAME: ${{ secrets.SF_PREPROD_USERNAME }}
+
+      - name: Run Apex tests
+        run: |
+          sfdx force:apex:test:run -u "$SF_PREPROD_USERNAME" --resultformat human --wait 30 --codecoverage --testlevel RunSpecifiedTests --runtests "$(cat testrun.txt | tr '\n' ',' | sed 's/,$//')" --json
+        env:
+          SF_PREPROD_USERNAME: ${{ secrets.SF_PREPROD_USERNAME }}
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apex-test-results
+          path: test-result-*.xml
+          if-no-files-found: ignore
