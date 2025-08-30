@@ -25,10 +25,10 @@ jobs:
 
       - name: Authenticate to Salesforce (JWT)
         run: |
-          echo "$SF_PREPROD_SERVER_KEY" > server.key
+          echo "$SF_PREPROD_SERVER_KEY" > ./keys/preprod/preprod-server-private.key
           sfdx auth:jwt:grant \
             --clientid "$SF_PREPROD_CLIENT_ID" \
-            --jwtkeyfile server.key \
+            --jwtkeyfile ./keys/preprod/preprod-server-private.key \
             --username "$SF_PREPROD_USERNAME" \
             --instanceurl "$SF_PREPROD_INSTANCE_URL" \
             --setdefaultdevhubusername
