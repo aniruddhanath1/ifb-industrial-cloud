@@ -70,6 +70,7 @@ jobs:
             --target-org preprod \
             --test-level RunSpecifiedTests \
             --tests "$(cat manifest/testrun.txt | tr '\n' ',' | sed 's/,$//')" \
+            --wait 60 \
             --json
 
       - name: Run Apex tests
@@ -81,6 +82,7 @@ jobs:
             --code-coverage \
             --test-level RunSpecifiedTests \
             --tests "$(cat manifest/testrun.txt | tr '\n' ',' | sed 's/,$//')" \
+            --wait 60 \
             --json
 
       - name: Upload test results
