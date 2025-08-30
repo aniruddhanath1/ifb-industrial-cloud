@@ -25,8 +25,8 @@ jobs:
 
       - name: Debug Username and Server Key
         run: |
-          echo "Username: ${{ secrets.SF_PREPROD_USERNAME }}"
-          echo "Server Key: ${{ secrets.SF_PREPROD_SERVER_KEY }}"
+          echo "Username: ${{ PREPROD_SECRET.SF_PREPROD_USERNAME }}"
+          echo "Server Key: ${{ PREPROD_SECRET.SF_PREPROD_SERVER_KEY }}"
 
       - name: Authenticate to Salesforce (JWT)
         run: |
@@ -38,10 +38,10 @@ jobs:
             --instanceurl "$SF_PREPROD_INSTANCE_URL" \
             --setdefaultusername
         env:
-          SF_PREPROD_CLIENT_ID: ${{ secrets.SF_PREPROD_CLIENT_ID }}
-          SF_PREPROD_SERVER_KEY: ${{ secrets.SF_PREPROD_SERVER_KEY }}
-          SF_PREPROD_USERNAME: ${{ secrets.SF_PREPROD_USERNAME }}
-          SF_PREPROD_INSTANCE_URL: ${{ secrets.SF_PREPROD_INSTANCE_URL }}
+          SF_PREPROD_CLIENT_ID: ${{ PREPROD_SECRET.SF_PREPROD_CLIENT_ID }}
+          SF_PREPROD_SERVER_KEY: ${{ PREPROD_SECRET.SF_PREPROD_SERVER_KEY }}
+          SF_PREPROD_USERNAME: ${{ PREPROD_SECRET.SF_PREPROD_USERNAME }}
+          SF_PREPROD_INSTANCE_URL: ${{ PREPROD_SECRET.SF_PREPROD_INSTANCE_URL }}
 
       - name: Install project dependencies
         run: |
