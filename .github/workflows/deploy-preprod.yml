@@ -23,9 +23,10 @@ jobs:
       - name: Install Salesforce CLI
         uses: sfdx-actions/setup-sfdx@v1
 
-      - name: Debug Username and Server Key
+      - name: Debug Username and Instance URL
         run: |
           echo "Username: ${{ secrets.SF_PREPROD_USERNAME }}"
+          echo "Instance URL: ${{ secrets.SF_PREPROD_INSTANCE_URL }}"
 
       - name: Prepare private key
         run: |
@@ -43,7 +44,7 @@ jobs:
             --username "$SF_PREPROD_USERNAME" \
             --instance-url "$SF_PREPROD_INSTANCE_URL" \
             --alias preprod \
-            --setdefaultusername
+            --set-default
         env:
           SF_PREPROD_CLIENT_ID: ${{ secrets.SF_PREPROD_CLIENT_ID }}
           SF_PREPROD_SERVER_KEY: ${{ secrets.SF_PREPROD_SERVER_KEY }}
