@@ -1,0 +1,32 @@
+<template>
+    <lightning-card footer="" title="">
+        <div class="c-container">
+            <p class="c-description">Step 16</p>
+            <ul class="slds-list_dotted">
+                <li>Highlight the Customer Tasks card.</li>
+                <li>Tap + Add new Customer Task.</li>
+                <li>Change Customer Task Type to Asset Maintenance.</li>
+                <li>Enter a description.</li>
+                <li>Tap Create.</li>
+            </ul>
+        </div>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <p>
+                        <lightning-formatted-text value="Since the refrigerator is not cooling properly, Chantelle creates a task to get it checked out as soon as possible."></lightning-formatted-text>
+                    </p><br />
+                    <p>
+                        <lightning-formatted-text value="The Customer Task Type determines what process the task follows, and which data points are required. Since Chantelle selected Asset Maintenance, it is assigned to the equipment services team who can resolve the issue."></lightning-formatted-text>
+                    </p><br />
+                    <div>
+                        <img src={newvisit_img} alt="New Visit">
+                    </div><br />
+                    <div>
+                        <img src={completevisit_img} alt="Complete Visit">
+                    </div><br />
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

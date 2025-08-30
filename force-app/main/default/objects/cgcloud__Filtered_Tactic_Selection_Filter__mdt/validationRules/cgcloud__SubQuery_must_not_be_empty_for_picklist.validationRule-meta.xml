@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__SubQuery_must_not_be_empty_for_picklist</fullName>
+    <active>true</active>
+    <description>Ensures that if user chose an UI Type of Multi-Select Picklist,, Subquery Source cannot be empty.</description>
+    <errorConditionFormula>AND(
+      $Setup.cgcloud__Validation_Rules_Setting__c.cgcloud__Bypass_Validation__c = FALSE,
+      ISPICKVAL( cgcloud__UI_Type__c , &apos;Multi-Select Picklist&apos;),
+      ISBLANK( cgcloud__Sub_Query_Source__c )
+      )</errorConditionFormula>
+    <errorMessage>Multi Select Picklist needs a valid subquery source to populate its data.</errorMessage>
+</ValidationRule>

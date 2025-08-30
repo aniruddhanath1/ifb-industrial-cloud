@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Date_From_Offset_Null_Validation</fullName>
+    <active>true</active>
+    <description>The Date From Offset value cannot be empty if Timeframe Determination Policy is not Manual.</description>
+    <errorConditionFormula>AND(
+NOT(ISPICKVAL(cgcloud__Timeframe_Determination_Policy__c , &apos;Manual&apos;)),
+ISPICKVAL(cgcloud__UI_Type__c , &apos;SmartUI&apos;),
+ISPICKVAL(cgcloud__Promotion_Type__c , &apos;Promotion&apos;),
+ISBLANK(cgcloud__TFD_Delivery_Date_From_Offset__c )
+)</errorConditionFormula>
+    <errorDisplayField>cgcloud__TFD_Delivery_Date_From_Offset__c</errorDisplayField>
+    <errorMessage>The offset value cannot be empty if Timeframe Determination Policy is not Manual</errorMessage>
+</ValidationRule>

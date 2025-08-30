@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visit_Type__c</fullName>
+    <label>Visit Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Visit_From__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+                <label>Follow-up</label>
+            </value>
+            <value>
+                <fullName>Pre-site inspection</fullName>
+                <default>false</default>
+                <label>Pre-site inspection</label>
+            </value>
+            <value>
+                <fullName>Quote/Technical document hard copy submission</fullName>
+                <default>false</default>
+                <label>Quote/Technical document hard copy submission</label>
+            </value>
+            <value>
+                <fullName>Commercial Negotiation - Self</fullName>
+                <default>false</default>
+                <label>Commercial Negotiation - Self</label>
+            </value>
+            <value>
+                <fullName>Technical Negotiation – Self</fullName>
+                <default>false</default>
+                <label>Technical Negotiation – Self</label>
+            </value>
+            <value>
+                <fullName>Commercial Negotiation – Along with IFB’s Senior resource</fullName>
+                <default>false</default>
+                <label>Commercial Negotiation – Along with IFB’s Senior resource</label>
+            </value>
+            <value>
+                <fullName>Technical Negotiation - Along with IFB’s Senior resource</fullName>
+                <default>false</default>
+                <label>Technical Negotiation - Along with IFB’s Senior resource</label>
+            </value>
+            <value>
+                <fullName>Post Site Inspection</fullName>
+                <default>false</default>
+                <label>Post Site Inspection</label>
+            </value>
+            <value>
+                <fullName>PO &amp; advance payment collection</fullName>
+                <default>false</default>
+                <label>PO &amp; advance payment collection</label>
+            </value>
+            <value>
+                <fullName>Advance payment collection</fullName>
+                <default>false</default>
+                <label>Advance payment collection</label>
+            </value>
+            <value>
+                <fullName>Service issue</fullName>
+                <default>false</default>
+                <label>Service issue</label>
+            </value>
+            <value>
+                <fullName>Relationship Building</fullName>
+                <default>false</default>
+                <label>Relationship Building</label>
+            </value>
+            <value>
+                <fullName>New opportunities</fullName>
+                <default>false</default>
+                <label>New opportunities</label>
+            </value>
+            <value>
+                <fullName>Visit with Service</fullName>
+                <default>false</default>
+                <label>Visit with Service</label>
+            </value>
+            <value>
+                <fullName>Invitations</fullName>
+                <default>false</default>
+                <label>Invitations</label>
+            </value>
+            <value>
+                <fullName>Festival wishes &amp; Greetings</fullName>
+                <default>false</default>
+                <label>Festival wishes &amp; Greetings</label>
+            </value>
+            <value>
+                <fullName>PI submission &amp; balance payment collection</fullName>
+                <default>false</default>
+                <label>PI submission &amp; balance payment collection</label>
+            </value>
+            <value>
+                <fullName>Balance Payment collection</fullName>
+                <default>false</default>
+                <label>Balance Payment collection</label>
+            </value>
+            <value>
+                <fullName>Unloading</fullName>
+                <default>false</default>
+                <label>Unloading</label>
+            </value>
+            <value>
+                <fullName>Installation</fullName>
+                <default>false</default>
+                <label>Installation</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Adhoc Visits</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Adhoc Visits</label>
+            </value>
+            <value>
+                <fullName>Competition Customer Acquisition</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Competition Customer Acquisition</label>
+            </value>
+            <value>
+                <fullName>Courtesy Visit</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Courtesy Visit</label>
+            </value>
+            <value>
+                <fullName>Follow up on lead</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Follow up on Lead</label>
+            </value>
+            <value>
+                <fullName>Multiple Days Visit</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Multiple Days Visit</label>
+            </value>
+            <value>
+                <fullName>New Customer Acquisition</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New Customer Acquisition</label>
+            </value>
+            <value>
+                <fullName>Post Purchase Visits</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Post Purchase Visits</label>
+            </value>
+            <value>
+                <fullName>Pre-Installation Check</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pre-Installation Check</label>
+            </value>
+            <value>
+                <fullName>Project Visits</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Project Visits</label>
+            </value>
+            <value>
+                <fullName>Property Expansion Plans</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Property Expansion Plans</label>
+            </value>
+            <value>
+                <fullName>Quote Negotiation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Quote Negotiation</label>
+            </value>
+            <value>
+                <fullName>Regular Meeting</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Regular Meeting</label>
+            </value>
+            <value>
+                <fullName>Repeat Order</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Repeat Order</label>
+            </value>
+            <value>
+                <fullName>Sales Negotiations</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sales Negotiations</label>
+            </value>
+            <value>
+                <fullName>Service Issues</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Service Issues</label>
+            </value>
+            <value>
+                <fullName>Site Inspection</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Site Inspection</label>
+            </value>
+            <value>
+                <fullName>Site Readiness Check</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Site Readiness Check</label>
+            </value>
+            <value>
+                <fullName>Technical Discussions</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Technical Discussions</label>
+            </value>
+            <value>
+                <fullName>Understanding New Projects</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Understanding New Projects</label>
+            </value>
+            <value>
+                <fullName>Visit Competition Consultant</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Visit Competition Consultant</label>
+            </value>
+            <value>
+                <fullName>Visit Competition Dealer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Visit Competition Dealer</label>
+            </value>
+            <value>
+                <fullName>Visit along with Service for AMC / CAMC Sale</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Visit along with Service for AMC / CAMC Sale</label>
+            </value>
+            <value>
+                <fullName>Visit along with Service for Additive Sale</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Visit along with Service for Additive Sale</label>
+            </value>
+            <value>
+                <fullName>Visit to Consultant</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Visit to Consultant</label>
+            </value>
+            <value>
+                <fullName>Visit to Dealer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Visit to Dealer</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Lead</controllingFieldValue>
+            <valueName>Follow-up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lead</controllingFieldValue>
+            <controllingFieldValue>Opportunity</controllingFieldValue>
+            <valueName>Pre-site inspection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opportunity</controllingFieldValue>
+            <valueName>Quote/Technical document hard copy submission</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opportunity</controllingFieldValue>
+            <valueName>Commercial Negotiation - Self</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opportunity</controllingFieldValue>
+            <valueName>Technical Negotiation – Self</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opportunity</controllingFieldValue>
+            <valueName>Commercial Negotiation – Along with IFB’s Senior resource</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opportunity</controllingFieldValue>
+            <valueName>Technical Negotiation - Along with IFB’s Senior resource</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opportunity</controllingFieldValue>
+            <controllingFieldValue>Order</controllingFieldValue>
+            <valueName>Post Site Inspection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opportunity</controllingFieldValue>
+            <valueName>PO &amp; advance payment collection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opportunity</controllingFieldValue>
+            <valueName>Advance payment collection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account</controllingFieldValue>
+            <valueName>Service issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account</controllingFieldValue>
+            <valueName>Relationship Building</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account</controllingFieldValue>
+            <valueName>New opportunities</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account</controllingFieldValue>
+            <controllingFieldValue>Order</controllingFieldValue>
+            <valueName>Visit with Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account</controllingFieldValue>
+            <valueName>Invitations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account</controllingFieldValue>
+            <valueName>Festival wishes &amp; Greetings</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order</controllingFieldValue>
+            <valueName>PI submission &amp; balance payment collection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order</controllingFieldValue>
+            <valueName>Balance Payment collection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order</controllingFieldValue>
+            <valueName>Unloading</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order</controllingFieldValue>
+            <valueName>Installation</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

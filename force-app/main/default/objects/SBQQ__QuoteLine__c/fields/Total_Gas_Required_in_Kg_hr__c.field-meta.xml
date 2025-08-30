@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Gas_Required_in_Kg_hr__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+SBQQ__Product__r.RecordType.Name = &quot;Industrial Washing Machine&quot;,
+OR(
+ISPICKVAL(SBQQ__Product__r.Heating_type__c, &quot;Gas&quot;)
+)
+),
+SBQQ__Quantity__c * SBQQ__Product__r.Gas_Each_Machine_Consumption_in_Kg_Hr__c,
+0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Gas Required in Kg/hr</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

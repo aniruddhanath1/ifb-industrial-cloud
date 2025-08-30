@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Hierarchies_With_Derive_Usage</fullName>
+    <active>true</active>
+    <description>At least one hierarchy with Usage as Derive must exist for Derivable Promotion Template.</description>
+    <errorConditionFormula>AND(cgcloud__Is_Derivable__c, cgcloud__Number_Of_Derive_Usage_Hierarchies__c &lt; 1)</errorConditionFormula>
+    <errorMessage>At least one hierarchy with Usage as Derive must exist for Derivable Promotion Template.</errorMessage>
+</ValidationRule>

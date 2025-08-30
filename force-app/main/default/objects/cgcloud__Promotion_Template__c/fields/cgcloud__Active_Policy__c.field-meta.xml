@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Active_Policy__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Specifies if a promotion of this template is initially active or if a tactic of this type is initially pre-set as included in the promotion (not considered if the tactic is manually added to the promotion!)</description>
+    <inlineHelpText>Determines if promotion is active by default.</inlineHelpText>
+    <label>Active Policy</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

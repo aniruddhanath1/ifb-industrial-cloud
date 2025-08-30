@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__TPO_Enable_Uplift_Prediction_Validation</fullName>
+    <active>true</active>
+    <description>TPO Enable Uplift Prediction can only be enabled if Anchor type is Customer, UI Type is SmartUI and Calculation Mode is Writeback</description>
+    <errorConditionFormula>AND(
+ cgcloud__TPO_Enable_Uplift_Prediction__c = true, 
+ NOT(
+  AND( 
+   ISPICKVAL(cgcloud__UI_Type__c, &apos;SmartUI&apos;), 
+   ISPICKVAL(cgcloud__Anchor_Type__c, &apos;Customer&apos;), 
+   ISPICKVAL(cgcloud__Calculation_Mode__c, &apos;Writeback&apos;) 
+  )
+ ) 
+)</errorConditionFormula>
+    <errorMessage>Anchor Type must be &amp;#39;Customer&amp;#39;, UI Type must be &amp;#39;SmartUI&amp;#39; and Calculation Mode must be &amp;#39;Writeback&amp;#39; if you want to enable TPO Enable Uplift Prediction.</errorMessage>
+</ValidationRule>

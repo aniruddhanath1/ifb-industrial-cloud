@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Push_Target_Account_Selection__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Only filled for Pushable Promotions.Contains a JSON with the selected push target accounts.</description>
+    <label>Push Target Account Selection</label>
+    <length>131072</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

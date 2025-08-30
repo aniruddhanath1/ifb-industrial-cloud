@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Represents one node of a tree structure. If the parent reference is not defined, it means the current record is the root of the tree.</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Named Fetch Tree Node</label>
+    <visibility>Public</visibility>
+</CustomObject>

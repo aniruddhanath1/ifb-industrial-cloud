@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Segment_Vertical__c</fullName>
+    <label>Customer Segment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Sector__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Educational Institutions</fullName>
+                <default>false</default>
+                <label>Educational Institutions</label>
+            </value>
+            <value>
+                <fullName>Establishments</fullName>
+                <default>false</default>
+                <label>Establishments</label>
+            </value>
+            <value>
+                <fullName>Export</fullName>
+                <default>false</default>
+                <label>Export</label>
+            </value>
+            <value>
+                <fullName>Garment</fullName>
+                <default>false</default>
+                <label>Garment</label>
+            </value>
+            <value>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+                <label>Healthcare</label>
+            </value>
+            <value>
+                <fullName>HNI</fullName>
+                <default>false</default>
+                <label>HNI</label>
+            </value>
+            <value>
+                <fullName>Hospitality</fullName>
+                <default>false</default>
+                <label>Hospitality</label>
+            </value>
+            <value>
+                <fullName>Laundromats</fullName>
+                <default>false</default>
+                <label>Laundromats</label>
+            </value>
+            <value>
+                <fullName>List Of Ministries</fullName>
+                <default>false</default>
+                <label>List Of Ministries</label>
+            </value>
+            <value>
+                <fullName>Non-Profit Organization/NGO</fullName>
+                <default>false</default>
+                <label>Non-Profit Organization/NGO</label>
+            </value>
+            <value>
+                <fullName>Organization/Entity</fullName>
+                <default>false</default>
+                <label>Organization/Entity</label>
+            </value>
+            <value>
+                <fullName>Partners</fullName>
+                <default>false</default>
+                <label>Partners</label>
+            </value>
+            <value>
+                <fullName>State</fullName>
+                <default>false</default>
+                <label>State</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Private</controllingFieldValue>
+            <controllingFieldValue>Government</controllingFieldValue>
+            <valueName>Educational Institutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private</controllingFieldValue>
+            <valueName>Export</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private</controllingFieldValue>
+            <valueName>Garment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private</controllingFieldValue>
+            <valueName>Healthcare</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private</controllingFieldValue>
+            <valueName>HNI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private</controllingFieldValue>
+            <valueName>Hospitality</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private</controllingFieldValue>
+            <valueName>Laundromats</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private</controllingFieldValue>
+            <valueName>Non-Profit Organization/NGO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private</controllingFieldValue>
+            <valueName>Organization/Entity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private</controllingFieldValue>
+            <valueName>Partners</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Government</controllingFieldValue>
+            <valueName>Establishments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Government</controllingFieldValue>
+            <valueName>List Of Ministries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Government</controllingFieldValue>
+            <valueName>State</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

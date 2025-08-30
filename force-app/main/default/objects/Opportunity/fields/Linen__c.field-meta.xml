@@ -1,0 +1,1478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Linen__c</fullName>
+    <label>Linen</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Vertical__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Apron</fullName>
+                <default>false</default>
+                <label>Apron</label>
+            </value>
+            <value>
+                <fullName>Apron/Overcoat</fullName>
+                <default>false</default>
+                <label>Apron/Overcoat</label>
+            </value>
+            <value>
+                <fullName>Apron/Over Coat</fullName>
+                <default>false</default>
+                <label>Apron/Over Coat</label>
+            </value>
+            <value>
+                <fullName>Baby Pant</fullName>
+                <default>false</default>
+                <label>Baby Pant</label>
+            </value>
+            <value>
+                <fullName>Baby Shirt</fullName>
+                <default>false</default>
+                <label>Baby Shirt</label>
+            </value>
+            <value>
+                <fullName>Bath Mat</fullName>
+                <default>false</default>
+                <label>Bath Mat</label>
+            </value>
+            <value>
+                <fullName>Bath Robe</fullName>
+                <default>false</default>
+                <label>Bath Robe</label>
+            </value>
+            <value>
+                <fullName>BathTowel</fullName>
+                <default>false</default>
+                <label>BathTowel</label>
+            </value>
+            <value>
+                <fullName>Bath Towel</fullName>
+                <default>false</default>
+                <label>Bath Towel</label>
+            </value>
+            <value>
+                <fullName>Bed Sheet (Single)</fullName>
+                <default>false</default>
+                <label>Bed Sheet (Single)</label>
+            </value>
+            <value>
+                <fullName>Black Coat</fullName>
+                <default>false</default>
+                <label>Black Coat</label>
+            </value>
+            <value>
+                <fullName>Blanket</fullName>
+                <default>false</default>
+                <label>Blanket</label>
+            </value>
+            <value>
+                <fullName>Blazer</fullName>
+                <default>false</default>
+                <label>Blazer</label>
+            </value>
+            <value>
+                <fullName>Blouse</fullName>
+                <default>false</default>
+                <label>Blouse</label>
+            </value>
+            <value>
+                <fullName>Blue Bed Sheet</fullName>
+                <default>false</default>
+                <label>Blue Bed Sheet</label>
+            </value>
+            <value>
+                <fullName>Blue Pant</fullName>
+                <default>false</default>
+                <label>Blue Pant</label>
+            </value>
+            <value>
+                <fullName>Blue Pillow Cover</fullName>
+                <default>false</default>
+                <label>Blue Pillow Cover</label>
+            </value>
+            <value>
+                <fullName>Blue Shirt</fullName>
+                <default>false</default>
+                <label>Blue Shirt</label>
+            </value>
+            <value>
+                <fullName>Boiler Suit</fullName>
+                <default>false</default>
+                <label>Boiler Suit</label>
+            </value>
+            <value>
+                <fullName>Booties (grade C) (pair)</fullName>
+                <default>false</default>
+                <label>Booties (grade C) (pair)</label>
+            </value>
+            <value>
+                <fullName>Booties with rubber sole ( pairs) (Grade B)</fullName>
+                <default>false</default>
+                <label>Booties with rubber sole ( pairs) (Grade B)</label>
+            </value>
+            <value>
+                <fullName>Capri</fullName>
+                <default>false</default>
+                <label>Capri</label>
+            </value>
+            <value>
+                <fullName>Chair Cover</fullName>
+                <default>false</default>
+                <label>Chair Cover</label>
+            </value>
+            <value>
+                <fullName>Chef Cap</fullName>
+                <default>false</default>
+                <label>Chef Cap</label>
+            </value>
+            <value>
+                <fullName>Chef Coat</fullName>
+                <default>false</default>
+                <label>Chef Coat</label>
+            </value>
+            <value>
+                <fullName>Coat</fullName>
+                <default>false</default>
+                <label>Coat</label>
+            </value>
+            <value>
+                <fullName>Cook Coat</fullName>
+                <default>false</default>
+                <label>Cook Coat</label>
+            </value>
+            <value>
+                <fullName>Cook Trouser</fullName>
+                <default>false</default>
+                <label>Cook Trouser</label>
+            </value>
+            <value>
+                <fullName>Doctors Coat</fullName>
+                <default>false</default>
+                <label>Doctors Coat</label>
+            </value>
+            <value>
+                <fullName>Doorman Coat</fullName>
+                <default>false</default>
+                <label>Doorman Coat</label>
+            </value>
+            <value>
+                <fullName>Double Duvet Cover</fullName>
+                <default>false</default>
+                <label>Double Duvet Cover</label>
+            </value>
+            <value>
+                <fullName>Double Sheet</fullName>
+                <default>false</default>
+                <label>Double Sheet</label>
+            </value>
+            <value>
+                <fullName>Dr. Coat</fullName>
+                <default>false</default>
+                <label>Dr. Coat</label>
+            </value>
+            <value>
+                <fullName>Draw Sheet</fullName>
+                <default>false</default>
+                <label>Draw Sheet</label>
+            </value>
+            <value>
+                <fullName>Dress</fullName>
+                <default>false</default>
+                <label>Dress</label>
+            </value>
+            <value>
+                <fullName>Dresses (shirt-pant) with hoods (nos) (Grade C)</fullName>
+                <default>false</default>
+                <label>Dresses (shirt-pant) with hoods (nos) (Grade C)</label>
+            </value>
+            <value>
+                <fullName>Dresses with hoods, bags or pre gowning caps each (Grade B)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Dresses with hoods, bags or pre gowning caps each (Grade B)</label>
+            </value>
+            <value>
+                <fullName>Dresses with hoods, bags  or pre gowning caps each (Grade B)</fullName>
+                <default>false</default>
+                <label>Dresses with hoods, bags  or pre gowning caps each (Grade B)</label>
+            </value>
+            <value>
+                <fullName>Dupatta</fullName>
+                <default>false</default>
+                <label>Dupatta</label>
+            </value>
+            <value>
+                <fullName>Engineering Coat</fullName>
+                <default>false</default>
+                <label>Engineering Coat</label>
+            </value>
+            <value>
+                <fullName>Engineering pant</fullName>
+                <default>false</default>
+                <label>Engineering Pant</label>
+            </value>
+            <value>
+                <fullName>FBD Bag</fullName>
+                <default>false</default>
+                <label>FBD Bag</label>
+            </value>
+            <value>
+                <fullName>FDB Bag</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>FDB Bag</label>
+            </value>
+            <value>
+                <fullName>Firl</fullName>
+                <default>false</default>
+                <label>Firl</label>
+            </value>
+            <value>
+                <fullName>Gloves</fullName>
+                <default>false</default>
+                <label>Gloves</label>
+            </value>
+            <value>
+                <fullName>Green Bed Sheet</fullName>
+                <default>false</default>
+                <label>Green Bed Sheet</label>
+            </value>
+            <value>
+                <fullName>Green Big Sheet</fullName>
+                <default>false</default>
+                <label>Green Big Sheet</label>
+            </value>
+            <value>
+                <fullName>Green pant</fullName>
+                <default>false</default>
+                <label>Green Pant</label>
+            </value>
+            <value>
+                <fullName>Green Pillow Cover</fullName>
+                <default>false</default>
+                <label>Green Pillow Cover</label>
+            </value>
+            <value>
+                <fullName>Green Shirt</fullName>
+                <default>false</default>
+                <label>Green Shirt</label>
+            </value>
+            <value>
+                <fullName>Green Small Sheet</fullName>
+                <default>false</default>
+                <label>Green Small Sheet</label>
+            </value>
+            <value>
+                <fullName>Gym Towel</fullName>
+                <default>false</default>
+                <label>Gym Towel</label>
+            </value>
+            <value>
+                <fullName>Hand Towel</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Hand Towel</label>
+            </value>
+            <value>
+                <fullName>Hankey</fullName>
+                <default>false</default>
+                <label>Hankey</label>
+            </value>
+            <value>
+                <fullName>Head Cap</fullName>
+                <default>false</default>
+                <label>Head Cap</label>
+            </value>
+            <value>
+                <fullName>Head Caps</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Head Caps</label>
+            </value>
+            <value>
+                <fullName>Heavy Lehenga</fullName>
+                <default>false</default>
+                <label>Heavy Lehenga</label>
+            </value>
+            <value>
+                <fullName>Heavy Suit - Women</fullName>
+                <default>false</default>
+                <label>Heavy Suit - Women</label>
+            </value>
+            <value>
+                <fullName>HK Lower</fullName>
+                <default>false</default>
+                <label>HK Lower</label>
+            </value>
+            <value>
+                <fullName>HK Set</fullName>
+                <default>false</default>
+                <label>HK Set</label>
+            </value>
+            <value>
+                <fullName>HK T-Shirt</fullName>
+                <default>false</default>
+                <label>HK T-Shirt</label>
+            </value>
+            <value>
+                <fullName>Hoodie</fullName>
+                <default>false</default>
+                <label>Hoodie</label>
+            </value>
+            <value>
+                <fullName>Inner Wear</fullName>
+                <default>false</default>
+                <label>Inner Wear</label>
+            </value>
+            <value>
+                <fullName>Inner Wearthermal</fullName>
+                <default>false</default>
+                <label>Inner Wearthermal</label>
+            </value>
+            <value>
+                <fullName>Jacket</fullName>
+                <default>false</default>
+                <label>Jacket</label>
+            </value>
+            <value>
+                <fullName>Jeans</fullName>
+                <default>false</default>
+                <label>Jeans</label>
+            </value>
+            <value>
+                <fullName>Kurta</fullName>
+                <default>false</default>
+                <label>Kurta</label>
+            </value>
+            <value>
+                <fullName>Lab Coats</fullName>
+                <default>false</default>
+                <label>Lab Coats</label>
+            </value>
+            <value>
+                <fullName>Lab Pants</fullName>
+                <default>false</default>
+                <label>Lab Pants</label>
+            </value>
+            <value>
+                <fullName>Lint free moping pads (wipes)( nos.  )</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lint free moping pads (wipes)( nos.  )</label>
+            </value>
+            <value>
+                <fullName>Lint free moping pads (wipes)  ( nos.  )</fullName>
+                <default>false</default>
+                <label>Lint free moping pads (wipes)  ( nos.  )</label>
+            </value>
+            <value>
+                <fullName>Lint free mopping pads (wipes) (nos.)</fullName>
+                <default>false</default>
+                <label>Lint free mopping pads (wipes) (nos.)</label>
+            </value>
+            <value>
+                <fullName>Lower</fullName>
+                <default>false</default>
+                <label>Lower</label>
+            </value>
+            <value>
+                <fullName>Lungi</fullName>
+                <default>false</default>
+                <label>Lungi</label>
+            </value>
+            <value>
+                <fullName>Managers Shirt</fullName>
+                <default>false</default>
+                <label>Managers Shirt</label>
+            </value>
+            <value>
+                <fullName>Manufacturing Garment Set</fullName>
+                <default>false</default>
+                <label>Manufacturing Garment Set</label>
+            </value>
+            <value>
+                <fullName>Mattress Protector</fullName>
+                <default>false</default>
+                <label>Mattress Protector</label>
+            </value>
+            <value>
+                <fullName>Microbiology</fullName>
+                <default>false</default>
+                <label>Microbiology</label>
+            </value>
+            <value>
+                <fullName>Microbiology Lab Coats</fullName>
+                <default>false</default>
+                <label>Microbiology Lab Coats</label>
+            </value>
+            <value>
+                <fullName>Mop Head</fullName>
+                <default>false</default>
+                <label>Mop Head</label>
+            </value>
+            <value>
+                <fullName>Mopping Cloth</fullName>
+                <default>false</default>
+                <label>Mopping Cloth</label>
+            </value>
+            <value>
+                <fullName>Napkin</fullName>
+                <default>false</default>
+                <label>Napkin</label>
+            </value>
+            <value>
+                <fullName>Napkins</fullName>
+                <default>false</default>
+                <label>Napkins</label>
+            </value>
+            <value>
+                <fullName>NICU Sheet</fullName>
+                <default>false</default>
+                <label>NICU Sheet</label>
+            </value>
+            <value>
+                <fullName>Nighty</fullName>
+                <default>false</default>
+                <label>Nighty</label>
+            </value>
+            <value>
+                <fullName>Non-Sterile Garment Set</fullName>
+                <default>false</default>
+                <label>Non-Sterile Garment Set</label>
+            </value>
+            <value>
+                <fullName>Non Sterilise</fullName>
+                <default>false</default>
+                <label>Non Sterilise</label>
+            </value>
+            <value>
+                <fullName>Overcoat</fullName>
+                <default>false</default>
+                <label>Overcoat</label>
+            </value>
+            <value>
+                <fullName>Over Coat</fullName>
+                <default>false</default>
+                <label>Over Coat</label>
+            </value>
+            <value>
+                <fullName>Overgown Suits</fullName>
+                <default>false</default>
+                <label>Overgown Suits</label>
+            </value>
+            <value>
+                <fullName>Pant</fullName>
+                <default>false</default>
+                <label>Pant</label>
+            </value>
+            <value>
+                <fullName>Pants</fullName>
+                <default>false</default>
+                <label>Pants</label>
+            </value>
+            <value>
+                <fullName>Pants/Trousers /Jeans</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pants/Trousers /Jeans</label>
+            </value>
+            <value>
+                <fullName>Pants / Trousers / Jeans</fullName>
+                <default>false</default>
+                <label>Pants / Trousers / Jeans</label>
+            </value>
+            <value>
+                <fullName>Patient Gown</fullName>
+                <default>false</default>
+                <label>Patient Gown</label>
+            </value>
+            <value>
+                <fullName>Patient Pant</fullName>
+                <default>false</default>
+                <label>Patient Pant</label>
+            </value>
+            <value>
+                <fullName>Patient Shirt</fullName>
+                <default>false</default>
+                <label>Patient Shirt</label>
+            </value>
+            <value>
+                <fullName>Petty Coat</fullName>
+                <default>false</default>
+                <label>Petty Coat</label>
+            </value>
+            <value>
+                <fullName>Pillow Cover</fullName>
+                <default>false</default>
+                <label>Pillow Cover</label>
+            </value>
+            <value>
+                <fullName>Pink Bed Sheet</fullName>
+                <default>false</default>
+                <label>Pink Bed Sheet</label>
+            </value>
+            <value>
+                <fullName>Pink Pillow Cover</fullName>
+                <default>false</default>
+                <label>Pink Pillow Cover</label>
+            </value>
+            <value>
+                <fullName>Plain Pink Pillow Cover</fullName>
+                <default>false</default>
+                <label>Plain Pink Pillow Cover</label>
+            </value>
+            <value>
+                <fullName>Printed Bed Sheet</fullName>
+                <default>false</default>
+                <label>Printed Bed Sheet</label>
+            </value>
+            <value>
+                <fullName>Printed Pillow Cover</fullName>
+                <default>false</default>
+                <label>Printed Pillow Cover</label>
+            </value>
+            <value>
+                <fullName>Pyjama Suit</fullName>
+                <default>false</default>
+                <label>Pyjama Suit</label>
+            </value>
+            <value>
+                <fullName>QC Lab Coats</fullName>
+                <default>false</default>
+                <label>QC Lab Coats</label>
+            </value>
+            <value>
+                <fullName>Rajai Cover (Single)</fullName>
+                <default>false</default>
+                <label>Rajai Cover (Single)</label>
+            </value>
+            <value>
+                <fullName>Rug</fullName>
+                <default>false</default>
+                <label>Rug</label>
+            </value>
+            <value>
+                <fullName>S.P Towel</fullName>
+                <default>false</default>
+                <label>S.P Towel</label>
+            </value>
+            <value>
+                <fullName>Safari Suit</fullName>
+                <default>false</default>
+                <label>Safari Suit</label>
+            </value>
+            <value>
+                <fullName>Salwar/Kurta/kurti</fullName>
+                <default>false</default>
+                <label>Salwar/Kurta/kurti</label>
+            </value>
+            <value>
+                <fullName>Salwar Kameez</fullName>
+                <default>false</default>
+                <label>Salwar Kameez</label>
+            </value>
+            <value>
+                <fullName>Saree</fullName>
+                <default>false</default>
+                <label>Saree</label>
+            </value>
+            <value>
+                <fullName>Scarf</fullName>
+                <default>false</default>
+                <label>Scarf</label>
+            </value>
+            <value>
+                <fullName>Screen/ Curtain</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Screen/ Curtain</label>
+            </value>
+            <value>
+                <fullName>Screen / Curtain</fullName>
+                <default>false</default>
+                <label>Screen / Curtain</label>
+            </value>
+            <value>
+                <fullName>Shawl</fullName>
+                <default>false</default>
+                <label>Shawl</label>
+            </value>
+            <value>
+                <fullName>Sherwani</fullName>
+                <default>false</default>
+                <label>Sherwani</label>
+            </value>
+            <value>
+                <fullName>Shirt</fullName>
+                <default>false</default>
+                <label>Shirt</label>
+            </value>
+            <value>
+                <fullName>Shirts</fullName>
+                <default>false</default>
+                <label>Shirts</label>
+            </value>
+            <value>
+                <fullName>Shorts</fullName>
+                <default>false</default>
+                <label>Shorts</label>
+            </value>
+            <value>
+                <fullName>Shower Curtain</fullName>
+                <default>false</default>
+                <label>Shower Curtain</label>
+            </value>
+            <value>
+                <fullName>Silk Blouse</fullName>
+                <default>false</default>
+                <label>Silk Blouse</label>
+            </value>
+            <value>
+                <fullName>Silk Dhoti</fullName>
+                <default>false</default>
+                <label>Silk Dhoti</label>
+            </value>
+            <value>
+                <fullName>Silk Saree</fullName>
+                <default>false</default>
+                <label>Silk Saree</label>
+            </value>
+            <value>
+                <fullName>Silk Shirts</fullName>
+                <default>false</default>
+                <label>Silk Shirts</label>
+            </value>
+            <value>
+                <fullName>Simple Lehnga</fullName>
+                <default>false</default>
+                <label>Simple Lehnga</label>
+            </value>
+            <value>
+                <fullName>Simple Safari Suit</fullName>
+                <default>false</default>
+                <label>Simple Safari Suit</label>
+            </value>
+            <value>
+                <fullName>Simple Saree</fullName>
+                <default>false</default>
+                <label>Simple Saree</label>
+            </value>
+            <value>
+                <fullName>Simple Suit</fullName>
+                <default>false</default>
+                <label>Simple Suit</label>
+            </value>
+            <value>
+                <fullName>Single Duvet</fullName>
+                <default>false</default>
+                <label>Single Duvet</label>
+            </value>
+            <value>
+                <fullName>Single Duvet Cover</fullName>
+                <default>false</default>
+                <label>Single Duvet Cover</label>
+            </value>
+            <value>
+                <fullName>Single Sheet</fullName>
+                <default>false</default>
+                <label>Single Sheet</label>
+            </value>
+            <value>
+                <fullName>Skirt</fullName>
+                <default>false</default>
+                <label>Skirt</label>
+            </value>
+            <value>
+                <fullName>Socks</fullName>
+                <default>false</default>
+                <label>Socks</label>
+            </value>
+            <value>
+                <fullName>SPA Sheet</fullName>
+                <default>false</default>
+                <label>SPA Sheet</label>
+            </value>
+            <value>
+                <fullName>Sterile Garment Set</fullName>
+                <default>false</default>
+                <label>Sterile Garment Set</label>
+            </value>
+            <value>
+                <fullName>Stockings</fullName>
+                <default>false</default>
+                <label>Stockings</label>
+            </value>
+            <value>
+                <fullName>Suit</fullName>
+                <default>false</default>
+                <label>Suit</label>
+            </value>
+            <value>
+                <fullName>Surgeon Gown</fullName>
+                <default>false</default>
+                <label>Surgeon Gown</label>
+            </value>
+            <value>
+                <fullName>Sweater</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sweater</label>
+            </value>
+            <value>
+                <fullName>Sweaters</fullName>
+                <default>false</default>
+                <label>Sweaters</label>
+            </value>
+            <value>
+                <fullName>T. Shirts/Top</fullName>
+                <default>false</default>
+                <label>T. Shirts/Top</label>
+            </value>
+            <value>
+                <fullName>Table Cloth</fullName>
+                <default>false</default>
+                <label>Table Cloth</label>
+            </value>
+            <value>
+                <fullName>Table Runner Mat</fullName>
+                <default>false</default>
+                <label>Table Runner Mat</label>
+            </value>
+            <value>
+                <fullName>Tie</fullName>
+                <default>false</default>
+                <label>Tie</label>
+            </value>
+            <value>
+                <fullName>Towel</fullName>
+                <default>false</default>
+                <label>Towel</label>
+            </value>
+            <value>
+                <fullName>Track Suit</fullName>
+                <default>false</default>
+                <label>Track Suit</label>
+            </value>
+            <value>
+                <fullName>Track Suit (T-shirt, Lower)</fullName>
+                <default>false</default>
+                <label>Track Suit (T-shirt, Lower)</label>
+            </value>
+            <value>
+                <fullName>Trolley Bag</fullName>
+                <default>false</default>
+                <label>Trolley Bag</label>
+            </value>
+            <value>
+                <fullName>Trouser</fullName>
+                <default>false</default>
+                <label>Trouser</label>
+            </value>
+            <value>
+                <fullName>T-Shirt</fullName>
+                <default>false</default>
+                <label>T-Shirt</label>
+            </value>
+            <value>
+                <fullName>T-Shirt(white)</fullName>
+                <default>false</default>
+                <label>T-Shirt(white)</label>
+            </value>
+            <value>
+                <fullName>Turban</fullName>
+                <default>false</default>
+                <label>Turban</label>
+            </value>
+            <value>
+                <fullName>Under Garment</fullName>
+                <default>false</default>
+                <label>Under Garment</label>
+            </value>
+            <value>
+                <fullName>Vesty</fullName>
+                <default>false</default>
+                <label>Vesty</label>
+            </value>
+            <value>
+                <fullName>Waist Coat</fullName>
+                <default>false</default>
+                <label>Waist Coat</label>
+            </value>
+            <value>
+                <fullName>Wedding Gowns</fullName>
+                <default>false</default>
+                <label>Wedding Gowns</label>
+            </value>
+            <value>
+                <fullName>White Bed Sheet</fullName>
+                <default>false</default>
+                <label>White Bed Sheet</label>
+            </value>
+            <value>
+                <fullName>White Dhoti</fullName>
+                <default>false</default>
+                <label>White Dhoti</label>
+            </value>
+            <value>
+                <fullName>White Kurta</fullName>
+                <default>false</default>
+                <label>White Kurta</label>
+            </value>
+            <value>
+                <fullName>White Pant</fullName>
+                <default>false</default>
+                <label>White Pant</label>
+            </value>
+            <value>
+                <fullName>White Pillow Cover</fullName>
+                <default>false</default>
+                <label>White Pillow Cover</label>
+            </value>
+            <value>
+                <fullName>Wollen Blankets</fullName>
+                <default>false</default>
+                <label>Wollen Blankets</label>
+            </value>
+            <value>
+                <fullName>Woolen Sweater</fullName>
+                <default>false</default>
+                <label>Woolen Sweater</label>
+            </value>
+            <value>
+                <fullName>Yoga Mats</fullName>
+                <default>false</default>
+                <label>Yoga Mats</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Prison</controllingFieldValue>
+            <valueName>Wollen Blankets</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yoga Center</controllingFieldValue>
+            <valueName>Yoga Mats</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dry Cleaning</controllingFieldValue>
+            <valueName>Black Coat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dry Cleaning</controllingFieldValue>
+            <valueName>Heavy Lehenga</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dry Cleaning</controllingFieldValue>
+            <valueName>Heavy Suit - Women</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dry Cleaning</controllingFieldValue>
+            <valueName>Safari Suit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dry Cleaning</controllingFieldValue>
+            <valueName>Salwar Kameez</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dry Cleaning</controllingFieldValue>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Sherwani</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dry Cleaning</controllingFieldValue>
+            <valueName>Silk Blouse</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dry Cleaning</controllingFieldValue>
+            <valueName>Silk Dhoti</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dry Cleaning</controllingFieldValue>
+            <valueName>Silk Saree</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dry Cleaning</controllingFieldValue>
+            <valueName>Silk Shirts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dry Cleaning</controllingFieldValue>
+            <valueName>Suit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dry Cleaning</controllingFieldValue>
+            <valueName>Wedding Gowns</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dry Cleaning</controllingFieldValue>
+            <valueName>White Dhoti</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dry Cleaning</controllingFieldValue>
+            <valueName>Woolen Sweater</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <valueName>Apron</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Bath Mat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <valueName>Bath Robe</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Bath Towel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Blouse</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Chair Cover</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <valueName>Chef Cap</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Chef Coat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Cook Coat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Cook Trouser</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Doorman Coat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Double Duvet Cover</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Double Sheet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Fire Service Department</controllingFieldValue>
+            <valueName>Engineering Coat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Fire Service Department</controllingFieldValue>
+            <valueName>Engineering pant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <valueName>Firl</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <valueName>Gym Towel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <valueName>HK Lower</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <valueName>HK T-Shirt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <valueName>Mattress Protector</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <valueName>Mop Head</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <valueName>Mopping Cloth</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Napkin</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Pant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Pillow Cover</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <valueName>S.P Towel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Saree</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Shirt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Shower Curtain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Single Duvet Cover</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Single Sheet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <valueName>SPA Sheet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <valueName>Table Cloth</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <valueName>Table Runner Mat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <valueName>Trouser</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>T-Shirt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Laundry</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>T-Shirt(white)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Capri</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Coat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Dress</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Dupatta</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Hankey</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Inner Wear</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Inner Wearthermal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Jacket</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Kurta</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Lungi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Nighty</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Over Coat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Pants</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Petty Coat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Pyjama Suit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Scarf</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <valueName>Shawl</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Shorts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Simple Lehnga</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Simple Safari Suit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Simple Saree</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Simple Suit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Skirt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Socks</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Stockings</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Tie</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Towel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Track Suit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Turban</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Under Garment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Vesty</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Regular Laundry</controllingFieldValue>
+            <valueName>Waist Coat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <valueName>Apron/Overcoat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <valueName>Bed Sheet (Single)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <valueName>Blazer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <valueName>Hoodie</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Jeans</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <valueName>Lab Coats</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <valueName>Lab Pants</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <valueName>Lower</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <valueName>Pants / Trousers / Jeans</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <valueName>Rajai Cover (Single)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <valueName>Salwar/Kurta/kurti</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <valueName>Shirts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <valueName>Sweaters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <valueName>T. Shirts/Top</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institution</controllingFieldValue>
+            <valueName>Track Suit (T-shirt, Lower)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharma</controllingFieldValue>
+            <valueName>Boiler Suit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharma</controllingFieldValue>
+            <valueName>Booties (grade C) (pair)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharma</controllingFieldValue>
+            <valueName>Booties with rubber sole ( pairs) (Grade B)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharma</controllingFieldValue>
+            <valueName>Dresses (shirt-pant) with hoods (nos) (Grade C)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharma</controllingFieldValue>
+            <valueName>Dresses with hoods, bags  or pre gowning caps each (Grade B)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharma</controllingFieldValue>
+            <valueName>FBD Bag</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharma</controllingFieldValue>
+            <valueName>Lint free mopping pads (wipes) (nos.)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharma</controllingFieldValue>
+            <valueName>Manufacturing Garment Set</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharma</controllingFieldValue>
+            <valueName>Microbiology Lab Coats</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharma</controllingFieldValue>
+            <valueName>Non-Sterile Garment Set</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharma</controllingFieldValue>
+            <valueName>Overcoat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharma</controllingFieldValue>
+            <valueName>Overgown Suits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharma</controllingFieldValue>
+            <valueName>QC Lab Coats</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharma</controllingFieldValue>
+            <valueName>Sterile Garment Set</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Baby Pant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Baby Shirt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>BathTowel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Blanket</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Blue Bed Sheet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Blue Pant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Blue Pillow Cover</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Blue Shirt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Doctors Coat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Draw Sheet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Green Bed Sheet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Green Big Sheet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Green pant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Green Pillow Cover</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Green Shirt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Green Small Sheet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>NICU Sheet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Patient Gown</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Patient Pant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Patient Shirt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Pink Bed Sheet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Pink Pillow Cover</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Plain Pink Pillow Cover</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Printed Bed Sheet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Printed Pillow Cover</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Rug</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Screen / Curtain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Surgeon Gown</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>Trolley Bag</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>White Bed Sheet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Care</controllingFieldValue>
+            <valueName>White Pillow Cover</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>Single Duvet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>White Kurta</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Profit Organization</controllingFieldValue>
+            <valueName>White Pant</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

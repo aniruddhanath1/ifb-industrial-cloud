@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rescheduling_reasons_is_mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(PRIORVALUE(Next_Follow_up_Date_Time__c)!= Next_Follow_up_Date_Time__c,
+				ISCHANGED(Next_Follow_up_Date_Time__c),
+    ISBLANK(TEXT(Rescheduling_reasons__c)),
+				!$User.Bypass_Validation_Rules__c,
+    NOT(CONTAINS($Profile.Name, &apos;Admin&apos;)))</errorConditionFormula>
+    <errorDisplayField>Rescheduling_reasons__c</errorDisplayField>
+    <errorMessage>If you are resheduling the follow up then Resheduling reason in mandatory.</errorMessage>
+</ValidationRule>

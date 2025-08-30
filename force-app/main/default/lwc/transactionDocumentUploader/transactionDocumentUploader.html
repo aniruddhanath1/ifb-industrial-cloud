@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Upload Transaction Document">
+                <div class="upload-button-container">
+        <lightning-file-upload
+            record-id={recordId}
+            accept={acceptedFormats}
+            multiple
+            onuploadfinished={handleUploadFinished}>
+        </lightning-file-upload>
+                </div>
+    </lightning-card>
+</template>

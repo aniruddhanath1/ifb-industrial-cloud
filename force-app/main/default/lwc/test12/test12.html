@@ -1,0 +1,31 @@
+<template>
+    <lightning-card footer="" title="">
+        <div class="c-container">
+            <p class="c-description">Step 12</p>
+            <ul class="slds-list_dotted">
+                <li>Highlight the Accounts Receivable card.</li>
+                <li>Highlight the Order History card.</li>
+                <li>Tap Create New Order.</li>
+                <li>Tap Standard Order.</li>
+            </ul>
+        </div>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <p>
+                        <lightning-formatted-text value="Before creating an order, Chantelle checks for account receivables. It helps her determine where to collect, and whether any credit limits must be changed for the customer. NTO 201 is all caught up and has no open accounts, and now it’s time to get an order placed."></lightning-formatted-text>
+                    </p><br />
+                    <p>
+                        <lightning-formatted-text value="To create an order,  Chantelle selects an order template. The order templates vary for orders based on the country or distribution models; such as orders through a broker or a wholesaler model. This gives sales reps configurability in the order taking process and booking process, depending on your country and distribution options."></lightning-formatted-text>
+                    </p><br />
+                    <div>
+                        <img src={ntostoreorder_img} alt="NTO Store Order">
+                    </div><br />
+                    <div>
+                        <img src={pdfpreview_img} alt="PDF Preview">
+                    </div><br />
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

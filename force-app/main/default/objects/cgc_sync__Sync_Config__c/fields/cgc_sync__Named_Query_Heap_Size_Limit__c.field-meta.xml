@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Named_Query_Heap_Size_Limit__c</fullName>
+    <defaultValue>5242880</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Named query heap size limit in bytes.</description>
+    <externalId>false</externalId>
+    <label>Named Query Heap Size Limit</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

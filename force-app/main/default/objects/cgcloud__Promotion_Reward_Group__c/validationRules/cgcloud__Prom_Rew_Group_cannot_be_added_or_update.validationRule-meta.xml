@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Prom_Rew_Group_cannot_be_added_or_update</fullName>
+    <active>false</active>
+    <description>Promotion Reward Groups can&apos;t be added or edited if the Promotion Phase is &apos;Committed&apos;.</description>
+    <errorConditionFormula>AND(cgcloud__Promotion__r.cgcloud__Promotion_Template__r.cgcloud__Consider_Promotion_Rewards__c == TRUE, 
+				ISPICKVAL(cgcloud__Promotion__r.cgcloud__Phase__c, &apos;Committed&apos;))</errorConditionFormula>
+    <errorMessage>Promotion Reward Groups can&apos;t be added or edited if the Promotion Phase is &apos;Committed&apos;.</errorMessage>
+</ValidationRule>

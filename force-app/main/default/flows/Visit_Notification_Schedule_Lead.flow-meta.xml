@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_Frequency_type</name>
+        <label>Check Frequency type</label>
+        <locationX>578</locationX>
+        <locationY>647</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Daiy</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Frequency__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Daily</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_for_Daily</targetReference>
+            </connector>
+            <label>Daiy</label>
+        </rules>
+        <rules>
+            <name>Weekly</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Frequency__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Weekly</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_for_Weekly</targetReference>
+            </connector>
+            <label>Weekly</label>
+        </rules>
+        <rules>
+            <name>Monthly</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Frequency__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Monthly</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>update_for_Monthly</targetReference>
+            </connector>
+            <label>Monthly</label>
+        </rules>
+        <rules>
+            <name>Quarterly</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Frequency__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Quarterly</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_for_Quarterly</targetReference>
+            </connector>
+            <label>Quarterly</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_New_Account_Or_Frequency_Update</name>
+        <label>Is New Account Or Frequency Update</label>
+        <locationX>974</locationX>
+        <locationY>539</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>New_Account</name>
+            <conditionLogic>3 AND (1 OR 2 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedDate</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.CreatedDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Frequency__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Frequency__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Visit_Count__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Frequency_type</targetReference>
+            </connector>
+            <label>New Account</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>ISMetaData</name>
+        <label>ISMetaData</label>
+        <locationX>1304</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>ISMetaDataTrue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Custom_MetaData.Active__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_New_Account_Or_Frequency_Update</targetReference>
+            </connector>
+            <label>ISMetaDataTrue</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>nextNotificationDateDaily</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE(
+    TEXT(
+        YEAR(TODAY() + 1)
+    ) + &quot;-&quot; +
+    TEXT(
+        MONTH(TODAY() + 1)
+    ) + &quot;-&quot; +
+    TEXT(
+        DAY(TODAY() + 1)
+    ) + &quot; 04:29:00&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>nextNotificationDateFromPrevious</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE(
+TEXT(
+YEAR(DATEVALUE({!$Record.Next_Notification__c})) +
+FLOOR((MONTH(DATEVALUE({!$Record.Next_Notification__c})) + 1 - 1) / 12)
+) + &quot;-&quot; +
+TEXT(
+MOD(MONTH(DATEVALUE({!$Record.Next_Notification__c})) + 1 - 1, 12) + 1
+) + &quot;-&quot; +
+TEXT(
+IF(
+DAY(DATEVALUE({!$Record.Next_Notification__c})) &gt;
+DAY(DATE(YEAR(DATEVALUE({!$Record.Next_Notification__c})),
+MONTH(DATEVALUE({!$Record.Next_Notification__c})) + 1,
+1) - 1),
+DAY(DATE(YEAR(DATEVALUE({!$Record.Next_Notification__c})),
+MONTH(DATEVALUE({!$Record.Next_Notification__c})) + 1,
+1) - 1),
+DAY(DATEVALUE({!$Record.Next_Notification__c}))
+)
+) + &quot; 04:29:00&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>nextnotificationdateMonthly</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE(
+    TEXT(
+        YEAR(TODAY()) + 
+        FLOOR((MONTH(TODAY()) + 1 - 1) / 12)
+    ) + &quot;-&quot; +
+    TEXT(
+        MOD(MONTH(TODAY()) + 1 - 1, 12) + 1
+    ) + &quot;-&quot; +
+    TEXT(
+        IF(
+            DAY(TODAY()) &gt; 
+            DAY(DATE(YEAR(TODAY()), 
+                     MONTH(TODAY()) + 1, 
+                     1) - 1), 
+            DAY(DATE(YEAR(TODAY()), 
+                     MONTH(TODAY()) + 1, 
+                     1) - 1), 
+            DAY(TODAY())
+        )
+    ) + &quot; 04:29:00&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>nextNotificationDateQuarterly</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE(
+TEXT(
+YEAR(
+DATE(
+YEAR(TODAY()),
+MONTH(TODAY()) + 4,
+IF(
+DAY(TODAY()) &gt; DAY(DATE(YEAR(TODAY()), MONTH(TODAY()) + 5, 1) - 1),
+DAY(DATE(YEAR(TODAY()), MONTH(TODAY()) + 5, 1) - 1),
+DAY(TODAY())
+)
+)
+)
+) + &quot;-&quot; +
+TEXT(
+MONTH(
+DATE(
+YEAR(TODAY()),
+MONTH(TODAY()) + 4,
+IF(
+DAY(TODAY()) &gt; DAY(DATE(YEAR(TODAY()), MONTH(TODAY()) + 5, 1) - 1),
+DAY(DATE(YEAR(TODAY()), MONTH(TODAY()) + 5, 1) - 1),
+DAY(TODAY())
+)
+)
+)
+) + &quot;-&quot; +
+TEXT(
+IF(
+DAY(TODAY()) &gt; DAY(DATE(YEAR(TODAY()), MONTH(TODAY()) + 5, 1) - 1),
+DAY(DATE(YEAR(TODAY()), MONTH(TODAY()) + 5, 1) - 1),
+DAY(TODAY())
+)
+) + &quot; 04:29:00&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>nextNotificationDateWeekly</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE(
+    TEXT(
+        YEAR(TODAY() + 7)
+    ) + &quot;-&quot; +
+    TEXT(
+        MONTH(TODAY() + 7)
+    ) + &quot;-&quot; +
+    TEXT(
+        DAY(TODAY() + 7)
+    ) + &quot; 04:29:00&quot;
+)</expression>
+    </formulas>
+    <interviewLabel>Visit Notification Schedule Lead {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Visit Notification Schedule Lead</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Custom_MetaData</name>
+        <label>Custom MetaData</label>
+        <locationX>1304</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>ISMetaData</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>flow_active</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>org_specific_setting__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_for_Daily</name>
+        <label>Update for Daily</label>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
+        <inputAssignments>
+            <field>Next_Notification__c</field>
+            <value>
+                <elementReference>nextNotificationDateDaily</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>update_for_Monthly</name>
+        <label>update for Monthly</label>
+        <locationX>578</locationX>
+        <locationY>755</locationY>
+        <inputAssignments>
+            <field>Next_Notification__c</field>
+            <value>
+                <elementReference>nextnotificationdateMonthly</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_for_Quarterly</name>
+        <label>Update for Quarterly</label>
+        <locationX>842</locationX>
+        <locationY>755</locationY>
+        <inputAssignments>
+            <field>Next_Notification__c</field>
+            <value>
+                <elementReference>nextNotificationDateQuarterly</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_for_Weekly</name>
+        <label>Update for Weekly</label>
+        <locationX>314</locationX>
+        <locationY>755</locationY>
+        <inputAssignments>
+            <field>Next_Notification__c</field>
+            <value>
+                <elementReference>nextNotificationDateWeekly</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>1178</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Custom_MetaData</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ConversionCheck__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>NotificationBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Please Make sure to Visit {!$Record.FirstName} {!$Record.LastName}</text>
+    </textTemplates>
+    <variables>
+        <name>OwnerIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Hidden_Field_Columns__c</fullName>
+    <deprecated>false</deprecated>
+    <description>A set of field names that lets the Selection Grid know to not show these column with such fieldnames</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Fields configured here will still be loaded into the Selection Grid, but is not shown to the user.
+Use end of line to separate each Field API Name. 
+Ensure that there is no whitespace</inlineHelpText>
+    <label>Hidden Field Columns</label>
+    <length>32768</length>
+    <type>LongTextArea</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

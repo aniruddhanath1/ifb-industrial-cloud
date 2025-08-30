@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Object_Api_Name__c</fullName>
+    <deprecated>false</deprecated>
+    <description>sObject name from where the data is fetched.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>sObject name from where the data is fetched.</inlineHelpText>
+    <label>Object API Name</label>
+    <length>100</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

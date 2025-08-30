@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_FieldsEdit_After_StatusValidated</fullName>
+    <active>false</active>
+    <errorConditionFormula>OR(AND(
+
+NOT(isNew()),
+NOT(ValidationBypass__c == True),
+NOT(ProvisionLeadCheck__c == True),
+OR(
+AND( ISPICKVAL(Status, &quot;Validated&quot;),NOT(ISCHANGED(Status)) ),
+
+(ISPICKVAL(Status,&quot;Contacted&quot;)),
+(ISPICKVAL(Status, &quot;Nurturing&quot;)),
+(ISPICKVAL(Status, &quot;Converted&quot;))
+
+) ,
+
+NOT(ValidationBypass__c == True),
+OR(
+AND(NOT(ISBLANK(FirstName)),ISCHANGED(FirstName) ),
+AND(NOT(ISBLANK(LastName)),ISCHANGED(LastName)),
+AND(NOT(ISBLANK(TEXT(LeadSource))),ISCHANGED(LeadSource)),
+AND(NOT(ISBLANK(TEXT(Lead_Sub_Source__c))),ISCHANGED( Lead_Sub_Source__c)),
+AND(NOT(ISBLANK(Company)),ISCHANGED(Company)),
+AND(NOT(ISBLANK(TEXT(Product_Category__c))),ISCHANGED(Product_Category__c)),
+AND(NOT(ISBLANK(Phone)),ISCHANGED(Phone)),
+AND(NOT(ISBLANK(PRIORVALUE(PostalCode))), ISCHANGED(PostalCode))
+
+
+)
+))</errorConditionFormula>
+    <errorMessage>The following fields should be non-editable after Validated
+1. Name
+2. Lead Source
+3. Lead Sub-source 
+4. Company
+5. Phone Number
+6. Product Category
+7. Shipping Pincode</errorMessage>
+</ValidationRule>

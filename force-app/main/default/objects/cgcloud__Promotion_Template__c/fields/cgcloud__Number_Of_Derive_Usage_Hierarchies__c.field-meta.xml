@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Number_Of_Derive_Usage_Hierarchies__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Total number of Hierarchies under the Promtion Template with Usage Derive</description>
+    <label>Number Of Derive Usage Hierarchies</label>
+    <summaryFilterItems>
+        <field>cgcloud__Promotion_Template_Hierarchy__c.cgcloud__Usage__c</field>
+        <operation>equals</operation>
+        <value>Derive</value>
+    </summaryFilterItems>
+    <summaryForeignKey>cgcloud__Promotion_Template_Hierarchy__c.cgcloud__Parent_Promotion_Template__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

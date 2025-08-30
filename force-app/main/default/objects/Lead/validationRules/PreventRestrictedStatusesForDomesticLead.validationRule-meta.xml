@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PreventRestrictedStatusesForDomesticLead</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    !ValidationBypass__c,
+    Owner:Queue.DeveloperName  = &apos;Domestic_Lead_Queue&apos;,
+    OR(ISPICKVAL(Status, &apos;Validated&apos;),
+       ISPICKVAL(Status, &apos;Contacted&apos;),
+       ISPICKVAL(Status, &apos;Nurturing&apos;),
+       ISPICKVAL(Status, &apos;Discarded&apos;),
+       ISPICKVAL(Status, &apos;Converted&apos;)
+    ) 
+)</errorConditionFormula>
+    <errorMessage>You cannot set the Lead status to this value when the Lead is owned by the &apos;Domestic Lead Queue&apos;.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Freight_Included_Mandatory_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(Freight_Terms__c,&apos;Borne by Customer&apos;),ISPICKVAL( Freight_Includes__c ,&apos;&apos;))</errorConditionFormula>
+    <errorDisplayField>Freight_Includes__c</errorDisplayField>
+    <errorMessage>Please specify whether freight is included in the quote or charged extra.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Transaction_Logs_Time_Frame</fullName>
+    <active>true</active>
+    <description>The time frame for logging transaction logs cannot be greater than 1 hour.</description>
+    <errorConditionFormula>cgcloud__End_Time__c - cgcloud__Start_Time__c &gt; 1/24</errorConditionFormula>
+    <errorMessage>The time frame for logging transaction logs cannot be greater than 1 hour.</errorMessage>
+</ValidationRule>

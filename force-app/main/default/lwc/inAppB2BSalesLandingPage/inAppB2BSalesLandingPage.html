@@ -1,0 +1,83 @@
+<template>
+    <lightning-card footer="" title="">
+        <h3 class="slds-text-heading_medium"><strong>{welcome_text}</strong></h3>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <p class="c-description"> <strong>&nbsp;&nbsp;&nbsp;{description}</strong><br /></p>
+                </div>
+                <br/>
+                    <ul>
+                        <li>&nbsp;&nbsp;&nbsp;{app_to_accelerate_desc}</li>
+                        <li>&nbsp;&nbsp;&nbsp;{app_to_accelerate_post_desc}</li><br>
+                    </ul>  
+                <br />
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <p class="c-description"> <strong>&nbsp;&nbsp;&nbsp;{getting_started_title}</strong><br /></p>
+                    <ul>
+                        <li>&nbsp;&nbsp;&nbsp;<strong>{home_page_title}</strong></li><br/>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{home_page_text}</li>
+                    </ul>
+                    <br />
+                    <div>
+                        <img src={home_page_img} alt="HomePage">
+                    </div>
+                </div>
+                <br />
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <ul>
+                        <li>&nbsp;&nbsp;&nbsp;<strong>{account_title}</strong></li><br/>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{account_text}</li><br>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{account_text_desc_a}</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{account_text_desc_b}</li>
+                    </ul>
+                    <br />
+                    <div>
+                        <img src={account_img} alt="Account">
+                    </div>
+                </div>
+                <br />
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <ul>
+                        <li>&nbsp;&nbsp;&nbsp;<strong>{opportunity_title}</strong></li><br/>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{opportunity_text}</li><br>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{opportunity_text_desc_a}</li>
+                    </ul>
+                    <br />
+                    <div>
+                        <img src={opportunity_img} alt="Opportunity">
+                    </div>
+                </div>
+                <br />
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <ul>
+                        <li>&nbsp;&nbsp;&nbsp;<strong>{leadership_title}</strong></li><br/>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{leadership_text}</li><br>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{leadership_text_desc_a}</li>
+                    </ul>
+                    <br />
+                    <div>
+                        <img src={leadership_img} alt="Leadership">
+                    </div>
+                </div>
+                <br />
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

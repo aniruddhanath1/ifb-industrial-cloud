@@ -1,0 +1,167 @@
+<template>
+   <template if:true={isLoading}>
+      <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+   </template>
+
+   <!-- Apply responsive-card class to the card for padding on mobile -->
+   <lightning-card  title="Recommended Product List" class="responsive-card">
+       <template if:true={hasProducts}>
+         <p if:true={opptotalWashSelectedLoad} class="slds-modal__container textstyle">Calculated Wash load:{opptotalWashSelectedLoad}</p> 
+         <p if:true={oppTotaldrySelectedLoad} class="slds-modal__container textstyle"> Calculated Dry Load:{oppTotaldrySelectedLoad}</p> 
+      </template>
+      <template if:true={hasProducts}>
+         <!-- Apply responsive-datatable-container class to wrap the table for mobile responsiveness -->
+         <div class="slds-scrollable_x responsive-datatable-container">
+            <!-- Custom table to display product data -->
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+               <thead>
+                  <tr>
+                <th colspan="7" class="slds-text-title_bold slds-text-align_center">
+                    Recommendations
+                </th>
+            </tr>
+                  <tr if:true={productILM}>
+                     <th scope="col"></th>
+                     <th scope="col">Product Name</th>
+                     <th scope="col">Dry Load</th>
+                     
+                     <th scope="col">Wash Load</th>
+                     <th scope="col">Heating Type</th>
+                     <th scope="col">Quantity</th>
+                     <th scope="col">Total Capacity</th>
+                     
+                  </tr>
+               </thead>
+               <tbody if:true={productILM}>
+                  <template if:true={normalProducts} for:each={normalProducts} for:item="product">
+                     <tr key={product.Id}>
+                        <td>
+                           <!-- Checkbox for product selection -->
+                           <lightning-input type="checkbox" onchange={handleRowSelection} 
+                           data-id={product.Id} 
+                           data-quantity={product.quantity}
+                           data-dry-load={product.Dry_load_capacity__c}
+                           data-wash-load={product.Wash_Load_capacity__c}
+                           >
+                           </lightning-input>
+                        </td>
+                        <td>{product.Name}</td>
+                        <td>{product.Dry_load_capacity__c}</td>
+                        <td>{product.Wash_Load_capacity__c}</td>
+                        <td>{product.Heating_type__c}</td>
+                        <td>{product.quantity}</td>
+                        <td>{product.TotalCapacity}</td>
+                        
+                     </tr>
+                  </template>
+               </tbody>
+               <thead if:true={productILM}>
+                  <tr if:true={guestProducts}>
+                     <th colspan="7" class="slds-text-title_bold slds-text-align_center">
+                        Guest Recommendations
+                     </th>
+                  </tr>
+                  <tr if:true={guestProducts}>
+                     <th scope="col"></th>
+                     <th scope="col">Product Name</th>
+                     <th scope="col">Dry Load</th>
+                     <th scope="col">Wash Load</th>
+                     <th scope="col">Heating Type</th>
+                     <th scope="col">Quantity</th>
+                     <th scope="col">Total Capacity</th>
+                     
+                  </tr>
+               </thead>
+               <tbody if:true={productILM}>
+                  <template if:true={guestProducts} for:each={guestProducts} for:item="product">
+                     <tr key={product.Id}>
+                        <td>
+                           <!-- Checkbox for product selection -->
+                           <lightning-input type="checkbox" onchange={handleRowSelection} 
+                           data-id={product.Id} 
+                           data-quantity={product.quantity}
+                           data-dry-load={product.Dry_load_capacity__c}
+                           data-wash-load={product.Wash_Load_capacity__c}
+                           >
+                           </lightning-input>
+                        </td>
+                        <td>{product.Name}</td>
+                        <td>{product.Dry_load_capacity__c}</td>
+                        <td>{product.Wash_Load_capacity__c}</td>
+                        <td>{product.Heating_type__c}</td>
+                        <td>{product.quantity}</td>
+                        <td>{product.TotalCapacity}</td>
+                        
+                     </tr>
+                  </template>
+               </tbody>
+               <thead>
+                  <tr if:false={productILM}>
+                     <th scope="col"></th>
+                     <th scope="col">Product Name</th>
+                     
+                   
+                     <th scope="col">Electric Connection ISV</th>
+                  </tr>
+               </thead>
+               <tbody if:false={productILM}>
+                  <template for:each={products} for:item="product">
+                     <tr key={product.Id}>
+                        <td>
+                           <!-- Checkbox for product selection -->
+                           <lightning-input type="checkbox" onchange={handleRowSelection} data-id={product.Id} data-quantity={product.quantity}></lightning-input>
+                        </td>
+                        <td>{product.Name}</td>
+                        
+                        <td>{product.Electric_Connection_ISV__c}</td>
+                     </tr>
+                  </template>
+               </tbody>
+               
+            </table>
+         </div>
+
+         <!-- Apply responsive-button class to make button full width on mobile -->
+         <lightning-button
+            label="Add Product"
+            
+            onclick={handleAddProductCheck}
+            class="slds-m-top_large responsive-button slds-modal__container textstyle"
+         ></lightning-button>
+      </template>
+
+      <template if:true={noProducts} class="noProduct">
+         <p class="slds-modal__container textstyle">No products to recommend</p>
+      </template>
+
+      <!-- modal start -->      
+      <template if:true={isShowModal}>
+         <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open responsive-modal">
+            <div class="slds-modal__container">
+               <!-- modal header start -->
+               <header class="slds-modal__header">
+                  <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox}>
+                     <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small"></lightning-icon>
+                     <span class="slds-assistive-text">Close</span>
+                  </button>
+                  <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Alert</h2>
+               </header>
+
+               <!-- modal body start -->
+               <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                  <p class="warning-text">{dryLoadWarningAlert}</p>
+                  <p class="warning-text">{washLoadWarningAlert}</p>
+                  <p class="warning-text">{ironLoadWarningAlert}</p>
+               </div>
+
+               <!-- modal footer start -->
+               <footer class="slds-modal__footer">
+                  <button class="slds-button slds-button_neutral" onclick={hideModalBox}>Cancel</button>
+                  <button class="slds-button slds-button_neutral" onclick={HandleaddProduct}>Add Product</button>
+               </footer>
+            </div>
+         </section>
+         <div class="slds-backdrop slds-backdrop_open"></div>
+      </template>
+   </lightning-card>
+</template>

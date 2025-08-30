@@ -1,0 +1,202 @@
+/* Custom CSS for responsiveness */
+
+/* Custom CSS for responsiveness */
+
+.centered-title {
+    text-align: center;
+}
+.headerdiv{
+	text-align: center;
+    background-color: #77787B;
+	color:#ffffff;
+	font-size: 15px;
+	font-weight: bold;
+    padding: 0.5rem;
+}
+
+.custom-container {
+    overflow-x: auto;
+    width: max-content;
+    box-sizing: border-box;
+    margin: auto;
+    /* background-color: green; */
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.custom-thead th,
+.custom-tbody td {
+    padding: 6px; /* Reduced padding for smaller view */
+    white-space: nowrap;
+    font-size: 14px; /* Smaller font size */
+}
+
+.custom-row {
+    display: table-row;
+}
+
+.custom-cell {
+    text-align: left;
+    word-break: break-word;
+}
+
+.custom-input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px; /* Smaller font size for input */
+}
+
+.totals-container {
+    margin-top: 0.5rem; /* Reduced margin for mobile */
+    text-align: center;
+    background-color: aliceblue;
+}
+.totals{
+    margin-bottom: 2px;
+    
+}
+
+.responsive-card {
+    margin-top: 0.5rem; /* Reduced margin for mobile */
+}
+
+.responsive-table {
+    overflow-x: auto;
+}
+
+.text-wrapper {
+    word-break: break-word;
+}
+
+.centered-input-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5rem; /* Reduced padding for mobile */
+}
+
+.responsive-input {
+    width: 100%;
+    max-width: 280px; /* Reduced max width for mobile */
+    font-size: 14px; /* Smaller font size */
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .custom-table,
+    .custom-thead,
+    .custom-tbody {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 12px; /* Even smaller font size for mobile */
+        /* background-color: red; */
+    }
+    
+    /* .custom-container{
+        width: 100vh;
+        background-color: blue;
+    } */
+    /* .custom-thead {
+        display: none;
+    } */
+
+    .custom-row {
+        /* width: 100%; */
+        /* background-color: blueviolet; */
+        margin-bottom: 0.8rem; /* Reduced margin between rows */
+    }
+
+    .custom-cell {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px; /* Reduced padding for mobile */
+        border-bottom: 1px solid #ddd;
+        width: 100%;
+        font-size: 12px; /* Even smaller font size for mobile */
+    }
+
+    .custom-cell::before {
+        content: attr(data-label);
+        font-weight: bold;
+        flex-basis: 48%; /* Reduced basis for labels */
+        text-align: left;
+    }
+
+    .custom-input {
+        flex-basis: 52%; /* Adjusted basis for inputs */
+        font-size: 12px; /* Even smaller font size for mobile */
+    }
+
+    .centered-input-container {
+        justify-content: flex-start;
+    }
+    .responsive-card{
+        width: 100%;
+        margin: auto;
+    }
+    .responsive-card,
+    .responsive-table {
+        margin-top: 0.5rem; /* Reduced margin for mobile */
+        width:100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .responsive-table-wrapper {
+        display: block;
+        width: 100%;
+    }
+
+    .responsive-table {
+        width: 100%;
+        display: block;
+        border: 0;
+    }
+
+    .responsive-table thead {
+        display: none;
+    }
+
+    .responsive-table tr {
+        display: block;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    .responsive-table td {
+        display: block;
+        padding: 8px;
+        border: 1px solid #ddd;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    .responsive-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .responsive-table td[data-label="ProTech 311 Plus"],
+    .responsive-table td[data-label="ProTech 411 Plus"],
+    .responsive-table td[data-label="ProTech 611 B"],
+    .responsive-table td[data-label="ProTech 611 Plus"],
+    .responsive-table td[data-label="ProTech 613 Plus"],
+    .responsive-table td[data-label="ProTech 813"],
+    .responsive-table td[data-label="ProTech 913"],
+    .responsive-table td[data-label="W/O Dryer"],
+    .responsive-table td[data-label="With Dryer"] {
+        white-space: normal;
+        word-break: break-word;
+        display: block;
+    }
+   
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Is_Fieldset__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Denotes whether the Field Columns entry is a fieldset or manual entry for field columns</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Check this if what is entered in Field Columns is a fieldset name.</inlineHelpText>
+    <label>Is Fieldset</label>
+    <type>Checkbox</type>
+</CustomField>

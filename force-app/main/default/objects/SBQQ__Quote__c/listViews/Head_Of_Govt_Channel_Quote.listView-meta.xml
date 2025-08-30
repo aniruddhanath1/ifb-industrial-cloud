@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Head_Of_Govt_Channel_Quote</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Head Of Govt Channel</label>
+    <queue>Head_Of_Govt_Channel</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Sales_Document_Filter_Validation</fullName>
+    <active>true</active>
+    <description>If Sales Document Filter is not activated, user should not be able to activate Sales Document Filter</description>
+    <errorConditionFormula>IF(AND(cgcloud__Sales_Document_Assortment__c = false, cgcloud__Sales_Document_Assortment_Filter__c = true), true,false)</errorConditionFormula>
+    <errorDisplayField>cgcloud__Sales_Document_Assortment_Filter__c</errorDisplayField>
+    <errorMessage>Enable Sales Document Assortment prior to activating Sales Document Filter.</errorMessage>
+</ValidationRule>

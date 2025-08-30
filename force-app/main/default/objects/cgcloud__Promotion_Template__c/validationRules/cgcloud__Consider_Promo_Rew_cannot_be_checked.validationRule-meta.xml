@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Consider_Promo_Rew_cannot_be_checked</fullName>
+    <active>true</active>
+    <description>Consider Promotion Rewards can&apos;t be checked if the Selectable Promotion is unchecked.</description>
+    <errorConditionFormula>AND(ISNEW(), AND(cgcloud__Consider_Promotion_Rewards__c = TRUE), cgcloud__Selectable_Promotion__c = FALSE)</errorConditionFormula>
+    <errorDisplayField>cgcloud__Consider_Promotion_Rewards__c</errorDisplayField>
+    <errorMessage>Consider Promotion Rewards can&apos;t be checked if the Selectable Promotion is unchecked.</errorMessage>
+</ValidationRule>

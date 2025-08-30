@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Currency_Cannot_beINR</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ValidationBypass__c),
+    NOT(ISPICKVAL( Lead_Source_Direct_Lead__c , &quot;Export&quot;)), 
+    ISPICKVAL(CurrencyIsoCode, &quot;INR&quot;), 
+    NOT(
+        OR(
+            CONTAINS(Country, &quot;India&quot;),
+            CONTAINS(Country, &quot;Nepal&quot;), 
+            CONTAINS(Country, &quot;Russia&quot;) 
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>If the currency is INR, the country must be set to India or select an appropriate country.</errorMessage>
+</ValidationRule>

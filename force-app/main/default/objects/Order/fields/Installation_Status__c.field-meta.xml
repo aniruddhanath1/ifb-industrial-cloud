@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Installation_Status__c</fullName>
+    <label>Installation Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Open</fullName>
+                <default>false</default>
+                <label>Open</label>
+            </value>
+            <value>
+                <fullName>Request for Re-Allocation</fullName>
+                <default>false</default>
+                <label>Request for Re-Allocation</label>
+            </value>
+            <value>
+                <fullName>Assigned</fullName>
+                <default>false</default>
+                <label>Assigned</label>
+            </value>
+            <value>
+                <fullName>Request Cancellation</fullName>
+                <default>false</default>
+                <label>Request Cancellation</label>
+            </value>
+            <value>
+                <fullName>Request for Repair</fullName>
+                <default>false</default>
+                <label>Request for Repair</label>
+            </value>
+            <value>
+                <fullName>Request for Replacement</fullName>
+                <default>false</default>
+                <label>Request for Replacement</label>
+            </value>
+            <value>
+                <fullName>Pending</fullName>
+                <default>false</default>
+                <label>Pending</label>
+            </value>
+            <value>
+                <fullName>Resolved (soft closure)</fullName>
+                <default>false</default>
+                <label>Resolved (soft closure)</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+            <value>
+                <fullName>Negative Response from Customer</fullName>
+                <default>false</default>
+                <label>Negative Response from Customer</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

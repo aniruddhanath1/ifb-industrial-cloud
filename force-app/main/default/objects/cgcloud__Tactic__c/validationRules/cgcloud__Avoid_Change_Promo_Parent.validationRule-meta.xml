@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Avoid_Change_Promo_Parent</fullName>
+    <active>true</active>
+    <description>Prevents a user from changing the tactic&apos;s promotion.</description>
+    <errorConditionFormula>cgcloud__Promotion__c != PRIORVALUE(cgcloud__Promotion__c)</errorConditionFormula>
+    <errorDisplayField>cgcloud__Promotion__c</errorDisplayField>
+    <errorMessage>You can&apos;t change the promotion of the tactic.</errorMessage>
+</ValidationRule>

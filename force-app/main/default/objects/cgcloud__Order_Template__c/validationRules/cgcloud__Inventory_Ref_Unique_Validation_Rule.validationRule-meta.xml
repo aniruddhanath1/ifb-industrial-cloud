@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Inventory_Ref_Unique_Validation_Rule</fullName>
+    <active>true</active>
+    <description>Inventory Reference 1…5 can&apos;t have duplicate values.</description>
+    <errorConditionFormula>IF(OR((NOT(ISBLANK(TEXT(cgcloud__Inventory_Reference_1__c))) &amp;&amp;
+    OR(TEXT(cgcloud__Inventory_Reference_1__c)== TEXT(cgcloud__Inventory_Reference_2__c),
+    TEXT(cgcloud__Inventory_Reference_1__c)== TEXT(cgcloud__Inventory_Reference_3__c),
+    TEXT(cgcloud__Inventory_Reference_1__c)== TEXT(cgcloud__Inventory_Reference_4__c),
+    TEXT(cgcloud__Inventory_Reference_1__c)== TEXT(cgcloud__Inventory_Reference_5__c))),
+    ((NOT(ISBLANK(TEXT(cgcloud__Inventory_Reference_2__c))) &amp;&amp;
+    OR(TEXT(cgcloud__Inventory_Reference_2__c)== TEXT(cgcloud__Inventory_Reference_3__c),
+    TEXT(cgcloud__Inventory_Reference_2__c)== TEXT(cgcloud__Inventory_Reference_4__c),
+    TEXT(cgcloud__Inventory_Reference_2__c)==
+    TEXT(cgcloud__Inventory_Reference_5__c)))),
+    ((NOT(ISBLANK(TEXT(cgcloud__Inventory_Reference_3__c))) &amp;&amp;
+    OR(TEXT(cgcloud__Inventory_Reference_3__c)==
+    TEXT(cgcloud__Inventory_Reference_4__c),
+    TEXT(cgcloud__Inventory_Reference_3__c)==
+    TEXT(cgcloud__Inventory_Reference_5__c)))),
+    ((NOT(ISBLANK(TEXT(cgcloud__Inventory_Reference_4__c))) &amp;&amp; TEXT(cgcloud__Inventory_Reference_4__c)==
+    TEXT(cgcloud__Inventory_Reference_5__c)))),true,false)</errorConditionFormula>
+    <errorMessage>Inventory Reference 1…5 can&apos;t have duplicate values.</errorMessage>
+</ValidationRule>

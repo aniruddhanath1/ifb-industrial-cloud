@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Used_For_Display__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Specifies the inventory template that is relevant for the display of the current inventory balances in the disposal list.</description>
+    <label>Used For Display</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

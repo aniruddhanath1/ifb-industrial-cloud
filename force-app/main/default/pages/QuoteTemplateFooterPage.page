@@ -1,0 +1,9 @@
+<apex:page contentType="text/xml" showHeader="false" sidebar="false">
+    <!-- Horizontal Line -->
+    <block border-bottom="1pt solid grey" padding-bottom="5pt"></block>
+    <block text-align="center" font-family="Calori" font-size="11" padding-top="12pt" padding-bottom="5pt">
+        <apex:outputPanel layout="none">
+            Registered Office 14, Taratolla Road, Kolkata – 700 088, India. CIN : L51109WB1974PLC029637, PAN AAACI6561R
+        </apex:outputPanel>
+    </block>
+</apex:page>

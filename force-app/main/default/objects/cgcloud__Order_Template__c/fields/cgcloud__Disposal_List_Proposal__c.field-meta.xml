@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Disposal_List_Proposal__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Controls, whether and how the disposal list is build for this sales document template.</description>
+    <label>Disposal List Proposal</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Proposal</fullName>
+                <default>true</default>
+                <label>Proposal</label>
+            </value>
+            <value>
+                <fullName>Talon</fullName>
+                <default>false</default>
+                <label>Talon</label>
+            </value>
+            <value>
+                <fullName>UserExit</fullName>
+                <default>false</default>
+                <label>UserExit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

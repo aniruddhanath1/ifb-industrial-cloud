@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Is_Transferable__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>AND(ISPICKVAL(cgcloud__Promotion_Template__r.cgcloud__Is_Transfer_Relevant__c, &quot;YES&quot;), RecordType.DeveloperName = &apos;Promotion&apos;, cgcloud__Date_From__c - IF( ISBLANK(cgcloud__Promotion_Template__r.cgcloud__Transfer_Lead_Time__c) , 0, cgcloud__Promotion_Template__r.cgcloud__Transfer_Lead_Time__c) &lt;= TODAY(),cgcloud__Date_Thru__c + IF( ISBLANK(cgcloud__Promotion_Template__r.cgcloud__Transfer_Follow_Up_Time__c) , 0, cgcloud__Promotion_Template__r.cgcloud__Transfer_Follow_Up_Time__c) &gt;= TODAY())</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Transferable</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

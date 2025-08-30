@@ -1,0 +1,24 @@
+<template>
+    <lightning-card footer="" title="">
+        <h1 slot="" class="slds-text-heading_medium">{appWelcomeText}</h1>
+        <div class="c-container">
+            <lightning-layout>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <p class="c-description">{appDescription}</p>                  
+                        <c-landing-home-page-child heading="Provider"
+                                                    cloud-detail="Seamlessly connect care teams to a 360-degree view of every patient on a single, HIPAA-compliant platform." 
+                                                    app="c__Health_Cloud_Learning_App"
+                                                    page="Provider_Landing_Page"
+                                                    link-reference="standard__navItemPage">
+                        </c-landing-home-page-child>
+                        <c-landing-home-page-child heading="Payer"
+                                                    cloud-detail="Enable a seamless experience across the entire member journey, from acquisition and onboarding through engagement and retention." 
+                                                    app="c__Health_Cloud_Learning_App"
+                                                    page="Payer_Landing_Page"
+                                                    link-reference="standard__navItemPage">
+                        </c-landing-home-page-child>                  
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

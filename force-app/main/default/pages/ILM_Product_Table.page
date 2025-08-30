@@ -1,0 +1,550 @@
+<apex:page contentType="text/xml" showHeader="false" sidebar="false" controller="MyQuoteController">
+
+    <apex:outputPanel layout="none"  rendered="{!isRateContractQuote}">
+        <block>
+            <table width="100%" >
+                <table-body>
+                    <table-row >
+                        <table-cell display-align="center" number-columns-spanned="5" border="1pt solid  #000000" padding="3pt">
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Image of the Machine</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center"  number-columns-spanned="5" border="1pt solid  #000000" padding="3pt" >
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText > Description </apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center"  number-columns-spanned="2" border="1pt solid  #000000" padding="3pt" >
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Quantity</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center"  number-columns-spanned="2" border="1pt solid  #000000" padding="3pt">
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >ARA Price ({!CurrencyName})</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center"  number-columns-spanned="2" border="1pt solid  #000000" padding="3pt" >
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Non-ARA Price ({!CurrencyName}) </apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center"  number-columns-spanned="2" border="1pt solid  #000000" padding="3pt" >
+                            <block text-align="right"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Total Price (INR) ({!CurrencyName})</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <apex:repeat value="{!lineItemList}" var="quoteLine">
+                        <table-row >
+                            <table-cell display-align="center" number-columns-spanned="5" border="1pt solid  #000000" padding="3pt">
+                                <block-container text-align="center" display-align="center">
+                                    <block>
+                                        <apex:outputPanel layout="none">
+                                            <!--<external-graphic src="{!quoteLine.Imagelink}" scaling="non-uniform" height="2.0in" content-height="1.8in" content-width="1.8in"/>-->
+                                            <external-graphic src="{!quoteLine.Imagelink}" scaling="uniform" content-width="1.5in" content-height="1.5in" />
+                                        </apex:outputPanel>
+                                    </block>
+                                </block-container>
+                            </table-cell>
+                            <table-cell display-align="center"  number-columns-spanned="5" border="1pt solid  #000000" padding="3pt">
+                                <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                    <block><apex:outputText >{!quoteLine.Name}</apex:outputText></block>
+                                    <block><apex:outputText >Make: {!quoteLine.MakeName}</apex:outputText></block>
+                                    <block><apex:outputText >Model: {!quoteLine.ProductCode}</apex:outputText></block>
+                                    <block><apex:outputText >HSN CODE: {!quoteLine.HSNCode}</apex:outputText></block>
+                                    <block><apex:outputText >SAP CODE: {!quoteLine.MaterialCode}</apex:outputText></block>
+                                </block>
+                            </table-cell>
+                            <table-cell display-align="center"  number-columns-spanned="2" border="1pt solid  #000000" padding="3pt">
+                                <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                    <apex:outputText >{!quoteLine.Quantity}</apex:outputText>
+                                </block>
+                            </table-cell>
+                            <table-cell display-align="center" number-columns-spanned="2" border="1pt solid  #000000"   padding="3pt">
+                                <block text-align="left"  font-family="sans-serif" font-size="8">
+                                    <apex:outputText >{!quoteLine.NetTotal} </apex:outputText>
+                                </block>
+                            </table-cell>
+                            <table-cell display-align="center"  number-columns-spanned="2" border="1pt solid  #000000"  padding="3pt">
+                                <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                    <apex:outputText >{!quoteLine.listPrice}</apex:outputText>
+                                </block>
+                            </table-cell>
+
+
+                            <table-cell display-align="center" number-columns-spanned="2" border="1pt solid  #000000" padding="3pt">
+                                <block text-align="right"  font-family="sans-serif" font-size="8" >
+                                    <apex:outputText rendered="{!NOT(ISNULL(quoteLine.ProductOption))}">Included in original machine price</apex:outputText>
+                                    <apex:outputText rendered="{!ISNULL(quoteLine.ProductOption)}">{!quoteLine.PackageTotal}</apex:outputText>
+                                </block>
+                            </table-cell>
+                        </table-row>
+                    </apex:repeat>
+                </table-body>
+            </table>
+            <table>
+                <table-body>
+                    <table-row >
+                        <table-cell display-align="left" number-columns-spanned="15.5" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right"  font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >SubTotal:</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="right" number-columns-spanned="4" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right" font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >{!quote.SBQQ__NetAmount__c}</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <table-row >
+                        <table-cell display-align="left" number-columns-spanned="15.5" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right"  font-family="sans-serif" font-size="9"  >
+                                GST:
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="right" number-columns-spanned="4" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right" font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >{!quote.Total_GST_Amount__c}</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <table-row >
+                        <table-cell display-align="left" number-columns-spanned="15.5" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right"  font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >Total Freight:</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="right" number-columns-spanned="4" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right" font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >{!quote.Fright_Charges__c}</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <table-row >
+                        <table-cell display-align="left" number-columns-spanned="15.5" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right"  font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >Total Amount Incl GST:</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="right" number-columns-spanned="4" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right" font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >{!quote.Total_Amount_Including_GST__c}</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                </table-body>
+            </table>
+
+        </block>
+    </apex:outputPanel>
+    <apex:outputPanel layout="none"  rendered="{!isDiscountPresent && Not(isExportQuote) && Not(isRateContractQuote)}">
+
+        <block>
+            <table width="100%" >
+                <table-body>
+                    <table-row >
+                        <table-cell display-align="center" number-columns-spanned="5" border="1pt solid  #000000" padding="3pt">
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Image of the Machine</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center"  number-columns-spanned="5" border="1pt solid  #000000" padding="3pt" >
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Description</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center"  number-columns-spanned="2" border="1pt solid  #000000" padding="3pt" >
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Quantity</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center"  number-columns-spanned="3" border="1pt solid  #000000" padding="3pt">
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Net Price ({!CurrencyName})</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center"  number-columns-spanned="1" border="1pt solid  #000000" padding="3pt" >
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Disc%</apex:outputText>
+                            </block>
+                        </table-cell>
+
+                        <table-cell display-align="center"  number-columns-spanned="1" border="1pt solid  #000000" padding="3pt" >
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >GST% </apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center"  number-columns-spanned="3" border="1pt solid  #000000" padding="3pt" >
+                            <block text-align="right"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Total Price-({!CurrencyName})</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <apex:repeat value="{!lineItemList}" var="quoteLine">
+                        <table-row >
+                            <table-cell display-align="center" number-columns-spanned="5" border="1pt solid  #000000" padding="3pt">
+                                <block-container text-align="center" display-align="center">
+                                    <block>
+                                        <apex:outputPanel layout="none">
+                                            <external-graphic src="{!quoteLine.Imagelink}" scaling="uniform" content-width="1.5in" content-height="1.5in" />
+                                        </apex:outputPanel>
+                                    </block>
+                                </block-container>
+                            </table-cell>
+                            <table-cell display-align="center"  number-columns-spanned="5" border="1pt solid  #000000" padding="3pt">
+                                <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                    <block><apex:outputText >{!quoteLine.Name}</apex:outputText></block>
+                                    <block><apex:outputText >Make: {!quoteLine.MakeName}</apex:outputText></block>
+                                    <block><apex:outputText >Model: {!quoteLine.ProductCode}</apex:outputText></block>
+                                    <block><apex:outputText >HSN CODE: {!quoteLine.HSNCode}</apex:outputText></block>
+                                    <block><apex:outputText >SAP CODE: {!quoteLine.MaterialCode}</apex:outputText></block>
+                                </block>
+                            </table-cell>
+                            <table-cell display-align="center"  number-columns-spanned="2" border="1pt solid  #000000" padding="3pt">
+                                <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                    <apex:outputText >{!quoteLine.Quantity}</apex:outputText>
+                                </block>
+                            </table-cell>
+                            <table-cell display-align="center" number-columns-spanned="3" border="1pt solid  #000000"   padding="3pt">
+                                <block text-align="left"  font-family="sans-serif" font-size="8">
+                                    <apex:outputText >{!quoteLine.NetTotal} </apex:outputText>
+                                </block>
+                            </table-cell>
+                            <table-cell display-align="center" number-columns-spanned="1" border="1pt solid  #000000"   padding="3pt">
+                                <block text-align="left"  font-family="sans-serif" font-size="8">
+                                    <apex:outputText >{!quoteLine.Discount}</apex:outputText>
+                                </block>
+                            </table-cell>
+
+                            <table-cell display-align="center"  number-columns-spanned="1" border="1pt solid  #000000"  padding="3pt">
+                                <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                    <apex:outputText >{!quoteLine.Gst}</apex:outputText>
+                                </block>
+                            </table-cell>
+                            <table-cell display-align="center" number-columns-spanned="3" border="1pt solid  #000000" padding="3pt">
+                                <block text-align="right"  font-family="sans-serif" font-size="8" >
+                                    <apex:outputText rendered="{!NOT(ISNULL(quoteLine.ProductOption))}">Included in original machine price</apex:outputText>
+                                    <apex:outputText rendered="{!ISNULL(quoteLine.ProductOption)}">{!quoteLine.PackageTotal}</apex:outputText>
+                                </block>
+                            </table-cell>
+                        </table-row>
+                    </apex:repeat>
+                </table-body>
+            </table>
+            <table>
+                <table-body>
+                    <table-row >
+                        <table-cell display-align="left" number-columns-spanned="15.5" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right"  font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >SubTotal:</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="right" number-columns-spanned="4" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right" font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >{!quote.SBQQ__NetAmount__c}</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <table-row >
+                        <table-cell display-align="left" number-columns-spanned="15.5" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right"  font-family="sans-serif" font-size="9"  >
+                                GST:
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="right" number-columns-spanned="4" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right" font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >{!quote.Total_GST_Amount__c}</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <table-row >
+                        <table-cell display-align="left" number-columns-spanned="15.5" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right"  font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >Freight:</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="right" number-columns-spanned="4" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right" font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >{!quote.Fright_Charges__c}</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <table-row >
+                        <table-cell display-align="left" number-columns-spanned="15.5" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right"  font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >Total Amount Incl GST:</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="right" number-columns-spanned="4" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right" font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >{!quote.Total_Amount_Including_GST__c}</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                </table-body>
+            </table>
+
+        </block>
+    </apex:outputPanel>
+    <apex:outputPanel layout="none"  rendered="{!Not(isDiscountPresent) && Not(isExportQuote) && Not(isRateContractQuote)}">
+        <block>
+            <table width="100%" >
+                <table-body>
+                    <table-row >
+                        <table-cell display-align="center" number-columns-spanned="5" border="1pt solid  #000000" padding="3pt">
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Image of the Machine</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center"  number-columns-spanned="5" border="1pt solid  #000000" padding="3pt" >
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText > Description </apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center"  number-columns-spanned="2" border="1pt solid  #000000" padding="3pt" >
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Quantity</apex:outputText>
+                            </block>
+                        </table-cell>
+
+                        <table-cell display-align="center"  number-columns-spanned="2" border="1pt solid  #000000" padding="3pt">
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Net Price ({!CurrencyName})</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center"  number-columns-spanned="1" border="1pt solid  #000000" padding="3pt" >
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >GST% </apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center"  number-columns-spanned="3" border="1pt solid  #000000" padding="3pt" >
+                            <block text-align="right"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Total Price ({!CurrencyName})</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <apex:repeat value="{!lineItemList}" var="quoteLine">
+                        <table-row >
+                            <table-cell display-align="center" number-columns-spanned="5" border="1pt solid  #000000" padding="3pt">
+                                <block-container text-align="center" display-align="center">
+                                    <block>
+                                        <apex:outputPanel layout="none">
+                                            <external-graphic src="{!quoteLine.Imagelink}" scaling="uniform" content-width="1.5in" content-height="1.5in" />
+                                        </apex:outputPanel>
+                                    </block>
+                                </block-container>
+                            </table-cell>
+                            <table-cell display-align="center"  number-columns-spanned="5" border="1pt solid  #000000" padding="3pt">
+                                <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                    <block><apex:outputText >{!quoteLine.Name}</apex:outputText></block>
+                                    <block><apex:outputText >Make: {!quoteLine.MakeName}</apex:outputText></block>
+                                    <block><apex:outputText >Model: {!quoteLine.ProductCode}</apex:outputText></block>
+                                    <block><apex:outputText >HSN CODE: {!quoteLine.HSNCode}</apex:outputText></block>
+                                    <block><apex:outputText >SAP CODE: {!quoteLine.MaterialCode}</apex:outputText></block>
+                                </block>
+                            </table-cell>
+                            <table-cell display-align="center"  number-columns-spanned="2" border="1pt solid  #000000" padding="3pt">
+                                <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                    <apex:outputText >{!quoteLine.Quantity}</apex:outputText>
+                                </block>
+                            </table-cell>
+
+                            <table-cell display-align="center" number-columns-spanned="2" border="1pt solid  #000000"   padding="3pt">
+                                <block text-align="left"  font-family="sans-serif" font-size="8">
+                                    <apex:outputText >{!quoteLine.NetTotal} </apex:outputText>
+                                </block>
+                            </table-cell>
+                            <table-cell display-align="center"  number-columns-spanned="1" border="1pt solid  #000000"  padding="3pt">
+                                <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                    <apex:outputText >{!quoteLine.Gst}</apex:outputText>
+                                </block>
+                            </table-cell>
+                            <table-cell display-align="center" number-columns-spanned="3" border="1pt solid  #000000" padding="3pt">
+                                <block text-align="right"  font-family="sans-serif" font-size="8" >
+                                    <apex:outputText rendered="{!NOT(ISNULL(quoteLine.ProductOption))}">Included in original machine price</apex:outputText>
+                                    <apex:outputText rendered="{!ISNULL(quoteLine.ProductOption)}">{!quoteLine.PackageTotal}</apex:outputText>
+                                </block>
+                            </table-cell>
+                        </table-row>
+                    </apex:repeat>
+                </table-body>
+            </table>
+            <table>
+                <table-body>
+                    <table-row >
+                        <table-cell display-align="left" number-columns-spanned="15.5" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right"  font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >SubTotal:</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="right" number-columns-spanned="4" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right" font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >{!quote.SBQQ__NetAmount__c}</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <table-row >
+                        <table-cell display-align="left" number-columns-spanned="15.5" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right"  font-family="sans-serif" font-size="9"  >
+                                GST:
+                            </block>
+                        </table-cell>
+
+                        <table-cell display-align="right" number-columns-spanned="4" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right" font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >{!quote.Total_GST_Amount__c}</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <table-row >
+                        <table-cell display-align="left" number-columns-spanned="15.5" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right"  font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >Total Freight:</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="right" number-columns-spanned="4" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right" font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >{!quote.Fright_Charges__c}</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <table-row >
+                        <table-cell display-align="left" number-columns-spanned="15.5" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right"  font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >Total Amount Incl GST:</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="right" number-columns-spanned="4" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right" font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >{!quote.Total_Amount_Including_GST__c}</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                </table-body>
+            </table>
+
+        </block>
+    </apex:outputPanel>
+    <apex:outputPanel layout="none"  rendered="{!isExportQuote}">
+        <block>
+            <table width="100%" >
+                <table-body>
+                    <table-row >
+                        <table-cell display-align="center" number-columns-spanned="5" border="1pt solid  #000000" padding="3pt">
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Image of the Machine</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center"  number-columns-spanned="5" border="1pt solid  #000000" padding="3pt" >
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText > Description </apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center"  number-columns-spanned="2" border="1pt solid  #000000" padding="3pt" >
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Quantity</apex:outputText>
+                            </block>
+                        </table-cell>
+
+                        <table-cell display-align="center"  number-columns-spanned="2" border="1pt solid  #000000" padding="3pt">
+                            <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Net Price ({!CurrencyName})</apex:outputText>
+                            </block>
+                        </table-cell>
+
+                        <table-cell display-align="center"  number-columns-spanned="3" border="1pt solid  #000000" padding="3pt" >
+                            <block text-align="right"  font-family="sans-serif" font-size="8" >
+                                <apex:outputText >Total Price ({!CurrencyName})</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <apex:repeat value="{!lineItemList}" var="quoteLine">
+                        <table-row >
+                            <table-cell display-align="center" number-columns-spanned="5" border="1pt solid  #000000" padding="3pt">
+                                <block-container text-align="center" display-align="center">
+                                    <block>
+                                        <apex:outputPanel layout="none">
+                                            <external-graphic src="{!quoteLine.Imagelink}" scaling="uniform" content-width="1.5in" content-height="1.5in" />
+                                        </apex:outputPanel>
+                                    </block>
+                                </block-container>
+                            </table-cell>
+                            <table-cell display-align="center"  number-columns-spanned="5" border="1pt solid  #000000" padding="3pt">
+                                <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                    <block><apex:outputText >{!quoteLine.Name}</apex:outputText></block>
+                                    <block><apex:outputText >Make: {!quoteLine.MakeName}</apex:outputText></block>
+                                    <block><apex:outputText >Model: {!quoteLine.ProductCode}</apex:outputText></block>
+                                    <block><apex:outputText >HSN CODE: {!quoteLine.HSNCode}</apex:outputText></block>
+                                    <block><apex:outputText >SAP CODE: {!quoteLine.MaterialCode}</apex:outputText></block>
+                                </block>
+                            </table-cell>
+                            <table-cell display-align="center"  number-columns-spanned="2" border="1pt solid  #000000" padding="3pt">
+                                <block text-align="left"  font-family="sans-serif" font-size="8" >
+                                    <apex:outputText >{!quoteLine.Quantity}</apex:outputText>
+                                </block>
+                            </table-cell>
+
+                            <table-cell display-align="center" number-columns-spanned="2" border="1pt solid  #000000"   padding="3pt">
+                                <block text-align="left"  font-family="sans-serif" font-size="8">
+                                    <apex:outputText >{!quoteLine.NetTotal}</apex:outputText>
+                                </block>
+                            </table-cell>
+
+                            <table-cell display-align="center" number-columns-spanned="3" border="1pt solid  #000000" padding="3pt">
+                                <block text-align="right"  font-family="sans-serif" font-size="8" >
+                                    <apex:outputText rendered="{!NOT(ISBLANK(quoteLine.ProductOption))}">Included in original machine price</apex:outputText>
+                                    <apex:outputText rendered="{!ISBLANK(quoteLine.ProductOption)}">{!quoteLine.PackageTotal}</apex:outputText>
+                                </block>
+                            </table-cell>
+                        </table-row>
+                    </apex:repeat>
+                </table-body>
+            </table>
+            <table>
+                <table-body>
+                    <table-row >
+                        <table-cell display-align="left" number-columns-spanned="15.5" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right"  font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >SubTotal:</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="right" number-columns-spanned="4" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right" font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >{!quote.SBQQ__NetAmount__c}</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <table-row >
+                        <table-cell display-align="left" number-columns-spanned="15.5" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right"  font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >Freight:</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="right" number-columns-spanned="4" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right" font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >{!quote.Fright_Charges__c}</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <table-row >
+                        <table-cell display-align="left" number-columns-spanned="15.5" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right"  font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >Total Amount:</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="right" number-columns-spanned="4" border="1pt solid  #000000" padding="3pt">
+                            <block font-weight="bold" text-align="right" font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >{!quote.Total_Amount_Including_GST__c}</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                </table-body>
+            </table>
+
+        </block>
+    </apex:outputPanel>
+    <block>&nbsp;</block>
+    <block font-weight="bold" text-align="left"  font-family="sans-serif" font-size="7">*Please note that product images are not contractual and are provided for illustrative purposes only. The actual product may vary.</block>
+</apex:page>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Client_App_ID__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The parent Client App Id for the Client App Profile of this record.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The parent Client App Id for the Client App Profile of this record.</inlineHelpText>
+    <label>Client App Id</label>
+    <length>40</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

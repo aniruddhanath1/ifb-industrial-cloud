@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Used_Reference_Date__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Defines which date should be used for the product hierarchy resolution if promotions of this type are calculated.</description>
+    <inlineHelpText>Defines which date should be used for the product hierarchy resolution if promotions of this type are calculated.</inlineHelpText>
+    <label>Used Reference Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>commitdate</fullName>
+                <default>true</default>
+                <label>commitdate</label>
+            </value>
+            <value>
+                <fullName>today</fullName>
+                <default>false</default>
+                <label>today</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

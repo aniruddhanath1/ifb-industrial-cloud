@@ -1,0 +1,259 @@
+<apex:page renderAs="pdf" applyHtmlTag="false" showHeader="false" standardStylesheets="false" controller="POPdfGenerateComCtrl" readOnly="true">
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 90%;
+        }
+
+        td,
+        th {
+            border: 1px solid #000000;
+            text-align: center;
+            padding: 8px;
+        }
+
+    </style>
+    <div style='margin-left:5%;'>
+
+
+        <apex:pageBlock >
+            <!-- PO Number and GST -->
+            <div class="header" style='margin-left:100'>
+
+
+                <div style="float: left; width: 65%;">
+                    <b> <span class="label">PO No: </span>
+                        <apex:outputText value="{!orderObject.OrderNumber}"/></b>
+                </div>
+                <div style="float: left; ">
+                    <b> <span class="label">Date: </span>
+                        <apex:outputText value="{!orderObject.currentDate}" /> </b>
+                </div>
+
+            </div>
+            <br/>
+
+            <p><b>GST No:</b> {!accountDetails.gstiNUIN}</p>
+
+
+            <b>To,</b>
+            <div style="width: 150px; word-wrap: break-word;">
+                <strong>IFB Industries Ltd</strong><br/>
+                <apex:pageBlock >
+                {!accountDetails.Address}<br/>
+                    GST IN: {!accountDetails.GST}<br/>
+                </apex:pageBlock>
+            </div>
+
+
+
+
+            <p>Dear Sir,</p>
+
+            <!-- Conditional Block for ILM Product Category -->
+            <apex:outputPanel rendered="{!orderObject.productCategory == 'IDW'}">
+                <b>Subject: Purchase Order for Commercial Dishwasher Machine.</b><br/>
+                As per above subject, we are hereby placing the Purchase Order for the same.<br/><br/>
+
+                <apex:pageBlock >
+                    <table id="html-data-table" border="1" cellpadding="7" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Sl. No.</th>
+                            <th>Description</th>
+                            <th>Basic Price [Rs.]</th>
+                            <th>Qty</th>
+                            <th>GST %</th>
+                            <th>Total Price [Rs.]</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <apex:repeat value="{!orderLineItemList}" var="item">
+
+                            <tr>
+                                <td>{!item.srNo}</td>
+                                <td>{!item.productName}<br/>Make: {!item.makeName}<br/> Model: {!item.modelName}<br/> Heating: {!item.heatingType}</td>
+                                <td>{!item.unitPrice}</td>
+                                <td>{!item.quantity}</td>
+                                <td>{!item.gst}</td>
+                                <td>{!item.totalPrice}</td>
+                            </tr>
+
+                        </apex:repeat>
+
+                        <tr>
+                            <td colspan="5" style="text-align:right;"><strong>GST: </strong></td>
+
+                            <td>
+                                <apex:outputText value="{0, number, ###,###.##}">
+                                    <apex:param value="{!orderObject.totalGstAmount}" />
+                                </apex:outputText>
+                            </td>
+
+                        </tr>
+                        <tr>
+
+                            <td colspan="5" style="text-align:right;"><strong>Total Amount Incl. GST: </strong></td>
+
+                            <td>
+                                <apex:outputText value="{0, number, ###,###.##}">
+                                    <apex:param value="{!orderObject.totalAmountInclGst}" />
+                                </apex:outputText>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <apex:outputPanel rendered="{!orderObject.FreightIncluded == 'Extras'}">
+                        <div class="slds-box slds-theme_default"> <br/>
+                            <span><strong>Note:</strong> Freight charges are based on the approved Quote.</span><br/>
+                            <span><strong>Freight Applied:</strong> ₹ {!orderObject.FrightCharges}</span>
+                        </div>
+
+                        <apex:outputPanel rendered="{!orderObject.FreightIncluded != 'Extras'}">
+                            <div class="slds-box slds-theme_default"> <br/>
+                                <span><strong>Note:</strong> Freight charges are based on the approved Quote.</span><br/>
+                                Freight Charges: <strong>{!orderObject.FreightIncluded}.</strong><br/><br/>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+
+
+
+
+
+                </apex:pageBlock>
+
+
+                <br/>
+                <b>Terms and Conditions</b><br/>
+                1. Taxes: GST including {!orderLineItemList[0].gst} on Machine.<br/>
+                2. Payment: {!orderObject.advanceAmount}% Rs. before dispatching machine along with PO.<br/>
+                3. Warranty: Industrial Dishwashers are warranted for a period of {!orderObject.warntyTerms} year(s) from the date of installation in accordance with the conditions as detailed in Warranty card.<br/>
+                4. Freight {!orderObject.FreightTerm}. Unloading and shifting of machines is in customer scope.<br/>
+
+                <br/>
+                <br/>
+                <b>Billing Address: </b><br/>
+                    {!accountDetails.nameOfConsignor}<br/>
+                    {!accountDetails.BillingStreet}<br/>
+                    {!accountDetails.BillingCity} {!accountDetails.BillingPostalCode}<br/>
+                    {!accountDetails.phoneNo}<br/>
+                    {!accountDetails.email}<br/><br/>
+
+                <b>Shipping Address: </b><br/>
+                    {!accountDetails.nameOfConsignee}<br/>
+                    {!accountDetails.Street}<br/>
+                    {!accountDetails.City} {!accountDetails.PostalCode}<br/>
+                    GSTIN: {!orderObject.GSTNo}<br/>
+                    {!accountDetails.phoneNo}<br/>
+                    {!accountDetails.email}<br/>
+            </apex:outputPanel>
+
+            <!-- Conditional Block for IDW Product Category -->
+            <apex:outputPanel rendered="{!orderObject.productCategory == 'ILM'}">
+                <b>Subject: Purchase Order for laundry machines </b><br/>
+                As per your above subject, we are hereby placing the Purchase Order for the same.<br/><br/>
+
+                <!-- Purchase Order Table -->
+                <apex:pageBlock >
+                    <table id="html-data-table" border="1" cellpadding="5" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Sl. No.</th>
+                            <th>Description</th>
+                            <th>Qty (Nos)</th>
+                            <th>Unit Price (Rs.)</th>
+                            <th>GST %</th>
+                            <th>Total Price (Rs.)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <apex:repeat value="{!orderLineItemList}" var="item">
+
+                            <tr>
+                                <td>{!item.srNo} </td>
+                                <td>{!item.productName}<br/>Make: {!item.makeName} <br/> Model: {!item.modelName}<br/> Heating: {!item.heatingType}</td>
+                                <td>{!item.quantity}</td>
+                                <td>{!item.unitPrice}</td>
+                                <td>{!item.gst}</td>
+                                <td>{!item.totalPrice}</td>
+                            </tr>
+
+                        </apex:repeat>
+
+                        <tr>
+                            <td colspan="5" style="text-align:right;"><strong>GST: </strong></td>
+
+                            <td>
+                                <apex:outputText value="{0, number, ###,###.##}">
+                                    <apex:param value="{!orderObject.totalGstAmount}" />
+                                </apex:outputText>
+                            </td>
+
+                        </tr>
+                        <tr>
+
+                            <td colspan="5" style="text-align:right;"><strong>Total Amount Incl. GST: </strong></td>
+
+                            <td>
+                                <apex:outputText value="{0, number, ###,###.##}">
+                                    <apex:param value="{!orderObject.totalAmountInclGst}" />
+                                </apex:outputText>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <apex:outputPanel rendered="{!orderObject.FreightIncluded == 'Extras'}">
+                        <div class="slds-box slds-theme_default"> <br/>
+                            <span><strong>Note:</strong> Freight charges are based on the approved Quote.</span><br/>
+                            <span><strong>Freight Charges:</strong> ₹ {!orderObject.FrightCharges}</span>
+                        </div>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel rendered="{!orderObject.FreightIncluded != 'Extras'}">
+                        <div class="slds-box slds-theme_default"> <br/>
+                            <span><strong>Note:</strong> Freight charges are based on the approved Quote.</span><br/>
+                            Freight Charges: <strong>{!orderObject.FreightIncluded}.</strong><br/><br/>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageBlock>
+
+                <br/>
+                <br/>
+                <b>Terms and Conditions</b><br/>
+                1. Taxes: GST included in the above rates.<br/>
+                2. Installation and commission: IFB shall provide pre-installation drawings and the customer shall keep the site ready before the arrival of the machines.<br/>
+                3. Payment: {!orderObject.advanceAmount}% advance along with the PO and balance against PI before dispatch.<br/>
+                4. Delivery: {!orderObject.deliverTerms} weeks from the date of order and advance payment.<br/>
+                5. Warranty: {!orderObject.warntyTerms} year(s) from the date of dispatch against any manufacturing defects.<br/>
+                6. Freight {!orderObject.FreightTerm}. Unloading and shifting of machines is in customer scope.<br/>
+
+
+                <br/>
+                <br/>
+                <b>Billing Address: </b><br/>
+                    {!accountDetails.nameOfConsignor}<br/>
+                    {!accountDetails.BillingStreet}<br/>
+                    {!accountDetails.BillingCity} {!accountDetails.BillingPostalCode}<br/>
+                    {!accountDetails.phoneNo}<br/>
+                    {!accountDetails.email}<br/><br/>
+
+                <b>Shipping Address: </b><br/>
+                    {!accountDetails.nameOfConsignee}<br/>
+                    {!accountDetails.Street}<br/>
+                    {!accountDetails.City} {!accountDetails.PostalCode}<br/>
+                    GSTIN: {!orderObject.GSTNo}<br/>
+                    {!accountDetails.phoneNo}<br/>
+                    {!accountDetails.email}<br/>
+            </apex:outputPanel>
+            <p>
+                Thanking you,<br/>
+                Encl. GST certificate, PAN copy and TCS declaration letter.
+            </p>
+        </apex:pageBlock>
+    </div>
+</apex:page>

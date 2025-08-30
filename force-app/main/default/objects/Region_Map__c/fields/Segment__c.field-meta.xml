@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Segment__c</fullName>
+    <label>Segment</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+                <label>Healthcare</label>
+            </value>
+            <value>
+                <fullName>Educational Institutions</fullName>
+                <default>false</default>
+                <label>Educational Institutions</label>
+            </value>
+            <value>
+                <fullName>Partners</fullName>
+                <default>false</default>
+                <label>Partners</label>
+            </value>
+            <value>
+                <fullName>Laundromats</fullName>
+                <default>false</default>
+                <label>Laundromats</label>
+            </value>
+            <value>
+                <fullName>Organization/Entity</fullName>
+                <default>false</default>
+                <label>Organization/Entity</label>
+            </value>
+            <value>
+                <fullName>Hospitality</fullName>
+                <default>false</default>
+                <label>Hospitality</label>
+            </value>
+            <value>
+                <fullName>Non-Profit Organization/NGO</fullName>
+                <default>false</default>
+                <label>Non-Profit Organization/NGO</label>
+            </value>
+            <value>
+                <fullName>Garment</fullName>
+                <default>false</default>
+                <label>Garment</label>
+            </value>
+            <value>
+                <fullName>HNI</fullName>
+                <default>false</default>
+                <label>HNI</label>
+            </value>
+            <value>
+                <fullName>Export</fullName>
+                <default>false</default>
+                <label>Export</label>
+            </value>
+            <value>
+                <fullName>List Of Ministries</fullName>
+                <default>false</default>
+                <label>List Of Ministries</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

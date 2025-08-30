@@ -1,0 +1,56 @@
+.form-wrapper {
+    padding: 1rem;
+}
+
+.form-container {
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    padding: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.Input-container{
+    padding: 2px;
+    margin: 2px;
+    
+}
+.button-container {
+    text-align: center;
+    margin-top: 1rem;
+}
+.InsideInput{
+    align-items: left ;
+    justify-content: left;
+}
+.section-header {
+    background-color: 	#014486; /* Change the background color as desired */
+    padding: 5px;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+    position: relative; /* Allow absolutely positioning the logo */
+}
+
+.logo {
+    height: 50px; /* Adjust the size as needed */
+    position: absolute; /* Remove the logo from the document flow */
+    left: 10px; /* Align the logo to the left */
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 auto; /* Center the title */
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_FieldsEdit_After_StatusNurturing</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(isNEW()),
+NOT(ValidationBypass__c == True),
+
+OR(
+ AND( ISPICKVAL(Status, &quot;Nurturing&quot;), 
+          NOT(ISCHANGED(Status)) ),
+ISPICKVAL(Status, &quot;Converted&quot;)
+
+),
+NOT(ValidationBypass__c == True),
+
+OR(
+ISCHANGED(Type_of_Setup__c),
+ISCHANGED(Customer_Department__c),
+ISCHANGED( Customer_Designation__c ),
+ISCHANGED( Is_our_contact_a_Key_Decision_Maker__c ),
+ISCHANGED( Type__c )
+)
+
+)</errorConditionFormula>
+    <errorMessage>The following fields should be non-editable after Nurturing:
+1. Type of Setup 
+2. Customer Department
+3. Customer Designation
+4. Is our contact a Key Decision Maker?
+5. Type of Implementation</errorMessage>
+</ValidationRule>

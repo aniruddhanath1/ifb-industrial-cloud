@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Item_Presetting_Policy__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Specifies whether the system shows the presetting of item values in the truck load and cash documents.</description>
+    <label>Item Presetting Policy</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BlindMode</fullName>
+                <default>false</default>
+                <label>BlindMode</label>
+            </value>
+            <value>
+                <fullName>NonBlindMode</fullName>
+                <default>false</default>
+                <label>NonBlindMode</label>
+            </value>
+            <value>
+                <fullName>Prepopulated</fullName>
+                <default>false</default>
+                <label>Prepopulated</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

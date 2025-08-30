@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Check_Display_VPC_On_Calculation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(cgcloud__Calculation_Mode__c, &quot;No&quot;), (cgcloud__Display_VPC__c))</errorConditionFormula>
+    <errorDisplayField>cgcloud__Calculation_Mode__c</errorDisplayField>
+    <errorMessage>Display VPC can&apos;t be checked if the Calculation Mode is &apos;No&apos;.</errorMessage>
+</ValidationRule>

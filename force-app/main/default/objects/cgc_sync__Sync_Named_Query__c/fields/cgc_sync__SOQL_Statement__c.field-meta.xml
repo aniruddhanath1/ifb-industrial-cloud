@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__SOQL_Statement__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The SOQL statement that will be executed if the named query is referenced by another query.
+
+Maximum length is 20k characters, see this link for details:
+http://salesforce.stackexchange.com/questions/25719/what-is-the-maximum-number-of-items-in-a-soql-in-clause</description>
+    <inlineHelpText>The SOQL statement that will be executed when the named query is referenced by another query.</inlineHelpText>
+    <label>SOQL Statement</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

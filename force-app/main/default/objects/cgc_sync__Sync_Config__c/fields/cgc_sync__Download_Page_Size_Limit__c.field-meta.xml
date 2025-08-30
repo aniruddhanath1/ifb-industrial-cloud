@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Download_Page_Size_Limit__c</fullName>
+    <defaultValue>1000</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Number of records to be processed inside Apex endpoint until paging starts.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Maximum allowed page size. Lower limit 1000. Upper limit 50000. Recommended value 1000.</inlineHelpText>
+    <label>Download Page Size Limit</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

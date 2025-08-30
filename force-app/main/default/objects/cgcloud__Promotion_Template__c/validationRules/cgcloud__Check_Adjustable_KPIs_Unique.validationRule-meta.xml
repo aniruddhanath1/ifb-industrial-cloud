@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Check_Adjustable_KPIs_Unique</fullName>
+    <active>true</active>
+    <errorConditionFormula>( 
+(!ISBLANK(cgcloud__Adjustment_KPI_1__c) &amp;&amp; !ISBLANK(cgcloud__Adjustment_KPI_2__c)) &amp;&amp; (cgcloud__Adjustment_KPI_1__c == cgcloud__Adjustment_KPI_2__c) 
+) || 
+( 
+(!ISBLANK(cgcloud__Adjustment_KPI_2__c) &amp;&amp; !ISBLANK(cgcloud__Adjustment_KPI_3__c)) &amp;&amp; (cgcloud__Adjustment_KPI_2__c == cgcloud__Adjustment_KPI_3__c) 
+) || 
+( 
+(!ISBLANK(cgcloud__Adjustment_KPI_1__c) &amp;&amp; !ISBLANK(cgcloud__Adjustment_KPI_3__c)) &amp;&amp; (cgcloud__Adjustment_KPI_1__c == cgcloud__Adjustment_KPI_3__c) 
+)</errorConditionFormula>
+    <errorMessage>Adjustment KPIs already exists, please enter different Adjustment KPIs.</errorMessage>
+</ValidationRule>

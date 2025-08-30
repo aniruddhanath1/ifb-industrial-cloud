@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Restrict_Edit_Promotion</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISNEW()), ISCHANGED( cgcloud__Promotion__c))</errorConditionFormula>
+    <errorDisplayField>cgcloud__Promotion__c</errorDisplayField>
+    <errorMessage>The Promotion can&apos;t be edited after Product Reward Group creation.</errorMessage>
+</ValidationRule>

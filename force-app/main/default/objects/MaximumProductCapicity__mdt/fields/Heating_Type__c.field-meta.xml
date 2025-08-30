@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Heating_Type__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Heating Type</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Diesel</fullName>
+                <default>true</default>
+                <label>Diesel</label>
+            </value>
+            <value>
+                <fullName>Dual (Electric &amp; Steam)</fullName>
+                <default>false</default>
+                <label>Dual (Electric &amp; Steam)</label>
+            </value>
+            <value>
+                <fullName>Electric</fullName>
+                <default>false</default>
+                <label>Electric</label>
+            </value>
+            <value>
+                <fullName>Gas</fullName>
+                <default>false</default>
+                <label>Gas</label>
+            </value>
+            <value>
+                <fullName>Steam</fullName>
+                <default>false</default>
+                <label>Steam</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

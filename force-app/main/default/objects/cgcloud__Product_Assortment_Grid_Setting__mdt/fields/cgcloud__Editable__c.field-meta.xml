@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Editable__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>The field can be edit by the user.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Editable</label>
+    <type>Checkbox</type>
+</CustomField>

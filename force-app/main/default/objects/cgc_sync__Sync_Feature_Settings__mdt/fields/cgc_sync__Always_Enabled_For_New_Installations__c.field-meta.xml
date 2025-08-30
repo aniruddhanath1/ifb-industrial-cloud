@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Always_Enabled_For_New_Installations__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Provides a mechanism to make new and enhanced Sync Management features available to users who have newly installed CG Cloud Sync Management.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Set to true to make the feature available to users of the newly installed CG Cloud Sync Management. Default is false.</inlineHelpText>
+    <label>Always Enabled For New Installations</label>
+    <type>Checkbox</type>
+</CustomField>

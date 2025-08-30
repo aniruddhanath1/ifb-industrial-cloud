@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Allow_Competitor_Products__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Controls, whether foreign products can be used in the sales document or not.</description>
+    <label>Allow Competitor Products</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

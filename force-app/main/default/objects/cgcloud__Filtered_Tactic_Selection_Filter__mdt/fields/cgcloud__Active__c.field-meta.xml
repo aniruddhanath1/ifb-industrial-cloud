@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Active__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This is a toggle to activate or deactivate a Filter. Set this to false so that the system will ignore this configuration.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Instead of deleting a filter, Uncheck to deactivate the filter. Alternatively, if you don&apos;t want user to be able to turn off this filter, set Display Filter to False(Unchecked) but set Active to True(Checked).</inlineHelpText>
+    <label>Active</label>
+    <type>Checkbox</type>
+</CustomField>

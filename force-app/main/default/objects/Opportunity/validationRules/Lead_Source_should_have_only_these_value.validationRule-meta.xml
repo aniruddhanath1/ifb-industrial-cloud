@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Source_should_have_only_these_value</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+    NOT(Bypass_Validation__c),
+    OR(
+        ISNEW(), 
+        ISCHANGED(LeadSource)
+    ),
+    ISPICKVAL(LeadSource, &quot;IndiaMart&quot;) ||
+    ISPICKVAL(LeadSource, &quot;LinkedIn&quot;) ||
+    ISPICKVAL(LeadSource, &quot;JustDial&quot;) ||
+    ISPICKVAL(LeadSource, &quot;Industrial Sales Team&quot;) ||
+    ISPICKVAL(LeadSource, &quot;Industrial Service Team&quot;) ||
+    ISPICKVAL(LeadSource, &quot;Domestic Sales Team&quot;) ||
+    ISPICKVAL(LeadSource, &quot;Domestic Service Team&quot;) ||
+    ISPICKVAL(LeadSource, &quot;IFB Points&quot;) ||
+    ISPICKVAL(LeadSource, &quot;Partners&quot;) ||
+    ISPICKVAL(LeadSource, &quot;Web Leads&quot;) ||
+    ISPICKVAL(LeadSource, &quot;Institutional Sales&quot;) ||
+    ISPICKVAL(LeadSource, &quot;Domestic Call Centre Team&quot;) ||
+    ISPICKVAL(LeadSource, &quot;Meta&quot;) ||
+    ISPICKVAL(LeadSource, &quot;Other&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>LeadSource</errorDisplayField>
+    <errorMessage>On Opportunity manual creation you can only select these values.
+Direct Lead,
+Event,
+Exports or
+Referral from Existing Customer</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__MegaEvent_TradeCalendar_Relevant</fullName>
+    <active>false</active>
+    <description>Trade Calendar Relevant must be &apos;Yes&apos; if the Anchor Type is &apos;None&apos;.</description>
+    <errorConditionFormula>(ISBLANK(TEXT(cgcloud__Anchor_Type__c)) &amp;&amp; NOT(ISPICKVAL(cgcloud__Trade_Calendar_Relevant__c, &apos;Yes&apos;)))</errorConditionFormula>
+    <errorDisplayField>cgcloud__Trade_Calendar_Relevant__c</errorDisplayField>
+    <errorMessage>Trade Calendar Relevant must be &apos;Yes&apos; if the Anchor Type is &apos;None&apos;.</errorMessage>
+</ValidationRule>

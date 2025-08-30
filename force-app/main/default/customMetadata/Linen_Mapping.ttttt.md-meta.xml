@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <description>ttttt</description>
+    <label>ttttt</label>
+    <protected>false</protected>
+    <values>
+        <field>Dry_cleaning_Load__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Drying__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Flat_Ironer__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Ironing_Load_Unshaped_Garments_in_Nos__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Linen_Weight_in_Kg__c</field>
+        <value xsi:type="xsd:double">0.6</value>
+    </values>
+    <values>
+        <field>Linen__c</field>
+        <value xsi:type="xsd:string">Doctors Coat</value>
+    </values>
+    <values>
+        <field>Vertical__c</field>
+        <value xsi:type="xsd:string">Health Care</value>
+    </values>
+    <values>
+        <field>Washing__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Consider_Quantity_Suggestion__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Specifies presetting of ordered quantity via calculated quantity suggestion or pre ordered quantity.</description>
+    <label>Consider Quantity Suggestion</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lqty</fullName>
+                <default>false</default>
+                <label>Lqty</label>
+            </value>
+            <value>
+                <fullName>Pqty</fullName>
+                <default>false</default>
+                <label>Pqty</label>
+            </value>
+            <value>
+                <fullName>LQtyStock</fullName>
+                <default>false</default>
+                <label>LQtyStock</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

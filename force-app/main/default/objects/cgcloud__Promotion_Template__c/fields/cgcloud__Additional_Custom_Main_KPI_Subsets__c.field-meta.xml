@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Additional_Custom_Main_KPI_Subsets__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Used when Subset Load Optimization is enabled to specify subsets that must be additionally loaded while opening a promotion.</description>
+    <label>Additional Custom Main KPI Subsets</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>cgcloud__KPI_Subsets</valueSetName>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

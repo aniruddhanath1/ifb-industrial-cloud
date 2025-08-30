@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Sync_Record_Weight__c</fullName>
+    <defaultValue>1</defaultValue>
+    <deprecated>false</deprecated>
+    <description>The weight of a record of this tracked object, with regards to computational resources (e.g. a bigger weight means more resources are needed to process (insert/update/delete) a single record.
+If you assign 5 as a weight here, and then set the sync config&apos;s &quot;chunk weight&quot; field to a 100 (which is the default) then the client&apos;s will do the math of 100 / 5 = 20 where 20 is the number of records that the client will attempt to sync in a single transaction.
+If you are syncing records from various different tracked objects, the weights will be summed up according to the individual record weight settings of each tracked object.
+
+The deafult value for this field is 1, which means that by default the clients uploading records will attempt to upload 100 records at a time. If you encounter issues with scalability (requests take too long or fail due to governor limits) then you can force the client to use smaller chunks by increasing the record weight of your tracked object.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The weight of a record of this tracked object, with regards to computational resources (e.g. a bigger weight means more resources are needed to process (insert/update/delete) a single record.</inlineHelpText>
+    <label>Sync Record Weight</label>
+    <precision>18</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

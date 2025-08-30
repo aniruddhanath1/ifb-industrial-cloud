@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <description>1696</description>
+    <label>1696</label>
+    <protected>false</protected>
+    <values>
+        <field>LDCA__c</field>
+        <value xsi:type="xsd:string">HISSAR</value>
+    </values>
+    <values>
+        <field>SDCA__c</field>
+        <value xsi:type="xsd:string">KALANWALI</value>
+    </values>
+    <values>
+        <field>State__c</field>
+        <value xsi:type="xsd:string">HA</value>
+    </values>
+</CustomMetadata>

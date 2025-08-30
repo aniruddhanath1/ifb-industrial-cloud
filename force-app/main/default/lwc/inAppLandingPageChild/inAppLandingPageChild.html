@@ -1,0 +1,13 @@
+<template> 
+	<div class="c-description">
+        <lightning-layout-item flexibility="auto">
+            <div class="custom-box">
+                <p>
+                    <lightning-icon icon-name="utility:send" alternative-text={heading} size="x-small" title="x-small size"></lightning-icon>
+                    <a class="c-heading" onclick={handleClick}>{heading}</a>
+                </p>
+                <p class="slds-text-body_regular c-feature-desc">{cloudDetail}</p>
+            </div>
+        </lightning-layout-item>
+    </div>
+</template>

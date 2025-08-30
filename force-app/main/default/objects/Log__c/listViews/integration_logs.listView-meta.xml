@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>integration_logs</fullName>
+    <columns>NAME</columns>
+    <columns>ClassName__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Exception_Message__c</columns>
+    <columns>Exception_Type__c</columns>
+    <columns>Http_Method__c</columns>
+    <columns>Json_Request__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ClassName__c</field>
+        <operation>equals</operation>
+        <value>IntegrationHandler</value>
+    </filters>
+    <label>integration logs</label>
+</ListView>

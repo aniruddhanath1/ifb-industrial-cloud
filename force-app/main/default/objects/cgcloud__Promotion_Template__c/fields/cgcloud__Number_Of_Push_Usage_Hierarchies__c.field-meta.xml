@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Number_Of_Push_Usage_Hierarchies__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Number of Child Templates with Usage as &quot;Push&quot; in the Hierarchy</description>
+    <label>Number Of Push Usage Hierarchies</label>
+    <summaryFilterItems>
+        <field>cgcloud__Promotion_Template_Hierarchy__c.cgcloud__Usage__c</field>
+        <operation>equals</operation>
+        <value>Push</value>
+    </summaryFilterItems>
+    <summaryForeignKey>cgcloud__Promotion_Template_Hierarchy__c.cgcloud__Parent_Promotion_Template__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

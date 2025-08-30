@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Lead</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Lead Qualification Path</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Email</fieldNames>
+        <fieldNames>Customer_Category__c</fieldNames>
+        <fieldNames>Sector__c</fieldNames>
+        <fieldNames>Customer_Segment_Vertical__c</fieldNames>
+        <fieldNames>Type_of_Customer__c</fieldNames>
+        <picklistValueName>Contacted</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Purchase_Timeline__c</fieldNames>
+        <fieldNames>Budget_Availablility_Budget_Source__c</fieldNames>
+        <fieldNames>Space_Availability__c</fieldNames>
+        <fieldNames>Site_Suitability__c</fieldNames>
+        <fieldNames>Infrastructure_completed_in_30_days__c</fieldNames>
+        <picklistValueName>Converted</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Reason_for_Disqualification__c</fieldNames>
+        <picklistValueName>Discarded</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Type_of_Setup__c</fieldNames>
+        <fieldNames>Customer_Department__c</fieldNames>
+        <fieldNames>Customer_Designation__c</fieldNames>
+        <fieldNames>Is_our_contact_a_Key_Decision_Maker__c</fieldNames>
+        <fieldNames>Type__c</fieldNames>
+        <picklistValueName>Nurturing</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Address</fieldNames>
+        <picklistValueName>Validated</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

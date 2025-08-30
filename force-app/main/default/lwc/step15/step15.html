@@ -1,0 +1,37 @@
+<template>
+    <lightning-card footer="" title="">
+        <div class="c-container">
+            <p class="c-description">Step 15</p>
+            <ul class="slds-list_dotted">
+                <li>Conduct Asset Check (call out Scan Barcode).</li>
+                <ul class="slds-list_dotted">
+                    <li>Tap the red circle for Refrigerator M80.</li>
+                    <li>Tap the red circle for Table (wood).</li>
+                    <li>Set Condition to Working.</li>
+                </ul>
+                <li>Tap Back.</li>
+            </ul>
+        </div>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <p>
+                        <lightning-formatted-text value="Chantelle's order is placed and her notes are recorded. But before leaving the store, she wants to check on the assets."></lightning-formatted-text>
+                    </p><br />
+                    <p>
+                        <lightning-formatted-text value="There're many expensive pieces of equipment at NTO Store 201, such as refrigerators and freezers. Sales reps like Chantelle are responsible for periodically checking the condition of the assets and ensuring that they're placed at the best spot within the store."></lightning-formatted-text>
+                    </p><br />
+                    <p>
+                        <lightning-formatted-text value="Chantelle checks the assets, selects the condition and the location in the offline mobile app, and adds notes, if required."></lightning-formatted-text>
+                    </p><br />
+                    <p>
+                        <lightning-formatted-text value="If there's an issue, sales reps create tasks on the home page to schedule maintenance jobs on the assets. Chantelle notices that the Refrigerator M80 isn't cooling properly, and schedules a task for the maintenance team to check the asset."></lightning-formatted-text>
+                    </p><br />
+                    <div>
+                        <img src={addcustomertask_img} alt="Add Customer Task">
+                    </div><br />
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

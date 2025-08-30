@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reasons__c</fullName>
+    <label>Reasons For Next Follow Up</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Natural Calamities</fullName>
+                <default>false</default>
+                <label>Natural Calamities</label>
+            </value>
+            <value>
+                <fullName>Personal Leave</fullName>
+                <default>false</default>
+                <label>Personal Leave</label>
+            </value>
+            <value>
+                <fullName>Visiting a Trade Fair</fullName>
+                <default>false</default>
+                <label>Visiting a Trade Fair</label>
+            </value>
+            <value>
+                <fullName>Customer not available</fullName>
+                <default>false</default>
+                <label>Customer not available</label>
+            </value>
+            <value>
+                <fullName>Meeting delayed with the previous customer</fullName>
+                <default>false</default>
+                <label>Meeting delayed with the previous customer</label>
+            </value>
+            <value>
+                <fullName>Scheduled another important customer visit</fullName>
+                <default>false</default>
+                <label>Scheduled another important customer visit</label>
+            </value>
+            <value>
+                <fullName>Review schedule in IFB branch</fullName>
+                <default>false</default>
+                <label>Review schedule in IFB branch</label>
+            </value>
+            <value>
+                <fullName>Corporate meeting/review in IFB Bommasandra Factory</fullName>
+                <default>false</default>
+                <label>Corporate meeting/review in IFB Bommasandra Factory</label>
+            </value>
+            <value>
+                <fullName>Advance payment collection</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Advance payment collection</label>
+            </value>
+            <value>
+                <fullName>Commercial Negotiation - Along with IFBs Senior Resource</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Commercial Negotiation - Along with IFBs Senior Resource</label>
+            </value>
+            <value>
+                <fullName>Commercial Negotiation - Self</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Commercial Negotiation - Self</label>
+            </value>
+            <value>
+                <fullName>Corporate meeting / review in IFB Bommasandra Factory</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Corporate meeting / review in IFB Bommasandra Factory</label>
+            </value>
+            <value>
+                <fullName>Meeting Delayed with previous Customer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Meeting Delayed with previous Customer</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>PI submission &amp; balance payment collection</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PI submission &amp; balance payment collection</label>
+            </value>
+            <value>
+                <fullName>PO &amp; advance payment collection</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PO &amp; advance payment collection</label>
+            </value>
+            <value>
+                <fullName>Post site Inspection</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Post site Inspection</label>
+            </value>
+            <value>
+                <fullName>Pre site Inspection</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pre site Inspection</label>
+            </value>
+            <value>
+                <fullName>Quote/Technical document hard copy submission</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Quote/Technical document hard copy submission</label>
+            </value>
+            <value>
+                <fullName>Technical Negotiation - Along with IFBs Senior Resource</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Technical Negotiation - Along with IFBs Senior Resource</label>
+            </value>
+            <value>
+                <fullName>Technical Negotiation - Self</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Technical Negotiation - Self</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

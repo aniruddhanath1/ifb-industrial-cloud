@@ -1,0 +1,27 @@
+<template>
+    <lightning-card>
+        <template if:false={showPdf}>
+            <div>
+                <h1 style="text-align:center;font-size: large;border-bottom: 1px solid grey; " class = "headerdiv">BlueSheet Details</h1>
+                <c-generic-blue-sheets-cmp 
+                    record-id={recordId} 
+                    has-parent-call="true"
+                    onsave={handleSaveFromChild}
+                    onsavecompleted={handleSaveCompleted}
+                    >
+                    
+                </c-generic-blue-sheets-cmp>
+            </div>
+            <footer class="slds-modal__footer slds-grid slds-grid_align-center ">
+                <lightning-button variant="brand" label="Export PDF" onclick={handlePDF} disabled={disableExportButton}></lightning-button>
+                <lightning-button variant="brand" label="Save & Update" onclick={handleSave} class="slds-m-left_x-small"></lightning-button>
+                <lightning-button variant="brand" label="Close" title="Primary action" onclick={handleClose}  class="slds-m-left_x-small"></lightning-button>
+
+            </footer>
+        </template>
+        
+        <template if:true={showPdf}>
+            <iframe src={vfHost} width="100%" height="800px" frameborder="0"></iframe>
+        </template>
+    </lightning-card>
+</template>

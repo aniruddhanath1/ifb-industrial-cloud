@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_FieldsEdit_After_StatusContacted</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+   
+NOT(isNEW()),
+NOT(ValidationBypass__c == True),
+
+OR(  
+   AND( ISPICKVAL(Status, &quot;Contacted&quot;),NOT(ISCHANGED(Status)) ),
+ISPICKVAL(Status, &quot;Nurturing&quot;)
+
+  
+
+),
+
+NOT(ValidationBypass__c == True),
+OR(
+AND(NOT(ISBLANK(text(Sector__c))),ISCHANGED(Sector__c) ),
+AND(NOT(ISBLANK(text(Customer_Sub_segment_Sub_Vertical__c))),ISCHANGED(Customer_Sub_segment_Sub_Vertical__c) ),
+ISCHANGED(Customer_Segment_Vertical__c) ,
+ISCHANGED(Requirement__c),
+AND(NOT(ISBLANK(Email)),ISCHANGED(Email) ),
+AND(NOT(ISBLANK(Text(Customer_Category__c))),ISCHANGED(Customer_Category__c) ),
+AND(NOT(ISBLANK(Text(Type_of_Customer__c))),ISCHANGED(Type_of_Customer__c) )
+
+)
+)</errorConditionFormula>
+    <errorMessage>The following fields should be non-editable after the Contacted
+1. Sector
+2. Customer Segment
+3. Customer Sub-segment
+4. Email ID
+5. Customer Category
+6. Type of Customer
+7. Requirement (Dependent on Product Category)</errorMessage>
+</ValidationRule>

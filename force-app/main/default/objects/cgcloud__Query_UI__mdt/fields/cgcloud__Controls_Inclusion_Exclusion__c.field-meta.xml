@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Controls_Inclusion_Exclusion__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Include or Exclude Query Conditions</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Controls Inclusion/Exclusion</label>
+    <referenceTo>cgcloud__Query_Condition__mdt</referenceTo>
+    <relationshipLabel>Query UIs</relationshipLabel>
+    <relationshipName>Query_UIs</relationshipName>
+    <required>false</required>
+    <type>MetadataRelationship</type>
+    <unique>true</unique>
+</CustomField>

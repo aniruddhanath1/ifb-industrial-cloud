@@ -1,0 +1,28 @@
+<template>
+    <template if:true={productCategoryILM}>
+        <lightning-card title="PDF Generation of Invoices">
+            <div class="slds-m-around_medium">
+                <lightning-combobox class="validate" required="true" label="Select Invoice Template" value={productILMType} options={ilmPdfOptions}
+                    onchange={handleILMPdfChange}></lightning-combobox>
+            </div>
+            <div class="slds-m-around_medium slds-align_absolute-center">
+                <lightning-button variant="Brand" label="Generate PDF" title="OpendPdf" onclick={openILMPage}></lightning-button>
+                <lightning-button variant="Brand"  class="slds-p-left_large" label="Close" title="CLose" onclick={handlecloseClick}></lightning-button>
+            </div>
+        </lightning-card>
+    
+    </template>
+    <template if:true={productCategoryIDW}>
+        <lightning-card title="PDF Generation of Invoices">
+            <div class="slds-m-around_medium">
+                <lightning-combobox class="validate" required="true" label="Select Invoice Template" value={productIDWType} options={idwPdfOptions}
+                    onchange={handleIDWPdfChange}></lightning-combobox>
+            </div>
+            <div class="slds-m-around_medium slds-align_absolute-center">
+                <lightning-button variant="Brand" label="Generate PDF" title="OpendPdf" onclick={openIDWPage}></lightning-button>&nbsp;&nbsp;&nbsp;
+                <lightning-button class="slds-p-left_large" variant="Brand" label="Close" title="CLose" onclick={handlecloseClick}></lightning-button>
+            </div>
+        </lightning-card>
+    </template>
+
+</template>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Markup_IDW</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+				!$User.Bypass_Validation_Rules__c,
+				NOT(CONTAINS($Profile.Name, &apos;Admin&apos;)), 
+ 			ISPICKVAL(SBQQ__Quote__r.SBQQ__Opportunity2__r.Product_category__c, &quot;IDW&quot;),
+				OR(
+								ISCHANGED(SBQQ__MarkupRate__c),
+				    ISCHANGED(SBQQ__MarkupAmount__c)
+				)			
+)</errorConditionFormula>
+    <errorMessage>Markup is not allowed for IDW quotes</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__In_Calculation_Time_Frame__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>IF(((TODAY() - $Setup.cgcloud__Promotion_Calculation_Server_Offset__c.cgcloud__Days_Before__c) &lt;= cgcloud__Date_Thru__c) &amp;&amp; (cgcloud__Date_From__c &lt;= (TODAY() + $Setup.cgcloud__Promotion_Calculation_Server_Offset__c.cgcloud__Days_After__c)), true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>In Calculation Time Frame</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

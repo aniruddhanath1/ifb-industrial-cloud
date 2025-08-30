@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Device_ID__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The client device&apos;s UUID which we are enabling debugging for. You can place the asterisk/wildcard character here to define a debugging session for any and all devices =&gt; *</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>The client device&apos;s UUID which we are enabling debugging for. You can place the asterisk/wildcard character here to define a debugging session for any and all devices =&gt; *</inlineHelpText>
+    <label>Device Id</label>
+    <length>64</length>
+    <required>true</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

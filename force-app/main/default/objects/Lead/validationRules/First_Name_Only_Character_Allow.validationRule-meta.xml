@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Name_Only_Character_Allow</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(REGEX(FirstName,&quot;^[a-z  A-Z]*$&quot;))</errorConditionFormula>
+    <errorDisplayField>FirstName</errorDisplayField>
+    <errorMessage>You have entered an invalid format.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_Centre_User_Task</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Call Centre User</label>
+    <queue>Call_Centre_User</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

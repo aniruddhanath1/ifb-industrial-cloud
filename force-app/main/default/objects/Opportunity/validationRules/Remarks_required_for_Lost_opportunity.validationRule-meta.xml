@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Remarks_required_for_Lost_opportunity</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(StageName, &quot;Closed Lost&quot;),
+    INCLUDES(Reasons_for_Closed_Lost__c, &quot;Others&quot;),
+    ISBLANK(Remarks__c),
+				!$User.Bypass_Validation_Rules__c,
+    NOT(CONTAINS($Profile.Name, &apos;Admin&apos;))
+)</errorConditionFormula>
+    <errorDisplayField>Remarks__c</errorDisplayField>
+    <errorMessage>Remarks required if Opportunity is Closed Lost and Reason is Others</errorMessage>
+</ValidationRule>

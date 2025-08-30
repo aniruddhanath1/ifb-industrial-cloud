@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Email_Action</name>
+        <label>Send Email Action</label>
+        <locationX>50</locationX>
+        <locationY>1692</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>EmailRecepient</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Orders Without Advance</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>EmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_Orders_Row</name>
+        <label>Add Orders Row</label>
+        <locationX>138</locationX>
+        <locationY>684</locationY>
+        <assignmentItems>
+            <assignToReference>OrderTableRows</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>OrderTableRow</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>All_Orders</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_ProfileId</name>
+        <label>Assign ProfileId</label>
+        <locationX>138</locationX>
+        <locationY>1092</locationY>
+        <assignmentItems>
+            <assignToReference>ProfileIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_on_Profiles.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_on_Profiles</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AssignEmailRecipient</name>
+        <label>AssignEmailRecipient</label>
+        <locationX>138</locationX>
+        <locationY>1500</locationY>
+        <assignmentItems>
+            <assignToReference>EmailRecepient</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_on_Users.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_on_Users</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Row_Vars</name>
+        <label>Set Row Vars</label>
+        <locationX>138</locationX>
+        <locationY>576</locationY>
+        <assignmentItems>
+            <assignToReference>RowNumber</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>IsEvenRow</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>NotIsEvenRow</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Orders_Row</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_Records_Found</name>
+        <label>Check Records Found</label>
+        <locationX>182</locationX>
+        <locationY>360</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Order_Without_Advance</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>All_Orders</targetReference>
+            </connector>
+            <label>Found</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>CreatedDate</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!All_Orders.CreatedDate})</expression>
+    </formulas>
+    <formulas>
+        <name>IsEvenRowStyle</name>
+        <dataType>String</dataType>
+        <expression>IF({!IsEvenRow}, &quot;background-color: #f2f2f2;&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>NotIsEvenRow</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT({!IsEvenRow})</expression>
+    </formulas>
+    <interviewLabel>Email Without Advance {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Email Without Advance</label>
+    <loops>
+        <name>All_Orders</name>
+        <label>All Orders</label>
+        <locationX>50</locationX>
+        <locationY>468</locationY>
+        <collectionReference>Get_Order_Without_Advance</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Set_Row_Vars</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Profiles</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_on_Profiles</name>
+        <label>Loop on Profiles</label>
+        <locationX>50</locationX>
+        <locationY>984</locationY>
+        <collectionReference>Get_Profiles</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_ProfileId</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Users</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_on_Users</name>
+        <label>Loop on Users</label>
+        <locationX>50</locationX>
+        <locationY>1392</locationY>
+        <collectionReference>Get_Users</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>AssignEmailRecipient</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Send_Email_Action</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Order_Without_Advance</name>
+        <label>Get Order Without Advance</label>
+        <locationX>182</locationX>
+        <locationY>252</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Records_Found</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Advance_Amount_p__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Advance_Amount_p__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Order</object>
+        <sortField>OrderNumber</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Profiles</name>
+        <label>Get Profiles</label>
+        <locationX>50</locationX>
+        <locationY>876</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_on_Profiles</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>RSM - Regional Sales Manager</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>NSM - National Sales Manager</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CEO</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Profile</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Users</name>
+        <label>Get Users</label>
+        <locationX>50</locationX>
+        <locationY>1284</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_on_Users</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ProfileId</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>ProfileIds</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Order_Without_Advance</targetReference>
+        </connector>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2024-12-30</startDate>
+            <startTime>16:30:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>AllCellsStyle</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>text-align:left;padding:8px;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Greetings, 
+Below are the orders for which Advance not Received
+
+{!OrderTable}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>OrderTable</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;table style=&quot;border-collapse: collapse; width: 100%;&quot;&gt;
+    {!OrderTableHeader}
+    {!OrderTableRows}
+&lt;/table&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>OrderTableHeader</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;tr style=&quot;background-color: #4CAF50; color: white;&quot;&gt;
+    &lt;th&gt;Sr. No&lt;/th&gt;
+    &lt;th&gt;Order ID&lt;/th&gt;
+    &lt;th&gt;Order Number&lt;/th&gt;
+    &lt;th&gt;Account Name&lt;/th&gt;
+    &lt;th&gt;Total Amount&lt;/th&gt;
+    &lt;th&gt;Order Creation Date&lt;/th&gt;
+&lt;/tr&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>OrderTableRow</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;tr style=&quot;{!IsEvenRowStyle}&quot;&gt;
+    &lt;td style=&quot;{!AllCellsStyle}&quot;&gt;{!RowNumber}&lt;/td&gt;
+    &lt;td style=&quot;{!AllCellsStyle}&quot;&gt;{!All_Orders.Id}&lt;/td&gt;
+    &lt;td style=&quot;{!AllCellsStyle}&quot;&gt;{!All_Orders.OrderNumber}&lt;/td&gt;
+    &lt;td style=&quot;{!AllCellsStyle}&quot;&gt;{!All_Orders.Account.Name}&lt;/td&gt;
+    &lt;td style=&quot;{!AllCellsStyle}&quot;&gt;{!All_Orders.TotalAmount}&lt;/td&gt;
+    &lt;td style=&quot;{!AllCellsStyle}&quot;&gt;{!CreatedDate}&lt;/td&gt;
+&lt;/tr&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>EmailRecepient</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IsEvenRow</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>OrderTableRows</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ProfileIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>RowNumber</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+</Flow>

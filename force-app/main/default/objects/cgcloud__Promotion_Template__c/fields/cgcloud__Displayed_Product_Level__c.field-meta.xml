@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Displayed_Product_Level__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Product levels displayed within the P&amp;L Views (VPC/SPC).</description>
+    <inlineHelpText>Product levels displayed within the P&amp;L Views (VPC/SPC).</inlineHelpText>
+    <label>Displayed Product Aggregation Levels</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Category</fullName>
+                <default>false</default>
+                <label>Category</label>
+            </value>
+            <value>
+                <fullName>SubCategory</fullName>
+                <default>false</default>
+                <label>SubCategory</label>
+            </value>
+            <value>
+                <fullName>Brand</fullName>
+                <default>false</default>
+                <label>Brand</label>
+            </value>
+            <value>
+                <fullName>Flavor</fullName>
+                <default>false</default>
+                <label>Flavor</label>
+            </value>
+            <value>
+                <fullName>Package</fullName>
+                <default>false</default>
+                <label>Package</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

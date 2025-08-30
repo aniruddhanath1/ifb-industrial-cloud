@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__UI_Type_To_SmartUI_If_Automatic_Simple</fullName>
+    <active>true</active>
+    <description>UI Type must be &apos;Smart UI&apos; if Timeframe Determination Policy is not &apos;Manual&apos;.</description>
+    <errorConditionFormula>AND (
+ISPICKVAL(cgcloud__Timeframe_Determination_Policy__c, &apos;Simple&apos;),
+NOT(ISPICKVAL(cgcloud__UI_Type__c , &apos;SmartUI&apos;))
+)</errorConditionFormula>
+    <errorDisplayField>cgcloud__UI_Type__c</errorDisplayField>
+    <errorMessage>UI Type must be &apos;Smart UI&apos; if Timeframe Determination Policy is not &apos;Manual&apos;.</errorMessage>
+</ValidationRule>

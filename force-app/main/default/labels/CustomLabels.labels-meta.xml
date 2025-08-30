@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AttendanceSync</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttendanceSync</shortDescription>
+        <value>Attendance Sync</value>
+    </labels>
+    <labels>
+        <fullName>Azure_AccountKey</fullName>
+        <categories>Azure</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Azure_AccountKey</shortDescription>
+        <value>97lmr3YLiuBiU4dHwnkwMAJ8Bcot5vmW1q/1EgIgAHvEdb292d1gSxMKxie8gmp474jn2hy6o1q7+AStIgwKwg==</value>
+    </labels>
+    <labels>
+        <fullName>Azure_AccountName</fullName>
+        <categories>Azure</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Azure_AccountName</shortDescription>
+        <value>ifbstoragesalesforce</value>
+    </labels>
+    <labels>
+        <fullName>Azure_ContainerName</fullName>
+        <categories>Azure</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Azure_ContainerName</shortDescription>
+        <value>testsalesforce</value>
+    </labels>
+    <labels>
+        <fullName>Azure_SASToken</fullName>
+        <categories>Azure</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Azure_SASToken</shortDescription>
+        <value>sv=2022-11-02&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupiytfx&amp;se=2025-09-21T17:43:37Z&amp;st=2024-09-18T09:43:37Z&amp;spr=https&amp;sig=hu%2BpiPuYJJy5GENZsoV%2B%2FebJRWUUiFDFvQF9kdwWraQ%3D</value>
+    </labels>
+    <labels>
+        <fullName>Azure_endpointSuffix</fullName>
+        <categories>Azure</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Azure_EndpointSuffix</shortDescription>
+        <value>core.windows.net</value>
+    </labels>
+    <labels>
+        <fullName>Error_Message_Log_Expense</fullName>
+        <categories>Log Expense Flow</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Message Log Expense</shortDescription>
+        <value>There was an error while processing your request. Please contact your administrator.</value>
+    </labels>
+    <labels>
+        <fullName>Existing_Expense_Error_Message</fullName>
+        <categories>Log Expense Flow</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Existing Expense Error Message</shortDescription>
+        <value>There is already one expense logged for this visit. Please Check expense to make further updates.</value>
+    </labels>
+    <labels>
+        <fullName>Lead_Sources_For_Lead_Sync</fullName>
+        <categories>Lead Integration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lead Sources For Lead Sync</shortDescription>
+        <value>Just Dial;Meta;LinkedIn;Bing;GoogleAds;IndiaMart;Website</value>
+    </labels>
+    <labels>
+        <fullName>Profiles_To_Send_Update_From</fullName>
+        <categories>Lead Integration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Profiles To Send Update From</shortDescription>
+        <value>System Administrator;ASM User;RSM User</value>
+    </labels>
+    <labels>
+        <fullName>Success_Message_Log_Expense</fullName>
+        <categories>Log Expense Flow</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Success Message Log Expense</shortDescription>
+        <value>Your expense has been logged successfully. To view it or submit for approval, please click the OK button.</value>
+    </labels>
+</CustomLabels>

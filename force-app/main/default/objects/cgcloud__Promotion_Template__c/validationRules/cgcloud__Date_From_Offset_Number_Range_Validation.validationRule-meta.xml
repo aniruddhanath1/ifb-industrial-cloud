@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Date_From_Offset_Number_Range_Validation</fullName>
+    <active>true</active>
+    <description>The range of Shipment Date From Offset must be between -90 to 90.</description>
+    <errorConditionFormula>OR(
+cgcloud__TFD_Delivery_Date_From_Offset__c &gt; 90,
+cgcloud__TFD_Delivery_Date_From_Offset__c &lt; -90
+)</errorConditionFormula>
+    <errorDisplayField>cgcloud__TFD_Delivery_Date_From_Offset__c</errorDisplayField>
+    <errorMessage>The value must be between -90 and +90.</errorMessage>
+</ValidationRule>

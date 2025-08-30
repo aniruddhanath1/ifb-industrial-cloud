@@ -1,0 +1,82 @@
+<template>
+    <lightning-card if:false={spinner} title="Punch In/Out" icon-name="action:new_event" class="card-container">
+        <div class="content-container">
+            <template if:true={accessDenied}>
+                <p class="message">Access denied. Please go to the Attendance screen and record your attendance.</p>
+            </template>
+
+            <template if:false={accessDenied}>
+                <template if:true={showClose}>
+                    <p class="message">You have already punched out today. Please close the page.</p>
+                </template>
+
+                <div if:false={showClose}>
+                    <template if:true={isPunchedInToday}>
+                        <div class="timeCont">
+                            <p class="punchTime">Punch In Date : {date}</p>
+                            <p class="punchTime">Punch In Time : {time}</p>
+                        </div>
+                        <p class="message">You have already punched in today. You can punch out now.</p>
+                        <lightning-button variant="brand" label="Punch Out" onclick={handlePunchOutValidate} class="action-button"></lightning-button>
+                    </template>
+
+                    <template if:false={isPunchedInToday}>
+                        <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                            <p class="message">Click the button to Punch In. Your current location and time will be recorded.</p>
+                            <lightning-combobox
+                                name="punchCategory"
+                                label="Select Punch Category"
+                                value={selectedCategory}
+                                options={punchCategories}
+                                onchange={handleCategoryChange}
+                                class="category-selector"
+                            ></lightning-combobox>
+
+                            <lightning-button variant="brand" label="Punch In" onclick={handlePunchIn} class="action-button" style="margin-top: 10px;"></lightning-button>
+                            <!--<lightning-button variant="brand" label="Print Page URL" onclick={printuplr} class="action-button" style="margin-top: 10px;"></lightning-button>-->
+                        
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+        <lightning-messages></lightning-messages>
+    </lightning-card>
+    <lightning-card if:true={spinner} class="spinner-card">
+        <div class="slds-spinner slds-spinner_brand">
+            <lightning-spinner variant="brand" alternative-text="Saving" size="large"></lightning-spinner>
+        </div>
+    </lightning-card>
+
+<template if:true={isShowModal}>
+<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+   <div class="slds-modal__container">
+    <!-- modal header start -->
+      <header class="slds-modal__header">
+         <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox}>
+            <lightning-icon icon-name="utility:close"
+               alternative-text="close"
+               variant="inverse"
+               size="small" ></lightning-icon>
+            <span class="slds-assistive-text">Close</span>
+         </button>
+         <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Warrning</h2>
+      </header>
+  
+      <!-- modal body start -->
+      <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <p style="color: red;">Do you really want to punch out before completing 8 hours?</p>
+      </div>
+
+      <!-- modal footer start-->
+      <footer class="slds-modal__footer">
+         <button class="slds-button slds-button_neutral" onclick={handlePunchOut}>Yes</button>
+         <button class="slds-button slds-button_neutral" onclick={hideModalBox}>Cancel</button>
+      </footer>
+   
+   </div>
+</section>
+<div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+
+</template>

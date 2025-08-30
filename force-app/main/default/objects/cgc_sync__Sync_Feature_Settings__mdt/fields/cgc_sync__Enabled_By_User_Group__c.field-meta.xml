@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Enabled_By_User_Group__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Controls the availability of a feature to  the users specified in the Feature Setting tab.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Controls the availability of a feature to the users specified in the Feature Setting tab. Default is false.</inlineHelpText>
+    <label>Enabled By User Group</label>
+    <type>Checkbox</type>
+</CustomField>

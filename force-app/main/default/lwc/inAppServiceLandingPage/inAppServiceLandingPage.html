@@ -1,0 +1,135 @@
+<template>
+    <lightning-card footer="" title="">
+        <h3 class="slds-text-heading_medium"><strong>{welcome_text}</strong></h3>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <p class="c-description"> <strong>&nbsp;&nbsp;&nbsp;{description}</strong></p>
+                </div>
+                <br />
+                <ul>
+                    <li>&nbsp;&nbsp;&nbsp;{app_to_accelerate_desc}</li>
+                    <li>&nbsp;&nbsp;&nbsp;{app_to_accelerate_post_desc}</li>
+                </ul>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <p class="c-description"> <strong>&nbsp;&nbsp;&nbsp;{getting_started_title}</strong><br /></p>
+                    <ul>
+                        <li>&nbsp;&nbsp;&nbsp;<strong>{home_page_title}</strong></li><br />
+                        <li>&nbsp;&nbsp;&nbsp;{home_page_text}</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>.</strong>{home_page_performance_text}</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>.</strong>{home_page_case_text}</li>
+                    </ul>
+                    <br />
+                    <div>
+                        <img src={home_page_service_img} alt="HomePageForService">
+                    </div>
+                </div>
+                <br />
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <ul>
+                        <li>&nbsp;&nbsp;&nbsp;<strong>{service_console_title}</strong></li><br />
+                        <li>&nbsp;&nbsp;&nbsp;{service_console_text}</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>.</strong>{customer_text}</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>.</strong>{timeline_text}</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>.</strong>{pricing_engine_text}</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>.</strong>{alert_text}</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>.</strong>{quick_text}</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>.</strong>{activity_text}</li>
+                    </ul>
+                    <br />
+                    <div>
+                        <img src={service_console_img} alt="ServiceConsole">
+                    </div>
+                </div>
+                <br />
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <ul>
+                        <li>&nbsp;&nbsp;&nbsp;<strong>{case_received_title}</strong></li><br />
+                        <li>&nbsp;&nbsp;&nbsp;{case_received_text}</li>
+                        <li>&nbsp;&nbsp;&nbsp;{case_received_end_text}</li>
+                    </ul>
+                    <br />
+                    <div>
+                        <img src={case_received_img} alt="CaseReceived">
+                    </div>
+                </div>
+                <br />
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <ul>
+                        <li>&nbsp;&nbsp;&nbsp;<strong>{case_details_title}</strong></li><br />
+                        <li>&nbsp;&nbsp;&nbsp;{case_details_text}</li>
+                    </ul>
+                    <br />
+                    <div>
+                        <img src={case_details_img} alt="CaseDetail">
+                    </div>
+                </div>
+                <br />
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <ul>
+                        <li>&nbsp;&nbsp;&nbsp;<strong>{telesales_title}</strong></li><br />
+                        <li>&nbsp;&nbsp;&nbsp;{telesales_text}</li>
+                        <li>&nbsp;&nbsp;&nbsp;{telesales_end_text}</li>
+                    </ul>
+                    <br />
+                    <div>
+                        <img src={telesales_img} alt="TeleSales">
+                    </div>
+                </div>
+                <br />
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <ul>
+                        <li>&nbsp;&nbsp;&nbsp;<strong>{supervisor_title}</strong></li><br />
+                        <li>&nbsp;&nbsp;&nbsp;{supervisor_text}</li>
+                        <li>&nbsp;&nbsp;&nbsp;{supervisor_end_text}</li>
+                    </ul>
+                    <br />
+                    <div>
+                        <img src={supervisor_img} alt="SuperVisor">
+                    </div>
+                </div>
+                <br />
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <ul>
+                        <li>&nbsp;&nbsp;&nbsp;<strong>{omnichannel_title}</strong></li><br />
+                        <li>&nbsp;&nbsp;&nbsp;{omnichannel_text}</li>
+                        <li>&nbsp;&nbsp;&nbsp;{omnichannel_end_text}</li>
+                    </ul>
+                    <br />
+                    <div>
+                        <img src={omnichannel_img} alt="Omnichannel">
+                    </div>
+                </div>
+                <br />
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

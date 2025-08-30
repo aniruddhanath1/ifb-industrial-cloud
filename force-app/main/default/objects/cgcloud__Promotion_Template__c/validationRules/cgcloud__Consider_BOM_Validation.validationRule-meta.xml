@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Consider_BOM_Validation</fullName>
+    <active>true</active>
+    <description>BOM Handling cannot be set to &apos;Consider BOMs&apos; if the Product Definition Level is &apos;Tactic&apos;.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( cgcloud__Product_Definition_Level__c , &apos;Tactic&apos;),
+ISPICKVAL( cgcloud__BOM_Handler__c , &apos;ConsiderBOMs&apos;)
+)</errorConditionFormula>
+    <errorMessage>BOM Handling cannot be set to &apos;Consider BOMs&apos; if the Product Definition Level is &apos;Tactic&apos;.</errorMessage>
+</ValidationRule>

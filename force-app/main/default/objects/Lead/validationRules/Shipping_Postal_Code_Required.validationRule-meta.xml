@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_Postal_Code_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    (ISBLANK(PostalCode) || NOT(REGEX(PostalCode, &quot;^[0-9]{6}$&quot;))),
+    NOT(ValidationBypass__c),
+    NOT(ISPICKVAL( Lead_Source_Direct_Lead__c , &quot;Export&quot;)),
+      NOT($Profile.Name = &quot;CEO&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>PostalCode</errorDisplayField>
+    <errorMessage>Shipping Postal Code is Invalid Format</errorMessage>
+</ValidationRule>

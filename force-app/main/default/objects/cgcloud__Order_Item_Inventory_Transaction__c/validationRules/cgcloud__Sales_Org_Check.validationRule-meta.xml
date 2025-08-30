@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Sales_Org_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+      IF((
+      ISBLANK(TEXT(cgcloud__Order_Item_Template__r.cgcloud__Sales_Org__c)) &amp;&amp; (
+      TEXT(cgcloud__Inventory_Control_Template__r.cgcloud__Sales_Org__c) &lt;&gt; TEXT(cgcloud__Inventory_Transaction_Template__r.cgcloud__Sales_Org__c)) &amp;&amp;
+      NOT(ISBLANK(TEXT(cgcloud__Inventory_Transaction_Template__r.cgcloud__Sales_Org__c))) &amp;&amp;         NOT(ISBLANK(TEXT(cgcloud__Inventory_Control_Template__r.cgcloud__Sales_Org__c)))
+
+      ), true, false),
+
+      IF((
+      NOT(ISBLANK(TEXT(cgcloud__Order_Item_Template__r.cgcloud__Sales_Org__c))) &amp;&amp;
+      (OR(
+
+      (NOT(ISBLANK(TEXT(cgcloud__Inventory_Transaction_Template__r.cgcloud__Sales_Org__c))) &amp;&amp;
+      TEXT(cgcloud__Inventory_Transaction_Template__r.cgcloud__Sales_Org__c) &lt;&gt; TEXT(cgcloud__Order_Item_Template__r.cgcloud__Sales_Org__c)),
+
+      (NOT(ISBLANK(TEXT(cgcloud__Inventory_Control_Template__r.cgcloud__Sales_Org__c))) &amp;&amp;
+      TEXT(cgcloud__Inventory_Control_Template__r.cgcloud__Sales_Org__c) &lt;&gt; TEXT(cgcloud__Order_Item_Template__r.cgcloud__Sales_Org__c))
+      ))), true, false))</errorConditionFormula>
+    <errorMessage>The Order Item Inventory Transaction and the Order Item must have the same Sales Org.</errorMessage>
+</ValidationRule>

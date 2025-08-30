@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Validation_Transfer_Sales_Org</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISBLANK(TEXT(cgcloud__Transfer_Sales_Org__c))) &amp;&amp; NOT(ISBLANK( TEXT(cgcloud__Target_Promotion_Template__r.cgcloud__Sales_Org__c))) &amp;&amp;
+TEXT(cgcloud__Transfer_Sales_Org__c) &lt;&gt;   TEXT(cgcloud__Target_Promotion_Template__r.cgcloud__Sales_Org__c )</errorConditionFormula>
+    <errorMessage>Ensure that the target sales org matches the sales org of the target promotion template tactic template</errorMessage>
+</ValidationRule>

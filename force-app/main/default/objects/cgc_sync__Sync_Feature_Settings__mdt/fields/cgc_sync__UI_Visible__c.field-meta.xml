@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__UI_Visible__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Sets the visibility of the Feature Settings page on the Sync Configurator UI.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Sets the visibility of the Feature Settings tab on the Sync Configurator UI. Default is false. Set to true to show the Feature Settings page.</inlineHelpText>
+    <label>UI Visible</label>
+    <type>Checkbox</type>
+</CustomField>

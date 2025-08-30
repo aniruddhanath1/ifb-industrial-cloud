@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Trade_Calendar_Transparency_5__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Property Based Coloring of Promotion Bars within the Trade Calendar</description>
+    <inlineHelpText>Transparency Value for Color Schema 5 of Usage &apos;TradeCalendar&apos;. Reserved for project specific Coloring</inlineHelpText>
+    <label>Trade Calendar Transparency 5</label>
+    <precision>7</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

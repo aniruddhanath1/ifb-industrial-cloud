@@ -1,0 +1,33 @@
+<template>
+    <lightning-card footer="" title="">
+        <h1 slot="" class="slds-text-heading_medium">{appWelcomeText}</h1>
+        <div class="c-container">
+            <lightning-layout>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <p class="c-description">{appDescription}</p>  
+                        <c-in-app-landing-page-child heading="Consumer Goods Cloud Retail Execution"
+                                                    cloud-detail="Unlock productivity and empower your field teams with Retail Execution." 
+                                                    app="standard__Retail"
+                                                    page="Enable_Offline_Mobile_App"
+                                                    link-in-new-tab={pass_true}
+                                                    link-reference="standard__navItemPage">
+                        </c-in-app-landing-page-child>                 
+                        <c-in-app-landing-page-child heading="Consumer Goods Cloud Sales"
+                                                    cloud-detail="Manage customer centric operations including leads, opportunities, and contracts on one unified platform." 
+                                                    app="standard__LightningSales"
+                                                    page="Discover_CG_for_Sales"
+                                                    link-in-new-tab={pass_true}
+                                                    link-reference="standard__navItemPage">    
+                        </c-in-app-landing-page-child>
+                        <c-in-app-landing-page-child heading="Consumer Goods Cloud for Service"
+                                                    cloud-detail="Gain visibility to order history and place orders with telesales capabilities." 
+                                                    app="c__Consumer_Goods_CloudService_App"
+                                                    page="Discover_CG_for_Service"
+                                                    link-in-new-tab={pass_true}
+                                                    link-reference="standard__navItemPage">
+                        </c-in-app-landing-page-child>   
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

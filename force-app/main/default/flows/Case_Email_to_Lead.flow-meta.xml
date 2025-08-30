@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Email_to_Service_Team</name>
+        <label>Email to Service Team</label>
+        <locationX>407</locationX>
+        <locationY>708</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>utkarsh.shukla@warpdrivetech.in</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>New Case Created: {!$Record.Subject}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>ServiceTeamNotification</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Case_created_from_Email_to_Case</name>
+        <label>Case created from Email to Case</label>
+        <locationX>275</locationX>
+        <locationY>600</locationY>
+        <defaultConnector>
+            <targetReference>Email_to_Service_Team</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Email_to_Case</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CaseId_for_EmailMesaage.ParentId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CaseId_for_EmailMesaage.ToAddress</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>industrialenquiries@1ldzifgrlbnafbkn9xfjn1bw21v00sql3iokzwf51tiw5pdifu.is-hola2a4.ap48.case.salesforce.com</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Getting_Queue_record</targetReference>
+            </connector>
+            <label>Email to Case</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>IsActive</name>
+        <label>IsActive</label>
+        <locationX>473</locationX>
+        <locationY>384</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IsmetaDataTrue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Custom_MetaData.Active__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CaseId_for_EmailMesaage</targetReference>
+            </connector>
+            <label>IsmetaDataTrue</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>descriptions</name>
+        <dataType>String</dataType>
+        <expression>&quot;Subject :- &quot; &amp;{!$Record.Subject} &amp;
+ &quot;  Description :- &quot; &amp; {!$Record.Description}</expression>
+    </formulas>
+    <formulas>
+        <name>EmailName</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!$Record.SuppliedEmail}, FIND(&quot;@&quot;, {!$Record.SuppliedEmail}) - 1)</expression>
+    </formulas>
+    <interviewLabel>Case : Email to Lead {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case After for Notification</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Creating_lead_record</name>
+        <label>Creating Lead record</label>
+        <locationX>143</locationX>
+        <locationY>816</locationY>
+        <connector>
+            <targetReference>Deleting_case_record</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Company</field>
+            <value>
+                <elementReference>CaseId_for_EmailMesaage.FromName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>descriptions</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Email</field>
+            <value>
+                <elementReference>$Record.SuppliedEmail</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LastName</field>
+            <value>
+                <elementReference>CaseId_for_EmailMesaage.FromName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LeadSource</field>
+            <value>
+                <stringValue>Email</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Getting_Queue_record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Unvalidated</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>validationBypassDate__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordDeletes>
+        <name>Deleting_case_record</name>
+        <label>Deleting case record</label>
+        <locationX>143</locationX>
+        <locationY>924</locationY>
+        <inputReference>$Record</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <name>CaseId_for_EmailMesaage</name>
+        <label>CaseId for EmailMesaage</label>
+        <locationX>275</locationX>
+        <locationY>492</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Case_created_from_Email_to_Case</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ParentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>EmailMessage</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Custom_MetaData</name>
+        <label>Custom MetaData</label>
+        <locationX>473</locationX>
+        <locationY>276</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>IsActive</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>flow_active</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>org_specific_setting__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Getting_Queue_record</name>
+        <label>Getting Queue record</label>
+        <locationX>143</locationX>
+        <locationY>708</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Creating_lead_record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Call_Centre_User</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <object>Case</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <scheduledPaths>
+            <name>Case_Creation</name>
+            <connector>
+                <targetReference>Custom_MetaData</targetReference>
+            </connector>
+            <label>Case Creation</label>
+            <offsetNumber>0</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <recordField>CreatedDate</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <description>Case notification to Service Team</description>
+        <name>ServiceTeamNotification</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hello,
+A new case has been created. The details are provided below:
+1. Case ID:  {!$Record.Id}
+2. Case Name: {!$Record.SuppliedName}
+3. Account Name: {!$Record.Account.Name}
+4. Case Origin : {!$Record.Origin}
+5. Case Reason : {!$Record.Reason}
+6. Subject: {!$Record.Subject}
+7. Description : {!$Record.Description}
+Please reach out to the customer as soon as possible.
+
+Regards &amp; Thanks</text>
+    </textTemplates>
+</Flow>

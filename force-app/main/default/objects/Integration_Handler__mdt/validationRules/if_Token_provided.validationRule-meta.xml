@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>if_Token_provided</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(is_Static_Token__c  ,    OR(ISBLANK(Static_Token_Value__c),ISNULL(Static_Token_Value__c ))  )</errorConditionFormula>
+    <errorDisplayField>Static_Token_Value__c</errorDisplayField>
+    <errorMessage>Please add a Static token value to the</errorMessage>
+</ValidationRule>

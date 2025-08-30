@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>IFB Common Permissions</label>
+    <mutingPermissionSets>IFB_Common_Permissions_Muted</mutingPermissionSets>
+    <permissionSets>SBQQ__SalesforceCPQUserAccess</permissionSets>
+    <permissionSets>SBQQ__SteelBrickCPQUser</permissionSets>
+    <permissionSets>force__ActionPlans</permissionSets>
+    <permissionSets>force__IndustriesVisit</permissionSets>
+    <permissionSets>force__LightningRetailExecutionStarterPsl</permissionSets>
+    <permissionSets>maps__Advanced</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

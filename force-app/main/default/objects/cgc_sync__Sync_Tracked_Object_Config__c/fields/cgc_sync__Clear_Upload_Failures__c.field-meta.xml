@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Clear_Upload_Failures__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Can upload failures to be cleared for this tracked object.</description>
+    <inlineHelpText>When Clear Upload Failures is triggered and this checkbox is selected, records that failed to upload are removed from the upload queue. These failed records can be synced again after they’re updated.
+
+When Clear Upload Failures is triggered and this checkbox isn’t selected, tracked object records that failed are removed from the upload queue. New records that failed are deleted from the device. The latest versions of the existing records that failed are downloaded from the database during the next sync.</inlineHelpText>
+    <label>Manage Upload Issues</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

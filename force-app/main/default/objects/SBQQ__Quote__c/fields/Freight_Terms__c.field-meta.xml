@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Freight_Terms__c</fullName>
+    <label>Freight Terms</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Borne by IFB</fullName>
+                <default>true</default>
+                <label>Borne by IFB</label>
+            </value>
+            <value>
+                <fullName>Borne by Customer</fullName>
+                <default>false</default>
+                <label>Borne by Customer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
