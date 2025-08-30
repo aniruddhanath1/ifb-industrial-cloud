@@ -53,7 +53,7 @@ jobs:
 
       - name: Verify Authentication
         run: |
-          sf org list
+          sf org display --target-org preprod --verbose
 
       - name: Install project dependencies
         run: |
