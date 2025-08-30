@@ -24,10 +24,12 @@ jobs:
           npm install --global sfdx-cli
 
       - name: Debug Username
-        run: echo "Username: $SF_PREPROD_USERNAME"
+        run: |
+        echo "Username: $SF_PREPROD_USERNAME"
 
       - name: Debug Server Key
-        run: echo "Server Key: $SF_PREPROD_SERVER_KEY"
+        run: |
+          echo "Server Key: $SF_PREPROD_SERVER_KEY"
 
       - name: Authenticate to Salesforce (JWT)
         run: |
