@@ -1,0 +1,114 @@
+<template>
+<lightning-card class="custom-card">
+    <div class="slds-text-align_center headerdiv">Check Stock Availability</div>
+    <div class="c-container">
+        <lightning-layout horizontal-align="spread" vertical-align="start" multiple-rows>
+            
+            <lightning-layout-item flexibility="auto" padding="around-small" size="12" medium-device-size="6" small-device-size="12">
+                <!--<div class="custom-box">
+                    <c-searchable-combobox
+                        required="true"
+                        label="Plant"
+                        options={plantOptions}
+                        value={plantValue}
+                        onchange={handlePlantChange}
+                    ></c-searchable-combobox>
+                </div>
+                -->
+                <div class="custom-box">
+                <lightning-combobox
+        name="Plant"
+        label="Plant"
+        value={plantValue}
+        placeholder="Select Plant"
+        options={plantOptions}
+        onchange={handlePlantChange}
+        required
+></lightning-combobox>
+                </div>
+            </lightning-layout-item>
+            
+            <lightning-layout-item flexibility="auto" padding="around-small" size="12" medium-device-size="6" small-device-size="12">
+                <!-- <div class="custom-box">
+                    <c-searchable-combobox
+                        required="true"
+                        label="Material Code"
+                        options={materialOptions}
+                        value={materialValue}
+                        onchange={handleMaterialChange}
+                    ></c-searchable-combobox>
+                </div>
+                -->
+                <div class="custom-box">
+                <lightning-combobox
+        name="progress"
+        label="Material Code"
+        value={materialValue}
+        placeholder="Select Material"
+        options={materialOptions}
+        onchange={handleMaterialChange}
+        required
+></lightning-combobox>
+                </div>
+            </lightning-layout-item>
+            
+            <lightning-layout-item if:false={FieldNoshow} flexibility="auto" padding="around-small" size="12" medium-device-size="6" small-device-size="12">
+                <div class="custom-box">
+                    <lightning-combobox
+                        required="true"
+                        name="materialGroup"
+                        label="Material Group"
+                        class="custom-combobox"
+                        value={materialGroup}
+                        placeholder="Select a Material Group"
+                        options={materialGroupOptions}
+                        onchange={handlematerialGroupChange}>
+                    </lightning-combobox>
+                </div>
+            </lightning-layout-item>
+
+            <lightning-layout-item if:false={FieldNoshow} flexibility="auto" padding="around-small" size="12" medium-device-size="6" small-device-size="12">
+                <div class="custom-box">
+                    <lightning-combobox
+                        required="true"
+                        name="materialSubGroup"
+                        label="Material Sub Group"
+                        class="custom-combobox"
+                        value={materialSubGroup}
+                        placeholder="Select a Material Sub Group"
+                        options={materialSubGroupOptions}
+                        onchange={handlematerialSubGroupChange}>
+                    </lightning-combobox>
+                </div>
+            </lightning-layout-item>
+            
+        </lightning-layout>
+    </div>
+
+    <div class="slds-m-top_medium slds-text-align_center">
+        <lightning-button class="custombutton" variant="brand" label="Search" onclick={handleSearch}></lightning-button>
+    </div>
+
+    <!-- Data table section -->
+    <template if:true={dataSize}>
+    <div class="slds-m-top_medium datatable-container" style="max-height: 450px; overflow-x: auto;">
+        <lightning-datatable
+            key-field="id"
+            data={displayData}
+            columns={columns}
+            hide-checkbox-column="true"
+            class="custom-datatable">
+        </lightning-datatable>
+    </div>
+</template>
+
+
+    <!-- Spinner for loading -->
+    <template if:true={showSpinner} class="slds-text-align_center">
+        <div class="spinner-container slds-text-align_center">
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </div>
+    </template>
+    
+</lightning-card>
+</template>

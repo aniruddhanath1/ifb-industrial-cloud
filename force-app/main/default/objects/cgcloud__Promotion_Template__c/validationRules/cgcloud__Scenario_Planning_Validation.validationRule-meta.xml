@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Scenario_Planning_Validation</fullName>
+    <active>true</active>
+    <description>Scenario Planning must be disabled if and only if the Promotion Template is &apos;Pushable&apos;.</description>
+    <errorConditionFormula>AND(
+        cgcloud__Is_Pushable__c,
+        cgcloud__Enable_Scenario_Planning__c
+        )</errorConditionFormula>
+    <errorMessage>Scenario Planning must be disabled if and only if the Promotion Template is &apos;Pushable&apos;.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Auto_Close_On_Filter_Apply__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Specifies if the manage product modal window is closed automatically after applying the filters.</description>
+    <inlineHelpText>Determines if the manage product modal window is closed automatically after applying the filters.</inlineHelpText>
+    <label>Auto Close On Filter Apply</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

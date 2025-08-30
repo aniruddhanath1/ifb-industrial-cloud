@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PreventRestrictedStatusesForCallCentre</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(
+$Profile.Name = &apos;Call center users&apos;,
+Owner:Queue.DeveloperName = &apos;Call_Centre_User&apos;
+),
+OR(ISPICKVAL(Status, &apos;Contacted&apos;),
+ISPICKVAL(Status, &apos;Nurturing&apos;),
+ISPICKVAL(Status, &apos;Discarded&apos;),
+ISPICKVAL(Status, &apos;Converted&apos;)
+)
+)</errorConditionFormula>
+    <errorMessage>You cannot set the Lead status to this value when the Lead is owned by the &apos;Call Centre&apos; .</errorMessage>
+</ValidationRule>

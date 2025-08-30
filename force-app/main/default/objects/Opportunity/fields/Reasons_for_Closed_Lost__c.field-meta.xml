@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reasons_for_Closed_Lost__c</fullName>
+    <label>Reasons for Closed Lost</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Competition (Name to be specified)</fullName>
+                <default>false</default>
+                <label>Competition (Name to be specified)</label>
+            </value>
+            <value>
+                <fullName>Product Availability</fullName>
+                <default>false</default>
+                <label>Product Availability</label>
+            </value>
+            <value>
+                <fullName>Not possible to install</fullName>
+                <default>false</default>
+                <label>Not possible to install</label>
+            </value>
+            <value>
+                <fullName>Past Experience</fullName>
+                <default>false</default>
+                <label>Past Experience</label>
+            </value>
+            <value>
+                <fullName>Decision Makers choice</fullName>
+                <default>false</default>
+                <label>Decision Makers choice</label>
+            </value>
+            <value>
+                <fullName>Preference for imported product</fullName>
+                <default>false</default>
+                <label>Preference for imported product</label>
+            </value>
+            <value>
+                <fullName>Budget restriction</fullName>
+                <default>false</default>
+                <label>Budget restriction</label>
+            </value>
+            <value>
+                <fullName>Warranty Terms</fullName>
+                <default>false</default>
+                <label>Warranty Terms</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>AMC Terms not agreed</fullName>
+                <default>false</default>
+                <label>AMC Terms not agreed</label>
+            </value>
+            <value>
+                <fullName>Invalid Product Requirement</fullName>
+                <default>false</default>
+                <label>Invalid Product Requirement</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

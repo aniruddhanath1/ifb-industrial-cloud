@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Count_Hurdles__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Count of promotion hurdles with &apos;Reward Group-Specific&apos; Record Type.</description>
+    <inlineHelpText>Defines the number of &apos;Reward Group-Specific&apos; Hurdles.</inlineHelpText>
+    <label>Count Hurdles</label>
+    <summaryFilterItems>
+        <field>cgcloud__Promotion_Hurdle__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>Reward Group-Specific</value>
+    </summaryFilterItems>
+    <summaryForeignKey>cgcloud__Promotion_Hurdle__c.cgcloud__Promotion_Reward_Group__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

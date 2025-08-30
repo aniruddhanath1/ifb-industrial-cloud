@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Type__c</fullName>
+    <label>Sub Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Train</fullName>
+                <default>false</default>
+                <label>Train</label>
+            </value>
+            <value>
+                <fullName>Local Conveyance</fullName>
+                <default>false</default>
+                <label>Local Conveyance</label>
+            </value>
+            <value>
+                <fullName>Bus - Local</fullName>
+                <default>false</default>
+                <label>Bus - Local</label>
+            </value>
+            <value>
+                <fullName>Own Vehicle - 2 Wheeler</fullName>
+                <default>false</default>
+                <label>Own Vehicle - 2 Wheeler</label>
+            </value>
+            <value>
+                <fullName>Own Vehicle - 4 Wheeler</fullName>
+                <default>false</default>
+                <label>Own Vehicle - 4 Wheeler</label>
+            </value>
+            <value>
+                <fullName>Cab - Ola/Uber/Rapido</fullName>
+                <default>false</default>
+                <label>Cab - Ola/Uber/Rapido</label>
+            </value>
+            <value>
+                <fullName>Cab - Office Hire</fullName>
+                <default>false</default>
+                <label>Cab - Office Hire</label>
+            </value>
+            <value>
+                <fullName>2 Wheeler - Shared service</fullName>
+                <default>false</default>
+                <label>2 Wheeler - Shared service</label>
+            </value>
+            <value>
+                <fullName>Cab</fullName>
+                <default>false</default>
+                <label>Cab</label>
+            </value>
+            <value>
+                <fullName>Bus - Intercity</fullName>
+                <default>false</default>
+                <label>Bus - Intercity</label>
+            </value>
+            <value>
+                <fullName>Air Ticket</fullName>
+                <default>false</default>
+                <label>Air Ticket</label>
+            </value>
+            <value>
+                <fullName>Auto / Shared Auto</fullName>
+                <default>false</default>
+                <label>Auto / Shared Auto</label>
+            </value>
+            <value>
+                <fullName>Metro</fullName>
+                <default>false</default>
+                <label>Metro</label>
+            </value>
+            <value>
+                <fullName>Local Train</fullName>
+                <default>false</default>
+                <label>Local Train</label>
+            </value>
+            <value>
+                <fullName>Ferry</fullName>
+                <default>false</default>
+                <label>Ferry</label>
+            </value>
+            <value>
+                <fullName>Toll Charges</fullName>
+                <default>false</default>
+                <label>Toll Charges</label>
+            </value>
+            <value>
+                <fullName>Flight</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Flight</label>
+            </value>
+            <value>
+                <fullName>Own Vehicle</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Own Vehicle</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Travel Expense</controllingFieldValue>
+            <valueName>Train</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travel Expense</controllingFieldValue>
+            <valueName>Local Conveyance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travel Expense</controllingFieldValue>
+            <valueName>Bus - Local</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travel Expense</controllingFieldValue>
+            <valueName>Own Vehicle - 2 Wheeler</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travel Expense</controllingFieldValue>
+            <valueName>Own Vehicle - 4 Wheeler</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travel Expense</controllingFieldValue>
+            <valueName>Cab - Ola/Uber/Rapido</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travel Expense</controllingFieldValue>
+            <valueName>Cab - Office Hire</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travel Expense</controllingFieldValue>
+            <valueName>2 Wheeler - Shared service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travel Expense</controllingFieldValue>
+            <valueName>Cab</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travel Expense</controllingFieldValue>
+            <valueName>Bus - Intercity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travel Expense</controllingFieldValue>
+            <valueName>Air Ticket</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travel Expense</controllingFieldValue>
+            <valueName>Auto / Shared Auto</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travel Expense</controllingFieldValue>
+            <valueName>Metro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travel Expense</controllingFieldValue>
+            <valueName>Local Train</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travel Expense</controllingFieldValue>
+            <valueName>Ferry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travel Expense</controllingFieldValue>
+            <valueName>Toll Charges</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

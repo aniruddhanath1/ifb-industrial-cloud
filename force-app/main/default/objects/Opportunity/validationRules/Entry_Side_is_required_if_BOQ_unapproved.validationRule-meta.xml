@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Entry_Side_is_required_if_BOQ_unapproved</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Product_category__c, &quot;IDW&quot;),
+    NOT(BOQ_URS_Approved__c),
+    ISPICKVAL(Entry_side__c, &quot;&quot;),
+				!Bypass_Validation__c,
+				NOT(CONTAINS($Profile.Name, &apos;Admin&apos;))
+)</errorConditionFormula>
+    <errorDisplayField>Entry_side__c</errorDisplayField>
+    <errorMessage>Entry Side is required when Opportunity is not BOQ/URS and Product Category is IDW.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Sales_Document_Assortment__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Controls, whether the sales document template assortment is used for presetting the disposal list.
+
+    - 0/No: The system doesn&apos;t consider any sales document template assortment.
+
+    - 1/Yes: The system presets the disposal list subject to the sales document template assortment. All other template attributes for the disposal list control have to be considered also.</description>
+    <label>Sales Document Assortment</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Reason_for_Markup_Blank__c</fullName>
+    <formula>IF(
+	AND
+	(
+		$User.Bypass_Validation_Rules__c = FALSE,
+		ISPICKVAL(SBQQ__Opportunity2__r.Product_category__c, &apos;ILM&apos;),
+		OR
+		(
+			Total_Markup_Amount__c &gt; 0,
+			Total_Markup_Rate__c &gt; 0
+		),
+		ISBLANK(Reason_for_Markup__c)
+	), 
+	TRUE, 
+	FALSE
+)</formula>
+    <label>Is Reason for Markup Blank</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

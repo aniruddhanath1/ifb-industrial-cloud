@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Opportunity</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+!$User.Bypass_Validation_Rules__c,
+NOT(CONTAINS($Profile.Name, &apos;Admin&apos;)),
+PRIORVALUE( IsClosed ) = True,
+NOT( Account.PreInstallationUpdateAllow__c)
+)</errorConditionFormula>
+    <errorMessage>Once Opportunity is Closed you can not Edit the Page</errorMessage>
+</ValidationRule>

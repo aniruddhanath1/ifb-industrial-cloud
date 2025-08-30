@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Consider_Account_Product_List__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Flag that indicates if Account Product List is considered for Promotions</description>
+    <inlineHelpText>Determines if Account Product List is considered to determine valid products.</inlineHelpText>
+    <label>Consider Account Product List</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

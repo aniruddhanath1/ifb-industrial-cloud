@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_IDW_Opportunities__c</fullName>
+    <label>Total IDW Opportunities</label>
+    <summaryFilterItems>
+        <field>Opportunity.Product_category__c</field>
+        <operation>equals</operation>
+        <value>Industrial Dishwasher</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity.StageName</field>
+        <operation>equals</operation>
+        <value>Qualification, Site Visit, load Calculation, Proposal/Price Quote, Negotiation/Review</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

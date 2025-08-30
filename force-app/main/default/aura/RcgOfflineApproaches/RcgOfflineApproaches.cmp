@@ -1,0 +1,19 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="welcome_text" type="String" default="Differences between Original Approach (User Cockpit) and New Approach (Advanced User Cockpit)" />
+    <aura:attribute name="description" type="String" default="Differences between Original Approach (User Cockpit) and New Approach (Advanced User Cockpit)" />
+	<lightning:card footer="" title="">
+        <div class="c-container">
+            <lightning:layout>
+                <lightning:layoutItem flexibility="auto" padding="around-small">
+                    <p class="c-description">{!v.description}</p>
+					<div>
+                    	<div class="div-style slds-text-color_default"></div>
+                        <div class="div-content"></div>
+                    </div>
+                        <p><img src="{!$Resource.OfflineApproaches}" alt="Approaches"/></p>
+
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+    </lightning:card>
+</aura:component>

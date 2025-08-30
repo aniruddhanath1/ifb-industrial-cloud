@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Reward_Multiplicity__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Defines the number of rewards that can be selected in mobility if conditions are fulfilled.</description>
+    <inlineHelpText>Defines the number of rewards that can be selected in mobility if conditions are fulfilled.</inlineHelpText>
+    <label>Reward Multiplicity</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1</fullName>
+                <default>false</default>
+                <label>Up to One</label>
+            </value>
+            <value>
+                <fullName>n</fullName>
+                <default>true</default>
+                <label>Zero or More</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

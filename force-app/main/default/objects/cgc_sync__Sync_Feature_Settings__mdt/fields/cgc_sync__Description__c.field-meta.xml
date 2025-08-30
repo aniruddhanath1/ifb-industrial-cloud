@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Description__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Short Description to define how works the related feature setting</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Short Description to define how works the related feature setting. It will be visible in the Feature Settings UI page in case the setting is visible</inlineHelpText>
+    <label>Description</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>

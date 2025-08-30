@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Prevent_Promotion_Template_Change</fullName>
+    <active>true</active>
+    <description>The Promotion Template can&apos;t be edited after Promotion creation.</description>
+    <errorConditionFormula>ISCHANGED( cgcloud__Promotion_Template__c )</errorConditionFormula>
+    <errorMessage>The Promotion Template can&apos;t be edited after Promotion creation.</errorMessage>
+</ValidationRule>

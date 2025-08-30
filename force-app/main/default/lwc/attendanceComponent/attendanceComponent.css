@@ -1,0 +1,101 @@
+.card-container {
+    padding: 10px;
+}
+
+.content-container {
+    padding: 5%;
+    text-align: center;
+}
+
+.message {
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+    color: #d9534f;
+    text-align: center;
+}
+
+.action-button {
+    margin-top: 5px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.category-selector {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin: auto;
+    width: 100%;
+    max-width: 300px;
+}
+
+.spinner-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        padding: 5px;
+    }
+
+    .message {
+        font-size: 0.9em;
+    }
+
+    .action-button,
+    .category-selector {
+        max-width: 100%;
+    }
+}
+
+.timeCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 0.5em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 20em;
+    margin: 0 auto;
+    transition: all 0.3s ease; /* Smooth transition for responsiveness */
+}
+
+.punchTime {
+    font-size: 1.1em;
+    color: #333;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: 600;
+}
+
+.timeCont p:first-child {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1em;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .timeCont {
+        max-width: 40%; /* Use more screen width on tablets */
+        padding: 1em;
+    }
+
+    .punchTime {
+        font-size: 1em; /* Slightly smaller font on tablets */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .timeCont {
+        max-width: 40%; /* Use almost full width on mobile */
+        padding: 1em;
+    }
+
+    .punchTime {
+        font-size: 0.9em; /* Smaller font for mobile devices */
+    }
+}

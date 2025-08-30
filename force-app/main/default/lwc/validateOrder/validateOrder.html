@@ -1,0 +1,61 @@
+<template>
+    <lightning-quick-action-panel header="Validate Order">
+        <lightning-card>
+            <template if:true={successMessage}>
+                <p class="slds-text-heading_small slds-align_absolute-center slds-m-bottom_medium" style="color: blue;font-weight: 600;">
+                    {successMessage}
+                </p>
+            </template>
+
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item padding="around-small">
+                    <template if:true={validationErrors.length}>
+                      
+                        <p class="slds-text-heading_small slds-m-bottom_medium">Validation Errors:</p>
+                       
+                        <template for:each={validationErrors} for:item="error">
+                            <lightning-layout-item key={error} size="12" padding="around-small">
+                                <lightning-icon icon-name="utility:error" alternative-text="Error" size="small" class="slds-m-right_x-small"></lightning-icon>
+                                <span class="slds-text-color_error">{error}</span><br/>
+                            </lightning-layout-item>
+                        </template>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
+    </lightning-quick-action-panel>
+
+    <footer class="slds-modal__footer slds-grid slds-grid_align-center">
+        <template if:true={showApprovalPrompt}>
+            <div class="slds-grid slds-wrap slds-grid_align-center slds-align_absolute-center slds-p-vertical_x-small slds-p-horizontal_small">
+                
+                <div class="slds-col slds-m-right_medium slds-size_auto">
+                    <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0;">
+                        Want to send for Approval?
+                    </p>
+                </div>
+                
+        
+                <div class="slds-col slds-m-right_small slds-size_auto">
+                    <lightning-button
+                        variant="brand"
+                        label="Yes"
+                        onclick={handleYesClick}>
+                    </lightning-button>
+                </div>
+        
+                <div class="slds-col slds-size_auto">
+                    <lightning-button
+                        variant="neutral"
+                        label="No"
+                        onclick={handleNoClick}>
+                    </lightning-button>
+                </div>
+            </div>
+        </template>
+
+        <template if:false={showApprovalPrompt}>
+            <lightning-button variant="brand" label="Close" onclick={handleClose} class="slds-m-left_x-small"></lightning-button>
+        </template>
+    </footer>
+</template>

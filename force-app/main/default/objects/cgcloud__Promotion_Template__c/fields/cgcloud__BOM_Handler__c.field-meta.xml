@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__BOM_Handler__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Determines whether BOM products will be considered in promotions created using the template.</description>
+    <label>BOM Handling</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>true</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>ExcludeBOMs</fullName>
+                <default>false</default>
+                <label>Exclude BOMs</label>
+            </value>
+            <value>
+                <fullName>ConsiderBOMs</fullName>
+                <default>false</default>
+                <label>Consider BOMs</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__CPU_Time_Calculation_Buffer__c</fullName>
+    <defaultValue>6500</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Buffer time in milliseconds that system includes into CPU Time limit calculations to protect the system of the Apex CPU time limit exceptions during sync processes.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Buffer time in milliseconds that system includes into CPU Time limit calculations to protect the system of the Apex CPU time limit exceptions during sync processes. Recommended value 6500.</inlineHelpText>
+    <label>CPU Time Calculation Buffer</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

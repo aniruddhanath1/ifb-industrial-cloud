@@ -1,0 +1,122 @@
+/* General text styling */
+.dummy {
+    color: black;
+}
+
+/* Warning text styling */
+.warning-text {
+    color: red; /* Change text color to red */
+    text-align: center; /* Center the text */
+    font-weight: bold; /* Make the text bold */
+    font-size: large; /* Make the text large */
+}
+
+/* Global styles for responsiveness */
+.responsive-card {
+    padding: 0 10px; /* Adds padding to the card */
+}
+
+/* Datatable responsiveness: Adjust font size and allow horizontal scrolling */
+.responsive-datatable-container {
+    overflow-x: auto; /* Allow horizontal scrolling for the datatable */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on mobile */
+}
+
+.slds-table {
+    font-size: 14px; /* Default font size for table */
+}
+
+/* Full width button on mobile screens */
+.responsive-button {
+    width: 100%; /* Make the button take full width on mobile devices */
+}
+
+.textstyle{
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+
+/* Modal responsiveness: Adjust modal size for mobile screens */
+.responsive-modal {
+    width: 95%; /* Make modal width responsive */
+    max-width: 400px; /* Maximum width for the modal */
+    margin: 0 auto; /* Center the modal horizontally */
+}
+
+/* Modal container adjustments for mobile */
+.slds-modal__container {
+    max-width: 500px; /* Default modal size */
+    padding: 10px; /* Add padding for better mobile display */
+}
+
+/* Mobile-specific media queries */
+@media (max-width: 768px) {
+    /* Ensure card layout is fluid on smaller screens */
+    .responsive-card {
+        padding: 0 5px;
+    }
+    
+    /* Datatable should be more compact on mobile */
+    .responsive-datatable-container {
+        font-size: 12px;
+        overflow-x: scroll;
+    }
+
+    /* Buttons take full width on smaller screens */
+    .responsive-button {
+        width: 100%;
+    }
+
+    /* Modal should adjust width for smaller devices */
+    .responsive-modal {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    /* Adjust modal content padding for smaller screens */
+    .slds-modal__container {
+        padding: 15px;
+    }
+
+    /* Modal header text should adjust font size for mobile */
+    .slds-modal__header h2 {
+        font-size: 16px; /* Reduce header text size for mobile */
+    }
+
+    /* Adjust button sizes and spacing inside the modal */
+    .slds-modal__footer button {
+        width: 100%; /* Buttons take full width on mobile */
+        margin-bottom: 10px; /* Add some margin between buttons */
+    }
+    
+    /* Make table cells easier to read on mobile */
+    .slds-table td, .slds-table th {
+        padding: 8px;
+        white-space: nowrap; /* Prevent line breaks in table cells */
+    }
+
+    /* Reduce table font size further for small screens */
+    .slds-table {
+        font-size: 11px; /* Smaller font for tables on mobile */
+    }
+}
+
+/* Add some styling for warning texts in modal */
+.warning-text {
+    color: #d0021b; /* Warning red */
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 10px; /* Add space below each warning */
+}
+
+/* Align the "Add Product" button on larger screens */
+.slds-large-size_1-of-3 {
+    width: calc(33.3333% - 1rem); /* Adjust width for larger screens */
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+.noProduct{
+    text-align: center;
+}

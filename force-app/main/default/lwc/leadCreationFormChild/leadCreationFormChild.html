@@ -1,0 +1,366 @@
+<template>
+    <template if:true={showspinner}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </template>
+    <template if:false={showspinner}>
+        <lightning-card>
+            <div class="form-wrapper">
+                <lightning-layout multiple-rows class="form-container">
+                    <template if:true={isRequestforQuoteForm}>
+                        <lightning-layout-item flexibility="auto" size="8" class="section-header input-container">
+                            <h3>Customer Details</h3>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input name="FirstName" label="First Name" onchange={handleInputNameChange}
+                                             required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input name="LastName" label="Last Name" onchange={handleInputNameChange}
+                                             required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input type='email' name="Email" label="Official Email ID"
+                                             onchange={handleEmailChange} required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input type='tel' name="Billing_PostalCode__s" label="Shipping Postal Code"
+                                             onchange={handlePostalChange}></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="8" class="input-container">
+                            <lightning-input name="Company" label="Organization Name" onchange={handleInputChange}
+                                             required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-combobox
+                                    name="Product_Category__c"
+                                    label="Product Category"
+                                    placeholder="Product Category"
+                                    options={productCategoryOptions}
+                                    value={productCategory}
+                                    onchange={handleInputChange}
+                                    required></lightning-combobox>
+                        </lightning-layout-item>
+                    </template>
+                    <template if:false={isRequestforQuoteForm}>
+                        <lightning-layout-item flexibility="auto" size="8" class="section-header input-container">
+                            <h3>Customer Details</h3>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input name="FirstName" label="First Name " onchange={handleInputNameChange}
+                                             required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input name="LastName" label="Last Name" onchange={handleInputNameChange}
+                                             required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input type="email" name="Email" label="Email"
+                                             onchange={handleEmailChange}></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input type="phone" name="Phone" label="Phone" onchange={handlePhoneInputChange}
+                                             required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input name="Company" label="Organization Name" onchange={handleInputChange}
+                                             required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-combobox
+                                    name="Type_of_Customer__c"
+                                    label="Type of Customer"
+                                    value={customerType}
+                                    options={customerTypeOptions}
+                                    onchange={handleInputChange}
+                                    required>
+                            </lightning-combobox>
+                        </lightning-layout-item>
+                        <template if:true={isServiceOrPartner}>
+                            <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                                <lightning-combobox
+                                        name="LeadSource"
+                                        label="Lead Source"
+                                        value={leadSources}
+                                        placeholder="Select an option"
+                                        options={LeadSourceoptions}
+                                        onchange={handelSourceInput} required>
+                                </lightning-combobox>
+                            </lightning-layout-item>
+                            <template if:true={isInstitutionalSales}>
+                                <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                                    <lightning-combobox
+                                            name="Lead_Sub_Source__c"
+                                            label="Lead Sub-Source"
+                                            value={LeadSubSource}
+                                            placeholder="Select an option"
+                                            options={LeadSubSourceOption}
+                                            onchange={handleInputChange}
+                                            disabled={isComboboxBDisabled} required>
+                                    </lightning-combobox>
+                                </lightning-layout-item>
+                            </template>
+                            <lightning-layout-item flexibility="auto" size="4" class="input-container">
+
+                                <lightning-combobox
+                                        name="Sector__c"
+                                        label="Sector"
+                                        value={value}
+                                        placeholder="Select Sector"
+                                        options={sectoroption}
+                                        onchange={handleSectorInput} required>
+                                </lightning-combobox>
+                            </lightning-layout-item>
+                            <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                                <lightning-combobox
+                                        name="Customer_Segment_Vertical__c"
+                                        label="Customer Segment"
+                                        value={customerType}
+                                        options={customerSegmentOptions}
+                                        onchange={handleInputChange}
+                                        disabled={isCUSTOMERComboboxBDisabled}
+                                        required>
+                                </lightning-combobox>
+                            </lightning-layout-item>
+
+                        </template>
+
+
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-combobox
+                                    name="Product_Category__c"
+                                    label="Product Category"
+                                    placeholder="Product Category"
+                                    options={productCategoryOptions}
+                                    value={productCategory}
+                                    onchange={handleInputChange}
+                                    required></lightning-combobox>
+                        </lightning-layout-item>
+                        <template if:false={isRequestforQuoteForm}>
+                            <lightning-layout-item flexibility="auto" size="8" class="section-header input-container">
+                                <h3>Query Details</h3>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item flexibility="auto" size="8" class="input-container">
+                                <lightning-textarea name="Description" flexibility="auto" label="Query"
+                                                    onchange={handleInputChange}></lightning-textarea>
+                            </lightning-layout-item>
+                        </template>
+
+                        <!-- Billing Information Start -->
+                        <lightning-layout-item flexibility="auto" size="8" class="section-header input-container">
+                            <h3>Billing Information</h3>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="8" class="input-container">
+                            <lightning-input name="Bill_To_Name__c" label="Bill To Name"
+                                             onchange={handleInputChange} required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="8" class="input-container">
+                            <lightning-input name="Billing_Street__s" label="Billing Street"
+                                             onchange={handleInputChange}></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input name="Billing_City__s" label="Billing City"
+                                             onchange={handleInputChange}></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input name="Billing_State__s" label="Billing State"
+                                             onchange={handleInputChange}></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input name="Billing_PostalCode__s" label="Billing Postal Code"
+                                             onchange={handlePostalChange}></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input name="Billing_Country__s" label="Billing Country"
+                                             onchange={handleInputChange}></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input type="checkbox" name="IsSameLocation"
+                                             label="Shipping address same as billing address"
+                                             checked={isSameLocation} onchange={handleCheckboxChange}></lightning-input>
+                        </lightning-layout-item>
+                        <!-- Billing Information End -->
+
+                        <!-- Shipping Information Start -->
+                        <template if:false={isSameLocation}>
+                            <lightning-layout-item flexibility="auto" size="8" class="section-header input-container">
+                                <h3>Shipping Information</h3>
+                            </lightning-layout-item>
+                            <lightning-layout-item flexibility="auto" size="8" class="input-container">
+                                <lightning-input name="Ship_to_Name__c" label="Ship To Name"
+                                                 onchange={handleInputChange} required={shipToNameRequired}></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item flexibility="auto" size="8" class="input-container">
+                                <lightning-input name="Shipping_Street__s" label="Shipping Street"
+                                                 onchange={handleInputChange}></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                                <lightning-input name="Shipping_City__s" label="Shipping City"
+                                                 onchange={handleInputChange}></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                                <lightning-input name="Shipping_State__s" label="Shipping State"
+                                                 onchange={handleInputChange}></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                                <lightning-input name="Shipping_PostalCode__s" label="Shipping Postal Code"
+                                                 onchange={handlePostalChange}></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                                <lightning-input name="Shipping_Country__s" label="Shipping Country"
+                                                 onchange={handleInputChange}></lightning-input>
+                            </lightning-layout-item>
+                        </template>
+                        <!-- Shipping Information End -->
+
+                        <template if:true={iscallcenter}>
+                            <lightning-layout-item flexibility="auto" size="8" class="input-container">
+                                <lightning-textarea name="Call_Centre_Remarks__c" label="Call Centre Remarks"
+                                                    onchange={handleInputChange} required></lightning-textarea>
+                            </lightning-layout-item>
+                        </template>
+                    </template>
+                    <template if:true={isService}>
+                        <lightning-layout-item flexibility="auto" size="8" class="section-header input-container">
+                            <h3>Your Details</h3>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input name="EmployeeName__c" label="Employee Name" onchange={handleInputChange}
+                                             required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input name="EmployeeID__c" label="Employee ID" onchange={handleInputChange}
+                                             required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input type="phone" name="Sub_Source_Phone_number__c" label="Employee Phone No"
+                                             onchange={handlePhoneInputChange} required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input type="datetime-local" placeholder="Select date an time"
+                                             name='Next_Follow_up_Date_Time__c' label="Next Follow-up Date/Time"
+                                             onchange={handleInputDateTime} timezone="IST" required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container"
+                                               if:false={isServiceTeamSelected}>
+                            <lightning-combobox
+                                    name="Operation_Parakram__c"
+                                    label="Operation Parakram"
+                                    placeholder="Operation Parakram"
+                                    options={operationParakramOptions}
+                                    value={productCategory}
+                                    onchange={handleInputChange}
+                                    required></lightning-combobox>
+                        </lightning-layout-item>
+
+                    </template>
+                    <!-- Partner Section Starts -->
+                    <template if:true={isPartner}>
+                        <lightning-layout-item flexibility="auto" size="8" class="section-header input-container">
+                            <h3>Your Details</h3>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input type="text" name="Partner_Name__c" label="Partner Name"
+                                             onchange={handleInputChange} required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input type="email" name="Partner_Email__c" label="Partner Email"
+                                             onchange={handleInputChange} required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" size="4" class="input-container">
+                            <lightning-input type="phone" name="Partner_Mobile__c" label="Partner Mobile" onchange={handlePhoneInputChange}></lightning-input>
+                        </lightning-layout-item>
+                    </template>
+                    <!-- Partner Section Ends -->
+                </lightning-layout>
+
+                <div class="button-container">
+                    <lightning-button variant="neutral" label="Back" onclick={handleBack}
+                                      class="slds-var-m-top_medium"></lightning-button>
+                    <lightning-button variant="brand" label="Submit" onclick={handleSave}
+                                      class="slds-var-m-top_medium slds-var-m-left_small"
+                                      disabled={isSaveDisabled}></lightning-button>
+                </div>
+            </div>
+        </lightning-card>
+        <template if:true={isModalOpen}>
+            <!-- Modal/Popup Box LWC starts here -->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                     aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box LWC header here -->
+                    <header class="slds-modal__header">
+                        <!-- <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                            <lightning-icon icon-name="utility:close"
+                                alternative-text="close"
+                                variant="inverse"
+                                size="small" ></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button> -->
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"></h2>
+                    </header>
+                    <!-- Modal/Popup Box LWC body starts here -->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <template if:true={showSuccess}>
+                            <div class="slds-notify slds-notify_alert slds-alert_success slds-theme_success"
+                                 role="alert">
+                                <ul>
+                                    Congratulations, Your lead has been submitted. Our Sales Agent will reach out to
+                                    your lead shortly.
+                                </ul>
+                            </div>
+                        </template>
+                        <template if:true={showError}>
+                            <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+
+                                <ul>
+                                    {errorMessage}
+                                </ul>
+                            </div>
+                        </template>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick={backToform} title="BackToForm">Back To
+                            Form
+                        </button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+
+        <template if:true={isduplicate}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-03"
+                     class="slds-modal slds-fade-in-open slds-modal_small">
+                <div class="slds-modal__container">
+
+                    <div class="slds-modal__header">
+                        <h1 id="modal-heading-03" class="slds-modal__title slds-hyphenate" tabindex="-1">This lead is
+                            already registered !</h1>
+                    </div>
+                    <div class="slds-modal__content slds-p-around_large" role="alert" id="modal-content-id-3">
+                        <div class="slds-align_absolute-center">
+                            <lightning-datatable
+                                    key-field="Id"
+                                    data={duplicateRecords}
+                                    columns={columns}
+                                    hide-checkbox-column>
+                            </lightning-datatable>
+                        </div>
+
+                    </div>
+                    <div class="slds-modal__footer">
+                        <p>Do you still Want to proceed*</p>
+                        <button class="slds-button slds-button_neutral" onclick={finalcreatelead} title="Yes">Yes
+                        </button>
+                        <button class="slds-button slds-button_neutral" onclick={backToform} title="No">No</button>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </template>
+
+    </template>
+
+
+</template>

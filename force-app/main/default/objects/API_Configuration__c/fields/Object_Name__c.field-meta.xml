@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Object_Name__c</fullName>
+    <label>Object Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Expense__c</fullName>
+                <default>false</default>
+                <label>Expense__c</label>
+            </value>
+            <value>
+                <fullName>Expense_Line_Item__c</fullName>
+                <default>false</default>
+                <label>Expense_Line_Item__c</label>
+            </value>
+            <value>
+                <fullName>Attendance__c</fullName>
+                <default>false</default>
+                <label>Attendance__c</label>
+            </value>
+            <value>
+                <fullName>Order</fullName>
+                <default>false</default>
+                <label>Order</label>
+            </value>
+            <value>
+                <fullName>Order_Installment__c</fullName>
+                <default>false</default>
+                <label>Order_Installment__c</label>
+            </value>
+            <value>
+                <fullName>OrderItem</fullName>
+                <default>false</default>
+                <label>OrderItem</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

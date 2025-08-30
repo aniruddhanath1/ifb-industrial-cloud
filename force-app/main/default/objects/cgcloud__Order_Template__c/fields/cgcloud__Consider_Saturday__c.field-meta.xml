@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Consider_Saturday__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If &apos;1&apos; (True): delivery at Saturdays are allowed.</description>
+    <label>Consider Saturday</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

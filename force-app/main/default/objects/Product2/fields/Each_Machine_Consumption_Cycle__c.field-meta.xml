@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Each_Machine_Consumption_Cycle__c</fullName>
+    <externalId>false</externalId>
+    <formula>Total_Connected_Power__c * (Power_Consumption__c)</formula>
+    <inlineHelpText>Power Consumption *  Total Connected Power</inlineHelpText>
+    <label>Each Machine Consumption/Cycle</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

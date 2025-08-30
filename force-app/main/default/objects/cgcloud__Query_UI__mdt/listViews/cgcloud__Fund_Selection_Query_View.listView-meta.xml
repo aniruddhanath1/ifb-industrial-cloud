@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Fund_Selection_Query_View</fullName>
+    <columns>cgcloud__UI_Display_Order__c</columns>
+    <columns>cgcloud__Is_Custom_Label__c</columns>
+    <columns>cgcloud__UI_Display_Label__c</columns>
+    <columns>MasterLabel</columns>
+    <columns>cgcloud__UI_Type__c</columns>
+    <columns>DeveloperName</columns>
+    <columns>cgcloud__Controls_Inclusion_Exclusion__c</columns>
+    <columns>cgcloud__UI_Output_Parameter__c</columns>
+    <columns>cgcloud__Dynamic_Data_Source__c</columns>
+    <columns>cgcloud__Manual_Data_Source__c</columns>
+    <columns>cgcloud__Is_Read_Only__c</columns>
+    <columns>NamespacePrefix</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>cgcloud__Query_Definition__c</field>
+        <operation>equals</operation>
+        <value>Fund_Selection_Query</value>
+    </filters>
+    <label>Fund Selection Query View</label>
+    <language>en_US</language>
+</ListView>

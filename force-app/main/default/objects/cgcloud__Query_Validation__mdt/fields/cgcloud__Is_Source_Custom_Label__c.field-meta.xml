@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Is_Source_Custom_Label__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Indicates whether source uses custom label to display error messages</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Is Source Custom Label</label>
+    <type>Checkbox</type>
+</CustomField>

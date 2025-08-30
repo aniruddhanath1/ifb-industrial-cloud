@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Planned_Start_Date_Cannot_be_past</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  OR(
+    ISNEW(),
+    ISCHANGED(PlannedVisitStartTime)
+  ),
+  PlannedVisitStartTime &lt; NOW()
+)</errorConditionFormula>
+    <errorDisplayField>PlannedVisitStartTime</errorDisplayField>
+    <errorMessage>Planned Start Date can not be a past date</errorMessage>
+</ValidationRule>

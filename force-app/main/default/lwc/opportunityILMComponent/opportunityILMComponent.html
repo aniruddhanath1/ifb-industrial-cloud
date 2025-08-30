@@ -1,0 +1,58 @@
+<template>
+    <lightning-card>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-small-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_12-of-12">
+                <div>
+                <table class="assessment-table">
+                    <tr>
+                        <th>Opportunity/Order Owner Name:</th>
+                        <td colspan="4">{currentLoginUserName}</td>
+                    </tr>
+                    <tr>
+                        <th>Customer Name:</th>
+                        <td colspan="4">{currentOppName}</td>
+                    </tr>
+                    <tr>
+                        <th>Date:</th>
+                        <td colspan="4">{currentDateNow}</td>
+                    </tr>
+                    <tr>
+                        <th colspan="5" class="centered-header">SITE ASSESSMENT CHECK POINTS</th>
+                    </tr>
+                    <tr>
+                        <th colspan="5" class="centered-header">INPUTS FOR LAYOUT & UTILITY CHART</th>
+                    </tr>
+                    <tr>
+                        <th class="centered-header">SL.NO</th>
+                        <th class="centered-header">DESCRIPTION</th>
+                        <th class="centered-header">INPUT</th>
+                        <th class="centered-header">FACTORY GUIDANCE</th>
+                        <th class="centered-header">OPPORTUNITY OWNER REMARKS</th>
+                    </tr>
+                    <template for:each={listOfWrapper} for:item="item" for:index="index">
+                        <tr key={item}>
+                            <td class="centered-text">{item.indexOfData}</td>
+                            <td class="centered-text">{item.fieldLable}</td>
+                            <td>
+                                <div if:true={item.isPicklist}>
+                                    <lightning-combobox name="progress" placeholder="Select" options={item.fieldPicklistValues} value={item.fieldCurrentValue} onchange={handleCombobox} data-sequence={index}></lightning-combobox>
+                                </div>
+                            </td>
+                            <td if:true={item.defaultValue} class="centered-text">{item.defaultValue}</td>
+                            <td if:false={item.defaultValue} class="centered-text"> ----- </td>
+                            <td>
+                                <lightning-input type="text" variant="standard" value={item.remarkValue} placeholder={item.remarkValue} onchange={handleRemark} data-sequenc={index}></lightning-input>
+                            </td>
+                        </tr>
+                    </template>
+                </table>
+                <br/><br/>
+                <div class="button-container">
+                    <lightning-button variant="brand" label="Cancel" title="Cancel" class="slds-m-left_x-small" onclick={closeAction}></lightning-button>
+                    <lightning-button variant="brand" label="Save/Update" title="Save" onclick={handleSave} class="slds-m-left_x-small"></lightning-button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

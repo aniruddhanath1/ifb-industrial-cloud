@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Client_Visibility__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Enabled if the feature details are to be sent to the client</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Enable this option to send the feature to the client application</inlineHelpText>
+    <label>Client Visibility</label>
+    <type>Checkbox</type>
+</CustomField>

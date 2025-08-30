@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Freight__c</fullName>
+    <label>Freight</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Inclusive - Borne by IFB</fullName>
+                <default>false</default>
+                <label>Inclusive - Borne by IFB</label>
+            </value>
+            <value>
+                <fullName>Inclusive - Paid to IFB - Price to be specified in PI</fullName>
+                <default>false</default>
+                <label>Inclusive - Paid to IFB - Price to be specified in PI</label>
+            </value>
+            <value>
+                <fullName>Extra as actuals</fullName>
+                <default>false</default>
+                <label>Extra as actuals</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

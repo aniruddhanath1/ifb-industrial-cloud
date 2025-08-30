@@ -1,0 +1,177 @@
+<apex:page contentType="text/xml" showHeader="false" sidebar="false" controller="MyQuoteController">
+    
+    
+      
+        <table>
+            <table-body> 
+                <table-row >
+                    
+                    <table-cell display-align="center" number-columns-spanned="18"  padding="3pt">
+                        <block  text-decoration= "underline" text-align="center"  font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >Terms And Conditions</apex:outputText>
+                        </block> 
+                    </table-cell>
+                    
+                    
+                </table-row>
+                <table-row >
+                    
+                    <table-cell display-align="left" number-columns-spanned="6" border="1pt solid  #000000" padding="3pt">
+                        <block  text-align="left"  font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >PRICE BASIS</apex:outputText>
+                        </block> 
+                    </table-cell>
+                    <table-cell display-align="left" number-columns-spanned="12" border="1pt solid  #000000" padding="3pt">
+                        <block  text-align="left" font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >Prices shown are Ex-Factory, Bommasandra, Bangalore.</apex:outputText>
+                        </block> 
+                    </table-cell>
+                </table-row>
+                <table-row >
+                    
+                    <table-cell display-align="left" number-columns-spanned="6" border="1pt solid  #000000" padding="3pt">
+                        <block  text-align="left"  font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >TRANSPORTATION</apex:outputText>
+                        </block> 
+                    </table-cell>
+                    <table-cell display-align="left" number-columns-spanned="12" border="1pt solid  #000000" padding="3pt">
+                        <block text-align="left" font-family="sans-serif" font-size="9" font-weight="bold">
+                            <apex:outputText >Freight charges {!quote.Freight_Terms__c}.</apex:outputText></block>
+                        <block  text-align="left" font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >Unloading is the customer's responsibility.
+                                Shifting of machines from the unloading spot to the laundry site is also the customer's responsibility.
+                            </apex:outputText>
+                        </block>
+                    </table-cell>
+                    
+                </table-row>
+                <table-row >
+                    <table-cell display-align="left" number-columns-spanned="6" border="1pt solid  #000000" padding="3pt">
+                        <block  text-align="left"  font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >TAXES</apex:outputText>
+                        </block> 
+                    </table-cell>
+                    <table-cell display-align="left" number-columns-spanned="12" border="1pt solid  #000000" padding="3pt">
+                        <block text-align="left" font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >GST charges @ 18%.
+                            </apex:outputText>
+                        </block>
+                    </table-cell>
+                    
+                </table-row>
+                <table-row >
+                    <table-cell display-align="left" number-columns-spanned="6" border="1pt solid  #000000" padding="3pt">
+                        <block  text-align="left"  font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >PAYMENT TERMS</apex:outputText>
+                        </block> 
+                    </table-cell>
+                    <table-cell display-align="left" number-columns-spanned="12" border="1pt solid  #000000" padding="3pt">
+                        <block  text-align="left" font-family="sans-serif" font-size="9"  >
+                            <apex:outputText rendered="{!quote.Payment_Term__c == 100}">{!quote.Payment_Term__c}% payment is required along with the purchase order
+                            </apex:outputText>
+                            <apex:outputText rendered="{!splitRatioListSize == 2 && quote.Payment_Term__c !=100}">{!quote.Payment_Term__c}% payment is required along with the purchase order.The remaining amount is due against the Proforma Invoice before dispatch.
+                            </apex:outputText>
+                            <apex:outputText rendered="{!splitRatioListSize > 2}" >{!quote.Payment_Term__c}% payment along with the purchase order, {!splitValue2}% against the
+                                Proforma Invoice before dispatch &amp; balance {!splitValue3}% against
+                                installation &amp; commissioning or 30 days of supply whichever is
+                                earlier.
+                            </apex:outputText>
+                        </block>
+                    </table-cell>
+                    
+                </table-row>
+                <table-row >
+                    <table-cell display-align="left" number-columns-spanned="6" border="1pt solid  #000000" padding="3pt">
+                        <block  text-align="left"  font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >DELIVERY</apex:outputText>
+                        </block> 
+                    </table-cell>
+                    <table-cell display-align="left" number-columns-spanned="12" border="1pt solid  #000000" padding="3pt">
+                        <block  text-align="left" font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >{!quote.Expected_Delivery_Period__c} weeks from the date of receipt of a firm order with advance payment.
+                            </apex:outputText>
+                        </block>
+                    </table-cell>
+                    
+                </table-row>
+                <table-row >
+                    <table-cell display-align="left" number-columns-spanned="6" border="1pt solid  #000000" padding="3pt">
+                        <block  text-align="left"  font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >WARRANTY</apex:outputText>
+                        </block> 
+                    </table-cell>
+                    <table-cell display-align="left" number-columns-spanned="12" border="1pt solid  #000000" padding="3pt">
+                        <block  text-align="left" font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >{!quote.WarrantyTerm_In_Year__c} Year from the date of dispatch against manufacturing defects.Covers all parts/components, 
+                                excluding wear and tear components and damages due to external factors such as input voltage, water quality, misuse, or non-adherence to installation parameters.</apex:outputText>
+                        </block>
+                    </table-cell>
+                    
+                </table-row>
+                <table-row >
+                    <table-cell display-align="left" number-columns-spanned="6" border="1pt solid  #000000" padding="3pt">
+                        <block  text-align="left"  font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >INSTALLATION</apex:outputText>
+                        </block> 
+                    </table-cell>
+                    <table-cell display-align="left" number-columns-spanned="12" border="1pt solid  #000000" padding="3pt">
+                        <block  text-align="left" font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >Pre-installation drawings will be provided to enable site preparation.</apex:outputText>
+                            <apex:outputText > Note: Installation is recommended on the ground floor.
+                                If installation is on floors other than the ground floor,
+                                structural design must account for dynamic and static loads.
+                                Inform IFB of any constraints in shifting machines to non-ground floor locations.
+                            </apex:outputText>
+                        </block>
+                    </table-cell>
+                    
+                </table-row>
+                <table-row >
+                    <table-cell display-align="left" number-columns-spanned="6" border="1pt solid  #000000" padding="3pt">
+                        <block  text-align="left"  font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >PURCHASE ORDER SHOULD BE IN FAVOUR OF:</apex:outputText>
+                        </block> 
+                    </table-cell>
+                    <table-cell display-align="left" number-columns-spanned="12" border="1pt solid  #000000" padding="3pt">
+                        <block  text-align="left" font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >M/s. IFB Industries Ltd., No. 3-B, Bommasandra Indl. Area, Anekal Taluk, Bangalore – 560 099. GSTIN: 29AAACI6561R4ZQ.
+                            </apex:outputText>
+                        </block>
+                    </table-cell>
+                </table-row>
+                <table-row >
+                    <table-cell display-align="left" number-columns-spanned="6" border="1pt solid  #000000" padding="3pt">
+                        <block  text-align="left"  font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >VALIDITY</apex:outputText>
+                        </block> 
+                    </table-cell>
+                    <table-cell display-align="left" number-columns-spanned="12" border="1pt solid  #000000" padding="3pt">
+                        <block text-align="left" font-family="sans-serif" font-size="9"  >
+                            <apex:outputText >This offer is valid for 30 days from the date of issuing of this letter.</apex:outputText>
+                        </block>
+                    </table-cell>
+                </table-row>
+                <apex:outputPanel rendered="{!isEssentialLineItemPresent}" layout="none">
+                    <table-row>
+                        <table-cell display-align="left" number-columns-spanned="6" border="1pt solid  #000000" padding="3pt">
+                            <block  text-align="left"  font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >IFB Essentials</apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="left" number-columns-spanned="12" border="1pt solid  #000000" padding="3pt">
+                            <block  text-align="left" font-family="sans-serif" font-size="9"  >
+                                <apex:outputText >Suitable IFB Essentials are indicated with minimum quantity. Required quantity may be ordered as per machine usage.</apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                </apex:outputPanel>
+            </table-body>
+        </table> 
+            
+ 
+   
+        
+  
+    
+    
+</apex:page>

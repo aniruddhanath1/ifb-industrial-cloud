@@ -1,0 +1,99 @@
+<apex:page contentType="text/xml" showHeader="false" sidebar="false" controller="MyQuoteController">
+
+    <table table-layout="fixed" width="100%">
+        <table-body>
+            <!-- Second Row: Date and Recipient Details -->
+            <table-row>
+                <table-cell text-align="left" font-size="10">
+                    <block font-weight="bold">To,</block>
+                    <block font-weight="bold"><apex:outputText >{!quote.SBQQ__PrimaryContact__r.Salutation}&nbsp;{!quote.SBQQ__PrimaryContact__r.Name} </apex:outputText></block>
+                    <block font-weight="bold"><apex:outputText >{!BillingName} </apex:outputText></block>
+                    <block font-weight="bold"><apex:outputText >{!BillingStreet} </apex:outputText></block>
+                    <block font-weight="bold"><apex:outputText >{!quote.SBQQ__BillingCity__c},{!quote.SBQQ__BillingState__c} </apex:outputText></block>
+                    <block font-weight="bold"><apex:outputText >{!quote.SBQQ__BillingPostalCode__c} </apex:outputText></block>
+                    <block font-weight="bold"><apex:outputText >{!quote.SBQQ__BillingCountry__c} </apex:outputText></block>
+                    <block font-weight="bold"><apex:outputtext >{!quote.SBQQ__PrimaryContact__r.Phone}</apex:outputtext></block>
+                    <block color="Blue" font-weight="bold"><apex:outputText >{!quote.SBQQ__PrimaryContact__r.Email}</apex:outputText></block>
+                    <block>&nbsp;</block>
+                </table-cell>
+                <table-cell>
+                    <block>&nbsp;&nbsp;&nbsp;</block>
+                </table-cell>
+                <table-cell text-align="left" font-size="10">
+                    <apex:outputPanel layout="none" rendered="{!isBillToAndShipToSame = false}">
+                        <block font-weight="bold">Ship To:</block>
+                        <block font-weight="bold"><apex:outputText >{!quote.SBQQ__PrimaryContact__r.Salutation}&nbsp;{!quote.SBQQ__PrimaryContact__r.Name} </apex:outputText></block>
+                        <block font-weight="bold"><apex:outputText >{!ShippingName} </apex:outputText></block>
+                        <block font-weight="bold"><apex:outputText >{!ShippingStreet} </apex:outputText></block>
+                        <block font-weight="bold"><apex:outputText >{!quote.SBQQ__ShippingCity__c},{!quote.SBQQ__ShippingState__c} </apex:outputText></block>
+                        <block font-weight="bold"><apex:outputText >{!quote.SBQQ__ShippingPostalCode__c} </apex:outputText></block>
+                        <block font-weight="bold"><apex:outputText >{!quote.SBQQ__ShippingCountry__c} </apex:outputText></block>
+                        <block font-weight="bold"><apex:outputtext >{!quote.SBQQ__PrimaryContact__r.Phone}</apex:outputtext></block>
+                        <block color="Blue" font-weight="bold"><apex:outputText >{!quote.SBQQ__PrimaryContact__r.Email}</apex:outputText></block>
+                        <block>&nbsp;</block>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="none" rendered="{!isBillToAndShipToSame = true}">
+                        <block font-weight="bold">Ship To:</block>
+                        <block font-weight="bold">Same as Billing Address</block>
+                        <block>&nbsp;</block>
+                    </apex:outputPanel>
+                </table-cell>
+            </table-row>
+        </table-body>
+    </table>
+    
+    <table table-layout="fixed" width="100%">
+        <table-body>
+            <!-- Third Row: Salutation -->
+            <table-row>
+                <table-cell text-align="left" font-size="10">
+                    <block>Dear &nbsp;<apex:outputText >{!quote.SBQQ__PrimaryContact__r.Salutation}&nbsp;{!quote.SBQQ__PrimaryContact__r.Name}</apex:outputText>,</block>
+                </table-cell>
+            </table-row>
+            
+            <!-- Fourth Row: Letter Body -->
+            <table-row>
+            
+                <table-cell text-align="justify" font-size="10">
+
+                    <block>&nbsp;</block>
+                    <block>Greetings from IFB INDUSTRIES LTD.</block>
+                    <block>&nbsp;</block>
+                    <apex:outputPanel layout="none" rendered="{!(NOT(isBOQQuote) && isDiscountMax != true)}">
+                        <block>We thank you for your call in connection with your requirement of  <apex:outputText >{!quote.Product_category__c}.</apex:outputText> Based on our discussions,we are pleased to provide you our offer for your kind consideration.</block>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="none" rendered="{!isBOQQuote==true}">
+					      <block>We thank you for your call in connection with your requirement of laundry machines for your {!AccountName}. Based on the BOQ provided by you, we are pleased to provide you our offer for your kind consideration.</block>
+                    </apex:outputPanel>
+                    
+					<apex:outputPanel layout="none" rendered="{!(NOT(isBOQQuote) && isDiscountMax == true)}">
+                          <block>We thank you for your call in connection with your requirement of  <apex:outputText >{!quote.Product_category__c}.</apex:outputText> Based on our discussions,</block>
+                        <block>&nbsp;</block>
+                        <block>We are pleased offer you a very special discount of {!quote.Maximum_Discount__c}% on the prices. Our revised offer after considering the discount is attached for your kind consideration..</block>
+                    </apex:outputPanel>
+               		<block>&nbsp;</block>
+					<block>We trust the same meets your requirements and we look forward to receiving your valuable feedback at your earliest.</block>
+                	<block>&nbsp;</block>
+					<block>Thanking you,</block>
+                </table-cell>
+            </table-row>
+            
+            <!-- Fifth Row: Closing -->
+            <table-row>
+                <table-cell text-align="left" font-size="10">
+                    <block>&nbsp;</block>
+                    <block>Yours faithfully,</block>
+                    <block font-weight="bold">For IFB INDUSTRIES LTD.</block>
+                    <block>&nbsp;</block>
+                    <block>&nbsp;</block>
+                    <block font-weight="bold"><apex:outputtext >{!quote.Owner.Name}</apex:outputtext></block>
+                    <block font-weight="bold"><apex:outputtext >{!quote.Owner.Profile.Name}</apex:outputtext></block>
+                    <block font-weight="bold"><apex:outputtext >{!quote.Owner.Phone}</apex:outputtext></block>
+                    
+                </table-cell>
+            </table-row>
+        </table-body>
+    </table>
+    
+    
+</apex:page>

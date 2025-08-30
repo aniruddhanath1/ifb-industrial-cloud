@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Schema_Name__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Property Based Coloring of Promotion Bars within the Trade Calendar</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Defines where the color scheme is used.For Ex: TradeCalendar_Phase</inlineHelpText>
+    <label>Schema Name</label>
+    <length>20</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,19 @@
+<apex:page contentType="text/xml" showHeader="false" sidebar="false" controller="AMCTemplateController">
+    <table table-layout="fixed" width="100%" font-size="12pt" margin-top="0pt" margin-bottom="20pt">
+        <table-body>
+            <!-- Row for Logo and Horizontal Line -->
+            <table-row>
+                <!-- Left Empty Cell -->
+                <table-cell width="100%" vertical-align="middle" text-align="left">
+                    <block font-size="20pt" margin-top="0pt">
+                        ______________________________________<external-graphic 
+                            src="{!imageUrl}" 
+                            scaling="uniform" 
+                            height="0.5in" 
+                            content-width="1.5in" />
+                    </block>
+                </table-cell>
+            </table-row>
+        </table-body>
+    </table>
+</apex:page>

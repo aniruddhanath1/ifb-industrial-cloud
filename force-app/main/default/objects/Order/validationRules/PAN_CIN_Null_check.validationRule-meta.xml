@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PAN_CIN_Null_check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK( PAN_No__c )),
+    MID(PAN_No__c, 4, 1) = &quot;C&quot;,
+    ISBLANK( CIN_No__c )
+)</errorConditionFormula>
+    <errorDisplayField>CIN_No__c</errorDisplayField>
+    <errorMessage>Please fill the CIN Number.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Max height of washable Plate</label>
+    <protected>false</protected>
+    <values>
+        <field>Model__c</field>
+        <value xsi:type="xsd:string">Max height of washable Plate</value>
+    </values>
+    <values>
+        <field>ProTech_311_Plus__c</field>
+        <value xsi:type="xsd:string">NA</value>
+    </values>
+    <values>
+        <field>ProTech_411_Plus__c</field>
+        <value xsi:type="xsd:string">NA</value>
+    </values>
+    <values>
+        <field>ProTech_611_B__c</field>
+        <value xsi:type="xsd:string">32.5</value>
+    </values>
+    <values>
+        <field>ProTech_611_Plus__c</field>
+        <value xsi:type="xsd:string">32.5</value>
+    </values>
+    <values>
+        <field>ProTech_613_plus__c</field>
+        <value xsi:type="xsd:string">32.5</value>
+    </values>
+    <values>
+        <field>ProTech_813__c</field>
+        <value xsi:type="xsd:string">38</value>
+    </values>
+    <values>
+        <field>ProTech_913__c</field>
+        <value xsi:type="xsd:string">44</value>
+    </values>
+    <values>
+        <field>Unit__c</field>
+        <value xsi:type="xsd:string">cm</value>
+    </values>
+</CustomMetadata>

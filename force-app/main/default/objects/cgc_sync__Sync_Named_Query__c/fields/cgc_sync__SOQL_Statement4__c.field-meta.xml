@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__SOQL_Statement4__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The 4th part of the SOQL statement when it exceeds 255 characters.</description>
+    <inlineHelpText>The SOQL statement that will be executed when the named query is referenced by another query.</inlineHelpText>
+    <label>SOQL_Statement4</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordActionDeployment xmlns="http://soap.sforce.com/2006/04/metadata">
+    <componentName>ActionLauncher</componentName>
+    <hasComponents>false</hasComponents>
+    <hasGuidedActions>true</hasGuidedActions>
+    <hasOmniscripts>false</hasOmniscripts>
+    <hasRecommendations>false</hasRecommendations>
+    <masterLabel>Actions</masterLabel>
+    <selectableItems>
+        <action>NewCase</action>
+        <frequentActionSequenceNbr>0</frequentActionSequenceNbr>
+        <isFrequentAction>true</isFrequentAction>
+        <type>QuickAction</type>
+    </selectableItems>
+    <selectableItems>
+        <action>NewTask</action>
+        <frequentActionSequenceNbr>1</frequentActionSequenceNbr>
+        <isFrequentAction>true</isFrequentAction>
+        <type>QuickAction</type>
+    </selectableItems>
+</RecordActionDeployment>

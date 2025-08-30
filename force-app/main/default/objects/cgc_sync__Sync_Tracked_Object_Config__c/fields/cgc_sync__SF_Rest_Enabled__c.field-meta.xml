@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__SF_Rest_Enabled__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Use Salesforce Rest API to download tracked object records.</description>
+    <inlineHelpText>Use Salesforce Rest API to download tracked object records.</inlineHelpText>
+    <label>Enable Salesforce Standard Rest API</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

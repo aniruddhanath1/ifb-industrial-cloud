@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Sync_Promo_To_False_If_Automatic_Simple</fullName>
+    <active>true</active>
+    <description>Synchronize Promotion Timeframes cannot be activated if Timeframe Determination Policy is not &apos;Manual&apos;.</description>
+    <errorConditionFormula>AND (
+ISPICKVAL(cgcloud__Timeframe_Determination_Policy__c, &apos;Simple&apos;),
+NOT(cgcloud__Synchronize_Promotion_Timeframes__c = false)
+)</errorConditionFormula>
+    <errorDisplayField>cgcloud__Synchronize_Promotion_Timeframes__c</errorDisplayField>
+    <errorMessage>Synchronize Promotion Timeframes cannot be activated if Timeframe Determination Policy is not &apos;Manual&apos;.</errorMessage>
+</ValidationRule>

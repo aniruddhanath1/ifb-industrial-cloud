@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__CommitDate_NotBefore_DFromMinusFourWeeks</fullName>
+    <active>true</active>
+    <description>The Commit Date must not be sooner than 4 weeks before Date From.</description>
+    <errorConditionFormula>AND(RecordType.DeveloperName = &apos;Promotion&apos;,cgcloud__Commit_Date__c + 28 &lt; cgcloud__Date_From__c)</errorConditionFormula>
+    <errorMessage>The Commit Date must not be sooner than 4 weeks before Date From.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ILM</fullName>
+    <active>true</active>
+    <label>ILM</label>
+    <picklistValues>
+        <picklist>Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved by NSM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending by NSM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected by NSM</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delivery_Period__c</picklist>
+        <values>
+            <fullName>0-1 weeks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1-2 weeks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10-12 weeks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12-16 weeks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3-4 weeks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5-8 weeks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8-10 weeks</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Distribution_Channel__c</picklist>
+        <values>
+            <fullName>19</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>37</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>43</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>External_Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partially Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request not submitted</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Request submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resubmit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Freight_Included__c</picklist>
+        <values>
+            <fullName>Extras</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Included in the Quote</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Freight_Terms__c</picklist>
+        <values>
+            <fullName>Borne by Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Borne by IFB</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Installation_Level__c</picklist>
+        <values>
+            <fullName>Above</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Basement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ground Above Basement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Installation_Status__c</picklist>
+        <values>
+            <fullName>Assigned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negative Response from Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request Cancellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request for Re-Allocation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request for Repair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request for Replacement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resolved %28soft closure%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Manufacturing_Status__c</picklist>
+        <values>
+            <fullName>MANUFACTURING COMPLETED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MANUFACTURING STARTED</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason_for_Followup__c</picklist>
+        <values>
+            <fullName>Balance Payment collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Installation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PI submission %26 balance payment collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post Site Inspection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unloading</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visit with Service</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reasons__c</picklist>
+        <values>
+            <fullName>Corporate meeting%2Freview in IFB Bommasandra Factory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer not available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting delayed with the previous customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Natural Calamities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Leave</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review schedule in IFB branch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled another important customer visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visiting a Trade fair</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reasons_for_Visit__c</picklist>
+        <values>
+            <fullName>Balance Payment collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Installation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PI submission %26 balance payment collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post Site Inspection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unloading</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visit with Service</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__ContractingMethod__c</picklist>
+        <values>
+            <fullName>By Subscription End Date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Contract</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__PaymentTerm__c</picklist>
+        <values>
+            <fullName>Due on receipt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 15</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 30</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Net 45</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 90</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__PriceCalcStatus__c</picklist>
+        <values>
+            <fullName>Aborted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Queued</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sales_Order_Status__c</picklist>
+        <values>
+            <fullName>Created</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Site_Readiness_Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved by NSM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending by NSM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected by NSM</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing Initiated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Delivered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Dispatched</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Installed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PO Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PO Draft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO Created</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Readiness Check</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

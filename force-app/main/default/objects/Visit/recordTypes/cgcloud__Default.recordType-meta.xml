@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Default</fullName>
+    <active>true</active>
+    <description>Record type for default visit</description>
+    <label>Default Visit</label>
+    <picklistValues>
+        <picklist>Reason__c</picklist>
+        <values>
+            <fullName>Corporate meeting%2Freview in IFB Bommasandra Factory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer not available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting delayed with the previous customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Natural Calamities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Leave</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review schedule in IFB branch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled another important customer visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visiting a Trade fair</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>VisitPriority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Visit_From__c</picklist>
+        <values>
+            <fullName>Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Visit_Type__c</picklist>
+        <values>
+            <fullName>Advance payment collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Balance Payment collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial Negotiation %E2%80%93 Along with IFB%E2%80%99s Senior resource</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial Negotiation - Self</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Festival wishes %26 Greetings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Follow-up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Installation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invitations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New opportunities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PI submission %26 balance payment collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PO %26 advance payment collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post Site Inspection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-site inspection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote%2FTechnical document hard copy submission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relationship Building</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Negotiation %E2%80%93 Self</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Negotiation - Along with IFB%E2%80%99s Senior resource</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unloading</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visit with Service</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>cgcloud__Creation_Mode__c</picklist>
+        <values>
+            <fullName>Automatically</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manually</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>cgcloud__Fixed_Visit_Date__c</picklist>
+        <values>
+            <fullName>0</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>cgcloud__Location_Status__c</picklist>
+        <values>
+            <fullName>GPS Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No GPS Fix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ok</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>cgcloud__Reason_Code__c</picklist>
+        <values>
+            <fullName>NoManager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>StoreClosed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TimeWindow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unserviced</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

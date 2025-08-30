@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Free_Items_Json__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Enter the custom JSON that’s used to display the fields from Order Template and Order Items objects.</description>
+    <label>Custom JSON for Free  Items</label>
+    <length>131072</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>50</visibleLines>
+</CustomField>

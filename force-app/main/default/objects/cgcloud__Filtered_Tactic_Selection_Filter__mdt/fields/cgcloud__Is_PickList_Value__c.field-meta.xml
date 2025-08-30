@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Is_PickList_Value__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This is a toggle to allow user to enter Picklist Values instead of using a dynamic SOQL Query to populate the option values of a Multi-Select Picklist. This field is only applicable if the UI Type is a &apos;Multi-Select Picklist&apos; type.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Check this if Sub Query Source is NOT a SOQL Query.
+
+      If this value is checked, enter picklist values separated by the &apos;Enter&apos; or &apos;Return&apos; key if the Sub Query Source textbox.</inlineHelpText>
+    <label>Manual PickList Value Entry</label>
+    <type>Checkbox</type>
+</CustomField>

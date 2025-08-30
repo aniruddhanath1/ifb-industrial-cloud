@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Sync_On_Online__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>It executes the last sync attempt that did not complete and is triggered when an online connection is available. It mainly synchronizes the tracked objects.
+        Stores the value true when sync is done online.</description>
+    <label>Sync On Online</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

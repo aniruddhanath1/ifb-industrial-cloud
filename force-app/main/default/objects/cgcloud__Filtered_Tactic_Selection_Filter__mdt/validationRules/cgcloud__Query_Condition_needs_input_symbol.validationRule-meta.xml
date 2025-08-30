@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Query_Condition_needs_input_symbol</fullName>
+    <active>true</active>
+    <description>When UI Type = Multi-Select Picklist, Query Condition must contain the {0} symbol</description>
+    <errorConditionFormula>AND(
+      $Setup.cgcloud__Validation_Rules_Setting__c.cgcloud__Bypass_Validation__c = FALSE,
+      ISPICKVAL( cgcloud__UI_Type__c, &apos;Multi-Select Picklist&apos;)   &amp;&amp;
+      FIND(&apos;{0}&apos;,  cgcloud__Query_Condition__c ) = 0
+      )</errorConditionFormula>
+    <errorMessage>Query Condition must contain the {0} input symbol for filter whose UI Type is a Multi-Select Picklist.</errorMessage>
+</ValidationRule>

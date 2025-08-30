@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__RecordType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicates the record type that the configuration belongs to. 
+We use the record type from Product Assortment template. 
+
+Possible values for retail: 
+- Assortment_List 
+- Customer_Selling_Assortments 
+- Sales_Document_Assortments 
+
+Possible values for TPM: 
+- Planning_Assortment_List</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Record Type</label>
+    <length>40</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

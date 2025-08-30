@@ -1,0 +1,32 @@
+.c-container {
+    border: 1px solid #d8dde6;
+    margin: 10px 0 20px;
+}
+
+.custom-box {
+    text-align: center;
+    padding: 1rem;
+}
+.headerdiv{
+	text-align: center;
+    background-color: #77787B;
+	color:#ffffff;
+	font-size: 15px;
+	font-weight: bold;
+    padding: 0.5rem;
+}
+.custombutton{
+    --slds-c-button-brand-color-background: #77787B;
+}
+
+.spinner-container {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1000; /* Ensure the spinner is above other content */
+}

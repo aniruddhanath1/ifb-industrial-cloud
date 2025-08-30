@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Debug__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Denotes whether this Query Definition is in debug mode for extended error logs</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Check this to have enhanced debug information.</inlineHelpText>
+    <label>Debug</label>
+    <type>Checkbox</type>
+</CustomField>

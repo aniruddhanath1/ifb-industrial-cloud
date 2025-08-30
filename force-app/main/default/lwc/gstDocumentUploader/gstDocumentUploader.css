@@ -1,0 +1,19 @@
+:host {
+    display: block;
+    padding: 0.1rem;
+}
+
+lightning-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: right; /* Center content vertically */
+    align-items: right; /* Center content horizontally */
+    height: 100%; /* Ensure it takes full height of parent container */
+}
+
+.upload-button-container {
+    display: flex;
+    justify-content: center; /* Center the upload button horizontally */
+    align-items: center; /* Center the upload button vertically */
+    width: 100%; /* Full width to center the button properly */
+}

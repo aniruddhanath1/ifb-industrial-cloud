@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__DisplayInFilter__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Subscriber and Developer Editable: The subscriber and developer can edit the component attributes in this column. However, these attributes aren’t upgradeable. Only new subscribers receive the latest changes.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Display In Filter</label>
+    <type>Checkbox</type>
+</CustomField>

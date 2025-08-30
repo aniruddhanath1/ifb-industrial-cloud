@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Can_not_change_the_stage</fullName>
+    <active>false</active>
+    <errorConditionFormula>CASE(
+    TEXT(StageName),
+    &quot;Qualification&quot;, 1,
+    &quot;Site Visit&quot;, 2,
+    &quot;Load Calculation&quot;, 3,
+    &quot;Proposal/Price Quote&quot;, 4,
+    &quot;Negotiation/Review&quot;, 5,
+    &quot;Closed Won&quot;, 6,
+    &quot;Closed Lost&quot;, 7,
+    0
+) &lt; 
+CASE(
+    TEXT(PRIORVALUE(StageName)),
+    &quot;Qualification&quot;, 1,
+    &quot;Site Visit&quot;, 2,
+    &quot;Load Calculation&quot;, 3,
+    &quot;Proposal/Price Quote&quot;, 4,
+    &quot;Negotiation/Review&quot;, 5,
+    &quot;Closed Won&quot;, 6,
+    &quot;Closed Lost&quot;, 7,
+    0
+)</errorConditionFormula>
+    <errorMessage>Can&apos;t change the stage in backward Direction</errorMessage>
+</ValidationRule>

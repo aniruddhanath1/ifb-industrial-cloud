@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Disqualification__c</fullName>
+    <label>Reason for Disqualification</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Domestic Machine Requirement</fullName>
+                <default>false</default>
+                <label>Domestic Machine Requirement</label>
+            </value>
+            <value>
+                <fullName>No Budget Available</fullName>
+                <default>false</default>
+                <label>No Budget Available</label>
+            </value>
+            <value>
+                <fullName>Inadequate Space Availability</fullName>
+                <default>false</default>
+                <label>Inadequate Space Availability</label>
+            </value>
+            <value>
+                <fullName>Routed through Dealer</fullName>
+                <default>false</default>
+                <label>Routed through Dealer</label>
+            </value>
+            <value>
+                <fullName>Cancellation of Tender</fullName>
+                <default>false</default>
+                <label>Cancellation of Tender</label>
+            </value>
+            <value>
+                <fullName>Service Terms</fullName>
+                <default>false</default>
+                <label>Service Terms</label>
+            </value>
+            <value>
+                <fullName>Product Not Available</fullName>
+                <default>false</default>
+                <label>Product Not Available</label>
+            </value>
+            <value>
+                <fullName>Budget not available</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Budget not available</label>
+            </value>
+            <value>
+                <fullName>Customer not able to complete infrastructure in 30 days</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Customer not able to complete infrastructure in 30 days</label>
+            </value>
+            <value>
+                <fullName>Product Availability</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Product Availability</label>
+            </value>
+            <value>
+                <fullName>Purchase Timeline more than 90 days</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Purchase Timeline more than 90 days</label>
+            </value>
+            <value>
+                <fullName>Site not suitable</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Site not suitable</label>
+            </value>
+            <value>
+                <fullName>Space not available</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Space not available</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

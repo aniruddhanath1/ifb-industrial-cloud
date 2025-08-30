@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Synchronize_Promotion_Timeframes__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If this field is set TRUE, the dates Shipment Dates From and Thru and InStore From and Thru dates will have always the values set in Date From and Date Thru.</description>
+    <inlineHelpText>If this field is set TRUE, the dates Shipment Dates From and Thru and InStore From and Thru dates will have always the values set in Date From and Date Thru.</inlineHelpText>
+    <label>Synchronize Promotion Timeframes</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

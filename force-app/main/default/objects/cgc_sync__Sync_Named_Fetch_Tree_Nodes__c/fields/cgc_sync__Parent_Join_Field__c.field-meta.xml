@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Parent_Join_Field__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The values in the object name and the join field indicate that for a given set of account IDs, a list of contracts having these IDs is returned. At the parent level, the join field acts as the look-up field.</description>
+    <externalId>false</externalId>
+    <label>Parent Join Field</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

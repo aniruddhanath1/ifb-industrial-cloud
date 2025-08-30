@@ -1,0 +1,14 @@
+<template>
+    <lightning-card  >
+       <div if:true={isILM} >
+           <c-opportunity-i-l-m-component record-id={recordId} oncallparentmethod={closeActionModel} ></c-opportunity-i-l-m-component>
+       </div>
+       <div if:true={isIDW} >
+          <!--<c-opportunity-table-on-quick-action record-id={recordId} oncallparentmethod={closeActionModel} ></c-opportunity-table-on-quick-action> !-->
+           <c-opportunity-i-d-w-component record-id={recordId} oncallparentmethod={closeActionModel}></c-opportunity-i-d-w-component>
+       </div>
+       <div if:true={isError} >
+           <p>Data not found ... </p>
+       </div>
+    </lightning-card>
+</template>

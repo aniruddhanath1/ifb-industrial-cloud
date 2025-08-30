@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>child_family__c</fullName>
+    <label>child family</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Child Family</fullName>
+                <default>false</default>
+                <label>Child Family</label>
+            </value>
+            <value>
+                <fullName>Industrial Glasswasher</fullName>
+                <default>false</default>
+                <label>Industrial Glasswasher</label>
+            </value>
+            <value>
+                <fullName>Industrial Dishwasher</fullName>
+                <default>false</default>
+                <label>Industrial Dishwasher</label>
+            </value>
+            <value>
+                <fullName>Hood Type</fullName>
+                <default>false</default>
+                <label>Hood Type</label>
+            </value>
+            <value>
+                <fullName>Rack Conveyor</fullName>
+                <default>false</default>
+                <label>Rack Conveyor</label>
+            </value>
+            <value>
+                <fullName>Utensil And Pot Washer</fullName>
+                <default>false</default>
+                <label>Utensil And Pot Washer</label>
+            </value>
+            <value>
+                <fullName>Electric Drying Module</fullName>
+                <default>false</default>
+                <label>Electric Drying Module</label>
+            </value>
+            <value>
+                <fullName>Conventional Washer Extractor</fullName>
+                <default>false</default>
+                <label>Conventional Washer Extractor</label>
+            </value>
+            <value>
+                <fullName>Xeros Washer Extractor</fullName>
+                <default>false</default>
+                <label>Xeros Washer Extractor</label>
+            </value>
+            <value>
+                <fullName>Hygienic Barrier Washer Extractor</fullName>
+                <default>false</default>
+                <label>Hygienic Barrier Washer Extractor</label>
+            </value>
+            <value>
+                <fullName>Vertical Washing Machine</fullName>
+                <default>false</default>
+                <label>Vertical Washing Machine</label>
+            </value>
+            <value>
+                <fullName>Shoe Washing Machine</fullName>
+                <default>false</default>
+                <label>Shoe Washing Machine</label>
+            </value>
+            <value>
+                <fullName>Direct Drive Series</fullName>
+                <default>false</default>
+                <label>Direct Drive Series</label>
+            </value>
+            <value>
+                <fullName>Non-Coaxial Series</fullName>
+                <default>false</default>
+                <label>Non-Coaxial Series</label>
+            </value>
+            <value>
+                <fullName>MS Body</fullName>
+                <default>false</default>
+                <label>MS Body</label>
+            </value>
+            <value>
+                <fullName>SS Body and Basket</fullName>
+                <default>false</default>
+                <label>SS Body and Basket</label>
+            </value>
+            <value>
+                <fullName>Roll Heated Flat Work Ironer</fullName>
+                <default>false</default>
+                <label>Roll Heated Flat Work Ironer</label>
+            </value>
+            <value>
+                <fullName>Movable Chest - E Series</fullName>
+                <default>false</default>
+                <label>Movable Chest - E Series</label>
+            </value>
+            <value>
+                <fullName>Fixed Chest - D Series</fullName>
+                <default>false</default>
+                <label>Fixed Chest - D Series</label>
+            </value>
+            <value>
+                <fullName>Automatic Sheet Folder (Only applicable for Chest Heated Flat Work Ironer)</fullName>
+                <default>false</default>
+                <label>Automatic Sheet Folder (Only applicable for Chest Heated Flat Work Ironer)</label>
+            </value>
+            <value>
+                <fullName>Dry Cleaning Machines (Discount only 10%)</fullName>
+                <default>false</default>
+                <label>Dry Cleaning Machines (Discount only 10%)</label>
+            </value>
+            <value>
+                <fullName>Body Presses</fullName>
+                <default>false</default>
+                <label>Body Presses</label>
+            </value>
+            <value>
+                <fullName>Ironing Tables</fullName>
+                <default>false</default>
+                <label>Ironing Tables</label>
+            </value>
+            <value>
+                <fullName>Presses</fullName>
+                <default>false</default>
+                <label>Presses</label>
+            </value>
+            <value>
+                <fullName>Buck Attachment</fullName>
+                <default>false</default>
+                <label>Buck Attachment</label>
+            </value>
+            <value>
+                <fullName>Stain Removing Machines</fullName>
+                <default>false</default>
+                <label>Stain Removing Machines</label>
+            </value>
+            <value>
+                <fullName>Electric Steam Generators</fullName>
+                <default>false</default>
+                <label>Electric Steam Generators</label>
+            </value>
+            <value>
+                <fullName>Diesel Steam Generators</fullName>
+                <default>false</default>
+                <label>Diesel Steam Generators</label>
+            </value>
+            <value>
+                <fullName>Gas Steam Generators</fullName>
+                <default>false</default>
+                <label>Gas Steam Generators</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

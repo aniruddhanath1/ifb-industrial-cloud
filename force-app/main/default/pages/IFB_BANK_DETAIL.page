@@ -1,0 +1,74 @@
+<apex:page contentType="text/xml" showHeader="false" sidebar="false" controller="MyQuoteController">
+    <table>
+        <table-body> 
+            <table-row >
+                <table-cell display-align="left" number-columns-spanned="18"  padding="3pt">
+                    <block  text-decoration= "underline" text-align="left"  font-family="sans-serif" font-size="9"  >
+                        <apex:outputText >IFB Bank Details</apex:outputText>
+                    </block> 
+                </table-cell>
+                
+            </table-row>
+            <table-row >
+                
+                <table-cell display-align="center" number-columns-spanned="3.6" border="1pt solid  #000000" padding="3pt">
+                    <block  text-align="center"  font-family="sans-serif" font-size="9"  >
+                        <apex:outputText >State</apex:outputText>
+                    </block> 
+                </table-cell>
+                <table-cell display-align="center" number-columns-spanned="3.6" border="1pt solid  #000000" padding="3pt">
+                    <block  text-align="center" font-family="sans-serif" font-size="9"  >
+                        <apex:outputText >Bank Name</apex:outputText>
+                    </block> 
+                </table-cell>
+                <table-cell display-align="center" number-columns-spanned="3.6" border="1pt solid  #000000" padding="3pt">
+                    <block  text-align="center" font-family="sans-serif" font-size="9"  >
+                        <apex:outputText >Account Name</apex:outputText>
+                    </block> 
+                </table-cell>
+                <table-cell display-align="center" number-columns-spanned="3.6" border="1pt solid  #000000" padding="3pt">
+                    <block  text-align="center" font-family="sans-serif" font-size="9"  >
+                        <apex:outputText >Account Number</apex:outputText>
+                    </block> 
+                </table-cell>
+                <table-cell display-align="center" number-columns-spanned="3.6" border="1pt solid  #000000" padding="3pt">
+                    <block  text-align="center" font-family="sans-serif" font-size="9"  >
+                        <apex:outputText >IFSC Code</apex:outputText>
+                    </block> 
+                </table-cell>
+                
+            </table-row>
+            <table-row >
+                <table-cell display-align="center" number-columns-spanned="3.6" border="1pt solid  #000000" padding="3pt">
+                    <block  text-align="center"  font-family="sans-serif" font-size="9"  >
+                        <apex:outputText >{!quote.Bank_State__c}</apex:outputText>
+                    </block> 
+                </table-cell>
+                <table-cell display-align="center" number-columns-spanned="3.6" border="1pt solid  #000000" padding="3pt">
+                    <block  text-align="center" font-family="sans-serif" font-size="9"  >
+                        <apex:outputText >{!quote.Bank_Name__c}</apex:outputText>
+                    </block> 
+                </table-cell>
+                <table-cell display-align="center" number-columns-spanned="3.6" border="1pt solid  #000000" padding="3pt">
+                    <block  text-align="center" font-family="sans-serif" font-size="9"  >
+                        <apex:outputText >{!quote.Bank_Account_Name__c}</apex:outputText>
+                    </block> 
+                </table-cell>
+                <table-cell display-align="center" number-columns-spanned="3.6" border="1pt solid  #000000" padding="3pt">
+                    <block  text-align="center" font-family="sans-serif" font-size="9"  >
+                        <apex:outputText >{!quote.Bank_Account_Number__c}</apex:outputText>
+                    </block> 
+                </table-cell>
+                <table-cell display-align="center" number-columns-spanned="3.6" border="1pt solid  #000000" padding="3pt">
+                    <block  text-align="center" font-family="sans-serif" font-size="9"  >
+                        <apex:outputText >{!quote.Bank_IFSC_Code__c}</apex:outputText>
+                    </block> 
+                </table-cell>
+            </table-row>
+        </table-body>
+    </table>
+    <block>&nbsp;</block>
+    <block>&nbsp;</block>
+    <block color="#7E7E7E" text-align="left" font-family="sans-serif" font-size="7">This quote is digitally generated and does not require a physical signature.</block>
+    
+</apex:page>

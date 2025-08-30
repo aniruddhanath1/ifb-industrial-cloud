@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Auto_Close_On_Filter_Apply_True</fullName>
+    <active>true</active>
+    <description>If Auto Closed On Filter Apply is used, the Product Definition Policy must be Dynamic and Product Definition Level must be Promotion.</description>
+    <errorConditionFormula>AND(
+cgcloud__Auto_Close_On_Filter_Apply__c = TRUE,
+OR(
+NOT(ISPICKVAL(cgcloud__Product_Definition_Level__c,&quot;Promotion&quot;)),
+NOT(INCLUDES(cgcloud__Product_Definition_Policy__c , &quot;Dynamic&quot;)),
+INCLUDES(cgcloud__Product_Definition_Policy__c , &quot;Static&quot;)
+)
+)</errorConditionFormula>
+    <errorMessage>If Auto Closed On Filter Apply is used, the Product Definition Policy must be Dynamic and Product Definition Level must be Promotion.</errorMessage>
+</ValidationRule>

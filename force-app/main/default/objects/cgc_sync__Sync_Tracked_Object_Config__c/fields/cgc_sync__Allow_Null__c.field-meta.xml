@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Allow_Null__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Switch to allow null values instead of default datatype values in the offline database.</description>
+    <inlineHelpText>Select this checkbox to allow a user to enter null values for a field from their mobile device.</inlineHelpText>
+    <label>Allow Null Value</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

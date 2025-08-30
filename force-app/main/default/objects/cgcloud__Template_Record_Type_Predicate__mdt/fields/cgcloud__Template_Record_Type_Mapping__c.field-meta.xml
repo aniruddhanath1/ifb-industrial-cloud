@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Template_Record_Type_Mapping__c</fullName>
+    <deprecated>false</deprecated>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Template Record Type Mapping</label>
+    <referenceTo>cgcloud__Template_Record_Type_Mapping__mdt</referenceTo>
+    <relationshipLabel>Template Record Type Predicates</relationshipLabel>
+    <relationshipName>Template_Record_Type_Predicates</relationshipName>
+    <required>true</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

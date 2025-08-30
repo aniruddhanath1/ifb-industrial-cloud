@@ -1,0 +1,41 @@
+.slds-text-align_left {
+    text-align: left;
+}
+.slds-table thead th {
+    background-color: #0047ab; /* Change this color as needed */
+    color: #ffffff; /* Optional: Change text color to white */
+    text-align: center; /* Center the text */
+    vertical-align: middle; /* Center vertically */
+}
+.inline-layout {
+    display: flex;
+    align-items: center; /* Vertically centers the image and text */
+}
+
+.icon-image {
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+}
+.headerdiv{
+	text-align: center;
+    background-color: #77787B;
+	color:#ffffff;
+	font-size: 15px;
+	font-weight: bold;
+    padding: 0.5rem;
+}
+.selected {
+    border: 2px solid #0070d2;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+    .slds-combobox_container, 
+    .slds-form-element__control, 
+    .slds-form-element, 
+    .slds-textarea, 
+    .slds-input {
+        width: 100%;
+    }
+}

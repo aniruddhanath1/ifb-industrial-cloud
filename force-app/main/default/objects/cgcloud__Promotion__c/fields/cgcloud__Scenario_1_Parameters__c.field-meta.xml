@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Scenario_1_Parameters__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Scenario Parameters for Scenario 1 in JSON format :
+[{&quot;KPI&quot;:&lt;KPI Name&gt;,&quot;value&quot;:&lt;KPI value&gt;,&quot;applied&quot;:&lt;boolean&gt;},...]</description>
+    <externalId>false</externalId>
+    <label>Scenario_1_Parameters</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

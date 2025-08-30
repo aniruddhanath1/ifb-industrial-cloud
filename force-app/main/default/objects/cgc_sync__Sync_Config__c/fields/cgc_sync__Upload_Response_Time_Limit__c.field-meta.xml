@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Upload_Response_Time_Limit__c</fullName>
+    <defaultValue>120000</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Upload response time limit in milliseconds.</description>
+    <externalId>false</externalId>
+    <label>Upload Response Time Limit</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

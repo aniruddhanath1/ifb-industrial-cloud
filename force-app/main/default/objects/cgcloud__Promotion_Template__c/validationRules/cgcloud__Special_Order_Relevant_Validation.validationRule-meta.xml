@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Special_Order_Relevant_Validation</fullName>
+    <active>true</active>
+    <description>Validation for special order relevant flag.</description>
+    <errorConditionFormula>IF(AND(cgcloud__Selectable_Promotion__c = false, cgcloud__Special_Order_Relevant__c = true), true,false)</errorConditionFormula>
+    <errorDisplayField>cgcloud__Special_Order_Relevant__c</errorDisplayField>
+    <errorMessage>Special Order Relevant can&apos;t be checked if Selectable Promotion is unchecked.</errorMessage>
+</ValidationRule>

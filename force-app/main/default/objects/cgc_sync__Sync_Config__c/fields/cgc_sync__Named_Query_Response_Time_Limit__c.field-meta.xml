@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Named_Query_Response_Time_Limit__c</fullName>
+    <defaultValue>3000</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Named query response time limit in milliseconds.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Value in ms. If you set this to a value higher than 3000 (3 seconds), you might get some API errors about too many concurrent long running transactions.</inlineHelpText>
+    <label>Named Query Response Time Limit</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

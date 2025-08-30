@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Machine_Installation_Floor_Level__c</fullName>
+    <label>Machine Installation Floor Level</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lower Basement</fullName>
+                <default>false</default>
+                <label>Lower Basement</label>
+            </value>
+            <value>
+                <fullName>GF</fullName>
+                <default>false</default>
+                <label>GF</label>
+            </value>
+            <value>
+                <fullName>1st / any other floor</fullName>
+                <default>false</default>
+                <label>1st / any other floor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Check_Out_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The check-out type that’s applied in the product check-out document.</description>
+    <label>Check-Out Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Express Check-Out</fullName>
+                <default>false</default>
+                <label>Express Check-Out</label>
+            </value>
+            <value>
+                <fullName>Pallet Check-Out</fullName>
+                <default>false</default>
+                <label>Pallet Check-Out</label>
+            </value>
+            <value>
+                <fullName>Counting Group Check-Out</fullName>
+                <default>false</default>
+                <label>Counting Group Check-Out</label>
+            </value>
+            <value>
+                <fullName>SKU Check-Out</fullName>
+                <default>true</default>
+                <label>SKU Check-Out</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,19 @@
+<apex:page controller="ProformaInvoiceController" applyHtmlTag="false" showHeader="false" standardStylesheets="false" renderAs="pdf" >
+     <head>
+        <style type="text/css" media="print">
+            
+            @page { 
+            size: a4;
+            } 
+            .page-break {
+            page-break-after: always;
+            }
+            
+            .displayNone{
+            display : none;
+            }
+            
+        </style>
+    </head>
+    <c:ProfomaInvoicePDFGenerator rightCornerText="ORIGINAL FOR RECIPIENT" styleCss="page-break-after: always;" ></c:ProfomaInvoicePDFGenerator>
+</apex:page>

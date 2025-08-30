@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__System_Number__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Parent relation to system number</description>
+    <inlineHelpText>Parent relation to system number</inlineHelpText>
+    <label>System Number</label>
+    <referenceTo>cgcloud__System_Number__c</referenceTo>
+    <relationshipLabel>System Numbers Last</relationshipLabel>
+    <relationshipName>System_Numbers_Last</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

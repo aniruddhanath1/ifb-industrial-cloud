@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Sync_On_Startup__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This synchronization option is triggered every time the application is launched. Tracked Objects and NFTs are optional for this synchronization method. This mainly synchronizes the schema and the runtime artifacts (RTAs).
+        Stores the value true when sync is on start.</description>
+    <inlineHelpText>When this option is selected and the app is launched, the background sync is executed, the app syncs schema updates, and downloads and deploys runtime artifacts (RTAs). When this option isn’t selected and the app is launched, the app syncs the schema updates and the RTAs are executed, but the background sync isn’t executed.</inlineHelpText>
+    <label>Sync On Startup</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

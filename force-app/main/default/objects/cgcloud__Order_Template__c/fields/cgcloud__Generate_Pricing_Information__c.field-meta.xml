@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Generate_Pricing_Information__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This attribute is used to control the storage of pricing information in respective order item/order object. In turn to be displayed during printing or print preview.</description>
+    <label>Generate Pricing Information</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No</fullName>
+                <default>true</default>
+                <label>No</label>
+            </value>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+            <value>
+                <fullName>YesOV</fullName>
+                <default>false</default>
+                <label>Yes (Optimised Version)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

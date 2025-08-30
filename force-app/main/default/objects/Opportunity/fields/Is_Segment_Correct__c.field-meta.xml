@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Segment_Correct__c</fullName>
+    <formula>IF(
+	AND
+	(
+		$User.Bypass_Validation_Rules__c = FALSE,
+		ISPICKVAL(CurrencyIsoCode, &apos;INR&apos;),
+		OR
+		(
+			ISPICKVAL(Account.Customer_Segment__c, &apos;&apos;), 
+			ISPICKVAL(Account.Customer_Sub_segment__c, &apos;&apos;)
+		)
+	), 
+	FALSE, 
+	TRUE
+)</formula>
+    <label>Is Segment Correct</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

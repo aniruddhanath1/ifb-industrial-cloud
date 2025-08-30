@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__SmartUI_ProductDefinitionLevel_Promotion</fullName>
+    <active>true</active>
+    <description>If the UI Type is &apos;SmartUI&apos;, then Product Definition Level must be &apos;Promotion&apos;.</description>
+    <errorConditionFormula>AND(NOT(ISPICKVAL(cgcloud__Product_Definition_Level__c, &apos;Promotion&apos;)),
+                        (ISPICKVAL(cgcloud__UI_Type__c, &apos;SmartUI&apos;)))</errorConditionFormula>
+    <errorDisplayField>cgcloud__UI_Type__c</errorDisplayField>
+    <errorMessage>If the UI Type is &apos;SmartUI&apos;, then Product Definition Level must be &apos;Promotion&apos;.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,53 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border : 2px solid;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border : 2px solid;
+}
+
+tr:nth-child(odd) {background-color: #f2f2f2;}
+
+.assessment-table {
+  font-size: 12px;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.centered-header {
+  text-align: center;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.button-container {
+  text-align: right;
+  margin-right: 5%;
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 768px) {
+  .assessment-table {
+      font-size: 10px; /* Smaller font size for mobile */
+      width: 90%; /* Slightly wider table on mobile */
+      margin-left: 0%; /* Adjust margin for better centering */
+  }
+
+  .button-container {
+      text-align: center; /* Center buttons on mobile */
+      margin-right: 0; /* Remove right margin */
+      margin-top: 10px; /* Add top margin for spacing */
+  }
+
+  .container{
+    
+  }
+
+  /* Adjust other elements if needed */
+}

@@ -1,0 +1,23 @@
+<apex:page renderAs="pdf" applyHtmlTag="false" showHeader="false" standardStylesheets="false" controller="InvoicePDFGenerateController" >
+    <head>
+        <style type="text/css" media="print">
+            
+            @page { 
+            size: a3;
+            } 
+            .page-break {
+            page-break-after: always;
+            }
+            
+            .displayNone{
+            display : none;
+            }
+            
+        </style>
+    </head>
+    
+    <c:ILMPDFGenerateComponent rightCornerText="ORIGINAL FOR RECIPIENT" styleCss="page-break-after: always;" ></c:ILMPDFGenerateComponent>
+    <c:ILMPDFGenerateComponent rightCornerText="DUPLICATE FOR TRANSPORTER" styleCss="page-break-after: always;" ></c:ILMPDFGenerateComponent>
+    <c:ILMPDFGenerateComponent rightCornerText="TRIPLICATE FOR SUPPLIER" styleCss="" ></c:ILMPDFGenerateComponent>
+    
+</apex:page>
