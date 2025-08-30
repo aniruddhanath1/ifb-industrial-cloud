@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Electric connection (Incoming Supply Vol</label>
+    <protected>false</protected>
+    <values>
+        <field>Model__c</field>
+        <value xsi:type="xsd:string">Electric connection (Incoming Supply Voltage)</value>
+    </values>
+    <values>
+        <field>ProTech_311_Plus__c</field>
+        <value xsi:type="xsd:string">1P/230/50/N</value>
+    </values>
+    <values>
+        <field>ProTech_411_Plus__c</field>
+        <value xsi:type="xsd:string">1P/230/50/N</value>
+    </values>
+    <values>
+        <field>ProTech_611_B__c</field>
+        <value xsi:type="xsd:string">1P/230/50/N</value>
+    </values>
+    <values>
+        <field>ProTech_611_Plus__c</field>
+        <value xsi:type="xsd:string">1P/230/50/N</value>
+    </values>
+    <values>
+        <field>ProTech_613_plus__c</field>
+        <value xsi:type="xsd:string">3P/400/50/N</value>
+    </values>
+    <values>
+        <field>ProTech_813__c</field>
+        <value xsi:type="xsd:string">3P/400/50/N</value>
+    </values>
+    <values>
+        <field>ProTech_913__c</field>
+        <value xsi:type="xsd:string">3P/400/50/N</value>
+    </values>
+    <values>
+        <field>Unit__c</field>
+        <value xsi:type="xsd:string">Ph/V/Hz/N</value>
+    </values>
+</CustomMetadata>

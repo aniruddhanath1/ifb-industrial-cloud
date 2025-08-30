@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Mapped_Record_Id__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The unique Salesforce identifier of a user/profile/role. Please note: If you migrate this from one Salesforce organisation to another, the IDs most probably will become obsolete, with the exception of having them defined based on a full-copy sandbox that only has data pulled from production.</description>
+    <externalId>true</externalId>
+    <inlineHelpText>The unique Salesforce identifier of a user/role/profile.</inlineHelpText>
+    <label>Mapped Record Id</label>
+    <length>18</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

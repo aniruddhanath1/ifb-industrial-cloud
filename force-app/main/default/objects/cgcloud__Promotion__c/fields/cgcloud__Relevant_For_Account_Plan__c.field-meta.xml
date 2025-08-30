@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Relevant_For_Account_Plan__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This field is for project customization. Through this field one can set if the Promotion is specific for the Account Plan.</description>
+    <inlineHelpText>Through this field one can set if the Promotion is specific for the Account Plan.</inlineHelpText>
+    <label>Relevant For Account Plan</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

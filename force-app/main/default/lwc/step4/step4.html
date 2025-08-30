@@ -1,0 +1,31 @@
+<template>
+    <lightning-card footer="" title="">
+        <div class="c-container">
+            <p class="c-description">Step 4</p>
+            <ul class="slds-list_dotted">
+                <li>Click Show Tour within the Guidance card.</li>
+                <li>Click the traffic and route buttons on the left button screen.</li>
+                <li>Click Back.</li>
+                <li>Click NTO Store #201 visit.</li>
+            </ul>
+        </div>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <p>
+                        <lightning-formatted-text value="Chantelle's ready to start her day. She already knows about her visits and visit types."></lightning-formatted-text>
+                    </p><br />
+                    <p>
+                        <lightning-formatted-text value="The Route card shows the route for the day including any traffic delays. Chantelle reviews the information and heads off to her first visit."></lightning-formatted-text>
+                    </p><br />
+                    <p>
+                        <lightning-formatted-text value="Let's check the other scheduled visits for NTO Store #201."></lightning-formatted-text>
+                    </p><br />
+                    <div>
+                        <img src={storecockpit_img} alt="Store Cockpit">
+                    </div><br />
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

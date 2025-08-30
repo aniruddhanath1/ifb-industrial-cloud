@@ -1,0 +1,11 @@
+.slds-modal__container{
+    width: 90% !important;
+    max-width: 90% !important;
+    
+}
+@media only screen and (max-width: 768px) {
+    .slds-modal__container {
+        width: auto !important; /* Smaller width for mobile */
+        max-width: auto !important; /* Ensure the max width is 90% on mobile */
+    }
+}

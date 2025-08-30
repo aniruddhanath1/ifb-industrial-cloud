@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Represent each UI Component that corresponds to a Query Definition record.</description>
+    <label>Query UI</label>
+    <pluralLabel>Query UIs</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

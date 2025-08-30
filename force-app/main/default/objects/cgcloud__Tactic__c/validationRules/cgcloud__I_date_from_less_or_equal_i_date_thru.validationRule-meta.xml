@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__I_date_from_less_or_equal_i_date_thru</fullName>
+    <active>true</active>
+    <description>Instore Date From can&apos;t be later than Instore Date Thru.</description>
+    <errorConditionFormula>cgcloud__Instore_Date_From__c  &gt;  cgcloud__Instore_Date_Thru__c</errorConditionFormula>
+    <errorDisplayField>cgcloud__Instore_Date_From__c</errorDisplayField>
+    <errorMessage>Instore Date From can&apos;t be later than Instore Date Thru.</errorMessage>
+</ValidationRule>

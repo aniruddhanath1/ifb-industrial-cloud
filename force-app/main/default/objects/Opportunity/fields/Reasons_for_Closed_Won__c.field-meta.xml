@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reasons_for_Closed_Won__c</fullName>
+    <label>Reasons for Closed Won</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Influencer</fullName>
+                <default>false</default>
+                <label>Influencer</label>
+            </value>
+            <value>
+                <fullName>Brand Value</fullName>
+                <default>false</default>
+                <label>Brand Value</label>
+            </value>
+            <value>
+                <fullName>Service</fullName>
+                <default>false</default>
+                <label>Service</label>
+            </value>
+            <value>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+                <label>Relationship</label>
+            </value>
+            <value>
+                <fullName>Customer base/Referrals</fullName>
+                <default>false</default>
+                <label>Customer base/Referrals</label>
+            </value>
+            <value>
+                <fullName>Past Experience</fullName>
+                <default>false</default>
+                <label>Past Experience</label>
+            </value>
+            <value>
+                <fullName>Support provided in Purchase Process</fullName>
+                <default>false</default>
+                <label>Support provided in Purchase Process</label>
+            </value>
+            <value>
+                <fullName>Technical Competency</fullName>
+                <default>false</default>
+                <label>Technical Competency</label>
+            </value>
+            <value>
+                <fullName>Product Features</fullName>
+                <default>false</default>
+                <label>Product Features</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

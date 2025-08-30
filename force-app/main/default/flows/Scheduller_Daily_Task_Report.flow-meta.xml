@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>This Emial Notification for Weekly basis</description>
+        <name>Business_day_Report_Weekly_basis</name>
+        <label>Business day Report Weekly basis</label>
+        <locationX>50</locationX>
+        <locationY>2100</locationY>
+        <actionName>EmailForLeadsReportsController</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>EmailForLeadsReportsController</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>BusinessDay_Reports</name>
+        <label>BusinessDay Reports</label>
+        <locationX>248</locationX>
+        <locationY>576</locationY>
+        <actionName>EmailForLeadsReportsController</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>BusinessDay_SLA</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>EmailForLeadsReportsController</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>BusinessDay_SLA</name>
+        <label>BusinessDay SLA</label>
+        <locationX>248</locationX>
+        <locationY>684</locationY>
+        <actionName>EmailForLeadsBusinessDaySLAController</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Checking_for_current_Time</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>EmailForLeadsBusinessDaySLAController</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_2_of_Sending_Emails</name>
+        <label>Copy 2 of Sending Emails</label>
+        <locationX>50</locationX>
+        <locationY>1992</locationY>
+        <actionName>EmailForTaskReportsController</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Business_day_Report_Weekly_basis</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>EmailForTaskReportsController</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Email_Notification_All_Open_Quotes_and_status_not_Change</name>
+        <label>Email Notification All Open Quotes and status not Change</label>
+        <locationX>94</locationX>
+        <locationY>1500</locationY>
+        <actionName>EmailNotificationOpenQuotesController</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Checking_for_Friday</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>EmailNotificationOpenQuotesController</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <description>This method check every day when lead has been created and send the email to the owner at 6PM.</description>
+        <name>Every_Business_Day</name>
+        <label>Every Business Day</label>
+        <locationX>94</locationX>
+        <locationY>1392</locationY>
+        <actionName>EmailForTaskReportsController</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Email_Notification_All_Open_Quotes_and_status_not_Change</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>EmailForTaskReportsController</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Sending_Emails</name>
+        <label>Sending Emails</label>
+        <locationX>248</locationX>
+        <locationY>984</locationY>
+        <actionName>EmailForTaskReportsController</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Checking_for_first_of_month</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>EmailForTaskReportsController</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_Business_Day</name>
+        <label>Check Business Day</label>
+        <locationX>380</locationX>
+        <locationY>468</locationY>
+        <defaultConnector>
+            <targetReference>Checking_for_current_Time</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BusinessDay</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>BusinessDay_Reports</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Checking_for_current_Time</name>
+        <label>Checking for current Time</label>
+        <locationX>380</locationX>
+        <locationY>876</locationY>
+        <defaultConnector>
+            <targetReference>Checking_for_first_of_month</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Currect_Time</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Flow.CurrentDateTime</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDateTime</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sending_Emails</targetReference>
+            </connector>
+            <label>Currect Time</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Checking_for_first_of_month</name>
+        <label>Checking for first of month</label>
+        <locationX>380</locationX>
+        <locationY>1176</locationY>
+        <defaultConnector>
+            <targetReference>Checking_for_Friday</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Checking_date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Firstofmonth</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Waiting_for_monthly</targetReference>
+            </connector>
+            <label>Checking date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Checking_for_Friday</name>
+        <label>Checking for Friday</label>
+        <locationX>380</locationX>
+        <locationY>1776</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IsFriday</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IfDayIsFriday</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>7.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>sending_mail_on_weekly</targetReference>
+            </connector>
+            <label>IsFriday</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>ismetadata</name>
+        <label>ismetadata</label>
+        <locationX>611</locationX>
+        <locationY>360</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>ismetadatatrue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Custom_MetaData.Active__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Business_Day</targetReference>
+            </connector>
+            <label>ismetadatatrue</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>BusinessDay</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(WEEKDAY({!$Flow.CurrentDate}) = 1 , true,IF(WEEKDAY({!$Flow.CurrentDate}) = 2 , true, IF(WEEKDAY({!$Flow.CurrentDate}) = 3, true, IF(WEEKDAY({!$Flow.CurrentDate}) = 4 , true, IF(WEEKDAY({!$Flow.CurrentDate}) = 5, true, IF(WEEKDAY({!$Flow.CurrentDate}) = 7, true,IF(WEEKDAY({!$Flow.CurrentDate}) = 6, true, false)))))))</expression>
+    </formulas>
+    <formulas>
+        <name>CurrentTime</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE(TEXT(TODAY() ) + &quot; 09:00:00&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>Dailytime</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE(TEXT(TODAY()) + &quot; 18:00:00&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>Firstofmonth</name>
+        <dataType>Number</dataType>
+        <expression>DAY({!$Flow.CurrentDate})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>IfDayIsFriday</name>
+        <dataType>Number</dataType>
+        <expression>WEEKDAY(TODAY() + 1)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>monthlytime</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE(TEXT(TODAY())+ &quot; 03:30:00&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>WeeklyTime</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE(TEXT(TODAY()) + &quot; 10:30:00&quot;)</expression>
+    </formulas>
+    <interviewLabel>Scheduller : Daily Task Report {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Scheduller : Daily Task Report</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Custom_MetaData</name>
+        <label>Custom MetaData</label>
+        <locationX>611</locationX>
+        <locationY>252</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>ismetadata</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>flow_active</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>org_specific_setting__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>485</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Custom_MetaData</targetReference>
+        </connector>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2024-09-24</startDate>
+            <startTime>18:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Draft</status>
+    <waits>
+        <name>sending_mail_on_weekly</name>
+        <label>sending mail on weekly</label>
+        <locationX>182</locationX>
+        <locationY>1884</locationY>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <name>Weekly_mail</name>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>Copy_2_of_Sending_Emails</targetReference>
+            </connector>
+            <eventType>AlarmEvent</eventType>
+            <inputParameters>
+                <name>AlarmTime</name>
+                <value>
+                    <elementReference>WeeklyTime</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>TimeOffset</name>
+            </inputParameters>
+            <inputParameters>
+                <name>TimeOffsetUnit</name>
+            </inputParameters>
+            <label>Weekly mail</label>
+        </waitEvents>
+    </waits>
+    <waits>
+        <name>Waiting_for_monthly</name>
+        <label>Waiting for monthly</label>
+        <locationX>226</locationX>
+        <locationY>1284</locationY>
+        <defaultConnector>
+            <targetReference>Checking_for_Friday</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <name>Checking_for_month_time</name>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>Every_Business_Day</targetReference>
+            </connector>
+            <eventType>AlarmEvent</eventType>
+            <inputParameters>
+                <name>AlarmTime</name>
+                <value>
+                    <elementReference>monthlytime</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>TimeOffset</name>
+            </inputParameters>
+            <inputParameters>
+                <name>TimeOffsetUnit</name>
+            </inputParameters>
+            <label>Checking for month time</label>
+        </waitEvents>
+    </waits>
+</Flow>

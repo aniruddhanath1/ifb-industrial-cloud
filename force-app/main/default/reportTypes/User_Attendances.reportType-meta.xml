@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>Employee</baseObject>
+    <category>employee</category>
+    <deployed>true</deployed>
+    <description>User Attendances</description>
+    <label>User Attendances</label>
+    <sections>
+        <masterLabel>Employees</masterLabel>
+    </sections>
+</ReportType>

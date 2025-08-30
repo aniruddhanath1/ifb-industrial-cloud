@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__S_date_from_less_or_equal_s_date_thru</fullName>
+    <active>true</active>
+    <description>Shipment Date From can&apos;t be later than Shipment Date Thru</description>
+    <errorConditionFormula>cgcloud__Shipment_Date_From__c  &gt;  cgcloud__Shipment_Date_Thru__c</errorConditionFormula>
+    <errorDisplayField>cgcloud__Shipment_Date_From__c</errorDisplayField>
+    <errorMessage>Shipment Date From can&apos;t be later than Shipment Date Thru.</errorMessage>
+</ValidationRule>

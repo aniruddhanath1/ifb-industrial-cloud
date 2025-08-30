@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__TPO_Enable_Uplift_Prediction__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Enables Uplift prediction using Einstein Predictions for this Promotion Template</description>
+    <inlineHelpText>Enables Uplift prediction using Einstein Predictions for this Promotion Template</inlineHelpText>
+    <label>TPO Enable Uplift Prediction</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

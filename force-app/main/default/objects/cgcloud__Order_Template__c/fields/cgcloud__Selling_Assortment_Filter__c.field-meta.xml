@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Selling_Assortment_Filter__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Controls ,whether the customer selling assortment has to be considered when validating the disposal list or not.
+
+    No: The system doesn&apos;t consider any customer selling assortment.
+
+    Yes: The system filters the disposal list subject to the customer selling assortment. The validation although checks the assignment of each product to the according assortment.</description>
+    <label>Selling Assortment Filter</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

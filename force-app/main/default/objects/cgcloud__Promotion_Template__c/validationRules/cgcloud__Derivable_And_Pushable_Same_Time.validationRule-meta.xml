@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Derivable_And_Pushable_Same_Time</fullName>
+    <active>true</active>
+    <description>A Promotion Template can&apos;t be Pushable and Derivable at the same time.</description>
+    <errorConditionFormula>AND(
+cgcloud__Is_Derivable__c = true,
+cgcloud__Is_Pushable__c = true
+)</errorConditionFormula>
+    <errorMessage>A Promotion Template can&apos;t be Pushable and Derivable at the same time.</errorMessage>
+</ValidationRule>

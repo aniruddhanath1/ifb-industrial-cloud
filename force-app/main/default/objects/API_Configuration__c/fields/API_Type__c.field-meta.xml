@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>API_Type__c</fullName>
+    <label>API Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Expense Sync Request</fullName>
+                <default>false</default>
+                <label>Expense Sync Request</label>
+            </value>
+            <value>
+                <fullName>LeaveUpdate</fullName>
+                <default>false</default>
+                <label>LeaveUpdate</label>
+            </value>
+            <value>
+                <fullName>Attendance Sync</fullName>
+                <default>false</default>
+                <label>Attendance Sync</label>
+            </value>
+            <value>
+                <fullName>Purchase Order Sync</fullName>
+                <default>false</default>
+                <label>Purchase Order Sync</label>
+            </value>
+            <value>
+                <fullName>Purchase Order Cancelled Sync</fullName>
+                <default>false</default>
+                <label>Purchase Order Cancelled Sync</label>
+            </value>
+            <value>
+                <fullName>Account Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Account Request</label>
+            </value>
+            <value>
+                <fullName>Meeting Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Meeting Request</label>
+            </value>
+            <value>
+                <fullName>Order Sync Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Order Sync Request</label>
+            </value>
+            <value>
+                <fullName>Product Query</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Product Query</label>
+            </value>
+            <value>
+                <fullName>Product Sync Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Product Sync Request</label>
+            </value>
+            <value>
+                <fullName>Sample Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sample Request</label>
+            </value>
+            <value>
+                <fullName>Site Sync Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Site Sync Request</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

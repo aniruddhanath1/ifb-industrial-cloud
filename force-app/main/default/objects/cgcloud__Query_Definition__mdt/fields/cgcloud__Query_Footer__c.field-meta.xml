@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Query_Footer__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Allows for statements AFTER the Where Clause.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Example: GROUP BY field1, field2 SORT BY field1 ASC</inlineHelpText>
+    <label>Query Footer</label>
+    <length>32768</length>
+    <type>LongTextArea</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

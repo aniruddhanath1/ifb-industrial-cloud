@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BOQ_USR_unapproved_Heating_Type_not_null</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Product_category__c, &quot;ILM&quot;),
+    NOT(BOQ_URS_Approved__c),
+    ISPICKVAL(Heating_Type__c, &quot;&quot;),
+    !$User.Bypass_Validation_Rules__c,				
+				NOT(CONTAINS($Profile.Name, &apos;Admin&apos;))
+)</errorConditionFormula>
+    <errorDisplayField>Heating_Type__c</errorDisplayField>
+    <errorMessage>Heating Type is required when Opportunity is not BOQ/URS and Product Category is ILM.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,17 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item flexibility="auto" padding="around-small">
+            <div class="custom-box">
+                <p>
+                    <lightning-icon icon-name={icon_name} alternative-text={heading}></lightning-icon>
+                    <a class="c-heading" onclick={navigateTo}>{heading}</a>
+                </p>
+                <div class="slds-text-body_regular c-feature-desc">
+                    <p>
+                        <lightning-formatted-text value={cloud_detail} ></lightning-formatted-text>
+                    </p>
+                </div>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

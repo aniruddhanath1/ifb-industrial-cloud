@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Promotion_Template__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The order of this list is very important due this will be the order of the messages that will be sent.</description>
+    <externalId>false</externalId>
+    <label>Promotion Template</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

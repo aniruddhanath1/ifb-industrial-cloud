@@ -1,0 +1,1217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Sub_segment_Sub_Vertical__c</fullName>
+    <label>Customer Sub segment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Customer_Segment_Vertical__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Agriculture and Farmers Welfare</fullName>
+                <default>false</default>
+                <label>Agriculture and Farmers Welfare</label>
+            </value>
+            <value>
+                <fullName>Airbnb</fullName>
+                <default>false</default>
+                <label>Airbnb</label>
+            </value>
+            <value>
+                <fullName>Airways</fullName>
+                <default>false</default>
+                <label>Airways</label>
+            </value>
+            <value>
+                <fullName>Ayurvedic Hospital</fullName>
+                <default>false</default>
+                <label>Ayurvedic Hospital</label>
+            </value>
+            <value>
+                <fullName>AYUSH</fullName>
+                <default>false</default>
+                <label>AYUSH</label>
+            </value>
+            <value>
+                <fullName>Banking &amp; Financial Services Institutions</fullName>
+                <default>false</default>
+                <label>Banking &amp; Financial Services Institutions</label>
+            </value>
+            <value>
+                <fullName>Banquets</fullName>
+                <default>false</default>
+                <label>Banquets</label>
+            </value>
+            <value>
+                <fullName>Caterers</fullName>
+                <default>false</default>
+                <label>Caterers</label>
+            </value>
+            <value>
+                <fullName>Chain of Hotels</fullName>
+                <default>false</default>
+                <label>Chain of Hotels</label>
+            </value>
+            <value>
+                <fullName>Chain of Laundromat - FOFO/COCO</fullName>
+                <default>false</default>
+                <label>Chain of Laundromat - FOFO/COCO</label>
+            </value>
+            <value>
+                <fullName>Chain of Restaurants</fullName>
+                <default>false</default>
+                <label>Chain of Restaurants</label>
+            </value>
+            <value>
+                <fullName>Chemicals and Fertilizers</fullName>
+                <default>false</default>
+                <label>Chemicals and Fertilizers</label>
+            </value>
+            <value>
+                <fullName>Civil Aviation</fullName>
+                <default>false</default>
+                <label>Civil Aviation</label>
+            </value>
+            <value>
+                <fullName>Clubs</fullName>
+                <default>false</default>
+                <label>Clubs</label>
+            </value>
+            <value>
+                <fullName>Coal</fullName>
+                <default>false</default>
+                <label>Coal</label>
+            </value>
+            <value>
+                <fullName>College</fullName>
+                <default>false</default>
+                <label>College</label>
+            </value>
+            <value>
+                <fullName>Commerce and Industry</fullName>
+                <default>false</default>
+                <label>Commerce and Industry</label>
+            </value>
+            <value>
+                <fullName>Communications</fullName>
+                <default>false</default>
+                <label>Communications</label>
+            </value>
+            <value>
+                <fullName>Consultant - Architect/PMC Consultant</fullName>
+                <default>false</default>
+                <label>Consultant - Architect/PMC Consultant</label>
+            </value>
+            <value>
+                <fullName>Consultant - Design Consultant</fullName>
+                <default>false</default>
+                <label>Consultant - Design Consultant</label>
+            </value>
+            <value>
+                <fullName>Consultant - Kitchen Consultant</fullName>
+                <default>false</default>
+                <label>Consultant - Kitchen Consultant</label>
+            </value>
+            <value>
+                <fullName>Consultant - Laundry Consultant</fullName>
+                <default>false</default>
+                <label>Consultant - Laundry Consultant</label>
+            </value>
+            <value>
+                <fullName>Consumer Affairs, Food and Public Distribution</fullName>
+                <default>false</default>
+                <label>Consumer Affairs, Food and Public Distribution</label>
+            </value>
+            <value>
+                <fullName>Contractors - Building contractors</fullName>
+                <default>false</default>
+                <label>Contractors - Building contractors</label>
+            </value>
+            <value>
+                <fullName>Contractors - Canteen contractors</fullName>
+                <default>false</default>
+                <label>Contractors - Canteen contractors</label>
+            </value>
+            <value>
+                <fullName>Contractors - Laundry contractors</fullName>
+                <default>false</default>
+                <label>Contractors - Laundry contractors</label>
+            </value>
+            <value>
+                <fullName>Contractors - MES contractors</fullName>
+                <default>false</default>
+                <label>Contractors - MES contractors</label>
+            </value>
+            <value>
+                <fullName>Conventional centers</fullName>
+                <default>false</default>
+                <label>Convention Centre</label>
+            </value>
+            <value>
+                <fullName>Cooperation</fullName>
+                <default>false</default>
+                <label>Cooperation</label>
+            </value>
+            <value>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+                <label>Corporate</label>
+            </value>
+            <value>
+                <fullName>Corporate Affairs</fullName>
+                <default>false</default>
+                <label>Corporate Affairs</label>
+            </value>
+            <value>
+                <fullName>Corporate guest Houses</fullName>
+                <default>false</default>
+                <label>Corporate guest Houses</label>
+            </value>
+            <value>
+                <fullName>Culture</fullName>
+                <default>false</default>
+                <label>Culture</label>
+            </value>
+            <value>
+                <fullName>Dealers - Kitchen equipment supplier</fullName>
+                <default>false</default>
+                <label>Dealers - Kitchen equipment supplier</label>
+            </value>
+            <value>
+                <fullName>Dealers - Medical equipment supplier</fullName>
+                <default>false</default>
+                <label>Dealers - Medical equipment supplier</label>
+            </value>
+            <value>
+                <fullName>Dealers - Other equipment supplier</fullName>
+                <default>false</default>
+                <label>Dealers - Other equipment supplier</label>
+            </value>
+            <value>
+                <fullName>Defence</fullName>
+                <default>false</default>
+                <label>Defence</label>
+            </value>
+            <value>
+                <fullName>Department of Atomic Energy</fullName>
+                <default>false</default>
+                <label>Department of Atomic Energy</label>
+            </value>
+            <value>
+                <fullName>Development of North Eastern Region</fullName>
+                <default>false</default>
+                <label>Development of North Eastern Region</label>
+            </value>
+            <value>
+                <fullName>Distributors</fullName>
+                <default>false</default>
+                <label>Distributors</label>
+            </value>
+            <value>
+                <fullName>Domestic Dealers</fullName>
+                <default>false</default>
+                <label>Domestic Dealers</label>
+            </value>
+            <value>
+                <fullName>Domestic Distributors</fullName>
+                <default>false</default>
+                <label>Domestic Distributors</label>
+            </value>
+            <value>
+                <fullName>Earth Sciences</fullName>
+                <default>false</default>
+                <label>Earth Sciences</label>
+            </value>
+            <value>
+                <fullName>Education</fullName>
+                <default>false</default>
+                <label>Education</label>
+            </value>
+            <value>
+                <fullName>Electronics and Information Technology</fullName>
+                <default>false</default>
+                <label>Electronics and Information Technology</label>
+            </value>
+            <value>
+                <fullName>Entertainment - Aquarium</fullName>
+                <default>false</default>
+                <label>Entertainment - Aquarium</label>
+            </value>
+            <value>
+                <fullName>Entertainment - Casino</fullName>
+                <default>false</default>
+                <label>Entertainment - Casino</label>
+            </value>
+            <value>
+                <fullName>Entertainment - Mall</fullName>
+                <default>false</default>
+                <label>Entertainment - Mall</label>
+            </value>
+            <value>
+                <fullName>Entertainment - Museums</fullName>
+                <default>false</default>
+                <label>Entertainment - Museums</label>
+            </value>
+            <value>
+                <fullName>Entertainment - Others</fullName>
+                <default>false</default>
+                <label>Entertainment - Others</label>
+            </value>
+            <value>
+                <fullName>Entertainment - Theatre</fullName>
+                <default>false</default>
+                <label>Entertainment - Theatre</label>
+            </value>
+            <value>
+                <fullName>Entertainment - Theme Park</fullName>
+                <default>false</default>
+                <label>Entertainment - Theme Park</label>
+            </value>
+            <value>
+                <fullName>Environment, Forest and Climate Change</fullName>
+                <default>false</default>
+                <label>Environment, Forest and Climate Change</label>
+            </value>
+            <value>
+                <fullName>Export</fullName>
+                <default>false</default>
+                <label>Export</label>
+            </value>
+            <value>
+                <fullName>Export Agent</fullName>
+                <default>false</default>
+                <label>Export Agent</label>
+            </value>
+            <value>
+                <fullName>External Affairs</fullName>
+                <default>false</default>
+                <label>External Affairs</label>
+            </value>
+            <value>
+                <fullName>Facility Management Companies</fullName>
+                <default>false</default>
+                <label>Facility Management Companies</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>Fisheries, Animal Husbandry and Dairying</fullName>
+                <default>false</default>
+                <label>Fisheries, Animal Husbandry and Dairying</label>
+            </value>
+            <value>
+                <fullName>Food Processing Industries</fullName>
+                <default>false</default>
+                <label>Food Processing Industries</label>
+            </value>
+            <value>
+                <fullName>Hatcheries</fullName>
+                <default>false</default>
+                <label>Hatcheries</label>
+            </value>
+            <value>
+                <fullName>Health and Family Welfare</fullName>
+                <default>false</default>
+                <label>Health and Family Welfare</label>
+            </value>
+            <value>
+                <fullName>Heavy Industries</fullName>
+                <default>false</default>
+                <label>Heavy Industries</label>
+            </value>
+            <value>
+                <fullName>Home Affairs</fullName>
+                <default>false</default>
+                <label>Home Affairs</label>
+            </value>
+            <value>
+                <fullName>Hospitals</fullName>
+                <default>false</default>
+                <label>Hospitals</label>
+            </value>
+            <value>
+                <fullName>Hostels</fullName>
+                <default>false</default>
+                <label>Hostels</label>
+            </value>
+            <value>
+                <fullName>Housing and Urban Affairs</fullName>
+                <default>false</default>
+                <label>Housing and Urban Affairs</label>
+            </value>
+            <value>
+                <fullName>Information and Broadcasting</fullName>
+                <default>false</default>
+                <label>Information and Broadcasting</label>
+            </value>
+            <value>
+                <fullName>Institutional dealers</fullName>
+                <default>false</default>
+                <label>Institutional dealers</label>
+            </value>
+            <value>
+                <fullName>Institutional Partners - AC Dealer/Distributor</fullName>
+                <default>false</default>
+                <label>Institutional Partners - AC Dealer/Distributor</label>
+            </value>
+            <value>
+                <fullName>IT</fullName>
+                <default>false</default>
+                <label>IT</label>
+            </value>
+            <value>
+                <fullName>Jal Shakti</fullName>
+                <default>false</default>
+                <label>Jal Shakti</label>
+            </value>
+            <value>
+                <fullName>Labour and Employment</fullName>
+                <default>false</default>
+                <label>Labour and Employment</label>
+            </value>
+            <value>
+                <fullName>Law and Justice</fullName>
+                <default>false</default>
+                <label>Law and Justice</label>
+            </value>
+            <value>
+                <fullName>Manufacturing</fullName>
+                <default>false</default>
+                <label>Manufacturing</label>
+            </value>
+            <value>
+                <fullName>Micro, Small &amp; Medium Enterprises</fullName>
+                <default>false</default>
+                <label>Micro, Small &amp; Medium Enterprises</label>
+            </value>
+            <value>
+                <fullName>Mines</fullName>
+                <default>false</default>
+                <label>Mines</label>
+            </value>
+            <value>
+                <fullName>Mining</fullName>
+                <default>false</default>
+                <label>Mining</label>
+            </value>
+            <value>
+                <fullName>Minority Affairs</fullName>
+                <default>false</default>
+                <label>Minority Affairs</label>
+            </value>
+            <value>
+                <fullName>New and Renewable Energy</fullName>
+                <default>false</default>
+                <label>New and Renewable Energy</label>
+            </value>
+            <value>
+                <fullName>Non IT</fullName>
+                <default>false</default>
+                <label>Non IT</label>
+            </value>
+            <value>
+                <fullName>Old age home</fullName>
+                <default>false</default>
+                <label>Old age home</label>
+            </value>
+            <value>
+                <fullName>Orphanages</fullName>
+                <default>false</default>
+                <label>Orphanages</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Other Training institutions</fullName>
+                <default>false</default>
+                <label>Other Training institutions</label>
+            </value>
+            <value>
+                <fullName>Panchayati Raj</fullName>
+                <default>false</default>
+                <label>Panchayati Raj</label>
+            </value>
+            <value>
+                <fullName>Parliamentary Affairs</fullName>
+                <default>false</default>
+                <label>Parliamentary Affairs</label>
+            </value>
+            <value>
+                <fullName>Personnel, Public Grievances and Pensions</fullName>
+                <default>false</default>
+                <label>Personnel, Public Grievances and Pensions</label>
+            </value>
+            <value>
+                <fullName>Petroleum and Natural Gas</fullName>
+                <default>false</default>
+                <label>Petroleum and Natural Gas</label>
+            </value>
+            <value>
+                <fullName>PGs</fullName>
+                <default>false</default>
+                <label>PGs</label>
+            </value>
+            <value>
+                <fullName>Pharms</fullName>
+                <default>false</default>
+                <label>Pharma</label>
+            </value>
+            <value>
+                <fullName>Planning</fullName>
+                <default>false</default>
+                <label>Planning</label>
+            </value>
+            <value>
+                <fullName>Ports, Shipping and Waterways</fullName>
+                <default>false</default>
+                <label>Ports, Shipping and Waterways</label>
+            </value>
+            <value>
+                <fullName>Poultry</fullName>
+                <default>false</default>
+                <label>Poultry</label>
+            </value>
+            <value>
+                <fullName>Power</fullName>
+                <default>false</default>
+                <label>Power</label>
+            </value>
+            <value>
+                <fullName>Power Plant</fullName>
+                <default>false</default>
+                <label>Power Plant</label>
+            </value>
+            <value>
+                <fullName>QSRs</fullName>
+                <default>false</default>
+                <label>QSRs</label>
+            </value>
+            <value>
+                <fullName>Railways</fullName>
+                <default>false</default>
+                <label>Railways</label>
+            </value>
+            <value>
+                <fullName>Rehabilitation Centers</fullName>
+                <default>false</default>
+                <label>Rehabilitation Centers</label>
+            </value>
+            <value>
+                <fullName>Religious Centers</fullName>
+                <default>false</default>
+                <label>Religious Centers</label>
+            </value>
+            <value>
+                <fullName>Research institutions</fullName>
+                <default>false</default>
+                <label>Research institutions</label>
+            </value>
+            <value>
+                <fullName>Residential</fullName>
+                <default>false</default>
+                <label>Residential</label>
+            </value>
+            <value>
+                <fullName>Residential Apartments</fullName>
+                <default>false</default>
+                <label>Residential Apartments</label>
+            </value>
+            <value>
+                <fullName>Resorts</fullName>
+                <default>false</default>
+                <label>Resorts</label>
+            </value>
+            <value>
+                <fullName>Resto Bars/Pubs/Clubs</fullName>
+                <default>false</default>
+                <label>Resto Bars/Pubs/Clubs</label>
+            </value>
+            <value>
+                <fullName>Retail Outlets - Boutique</fullName>
+                <default>false</default>
+                <label>Retail Outlets - Boutique</label>
+            </value>
+            <value>
+                <fullName>Retail Outlets - Multi Brand Outlets</fullName>
+                <default>false</default>
+                <label>Retail Outlets - Multi Brand Outlets</label>
+            </value>
+            <value>
+                <fullName>Retail Outlets - Single Brand Outlets</fullName>
+                <default>false</default>
+                <label>Retail Outlets - Single Brand Outlets</label>
+            </value>
+            <value>
+                <fullName>Revenue</fullName>
+                <default>false</default>
+                <label>Revenue</label>
+            </value>
+            <value>
+                <fullName>Road Transport and Highways</fullName>
+                <default>false</default>
+                <label>Road Transport and Highways</label>
+            </value>
+            <value>
+                <fullName>Rural Development</fullName>
+                <default>false</default>
+                <label>Rural Development</label>
+            </value>
+            <value>
+                <fullName>Salon/Spa</fullName>
+                <default>false</default>
+                <label>Salon/Spa</label>
+            </value>
+            <value>
+                <fullName>Schools</fullName>
+                <default>false</default>
+                <label>Schools</label>
+            </value>
+            <value>
+                <fullName>Science and Technology</fullName>
+                <default>false</default>
+                <label>Science and Technology</label>
+            </value>
+            <value>
+                <fullName>Service Apartments</fullName>
+                <default>false</default>
+                <label>Service Apartments</label>
+            </value>
+            <value>
+                <fullName>SEZ</fullName>
+                <default>false</default>
+                <label>SEZ</label>
+            </value>
+            <value>
+                <fullName>Ship Building Companies</fullName>
+                <default>false</default>
+                <label>Ship Building Companies</label>
+            </value>
+            <value>
+                <fullName>Skill Development and Entrepreneurship</fullName>
+                <default>false</default>
+                <label>Skill Development and Entrepreneurship</label>
+            </value>
+            <value>
+                <fullName>Social Justice and Empowerment</fullName>
+                <default>false</default>
+                <label>Social Justice and Empowerment</label>
+            </value>
+            <value>
+                <fullName>Sports Academy</fullName>
+                <default>false</default>
+                <label>Sports Academy</label>
+            </value>
+            <value>
+                <fullName>Standalone - Commercial - Educational Institutions</fullName>
+                <default>false</default>
+                <label>Standalone - Commercial - Educational Institutions</label>
+            </value>
+            <value>
+                <fullName>Standalone - Commercial - Hospital</fullName>
+                <default>false</default>
+                <label>Standalone - Commercial - Hospital</label>
+            </value>
+            <value>
+                <fullName>Standalone - Commercial - Hotels</fullName>
+                <default>false</default>
+                <label>Standalone - Commercial - Hotels</label>
+            </value>
+            <value>
+                <fullName>Standalone Hotels</fullName>
+                <default>false</default>
+                <label>Standalone Hotels</label>
+            </value>
+            <value>
+                <fullName>Standalone Restaurants</fullName>
+                <default>false</default>
+                <label>Standalone Restaurants</label>
+            </value>
+            <value>
+                <fullName>Statistics and Programme Implementation</fullName>
+                <default>false</default>
+                <label>Statistics and Programme Implementation</label>
+            </value>
+            <value>
+                <fullName>Steel</fullName>
+                <default>false</default>
+                <label>Steel</label>
+            </value>
+            <value>
+                <fullName>Textiles</fullName>
+                <default>false</default>
+                <label>Textiles</label>
+            </value>
+            <value>
+                <fullName>Tourism</fullName>
+                <default>false</default>
+                <label>Tourism</label>
+            </value>
+            <value>
+                <fullName>Tribal Affairs</fullName>
+                <default>false</default>
+                <label>Tribal Affairs</label>
+            </value>
+            <value>
+                <fullName>Universities</fullName>
+                <default>false</default>
+                <label>Universities</label>
+            </value>
+            <value>
+                <fullName>Wellness centers</fullName>
+                <default>false</default>
+                <label>Wellness centers</label>
+            </value>
+            <value>
+                <fullName>Women and Child Development</fullName>
+                <default>false</default>
+                <label>Women and Child Development</label>
+            </value>
+            <value>
+                <fullName>Youth Affairs and Sports</fullName>
+                <default>false</default>
+                <label>Youth Affairs and Sports</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Consultant - Architect/PMC Consultant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Consultant - Design Consultant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Consultant - Kitchen Consultant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Consultant - Laundry Consultant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Contractors - Building contractors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Contractors - Canteen contractors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Contractors - Laundry contractors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Contractors - MES contractors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Dealers - Kitchen equipment supplier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Dealers - Medical equipment supplier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Dealers - Other equipment supplier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Distributors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Domestic Dealers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Domestic Distributors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Export Agent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Facility Management Companies</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Institutional dealers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partners</controllingFieldValue>
+            <valueName>Institutional Partners - AC Dealer/Distributor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Establishments</controllingFieldValue>
+            <controllingFieldValue>State</controllingFieldValue>
+            <controllingFieldValue>Educational Institutions</controllingFieldValue>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Others</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Revenue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institutions</controllingFieldValue>
+            <valueName>College</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institutions</controllingFieldValue>
+            <valueName>Other Training institutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institutions</controllingFieldValue>
+            <valueName>Research institutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institutions</controllingFieldValue>
+            <valueName>Schools</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institutions</controllingFieldValue>
+            <valueName>Sports Academy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Institutions</controllingFieldValue>
+            <valueName>Universities</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Export</controllingFieldValue>
+            <valueName>Export</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Garment</controllingFieldValue>
+            <valueName>Textiles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Healthcare</controllingFieldValue>
+            <valueName>Hospitals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Airbnb</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Airways</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Banquets</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Caterers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Chain of Hotels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Chain of Restaurants</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Clubs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Conventional centers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Corporate guest Houses</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Entertainment - Aquarium</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Entertainment - Casino</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Entertainment - Mall</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Entertainment - Museums</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Entertainment - Others</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Entertainment - Theatre</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Entertainment - Theme Park</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Hostels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>PGs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>QSRs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Residential Apartments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Resorts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Resto Bars/Pubs/Clubs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Salon/Spa</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Service Apartments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Standalone Hotels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hospitality</controllingFieldValue>
+            <valueName>Standalone Restaurants</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Laundromats</controllingFieldValue>
+            <valueName>Chain of Laundromat - FOFO/COCO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Laundromats</controllingFieldValue>
+            <valueName>Residential</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Laundromats</controllingFieldValue>
+            <valueName>Standalone - Commercial - Educational Institutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Laundromats</controllingFieldValue>
+            <valueName>Standalone - Commercial - Hospital</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Laundromats</controllingFieldValue>
+            <valueName>Standalone - Commercial - Hotels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Agriculture and Farmers Welfare</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>AYUSH</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Chemicals and Fertilizers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Civil Aviation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Coal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Commerce and Industry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Communications</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Consumer Affairs, Food and Public Distribution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Cooperation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Corporate Affairs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Culture</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Defence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Department of Atomic Energy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Development of North Eastern Region</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Earth Sciences</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Education</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Electronics and Information Technology</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Environment, Forest and Climate Change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>External Affairs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Finance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Fisheries, Animal Husbandry and Dairying</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Health and Family Welfare</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Heavy Industries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Home Affairs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Housing and Urban Affairs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Information and Broadcasting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Jal Shakti</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Labour and Employment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Law and Justice</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Micro, Small &amp; Medium Enterprises</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Mines</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Minority Affairs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>New and Renewable Energy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Panchayati Raj</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Parliamentary Affairs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Personnel, Public Grievances and Pensions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Petroleum and Natural Gas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Planning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Ports, Shipping and Waterways</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Power</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Railways</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Road Transport and Highways</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Rural Development</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Science and Technology</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Skill Development and Entrepreneurship</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Social Justice and Empowerment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Statistics and Programme Implementation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Steel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Tourism</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Tribal Affairs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Women and Child Development</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>List Of Ministries</controllingFieldValue>
+            <valueName>Youth Affairs and Sports</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Profit Organization/NGO</controllingFieldValue>
+            <valueName>Old age home</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Profit Organization/NGO</controllingFieldValue>
+            <valueName>Orphanages</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Profit Organization/NGO</controllingFieldValue>
+            <valueName>Rehabilitation Centers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Profit Organization/NGO</controllingFieldValue>
+            <valueName>Religious Centers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organization/Entity</controllingFieldValue>
+            <valueName>Banking &amp; Financial Services Institutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organization/Entity</controllingFieldValue>
+            <valueName>Corporate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organization/Entity</controllingFieldValue>
+            <valueName>Food Processing Industries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organization/Entity</controllingFieldValue>
+            <valueName>Hatcheries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organization/Entity</controllingFieldValue>
+            <valueName>IT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organization/Entity</controllingFieldValue>
+            <valueName>Manufacturing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organization/Entity</controllingFieldValue>
+            <valueName>Mining</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organization/Entity</controllingFieldValue>
+            <valueName>Non IT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organization/Entity</controllingFieldValue>
+            <valueName>Pharms</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organization/Entity</controllingFieldValue>
+            <valueName>Poultry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organization/Entity</controllingFieldValue>
+            <valueName>Power Plant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organization/Entity</controllingFieldValue>
+            <valueName>Retail Outlets - Boutique</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organization/Entity</controllingFieldValue>
+            <valueName>Retail Outlets - Multi Brand Outlets</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organization/Entity</controllingFieldValue>
+            <valueName>Retail Outlets - Single Brand Outlets</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organization/Entity</controllingFieldValue>
+            <valueName>SEZ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organization/Entity</controllingFieldValue>
+            <valueName>Ship Building Companies</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

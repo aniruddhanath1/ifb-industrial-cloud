@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Upload PO Document">
+                <div class="upload-button-container">
+        <lightning-file-upload
+            record-id={recordId}
+            accept={acceptedFormats}
+            multiple
+            onuploadfinished={handleUploadFinished}>
+        </lightning-file-upload>
+                </div>
+    </lightning-card>
+</template>

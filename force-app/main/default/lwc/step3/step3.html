@@ -1,0 +1,35 @@
+<template>
+    <lightning-card footer="" title="">
+        <div class="c-container">
+            <p class="c-description">Step 3</p>
+            <ul class="slds-list_dotted">
+                <li>Click Show Visit Calendar.</li>
+                <li>Click Menu.</li>
+                <li>Select Weekly View.</li>
+                <li>Click Menu.</li>
+                <li>Click Automatic Planning.</li>
+                <li>Click Menu.</li>
+                <li>Click Plan Customers.</li>
+                <li>Drag and drop a visit to another day to reschedule the visit.</li>
+                <li>Highlight the Create Visit button.</li>
+                <li>Click Back to return to the landing page.</li>
+            </ul>
+        </div>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <p>
+                        <lightning-formatted-text value="To get a view of the current week's visits, Chantelle clicks the Calendar view.  Visits are either preloaded in Salesforce by a route optimization tool or can be manually created and optimized based on configurable attributes."></lightning-formatted-text>
+                    </p><br />
+                    <p>
+                        <lightning-formatted-text value="Each visit is color-coded, which denotes the visit type and the corresponding activities. For example, a planogram reset is represented by a different color and time allotment compared to a typical sales visit. The Calendar view gives Chantelle a snapshot of her workload and helps her prioritize her day. In the next step, Chantelle checks out her visits for the current day."></lightning-formatted-text>
+                    </p><br />
+                    
+                    <div>
+                        <img src={yourdayvisit_img} alt="Yourday Visit">
+                    </div><br />
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

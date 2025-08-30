@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Lead_Time_Validation</fullName>
+    <active>true</active>
+    <description>The Min Lead Time can&apos;t be greater than the Max Lead Time.</description>
+    <errorConditionFormula>cgcloud__Max_Lead_Time__c &lt; cgcloud__Min_Lead_Time__c</errorConditionFormula>
+    <errorMessage>The Min Lead Time can&apos;t be greater than the Max Lead Time.</errorMessage>
+</ValidationRule>

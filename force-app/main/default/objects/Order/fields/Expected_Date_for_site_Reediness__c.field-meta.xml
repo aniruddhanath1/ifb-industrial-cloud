@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expected_Date_for_site_Reediness__c</fullName>
+    <description>This date will be used for Site Readiness before 7 day approval will to NSM</description>
+    <label>Expected Date for site Readiness</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

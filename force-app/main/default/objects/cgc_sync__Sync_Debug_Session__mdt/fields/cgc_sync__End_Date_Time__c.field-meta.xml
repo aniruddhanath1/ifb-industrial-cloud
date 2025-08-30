@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__End_Date_Time__c</fullName>
+    <defaultValue>now() + 30</defaultValue>
+    <deprecated>false</deprecated>
+    <description>The instant in time when debugging should be considered enabled UNTIL.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>The instant in time when debugging should be considered enabled UNTIL.</inlineHelpText>
+    <label>End Date Time</label>
+    <required>true</required>
+    <type>DateTime</type>
+</CustomField>

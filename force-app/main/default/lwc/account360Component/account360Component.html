@@ -1,0 +1,236 @@
+<template>
+    <lightning-card>
+        <template if:true={showSpinner} class="slds-text-align_center slds-p-top_xx-large">
+            <div class="slds-text-align_center slds-p-top_xx-large" style="position: relative; display: inline-block; width: 80px; height: 80px; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 1000;">
+                    <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                </div>
+        </template>
+        <template if:false={showSpinner}>
+            <template if:true={redAccount}>
+                <div style="width: 30px; height: 20px; background-color: red; border: 1px solid black;"></div>
+            </template>
+            <template if:true={customer.machine_details}>
+                <lightning-card title="Machine Details">
+                    <div class="slds-scrollable_x">
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                            <thead>
+                                <tr class="slds-line-height_reset">
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Serial No">Serial No</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Product Code">Product Code</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="FG Code">FG Code</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Model Description">Model Description</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Purchase Date">Purchase Date</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={customer.machine_details} for:item="machine">
+                                    <tr key={machine.serialNo}>
+                                        <td>{machine.serialNo}</td>
+                                        <td>{machine.productCode}</td>
+                                        <td>{machine.fgCode}</td>
+                                        <td>{machine.modelDescription}</td>
+                                        <td>{machine.purchaseDate}</td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </lightning-card>
+            </template>
+
+            <template if:true={customer.installation_details}>
+                <lightning-card title="Installation Details">
+                    <div class="slds-scrollable_x">
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                            <thead>
+                                <tr class="slds-line-height_reset">
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Serial No">Serial No</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Location">Location</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Pincode">Pincode</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Service Engineer">Service Engineer</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Date of Installation">Date of Installation</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={customer.installation_details} for:item="installation">
+                                    <tr key={installation.serialNo}>
+                                        <td>{installation.serialNo}</td>
+                                        <td>{installation.installation_location}</td>
+                                        <td>{installation.pincode}</td>
+                                        <td>{installation.service_Engineer}</td>
+                                        <td>{installation.dateofInstallation}</td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </lightning-card>
+            </template>
+
+            <template if:true={customer.warranty_details}>
+                <lightning-card title="Warranty Details">
+                    <div class="slds-scrollable_x">
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                            <thead>
+                                <tr class="slds-line-height_reset">
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Serial No">Serial No</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Status">Status</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Warranty Type">Warranty Type</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Warranty Start Date">Warranty Start Date</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Warranty End Date">Warranty End Date</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={customer.warranty_details} for:item="warranty">
+                                    <tr key={warranty.serialNo}>
+                                        <td>{warranty.serialNo}</td>
+                                        <td>{warranty.status}</td>
+                                        <td>{warranty.warrantyType}</td>
+                                        <td>{warranty.warrantyStartDate}</td>
+                                        <td>{warranty.warrantyEndDate}</td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </lightning-card>
+            </template>
+
+            <template if:true={customer.essentials}>
+                <lightning-card title="Essentials">
+                    <div class="slds-scrollable_x">
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                            <thead>
+                                <tr class="slds-line-height_reset">
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Date of Purchase">Date of Purchase</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Material">Material</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Material Description">Material Description</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Quantity">Quantity</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Price">Price</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Sold to Party">Sold to Party</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Sold to Part Name">Sold to Part Name</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Ship to Party">Ship to Party</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Ship to Party Name">Ship to Party Name</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={customer.essentials} for:item="essential">
+                                    <tr key={essential.dateofPurchase}>
+                                        <td>{essential.dateofPurchase}</td>
+                                        <td>{essential.material}</td>
+                                        <td>{essential.materialDescription}</td>
+                                        <td>{essential.quantity}</td>
+                                        <td>{essential.price}</td>
+                                        <td>{essential.soldtoParty}</td>
+                                        <td>{essential.soldtoPartName}</td>
+                                        <td>{essential.shiptoParty}</td>
+                                        <td>{essential.shiptoPartyName}</td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </lightning-card>
+            </template>
+
+            <template if:true={customer.complaints}>
+                <lightning-card title="Complaints">
+                    <div class="slds-scrollable_x">
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                            <thead>
+                                <tr class="slds-line-height_reset">
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Serial No">Serial No</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Call Type">Call Type</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Period Of Complaint">Period Of Complaint</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Date Of Complaint">Date Of Complaint</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Status">Status</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Technician Code">Technician Code</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Technician Name">Technician Name</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Contact No">Contact No</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={customer.complaints} for:item="complaint">
+                                    <tr key={complaint.serialNo}>
+                                        <td>{complaint.serialNo}</td>
+                                        <td>{complaint.callType}</td>
+                                        <td>{complaint.periodOfComplaint}</td>
+                                        <td>{complaint.dateOfComplaint}</td>
+                                        <td>{complaint.status}</td>
+                                        <td>{complaint.engineerDetails.technicianCode}</td>
+                                        <td>{complaint.engineerDetails.technicianName}</td>
+                                        <td>{complaint.engineerDetails.contactNo}</td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </lightning-card>
+            </template>
+        </template>
+    </lightning-card>
+</template>

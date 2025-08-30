@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Zipcode__c</columns>
+    <columns>Region__c</columns>
+    <columns>Region_Owner__c</columns>
+    <columns>Circle_Name__c</columns>
+    <columns>State_Name__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Zipcode__c</field>
+        <operation>equals</operation>
+        <value>581101</value>
+    </filters>
+    <label>All</label>
+</ListView>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This metaData is stored STD Codes</description>
+    <label>STD Codes MDT</label>
+    <pluralLabel>STD Codes MDT</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

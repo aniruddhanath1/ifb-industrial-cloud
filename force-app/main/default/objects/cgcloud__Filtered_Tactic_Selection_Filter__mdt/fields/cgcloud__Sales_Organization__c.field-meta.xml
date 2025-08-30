@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Sales_Organization__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Specifies whether the filter applies to a specific Sales Org. By default, it applies to ALL Sales Organization unless a specific Sales Org value is chosen in this field.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>By default, it applies to ALL Sales Organization. Otherwise, choose a Specific Sales Org if you want this filter to only apply to that Sales Org</inlineHelpText>
+    <label>Sales Organization</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ALL</fullName>
+                <default>true</default>
+                <label>ALL</label>
+            </value>
+            <value>
+                <fullName>0001</fullName>
+                <default>false</default>
+                <label>0001</label>
+            </value>
+            <value>
+                <fullName>0002</fullName>
+                <default>false</default>
+                <label>0002</label>
+            </value>
+            <value>
+                <fullName>0003</fullName>
+                <default>false</default>
+                <label>0003</label>
+            </value>
+            <value>
+                <fullName>0004</fullName>
+                <default>false</default>
+                <label>0004</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

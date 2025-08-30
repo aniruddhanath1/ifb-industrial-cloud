@@ -1,0 +1,330 @@
+<apex:component controller="InvoicePDFGenerateController"  > 
+    <apex:attribute name="rightCornerText" type="String" description="Corner Title" />
+    <apex:attribute name="styleCss" type="String" description="Corner Title" />
+    <head>
+        
+    </head>
+    <body>
+        <div style="{!styleCss}"  >
+            <div style="border:2px solid;" > 
+                <table width="100%" style="border:1px solid;border-collapse: collapse;" >
+                    <tr>
+                        <td width="40%;" ><apex:image value="{!$Resource.ifblogo}" height="50px"/></td>
+                        <td width="30%;" style="text-align:center;font-family: sans-serif;font-size: 25px;" >{!If(typeOfPDF == 'IDW_BRANCH',ifb_Delivery_Challan, ifb_Tax_Invoice)}</td>
+                        <td width="30%;" style="text-align:center;font-family: sans-serif;font-size: 10px;" >{!rightCornerText}</td>
+                    </tr>
+                    
+                </table>
+                <table width="100%" style=" border:1px solid " > 
+                    <tr>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 9px;" width="40%;" ><p>IRN:</p></td>
+                        <td  style="text-align:left;font-family: sans-serif;font-size: 9px;" >Ack No:</td>
+                        <td  style="text-align:left;font-family: sans-serif;font-size: 9px;" >Ack Date:</td>
+                    </tr>
+                </table>
+                <table width="100%" style="border:1px solid;padding:0px;margin:0px;border-collapse: collapse;" > 
+                    <tr>
+                        <td style="border:1px solid;" >
+                            <p style="text-align:left;font-family: sans-serif;font-size: 15px;margin:0px;" >{!iFB}</p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;">{!iFb_Address}</p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;">Phone No:{!iFb_Phone} Fax: {!iFb_Fax}</p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;">Website &amp; Email : {!iFb_Websit_Email}</p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;">PAN : {!iFb_Pan_No} CIN : {!iFb_Cin}</p> 
+                            <br/>
+                            <p style="text-align:left;font-family: sans-serif;font-size: 12px;margin:0px;"><srtorg>Name of Consignor:</srtorg></p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 12px;margin:0px;"><srtorg>{!IF(typeOfPDF == 'IDW_BRANCH',idwBranch_Name_Of_Consignor,ifb_Industries_Limited)}</srtorg></p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 8px;margin:0px;word-wrap: break-word;">{!IF(typeOfPDF == 'IDW_BRANCH',iDw_Branch_Name_Of_Consignor_Address,IF(typeOfPDF == 'IDW_HUB',iDw_Hub_Name_Name_Of_Consignor_Address,iLM_Consignor_Address))}</p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;">{!IF(typeOfPDF == 'IDW_BRANCH',Idw_Branch_gStin,IF(typeOfPDF == 'IDW_HUB',iDw_Hub_gStin,iLM_PAN_GSTIN))}</p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;">{!IF(typeOfPDF == 'IDW_BRANCH','',IF(typeOfPDF == 'IDW_HUB','',pLace_Of_Supply))}</p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;">State Name &amp; Code: {!IF(typeOfPDF == 'IDW_BRANCH',iFb_IdwBranch_StateName_Code,IF(typeOfPDF == 'IDW_HUB',iFb_IdwHub_StateName_Code,iFB_IlmPdf_StateName_Code))}</p>                     
+                        </td>
+                        <td style="border:1px solid;" > 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 12px;margin:0px;" >Name of Consignee : Billed To: {!wrapperObjAccount.consigneeBilledTo} </p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 12px;margin:0px;" > {!wrapperObjAccount.nameOfConsignee}</p>
+                            <p style="text-align:left;font-family: sans-serif;font-size: 8px;margin:0px;word-wrap: break-word;" >{!wrapperObjAccount.billingAddress} </p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;">Phone No: {!wrapperObjAccount.phoneNo} Mobile No: {!wrapperObjAccount.mobileNo} Email {!wrapperObjAccount.billingEmail}</p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;">State Name &amp; Code {!wrapperObjAccount.stateNameCode}</p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;">PAN No : {!wrapperObjAccount.panNo} GSTIN/UIN:</p> 
+                            
+                            <br/>
+                            <p style="text-align:left;font-family: sans-serif;font-size: 12px;margin:0px;" ><srtorg>Ship To:</srtorg> {!wrapperObjAccount.shipTo}</p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 12px;margin:0px;" > {!wrapperObjAccount.nameOfConsignee}</p>
+                            <p style="text-align:left;font-family: sans-serif;font-size: 8px;margin:0px;word-wrap: break-word;" >{!wrapperObjAccount.shippingAddress} </p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;">Phone No: {!wrapperObjAccount.ShipingPhoneNo} Mobile No: {!wrapperObjAccount.shipingMobileNo} Email {!wrapperObjAccount.email}</p> 
+                        </td>
+                        <td style="border:1px solid;" > 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 12px;margin:0px;" >Invoice No. : {!wrapperObj.invoiceNo}</p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 12px;margin:0px;" >Invoice Date:    {!wrapperObj.invoiceDate}   Time: {!wrapperObj.invoiceTime}</p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 12px;margin:0px;" >Transporter Name: {!wrapperObj.invoiceTranceportName}</p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 12px;margin:0px;" >Transport Mode: {!wrapperObj.invoiceTranceportMode}</p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 12px;margin:0px;" >Vehicle No: {!wrapperObj.invoiceVehicleNo}  LR Number: {!wrapperObj.LRNumber} </p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 12px;margin:0px;" >Gross Weight: {!wrapperObj.invoiceGrossWeight} Net WT. : {!wrapperObj.invoiceNetWt}</p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 12px;margin:0px;" >Sales Order: {!wrapperObj.invoiceSalesOrder}</p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 12px;margin:0px;" >Challan Details: {!wrapperObj.invoiceChallanDetails} </p> 
+                            <p style="text-align:left;font-family: sans-serif;font-size: 12px;margin:0px;" >PO Details : {!wrapperObj.invoicePODetails}</p> 
+                        </td>
+                    </tr>
+                </table>
+                <table width="100%;" style="border-collapse: collapse;" > 
+                    <tr>
+                        <td width="3%" rowspan="2" style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;border:1px solid;" >Sr No.</td>
+                        <td width="12%" rowspan="2" style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;border:1px solid;" >Item Code / Cust Mat Code.</td>
+                        <td width="15%" rowspan="2" style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;border:1px solid;" >Desc of Goods/Services</td>
+                        <td width="4%" rowspan="2" style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;border:1px solid;" >Cust PO</td>
+                        <td width="10%" rowspan="2" style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;border:1px solid;" >HSN of Goods / Services</td>
+                        <td width="4%" rowspan="2" style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;border:1px solid;" >Qty</td>
+                        <td width="4%" rowspan="2" style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;border:1px solid;" >UoM</td>
+                        <td width="6%" rowspan="2" style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;border:1px solid;" >Unit Price</td>
+                        <td width="7%" rowspan="2" style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;border:1px solid;" >Total Amount</td>
+                        <td width="5%" rowspan="2" style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;border:1px solid;" >Discount 1</td>
+                        <td width="5%" rowspan="2" style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;border:1px solid;" >Discount 2</td>
+                        <td width="7%" rowspan="2" style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;border:1px solid;" >Taxable value</td>
+                        <td width="9%" colspan="2" style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;border:1px solid;" >CGST</td>
+                        <td width="9%" colspan="2" style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;border:1px solid;" >SGST/UTGST</td>
+                        <td width="9%" colspan="2" style="text-align:left;font-family: sans-serif;font-size: 9px;margin:0px;border:1px solid;" >IGST</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Rate</td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Amount</td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Rate</td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Amount</td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Rate</td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Amount</td>
+                    </tr>
+                    <apex:variable var="srNo" value="{!1}" />
+                    <apex:repeat value="{!invoiceLineItemList}" var="wrapperInvoiceLineItemObj">
+                        <tr>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!srNo}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!wrapperInvoiceLineItemObj.ivItemCodeCustMatCode}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!wrapperInvoiceLineItemObj.ivDescofGoodsServices}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!wrapperInvoiceLineItemObj.ivCustPO}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!wrapperInvoiceLineItemObj.ivHSNofGoodsServices}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!wrapperInvoiceLineItemObj.ivQty}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!wrapperInvoiceLineItemObj.ivUoM}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!wrapperInvoiceLineItemObj.ivUnitPrice}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!wrapperInvoiceLineItemObj.ivTotalAmount}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!wrapperInvoiceLineItemObj.ivDiscount1}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!wrapperInvoiceLineItemObj.ivDiscount2}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!wrapperInvoiceLineItemObj.ivTaxablevalue}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!wrapperInvoiceLineItemObj.gstRate1}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!wrapperInvoiceLineItemObj.gstAmount1}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!wrapperInvoiceLineItemObj.gstRate2}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!wrapperInvoiceLineItemObj.gstAmount2}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!wrapperInvoiceLineItemObj.gstRate3}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-left:1px solid;border-right:1px solid;" >{!wrapperInvoiceLineItemObj.gstAmount3}</td>
+                        </tr>
+                        
+                        
+                        <apex:variable var="srNo" value="{!srNo + 1}" />
+                    </apex:repeat>
+                    <tr class="{!IF((typeOfPDF == 'IDW_HUB' || typeOfPDF == 'IDW_BRANCH'),'displayNone','')}"  >
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-right:1px solid;border-left:1px solid;" ></td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;" ></td>
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Freight Charges</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" ></td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" ></td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" ></td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" ></td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" ></td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" ></td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" ></td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" ></td>   
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" ></td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" ></td>
+                        
+                    </tr> 
+                    
+                    <tr>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border-Top:1px solid;" ></td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border-Top:1px solid;" ></td>
+                        <td colspan="3" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-Top:1px solid" >Total </td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-Top:1px solid" >{!wrapperObjLast.totalQuantity}</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;" ></td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" ></td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;" ></td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" ></td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" ></td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalCGST}</td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" ></td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalSGST}</td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" ></td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalIGST}</td>
+                    </tr>
+                    <!-- Start PDF ILM_RGFE --> 
+                    <!--
+                    <tr class="{!IF(typeOfPDF == 'ILM_RGFE','','displayNone')}" >
+                        <td colspan="12" rowspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >
+                            <p style="margin:0px;" >CGST Amount (in words): {!wrapperObjLast.cgstWord}</p>
+                            <p style="margin:0px;" >SGST/UTGST Amount (in words): {!wrapperObjLast.sgstWord}</p>
+                            <p style="margin:0px;" >Total Invoice Value (in words): {!wrapperObjLast.totalWord}</p>
+                        </td>
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Total taxable value</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalTax}</td>
+                    </tr>
+                    
+                    
+                    <tr class="{!IF(typeOfPDF == 'ILM_RGFE','','displayNone')}" >
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Total CGST</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalCGST}</td>
+                    </tr>
+                    <tr class="{!IF(typeOfPDF == 'ILM_RGFE','','displayNone')}" >
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Total SGST/UTGST</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalSGST}</td>
+                    </tr>
+                    <tr class="{!IF(typeOfPDF == 'ILM_RGFE','','displayNone')}" >
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Total invoice value</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalinvoiceValue}</td>
+                    </tr>
+                    <!-- Finish PDF ILM_RGFE --> 
+                    
+                    <!-- Start PDF ILM_EXPORT --> 
+                    <!--
+                    <tr class="{!IF(typeOfPDF == 'ILM_EXPORT','','displayNone')}" >
+                        <td colspan="12" rowspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >
+                            <p style="margin:0px;" >Total Invoice Value (in words): {!wrapperObjLast.totalWord}</p>
+                        </td>
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Total taxable value</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalTax}</td>
+                    </tr>
+                    <tr class="{!IF(typeOfPDF == 'ILM_EXPORT','','displayNone')}" >
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Total invoice value</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalinvoiceValue}</td>
+                    </tr>
+                    <!-- Finish PDF ILM_EXPORT --> 
+                    
+                    
+                    <!-- Start PDF ILM_BRANCH --> 
+                    <!--
+                    <tr class="{!IF(typeOfPDF == 'ILM_BRANCH','','displayNone')}" >
+                        <td colspan="12" rowspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >
+                            
+                            <p style="margin:0px;" >IGST Amount (in words): {!wrapperObjLast.totalIGSTWord}</p>
+                            <p style="margin:0px;" >Total Invoice Value (in words): {!wrapperObjLast.totalWord}</p>
+                        </td>
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Total taxable value</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalTax}</td>
+                    </tr>
+                    <tr class="{!IF(typeOfPDF == 'ILM_BRANCH','','displayNone')}" >
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Total IGST</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalIGST}</td>
+                    </tr>
+                    <tr class="{!IF(typeOfPDF == 'ILM_BRANCH','','displayNone')}" >
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Total invoice value</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalinvoiceValue}</td>
+                    </tr>
+                    <!-- Finish PDF ILM_BRANCH --> 
+                    
+                    <!-- Start PDF ILM_CUSTOMER --> 
+                    <!--
+                    <tr class="{!IF(typeOfPDF == 'ILM_CUSTOMER','','displayNone')}" >
+                        <td colspan="12" rowspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >
+                            
+                            <p style="margin:0px;" >IGST Amount (in words): {!wrapperObjLast.totalIGSTWord}</p>
+                            <p style="margin:0px;" >Total Invoice Value (in words): {!wrapperObjLast.totalWord}</p>
+                        </td>
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Total taxable value</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalTax}</td>
+                    </tr>
+                    <tr class="{!IF(typeOfPDF == 'ILM_CUSTOMER','','displayNone')}" >
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Total IGST</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalIGST}</td>
+                    </tr>
+                    <tr class="{!IF(typeOfPDF == 'ILM_CUSTOMER','','displayNone')}" >
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Total invoice value</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalinvoiceValue}</td>
+                    </tr>-->
+                    <!-- Finish PDF ILM_CUSTOMER --> 
+                    
+                    
+                    
+                    <!-- Start PDF IDW_HUB --> 
+                    <tr >
+                        <td colspan="12" rowspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >
+                            
+                            <p style="margin:0px;" >IGST Amount (in words): {!wrapperObjLast.totalIGSTWord}</p>
+                            <p style="margin:0px;" >Total Invoice Value (in words): {!wrapperObjLast.totalWord}</p>
+                        </td>
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Total taxable value</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalTax}</td>
+                    </tr>
+                    <tr >
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Total IGST</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalIGST}</td>
+                    </tr>
+                    <tr >
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Total invoice value</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalinvoiceValue}</td>
+                    </tr>
+                    <!-- Finish PDF IDW_HUB --> 
+                    
+                    <!-- Start PDF IDW_BRANCH --> 
+                    <!--
+                    <tr class="{!IF(typeOfPDF == 'IDW_BRANCH','','displayNone')}" >
+                        <td colspan="12" rowspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >
+                            <p style="margin:0px;" >Total Invoice Value (in words): {!wrapperObjLast.totalWord}</p>
+                        </td>
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Total taxable value</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalTax}</td>
+                    </tr>
+                    <tr class="{!IF(typeOfPDF == 'IDW_BRANCH','','displayNone')}" >
+                        <td colspan="4" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Total invoice value</td>
+                        <td colspan="2" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperObjLast.totalinvoiceValue}</td>
+                    </tr>-->
+                    <!-- Finish PDF IDW_BRANCH --> 
+                    
+                    
+                    
+                </table>
+                <table width="100%;" style="border-collapse: collapse;"  > 
+                    <tr>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >S.No.</td>
+                        <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Material Code</td>
+                        <td colspan="10" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Description of Goods/ Services</td>
+                        <td colspan="3" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Quantity</td>
+                        <td colspan="3" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >Serial Nos</td>
+                    </tr>
+                    <apex:variable var="srNo" value="{!1}" />
+                    <apex:repeat value="{!invoiceLineItemList}" var="wrapperInvoiceLineItemObj">
+                        <tr>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!srNo}</td>
+                            <td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperInvoiceLineItemObj.ivItemCodeCustMatCode}</td>
+                            <td colspan="10" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperInvoiceLineItemObj.ivDescofGoodsServices}</td>
+                            <td colspan="3" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" >{!wrapperInvoiceLineItemObj.ivQty}</td>
+                            <td colspan="3" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border:1px solid;border:1px solid;" ></td>
+                        </tr>
+                        <apex:variable var="srNo" value="{!srNo + 1}" />
+                    </apex:repeat>
+                </table>
+                <br/><br/><br/>
+                <table width="100%;" style="border-collapse: collapse;" >
+                    <!--  <tr>
+<td style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-top:1px solid;" >
+<p style="margin:0px;" >Whether tax is payable under reverse charge basis - No</p> 
+</td>
+</tr>!-->  
+                    <tr> 
+                        <td width="50%;" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-top:1px solid;" >
+                            <p style="margin:0px;" >{!IF((typeOfPDF == 'IDW_HUB' || typeOfPDF == 'IDW_BRANCH'),'Whether tax is payable under reverse charge basis - No','')}</p>
+                            <p style="margin:0px;" >Declaration</p>
+                            <p style="margin:0px;" >Declared that this invoice shows the actual price of the goods and all the particulars are true and correct.</p>
+                            <p>dated:</p>
+                            <p style="margin:0px;" >(E&amp;OE)</p>
+                            <p style="margin:0px;" >Terms &amp; Conditions:</p>
+                            <p style="margin:0px;" >Certified that the goods are received correctly and in good condition. We certify that the goods received under this challan are of genuine
+                                requirements order by us and we are liable to pay the value thereof to the company as per terms ruling on this day. We undertake not to return
+                                goods to the company unless there is any manufacturing defect. Any such defects will be intimated to the company in writing within 30 days from the
+                                date of receipt of goods. Interest @ 24% will be charged, if payment is not received within the due date.</p>
+                        </td>
+                        <td width="20%;" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-top:1px solid;" >
+                        </td>
+                        <td width="30%;" style="text-align:left;font-family: sans-serif;font-size: 10px;margin:0px;border-top:1px solid;text-align:center;" >
+                            <p style="margin:0px;" >For IFB Industries Ltd</p>
+                            <br/><br/><br/>
+                            <p style="margin:0px;" >Authorized Signatory</p>
+                        </td>
+                    </tr><br/><br/><br/>
+                </table>
+            </div>
+        </div>
+    </body>       
+</apex:component>

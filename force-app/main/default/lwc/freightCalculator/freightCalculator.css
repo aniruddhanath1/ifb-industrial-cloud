@@ -1,0 +1,35 @@
+.outer-boundary {
+    padding: 0%;
+}
+.bottom-boundary {
+}
+
+.headerdiv{
+	text-align: center;
+    background-color: #F2F2F2;
+	font-size: 1rem;
+	font-weight: bolder;
+    padding: 0.5rem;
+}
+/* .accTable hr,p{
+    margin: 0;
+    padding: 0;
+} */
+.accTable{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding:1rem;
+    border-radius: 10px;
+}
+
+.accTable p {
+    font-size: medium;
+    font-weight: 300;
+}
+.accTable span {
+    font-size: larger;
+    font-weight: bolder;
+    border-bottom: 1px solid black;
+    width: 100%;
+    display: block;
+    margin-bottom: 0.5rem;
+}

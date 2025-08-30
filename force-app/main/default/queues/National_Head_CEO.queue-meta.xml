@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>National Head / CEO</name>
+    <queueMembers>
+        <users>
+            <user>govindarajcs@ifbglobal.com</user>
+            <user>rajan_rahi@ifbglobal.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Order</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>SBQQ__Quote__c</sobjectType>
+    </queueSobject>
+</Queue>

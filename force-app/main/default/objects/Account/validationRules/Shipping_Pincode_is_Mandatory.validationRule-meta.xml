@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_Pincode_is_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(!$User.Bypass_Validation_Rules__c,
+NOT(CONTAINS($Profile.Name, &apos;Admin&apos;)),
+(ISBLANK(BillingPostalCode) || NOT(REGEX(BillingPostalCode, &quot;^[0-9]{6}$&quot;))),
+NOT(ValidationBypass__c),
+NOT(ISPICKVAL( AccountSource , &quot;Export&quot;))
+)</errorConditionFormula>
+    <errorDisplayField>BillingPostalCode</errorDisplayField>
+    <errorMessage>Billing Postal Code is in invalid Format</errorMessage>
+</ValidationRule>

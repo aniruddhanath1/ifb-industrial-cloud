@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Customer_Selling_Assortment__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Controls, whether the customer selling assortment is used for presetting the disposal list.
+    - 0/No: The system doesn&apos;t consider any customer selling assortment.
+    - 1/Yes: The system filters the disposal list subject to the customer selling assortment. All other template attributes for the disposal list control have to be considered also.</description>
+    <label>Customer Selling Assortment</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

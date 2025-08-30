@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Type__c</fullName>
+    <label>Sub Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cab - Ola/Uber/Rapido</fullName>
+                <default>true</default>
+                <label>Cab - Ola/Uber/Rapido</label>
+            </value>
+            <value>
+                <fullName>Cab - Office Hire</fullName>
+                <default>false</default>
+                <label>Cab - Office Hire</label>
+            </value>
+            <value>
+                <fullName>Cab</fullName>
+                <default>false</default>
+                <label>Cab</label>
+            </value>
+            <value>
+                <fullName>2 Wheeler - Shared service</fullName>
+                <default>false</default>
+                <label>2 Wheeler - Shared service</label>
+            </value>
+            <value>
+                <fullName>Own 2 Wheeler</fullName>
+                <default>false</default>
+                <label>Own 2 Wheeler</label>
+            </value>
+            <value>
+                <fullName>Own 4 Wheeler</fullName>
+                <default>false</default>
+                <label>Own 4 Wheeler</label>
+            </value>
+            <value>
+                <fullName>Bus - Local</fullName>
+                <default>false</default>
+                <label>Bus - Local</label>
+            </value>
+            <value>
+                <fullName>Bus - Intercity</fullName>
+                <default>false</default>
+                <label>Bus - Intercity</label>
+            </value>
+            <value>
+                <fullName>Train</fullName>
+                <default>false</default>
+                <label>Train</label>
+            </value>
+            <value>
+                <fullName>Air Ticket</fullName>
+                <default>false</default>
+                <label>Air Ticket</label>
+            </value>
+            <value>
+                <fullName>Auto / Shared Auto</fullName>
+                <default>false</default>
+                <label>Auto / Shared Auto</label>
+            </value>
+            <value>
+                <fullName>Metro</fullName>
+                <default>false</default>
+                <label>Metro</label>
+            </value>
+            <value>
+                <fullName>Local Train</fullName>
+                <default>false</default>
+                <label>Local Train</label>
+            </value>
+            <value>
+                <fullName>Ferry</fullName>
+                <default>false</default>
+                <label>Ferry</label>
+            </value>
+            <value>
+                <fullName>Toll Charges</fullName>
+                <default>false</default>
+                <label>Toll Charges</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

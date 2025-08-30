@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Check_Display_SPC_On_Promotion</fullName>
+    <active>true</active>
+    <description>Display SPC can only be cheked if the Product Definition Level is &apos;Promotion&apos;.</description>
+    <errorConditionFormula>AND(NOT(ISPICKVAL(cgcloud__Product_Definition_Level__c, &quot;Promotion&quot;)), (cgcloud__Display_SPC__c))</errorConditionFormula>
+    <errorDisplayField>cgcloud__Product_Definition_Level__c</errorDisplayField>
+    <errorMessage>Display SPC can only be cheked if the Product Definition Level is &apos;Promotion&apos;.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Check_calculation_mode_value</fullName>
+    <active>true</active>
+    <description>Select a KPI set value when the calculation mode is Ad Hoc or Writeback</description>
+    <errorConditionFormula>!ISPICKVAL(cgcloud__Calculation_Mode__c, &apos;No&apos;) &amp;&amp; !ISPICKVAL(cgcloud__Calculation_Mode__c, &apos;&apos;) &amp;&amp;  ISBLANK(cgcloud__KPI_Set__c)</errorConditionFormula>
+    <errorDisplayField>cgcloud__Calculation_Mode__c</errorDisplayField>
+    <errorMessage>Select a KPI set value when the calculation mode is Ad Hoc or Writeback</errorMessage>
+</ValidationRule>

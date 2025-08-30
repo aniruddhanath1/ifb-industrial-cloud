@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Selectable_Promotion_cannot_be_modified</fullName>
+    <active>true</active>
+    <description>The Selectable Promotion can&apos;t be edited after Promotion Template creation.</description>
+    <errorConditionFormula>AND(NOT(ISNEW()), ISCHANGED(cgcloud__Selectable_Promotion__c))</errorConditionFormula>
+    <errorDisplayField>cgcloud__Selectable_Promotion__c</errorDisplayField>
+    <errorMessage>The Selectable Promotion can&apos;t be edited after Promotion Template creation.</errorMessage>
+</ValidationRule>

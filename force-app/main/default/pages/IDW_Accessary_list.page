@@ -1,0 +1,72 @@
+<apex:page contentType="text/xml" showHeader="false" sidebar="false" controller="MyQuoteController">
+     <table >
+        <table-body> 
+            <table-row >
+                
+                <table-cell display-align="center" number-columns-spanned="18"  padding="3pt">
+                    <block  text-decoration= "underline" text-align="center"  font-family="sans-serif" font-size="9"  >
+                        <apex:outputText >*Accessory Items by Model</apex:outputText>
+                    </block> 
+                </table-cell>
+                
+                
+            </table-row>
+            <table-row >
+                
+                <table-cell display-align="left" number-columns-spanned="6" border="1pt solid  #000000" padding="3pt">
+                    <block  text-align="left"  font-family="sans-serif" font-size="9" font-weight="bold" >
+                        <apex:outputText >PT311 Plus/PT411 Plus</apex:outputText>
+                    </block> 
+                </table-cell>
+                <table-cell display-align="left" number-columns-spanned="12" border="1pt solid  #000000" padding="3pt">
+                    <block  text-align="left" font-family="sans-serif" font-size="9"  >
+                        <apex:outputText >Voltage Stabilizer for PCB Protection-1 no., Auto Detergent Dozer Pump-1 no., Auto Rinse Aid Dozer Pump-1 no., Glass(Flat)Basket-2 nos., Electric Power Cable-1 no., Water Inlet Pipe-1 no., Water Drain Pipe-1 no., Rat Mesh-1 no., Opreating Manual/ Electrical Circuit Daigram/ Test Report 1-no </apex:outputText>
+                    </block> 
+                </table-cell>
+            </table-row>
+            <table-row >
+                <table-cell display-align="left" number-columns-spanned="6" border="1pt solid  #000000" padding="3pt">
+                    <block  text-align="left"  font-family="sans-serif" font-size="9" font-weight="bold" >
+                        <apex:outputText >PT611 B/PT611 Plus/PT613 Plus/PT 813/PT 913 </apex:outputText>
+                    </block> 
+                </table-cell>
+                <table-cell display-align="left" number-columns-spanned="12" border="1pt solid  #000000" padding="3pt">
+                    <block text-align="left" font-family="sans-serif" font-size="9" >
+                        <apex:outputText >Voltage Stabilizer for PCB Protection-1 no., Auto Detergent Dozer Pump-1 no., Auto Rinse Aid Dozer Pump-1 no., Glass(Flat)Basket-1 nos., Dish Basket-1 no., Cutlery Basket-1 no., Electric Power Cable-1 no., Water Inlet Pipe-1 no., Water Drain Pipe-1 no., Rat Mesh-1 no., Opreating Manual/ Electrical Circuit Daigram/ Test Report 1-no</apex:outputText></block>
+                </table-cell>
+                
+            </table-row>
+           <table-row >
+                
+                <table-cell display-align="left" number-columns-spanned="6" border="1pt solid  #000000" padding="3pt">
+                    <block  text-align="left"  font-family="sans-serif" font-size="9" font-weight="bold"  >
+                        <apex:outputText >PT 813 Ultra ( Bottle and Dishwasher)</apex:outputText>
+                    </block> 
+                </table-cell>
+                <table-cell display-align="left" number-columns-spanned="12" border="1pt solid  #000000" padding="3pt">
+                    <block text-align="left" font-family="sans-serif" font-size="9" >
+                        <apex:outputText >Voltage Stabilizer for PCB Protection-1 no., Auto Detergent Dozer Pump-1 no., Auto Rinse Aid Dozer Pump-1 no., Glass (Flat)Basket-1 nos., Cutlery Basket-1 no., Bottle Washer Fixture-1 no., Bottle Washer Fixture-1 no., Electric Power Cable-1 no., Water Inlet Pipe-1 no., Water Drain Pipe-1 no., Rat Mesh-1 no., Opreating Manual/ Electrical Circuit Diagram/Test Report 1-no</apex:outputText>
+                    </block>
+                </table-cell>
+                
+            </table-row>
+            <table-row >
+                <table-cell display-align="left" number-columns-spanned="6" border="1pt solid  #000000" padding="3pt">
+                    <block  text-align="left"  font-family="sans-serif" font-size="9" font-weight="bold"  >
+                        <apex:outputText >RC150 PLUS EXIT RIGHT/RC150 PLUS EXIT LEFT/RC154 PLUS EXIT RIGHT/RC154 PLUS EXIT LEFT/RC152 ULTRA EXIT RIGHT/RC152 ULTRA EXIT LEFT/RC152 T EXIT RIGHT(Thermo Level)/RC152 T EXIT LEFT(Thermo Level)</apex:outputText>
+                    </block> 
+                </table-cell>
+                <table-cell display-align="left" number-columns-spanned="12" border="1pt solid  #000000" padding="3pt">
+                    <block text-align="left" font-family="sans-serif" font-size="9" >
+                        <apex:outputText >Voltage Stabilizer for PCB Protection-1 no., Auto Detergent Dozer Pump-1 no., Auto Rinse Aid Dozer Pump-1 no., Glass (Flat)Basket-1 nos., Dish Basket-1 no., Cutlery Basket-1 no., Electric Power Cable-1 no., Water Inlet Pipe-1 no., Water Drain Pipe-1 no., Rat Mesh-1 no., Opreating Manual/ Electrical Circuit Daigram/ Test Report 1-no</apex:outputText>
+                    </block>
+                </table-cell>
+                
+            </table-row>
+        
+          
+           
+        </table-body>
+    </table>
+    
+</apex:page>

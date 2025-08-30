@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Display_Filter__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This field determines whether the filter should be displayed in the Filtered Tactic Selection lightning component.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Uncheck this filter if you don&apos;t want it to show at the Filtered Tactic Selection lightning component. If you do not want to give user the ability to turn off this filter, set Display Filter to False (Unchecked) but set Active to True (Checked).</inlineHelpText>
+    <label>Display Filter In UI</label>
+    <type>Checkbox</type>
+</CustomField>

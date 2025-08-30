@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Consider_OoS__c</fullName>
+    <deprecated>false</deprecated>
+    <description>To the disposal list, the system adds out of stock products and/or presets their quantity.</description>
+    <label>Consider OoS</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+            <value>
+                <fullName>Add</fullName>
+                <default>false</default>
+                <label>Add</label>
+            </value>
+            <value>
+                <fullName>Preset</fullName>
+                <default>false</default>
+                <label>Preset</label>
+            </value>
+            <value>
+                <fullName>AddPreset</fullName>
+                <default>false</default>
+                <label>AddPreset</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

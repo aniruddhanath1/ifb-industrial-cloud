@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Parameter_Order__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field dictates which parameter that will be used in query conditions.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Order must start with 0. Must be unique per query definition. No two parameters should share the same parameter order. 
+Parameter Order 0 corresponds to {0}, Parameter Order 1 corresponds to {1} in Query Conditions...etc</inlineHelpText>
+    <label>Parameter Order</label>
+    <precision>3</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

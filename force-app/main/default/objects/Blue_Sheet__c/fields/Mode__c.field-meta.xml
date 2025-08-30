@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mode__c</fullName>
+    <label>Mode</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Growth</fullName>
+                <default>false</default>
+                <label>Growth</label>
+            </value>
+            <value>
+                <fullName>Trouble</fullName>
+                <default>false</default>
+                <label>Trouble</label>
+            </value>
+            <value>
+                <fullName>Even Keel</fullName>
+                <default>false</default>
+                <label>Even Keel</label>
+            </value>
+            <value>
+                <fullName>Overconfident</fullName>
+                <default>false</default>
+                <label>Overconfident</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

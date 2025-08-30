@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Ignore_Client_Overrides__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Ignore client overrides.</description>
+    <inlineHelpText>If this checkbox is checked, then the client requests to override the limit values will be ignored.</inlineHelpText>
+    <label>Ignore Client Overrides</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

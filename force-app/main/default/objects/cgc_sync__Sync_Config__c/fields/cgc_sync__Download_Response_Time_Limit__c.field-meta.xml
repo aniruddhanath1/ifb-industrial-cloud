@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Download_Response_Time_Limit__c</fullName>
+    <defaultValue>3000</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Download response time in milliseconds. Range: 2000-4000. Recommended value: 3000.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Value in ms. Lower limit 3000. Upper limit 4000. Recommended value 3000.</inlineHelpText>
+    <label>Download Response Time Limit</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

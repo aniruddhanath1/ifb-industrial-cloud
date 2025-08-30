@@ -1,0 +1,115 @@
+<template>
+    <lightning-card>
+        <!-- Outer Boundary -->
+        <div class="outer-boundary slds-p-around_medium">
+
+            <!-- Header (Centered) -->
+            <div class="slds-text-align_center slds-m-bottom_medium bottom-boundary headerdiv">
+                <h1 class="slds-text-heading_medium">Freight Calculator</h1>
+            </div>
+            <lightning-card if:true={showCityAndStatePicklist}>
+                <div style="width: 90%;margin:auto">
+                    <lightning-combobox name="state" label="Shipping State" value={selectedState}
+                        placeholder="Select State" options={stateOptions}
+                        onchange={handleStateChange}></lightning-combobox>
+
+                    <lightning-combobox name="city" label="Shipping City" value={selectedCity} placeholder="Select City"
+                        options={cityOptions} onchange={handleCityChange} class="slds-p-top_small"></lightning-combobox>
+                </div>
+            </lightning-card>
+            
+
+                
+                    <div class="slds-m-around_medium">
+                        <template for:each={products} for:item="row">
+                            <div key={row.Id} class="slds-m-around_medium accTable">
+                                <span>
+                                    {row.productName}
+                                </span>
+                                
+                                <p>
+                                    Model: {row.Model}
+                                </p>
+                                <p>
+                                    Area: {row.areaFeet}
+                                </p>
+                                <p>Quantity: {row.quantity}</p>
+
+                            </div>
+                        </template>
+                    </div>
+    
+
+
+            <!-- Additional Information Section -->
+            <div class="slds-m-around_medium">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <p><b>Total Area in Feets : {TotalArea}</b></p>
+                            </th>
+                            <th>
+                                <p><b>Area left : {leftArea}</b></p>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Vehicle Comboboxes -->
+            <div class="slds-m-around_medium">
+                <lightning-combobox label="Vehicle 1" value={vehicleOne} placeholder="Select Vehicle"
+                    options={vehicleOneOption} onchange={handleVehicleChange} data-label="Vehicle 1"
+                    disabled={disablevehiclPicklist}>
+                </lightning-combobox>
+
+                <lightning-combobox label="Vehicle 2" value={vehicleTwo} placeholder="Select Vehicle"
+                    options={vehicleTwoOption} onchange={handleVehicleChange} data-label="Vehicle 2"
+                    disabled={disablevehiclPicklist}>
+                </lightning-combobox>
+
+                <lightning-combobox label="Vehicle 3" value={vehicleThree} placeholder="Select Vehicle"
+                    options={vehicleThreeOption} onchange={handleVehicleChange} data-label="Vehicle 3"
+                    disabled={disablevehiclPicklist}>
+                </lightning-combobox>
+
+                <lightning-combobox label="Vehicle 4" value={vehicleFour} placeholder="Select Vehicle"
+                    options={vehicleFourOption} onchange={handleVehicleChange} data-label="Vehicle 4"
+                    disabled={disablevehiclPicklist}>
+                </lightning-combobox>
+            </div>
+
+
+
+            <!-- Additional Information Section -->
+            <div class="slds-m-around_medium">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <p><b>Capacity Utilisation : {TotalCapacity}</b></p>
+                            </th>
+                            <th>
+                                <p><b>Price : {formattedFreightPrice}</b></p>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Footer -->
+            <div class="slds-text-align_center slds-m-top_medium">
+                <!-- Buttons -->
+                <div class="slds-m-around_medium">
+                    <lightning-button variant="brand" label="Calculate" title="Primary action" onclick={handleSave}
+                        disabled={disableCalculateButton} class="slds-m-left_x-small"></lightning-button>
+                    <lightning-button variant="brand" label="Save & Close" title="Primary action" onclick={UpdateQuote}
+                        disabled={disableSaveButton} class="slds-m-left_x-small"></lightning-button>
+                    <lightning-button variant="brand" label="Close" title="Primary action" onclick={handleClose}
+                        class="slds-m-left_x-small"></lightning-button>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

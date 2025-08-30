@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Payment_Modification_Reason__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Specifies whether modification reasons can be entered for difference in payments.</description>
+    <label>Payment Modification Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Notrequired</fullName>
+                <default>false</default>
+                <label>Notrequired</label>
+            </value>
+            <value>
+                <fullName>Optional</fullName>
+                <default>false</default>
+                <label>Optional</label>
+            </value>
+            <value>
+                <fullName>Mandatory</fullName>
+                <default>false</default>
+                <label>Mandatory</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>is_Static_Token__c</fullName>
+    <defaultValue>false</defaultValue>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>if the Static Bearer token is Provided to you then Marke this as True and add the static token value</inlineHelpText>
+    <label>is Static Token</label>
+    <type>Checkbox</type>
+</CustomField>

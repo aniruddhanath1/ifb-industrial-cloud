@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Active_Flag_Field__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Field name that determines whether the Type is active (should be included) or not</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Field name that determines whether the Type is active (should be included) or not</inlineHelpText>
+    <label>Active Flag Field</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

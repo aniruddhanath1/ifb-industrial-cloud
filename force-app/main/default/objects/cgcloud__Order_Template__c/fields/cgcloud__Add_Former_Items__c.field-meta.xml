@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Add_Former_Items__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>The template setting controls whether items, which belong to a former sales document of the same business partner and of the same sales document template, are to be added to the disposal list. The system considers only sales documents which have reached a status of status type = &apos;Ready&apos; within the last number of days specified in SdoMeta.ConsiderMaxHistoryDays.</description>
+    <label>Add Former Items</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

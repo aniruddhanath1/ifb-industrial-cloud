@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Namespace_Macro__c</fullName>
+    <defaultValue>&quot;NS&quot;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Contains the replacement key to the settings for CG Cloud Synchronization namepsace SOQL macro.
+
+        Example: If this method returns the string: MY_NAMESPACE, then every SOQL query executed by the system will be replaced like this:
+        
+        SELECT $MY_NAMESPACE.MyCustomField__c FROM $MY_NAMESPACE.MyCustomObject__c replaced with SELECT cgcloud__.MyCustomField__c FROM cgcloud__.MyCustomObject__c where the string cgcloud__ is the prefix obtained from {@link SYNCConstants.NAMESPACEPREFIX}.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Contains the replacement key (or anchor) of the Settings for the namespace macro.
+
+        For example if this method returns the String &quot;MY_NAMESPACE&quot; then every SOQL
+        query executed by the system will be replaced the following way:
+        
+        SELECT $MY_NAMESPACE.MyCustomField__c FROM $MY_NAMESPACE.MyCustomObject__c
+        with something like this:
+        SELECT [NS]__.MyCustomField__c FROM [NS]__.MyCustomObject__c</inlineHelpText>
+    <label>Namespace Macro</label>
+    <length>25</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

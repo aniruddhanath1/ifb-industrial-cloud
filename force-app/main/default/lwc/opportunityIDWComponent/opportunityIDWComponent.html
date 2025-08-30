@@ -1,0 +1,185 @@
+<template>
+    <lightning-card>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-small-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_12-of-12">
+                <div>
+
+                    <table class="table-responsive">
+                        <tr>
+                            <th>Opportunity/Order Owner Name:</th>
+                            <td colspan="6">{currentLoginUserName}</td>
+
+                        </tr>
+                        <tr>
+                            <th>Customer Name:</th>
+                            <td colspan="6">{currentOppName}</td>
+
+                        </tr>
+                        <tr>
+                            <th>Date:</th>
+                            <td colspan="6">{currentDateNow}</td>
+
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th class="centered-header">Under Counter Glass Washer</th>
+                            <th class="centered-header">Under Counter Dishwashers</th>
+                            <th class="centered-header">Hood Type Machines</th>
+                            <th class="centered-header">Remark</th>
+                            <th class="centered-header">Input</th>
+                        </tr>
+                        <tr>
+                            <td class="centered-text">Model</td>
+                            <td></td>
+                            <td class="centered-text">ProTech 411 Plus</td>
+                            <td class="centered-text">ProTech 611 Plus</td>
+                            <td class="centered-text">ProTech 813 Plus</td>
+                            <td></td>
+                            <td>
+                                <lightning-combobox name="progress" placeholder="Select" options={options}
+                                    value={defaultValue10} onchange={handleChange} data-fieldapiname="Model__c">
+                                </lightning-combobox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="centered-text">Machine Dimensions (w*d*h) -Space Req.</td>
+                            <td class="centered-text">cm</td>
+                            <td class="centered-text">43.5 x 54 x 67</td>
+                            <td class="centered-text">57.5 x 60 x 82</td>
+                            <td class="centered-text">64 x 74 x 151</td>
+                            <td class="centered-text">Need Exhaust fan in Room nearby machine</td>
+                            <td>
+                                <lightning-combobox name="progress" placeholder="Select" options={options}
+                                    value={defaultValue1} onchange={handleChange}
+                                    data-fieldapiname="Machine_Dimensions_w_d_h_Space_Req__c"></lightning-combobox>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="centered-text">Total Power Req.(Connected Load)</td>
+                            <td class="centered-text">KW</td>
+                            <td class="centered-text">3.4</td>
+                            <td class="centered-text">3.5</td>
+                            <td class="centered-text">8.5</td>
+                            <td></td>
+                            <td>
+                                <lightning-combobox name="progress" placeholder="Select" options={options}
+                                    value={defaultValue2} onchange={handleChange}
+                                    data-fieldapiname="Total_Power_Req_Connected_Load__c"></lightning-combobox>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="centered-text">Electric Connection (Incoming Supp Vol.)</td>
+                            <td class="centered-text">P?V/Hz</td>
+                            <td class="centered-text">IP/220V/N/E/50Hz</td>
+                            <td class="centered-text">IP/220V/N/E.50Hz</td>
+                            <td class="centered-text">3P/400V/N/E/50Hz</td>
+                            <td class="centered-text"></td>
+                            <td>
+                                <lightning-combobox name="progress" placeholder="Select" options={options}
+                                    value={defaultValue3} onchange={handleChange}
+                                    data-fieldapiname="Electric_Connection_Incoming_Supp_Vol__c"></lightning-combobox>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="centered-text">MCB Rating</td>
+                            <td class="centered-text">Amp</td>
+                            <td class="centered-text">2 pole.16 Amp</td>
+                            <td class="centered-text">2 pole.16 Amp</td>
+                            <td class="centered-text">24 pole.16 Amp</td>
+                            <td></td>
+                            <td>
+                                <lightning-combobox name="progress" placeholder="Select" options={options}
+                                    value={defaultValue4} onchange={handleChange} data-fieldapiname="MCB_Rating__c">
+                                </lightning-combobox>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="centered-text">Required Power Cable(Size/Rating)</td>
+                            <td class="centered-text">5qmm</td>
+                            <td class="centered-text">3 Core.4 sqmm, cu, flexible cable</td>
+                            <td class="centered-text">3 Core.4 sqmm, cu, flexible cable</td>
+                            <td class="centered-text">5 Core.4 sqmm, cu, flexible cable</td>
+                            <td></td>
+                            <td>
+                                <lightning-combobox name="progress" placeholder="Select" options={options}
+                                    value={defaultValue5} onchange={handleChange}
+                                    data-fieldapiname="Required_Power_Cable_Size_Rating__c"></lightning-combobox>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="centered-text">Water Hardness</td>
+                            <td class="centered-text">ppm</td>
+                            <td class="centered-text"> 100</td>
+                            <td class="centered-text"> 100</td>
+                            <td class="centered-text"> 100</td>
+                            <td class="centered-text">If water hardness more than 100 ppm, need to Recommended to Water
+                                Softener as per Site water hardness</td>
+                            <td>
+                                <lightning-combobox name="progress" placeholder="Select" options={options}
+                                    value={defaultValue6} onchange={handleChange} data-fieldapiname="Water_Hardness__c">
+                                </lightning-combobox>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="centered-text">Required Intel Water Pressure</td>
+                            <td class="centered-text">bar</td>
+                            <td class="centered-text"> 2 to 4 </td>
+                            <td class="centered-text"> 2 to 4 </td>
+                            <td class="centered-text"> 2 to 4 </td>
+                            <td class="centered-text">If water pressure less than 2 bar, need to Recommended the Rinse
+                                Booster Pump for increase the Water Pressure</td>
+                            <td>
+                                <lightning-combobox name="progress" placeholder="Select" options={options}
+                                    value={defaultValue7} onchange={handleChange}
+                                    data-fieldapiname="Required_Intel_Water_Pressure__c"></lightning-combobox>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="centered-text">Water Intel Size With Ball Value(M.T.S.)</td>
+                            <td></td>
+                            <td class="centered-text"> 1x3/4" </td>
+                            <td class="centered-text"> 1x3/4" </td>
+                            <td class="centered-text"> 1x3/4" </td>
+                            <td></td>
+                            <td>
+                                <lightning-combobox name="progress" placeholder="Select" options={options}
+                                    value={defaultValue8} onchange={handleChange}
+                                    data-fieldapiname="Water_Intel_Size_With_Ball_Value_M_T_S__c"></lightning-combobox>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="centered-text">Drain Outlet Size-Gravity Drain Req.</td>
+                            <td></td>
+                            <td class="centered-text"> 1x35mm </td>
+                            <td class="centered-text"> 1x35mm </td>
+                            <td class="centered-text"> 1x35mm </td>
+                            <td class="centered-text">If Drain height more than Machine base height, need to Recommended
+                                to Drain Pump kit (Up to 1 mtr max)</td>
+                            <td>
+                                <lightning-combobox name="progress" placeholder="Select" options={options}
+                                    value={defaultValue9} onchange={handleChange}
+                                    data-fieldapiname="Drain_Outlet_Size_Gravity_Drain_Req__c"></lightning-combobox>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br/><br/>
+                <div class="action-buttons">
+                    <lightning-button variant="brand" label="Cancel" title="Cancel" class="slds-m-left_x-small"
+                        onclick={closeAction}></lightning-button>
+                    <lightning-button variant="brand" label="Save/Update" title="Save/Update" onclick={handleSave}
+                        class="slds-m-left_x-small"></lightning-button>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

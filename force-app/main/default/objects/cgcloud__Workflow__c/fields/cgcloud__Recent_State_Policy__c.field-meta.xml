@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Recent_State_Policy__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This attributes controls the creation of the Recent State data records for the workflow. If the attribute is set to &apos;no&apos;, the system does not create a Recent State data record when the business object reaches a new state.</description>
+    <label>Recent State Policy</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

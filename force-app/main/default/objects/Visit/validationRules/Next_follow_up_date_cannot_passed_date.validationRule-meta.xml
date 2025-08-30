@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_follow_up_date_cannot_passed_date</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED( Next_follow_up_date__c ),
+Next_follow_up_date__c &lt; today())</errorConditionFormula>
+    <errorDisplayField>Next_follow_up_date__c</errorDisplayField>
+    <errorMessage>Next follow up date can not be past date from today</errorMessage>
+</ValidationRule>

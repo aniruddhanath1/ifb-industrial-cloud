@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Valiation_on_Currency_if_Lsource_Export</fullName>
+    <active>false</active>
+    <errorConditionFormula>OR(
+AND(
+ISPICKVAL( AccountSource  , &quot;Export&quot;),
+NOT(ValidationBypass__c),
+ISPICKVAL( CurrencyIsoCode , &quot;INR&quot;)
+),
+AND(
+ISPICKVAL( AccountSource , &quot;Export&quot;),
+NOT(ValidationBypass__c),
+NOT(ISPICKVAL( CurrencyIsoCode , &quot;INR&quot;)),
+CONTAINS( BillingCountry , &quot;India&quot;)
+)
+)</errorConditionFormula>
+    <errorMessage>Account Currency cannot be set to INR and the Shipping Country cannot be India when the Account Source is Export Agency.</errorMessage>
+</ValidationRule>

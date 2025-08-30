@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Backward_Status_Change</fullName>
+    <active>true</active>
+    <errorConditionFormula>PRIORVALUE(Order_of_Status__c) &gt; Order_of_Status__c</errorConditionFormula>
+    <errorMessage>You cannot move a lead to a previous status.</errorMessage>
+</ValidationRule>

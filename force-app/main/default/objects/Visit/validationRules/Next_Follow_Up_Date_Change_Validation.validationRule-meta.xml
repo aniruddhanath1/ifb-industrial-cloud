@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Follow_Up_Date_Change_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(PRIORVALUE(Next_follow_up_date__c)!= Next_follow_up_date__c,ISCHANGED(Next_follow_up_date__c),
+ISBLANK( text(Reason__c) ))</errorConditionFormula>
+    <errorDisplayField>Reason__c</errorDisplayField>
+    <errorMessage>If the Next Follow-Up Date changes reasons field fill to be Mandatory</errorMessage>
+</ValidationRule>

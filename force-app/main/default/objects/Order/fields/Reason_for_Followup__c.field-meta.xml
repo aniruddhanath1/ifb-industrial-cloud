@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Followup__c</fullName>
+    <label>Reason for Follow-up</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PI submission &amp; balance payment collection</fullName>
+                <default>false</default>
+                <label>PI submission &amp; balance payment collection</label>
+            </value>
+            <value>
+                <fullName>Post Site Inspection</fullName>
+                <default>false</default>
+                <label>Post Site Inspection</label>
+            </value>
+            <value>
+                <fullName>Balance Payment collection</fullName>
+                <default>false</default>
+                <label>Balance Payment collection</label>
+            </value>
+            <value>
+                <fullName>Unloading</fullName>
+                <default>false</default>
+                <label>Unloading</label>
+            </value>
+            <value>
+                <fullName>Installation</fullName>
+                <default>false</default>
+                <label>Installation</label>
+            </value>
+            <value>
+                <fullName>Visit with Service</fullName>
+                <default>false</default>
+                <label>Visit with Service</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

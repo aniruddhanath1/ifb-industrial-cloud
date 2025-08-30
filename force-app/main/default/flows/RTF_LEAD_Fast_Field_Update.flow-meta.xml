@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Lead_Owner_to_Queue</name>
+        <label>Assign Lead Owner to Queue</label>
+        <locationX>50</locationX>
+        <locationY>1319</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Queue.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Lead_New</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_value_to_region_map</name>
+        <label>Assign value to region map</label>
+        <locationX>182</locationX>
+        <locationY>3035</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Region_Map__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Region_Map_Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_for_TestClass</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assigning_lead_source_values</name>
+        <label>Assigning lead source values</label>
+        <locationX>182</locationX>
+        <locationY>911</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.LeadSource</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Lead_Source_Direct_Lead__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Lead_Unvalidated_Check</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assignment_4</name>
+        <label>Assignment 4</label>
+        <locationX>226</locationX>
+        <locationY>1943</locationY>
+        <assignmentItems>
+            <assignToReference>CountofEventCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>count</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>bypass_the_validation</name>
+        <label>bypass the validation</label>
+        <locationX>182</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.validationBypassDate__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Checking_the_lead_source_value</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_1_of_Assign_Lead_Owner_to_Queue</name>
+        <label>Assign Lead Owner to Queue</label>
+        <locationX>314</locationX>
+        <locationY>1319</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Copy_1_of_Get_Queue.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Lead_New</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_2_of_Assignment_4</name>
+        <label>Copy 2 of Assignment 4</label>
+        <locationX>226</locationX>
+        <locationY>2243</locationY>
+        <assignmentItems>
+            <assignToReference>CountofEventCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_2</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>set_Last_Modified_date_As_it_is</name>
+        <label>set Last Modified date As it is</label>
+        <locationX>314</locationX>
+        <locationY>3335</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.ModifyDateToStage2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.LastModifiedDate</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <customErrors>
+        <name>Prevent_User_from_Discard</name>
+        <label>Prevent User from Discard</label>
+        <locationX>226</locationX>
+        <locationY>2543</locationY>
+        <connector>
+            <targetReference>Get_Region_Map_Record</targetReference>
+        </connector>
+        <customErrorMessages>
+            <errorMessage>A minimum of 3 follow-ups is required before a lead can be discarded.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Check_for_Count</name>
+        <label>Check for Count</label>
+        <locationX>138</locationX>
+        <locationY>2435</locationY>
+        <defaultConnector>
+            <targetReference>Prevent_User_from_Discard</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Count less than 3</defaultConnectorLabel>
+        <rules>
+            <name>Count_greater_than_or_Equal_to_3</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CountofEventCollection</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>3.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Region_Map_Record</targetReference>
+            </connector>
+            <label>Count greater than or Equal to 3</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_for_pincode</name>
+        <label>Check for pincode</label>
+        <locationX>314</locationX>
+        <locationY>2927</locationY>
+        <defaultConnector>
+            <targetReference>Check_for_TestClass</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_for_pincode_on_lead_to_region_map_zipcode</name>
+            <conditionLogic>1 AND 2 AND 3 AND (4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.PostalCode</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PostalCode</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_Region_Map_Record.Zipcode__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Region_Map_Record.Region_Owner__r.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PostalCode</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>IsCreated</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_value_to_region_map</targetReference>
+            </connector>
+            <label>Check for pincode on lead to region map zipcode</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_for_TestClass</name>
+        <label>Check for TestClass</label>
+        <locationX>314</locationX>
+        <locationY>3227</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>This_is_Test_Class</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Company</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Test-Class Company</stringValue>
+                </rightValue>
+            </conditions>
+            <label>This is Test Class</label>
+        </rules>
+        <rules>
+            <name>This_is_Not_Test_Class</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Company</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Test-Class Company</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>set_Last_Modified_date_As_it_is</targetReference>
+            </connector>
+            <label>This is Not Test Class</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Checking_the_lead_source_value</name>
+        <label>Checking the lead source value</label>
+        <locationX>314</locationX>
+        <locationY>803</locationY>
+        <defaultConnector>
+            <targetReference>Lead_Unvalidated_Check</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>lead_source_is_blank</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Lead_Source_Direct_Lead__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assigning_lead_source_values</targetReference>
+            </connector>
+            <label>lead source is blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Lead_New</name>
+        <label>Is Lead New?</label>
+        <locationX>314</locationX>
+        <locationY>1511</locationY>
+        <defaultConnector>
+            <targetReference>Get_Region_Map_Record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Lead_Status_is_Changed_to_Discarded</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discarded</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discarded</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Profile.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Call center</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_related_Events</targetReference>
+            </connector>
+            <label>Lead Status is changed to Discarded</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>IsActive</name>
+        <label>IsActive</label>
+        <locationX>578</locationX>
+        <locationY>395</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IsmetaDataTrue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Custom_MetaData.Active__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Lead_is_created</targetReference>
+            </connector>
+            <label>IsmetaDataTrue</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Lead_is_created</name>
+        <label>Lead is created</label>
+        <locationX>314</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>Checking_the_lead_source_value</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Created_Lead</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsCreated</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>LinkedIn</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>bypass_the_validation</targetReference>
+            </connector>
+            <label>Is Created Lead</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Lead_Unvalidated_Check</name>
+        <label>Lead Unvalidated Check</label>
+        <locationX>314</locationX>
+        <locationY>1103</locationY>
+        <defaultConnector>
+            <targetReference>Is_Lead_New</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Lead_Unvalidated</name>
+            <conditionLogic>(1 AND 2 AND 4) OR (1 AND 3 AND 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Unvalidated</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>IsCreated</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Customer_Category__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Domestic</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Queue</targetReference>
+            </connector>
+            <label>Lead Unvalidated</label>
+        </rules>
+        <rules>
+            <name>Lead_Domestic</name>
+            <conditionLogic>(1 AND 2) OR (1 AND 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Customer_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Domestic</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>IsCreated</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Customer_Category__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Get_Queue</targetReference>
+            </connector>
+            <label>Lead Domestic</label>
+        </rules>
+    </decisions>
+    <description>-Region map auto populate on lead</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Calculateleadscore</name>
+        <dataType>Number</dataType>
+        <expression>(
+    IF(TEXT({!$Record.Purchase_Timeline__c}) = &quot;0-30 days&quot;, 35,
+        IF(TEXT({!$Record.Purchase_Timeline__c}) = &quot;31-60 days&quot;, 20,
+            IF(TEXT({!$Record.Purchase_Timeline__c}) = &quot;61-90 days&quot;, 10,
+                IF(TEXT({!$Record.Purchase_Timeline__c}) = &quot;greater than 90 days&quot;, 0, 0)
+            )
+        )
+    ) +
+    IF(TEXT({!$Record.Budget_Availablility_Budget_Source__c}) = &quot;Yes, Own Source&quot;, 35,
+        IF(TEXT({!$Record.Budget_Availablility_Budget_Source__c}) = &quot;Yes, Loan Approved&quot;, 35,
+            IF(TEXT({!$Record.Budget_Availablility_Budget_Source__c}) = &quot;In Progress&quot;, 20,
+                IF(TEXT({!$Record.Budget_Availablility_Budget_Source__c}) = &quot;Budget not available&quot;, 0, 0)
+            )
+        )
+    ) +
+    IF(TEXT({!$Record.Space_Availability__c}) = &quot;YES&quot;, 10,
+        IF(TEXT({!$Record.Space_Availability__c}) = &quot;NO&quot;, 0, 0)
+    ) +
+    IF(TEXT({!$Record.Site_Suitability__c}) = &quot;YES&quot;, 10,
+        IF(TEXT({!$Record.Site_Suitability__c}) = &quot;NO&quot;, 0, 0)
+    ) +
+    IF(TEXT({!$Record.Infrastructure_completed_in_30_days__c}) = &quot;YES&quot;, 10,
+        IF(TEXT({!$Record.Infrastructure_completed_in_30_days__c}) = &quot;NO&quot;, 0, 0)
+    )
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>IsCreated</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>IsUpdated</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT(ISNEW())</expression>
+    </formulas>
+    <formulas>
+        <name>shippingPostalCode</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT(ISNULL({!$Record.Shipping__PostalCode__s} ))</expression>
+    </formulas>
+    <formulas>
+        <name>TODAYSDATE</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()</expression>
+    </formulas>
+    <interviewLabel>RTF LEAD-Fast Field Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RTF LEAD-Fast Field Update</label>
+    <loops>
+        <name>count</name>
+        <label>count</label>
+        <locationX>138</locationX>
+        <locationY>1835</locationY>
+        <collectionReference>Get_related_Events</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assignment_4</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Loop_2</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_2</name>
+        <label>Loop 2</label>
+        <locationX>138</locationX>
+        <locationY>2135</locationY>
+        <collectionReference>get_related_Task</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Copy_2_of_Assignment_4</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Check_for_Count</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Copy_1_of_Get_Queue</name>
+        <label>Get Queue</label>
+        <locationX>314</locationX>
+        <locationY>1211</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Copy_1_of_Assign_Lead_Owner_to_Queue</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Domestic_Lead_Queue</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Custom_MetaData</name>
+        <label>Custom MetaData</label>
+        <locationX>578</locationX>
+        <locationY>287</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>IsActive</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>flow_active</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>org_specific_setting__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Queue</name>
+        <label>Get Queue</label>
+        <locationX>50</locationX>
+        <locationY>1211</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Lead_Owner_to_Queue</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Call_Centre_User</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Region_Map_Record</name>
+        <label>Get Region Map Record</label>
+        <locationX>314</locationX>
+        <locationY>2819</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_for_pincode</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Zipcode__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.PostalCode</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Region_Map__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_related_Events</name>
+        <label>Get related Events</label>
+        <locationX>138</locationX>
+        <locationY>1619</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>get_related_Task</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WhoId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Event</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>get_related_Task</name>
+        <label>get related Task</label>
+        <locationX>138</locationX>
+        <locationY>1727</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>count</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WhoId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Custom_MetaData</targetReference>
+        </connector>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>3</triggerOrder>
+    <variables>
+        <name>Accoudidd</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CountofEventCollection</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+</Flow>

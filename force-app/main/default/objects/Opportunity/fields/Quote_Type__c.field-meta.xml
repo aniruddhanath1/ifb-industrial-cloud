@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Type__c</fullName>
+    <label>Quote Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EPCG</fullName>
+                <default>false</default>
+                <label>EPCG</label>
+            </value>
+            <value>
+                <fullName>SEZ</fullName>
+                <default>false</default>
+                <label>SEZ</label>
+            </value>
+            <value>
+                <fullName>Deemed Exports</fullName>
+                <default>false</default>
+                <label>Deemed Exports</label>
+            </value>
+            <value>
+                <fullName>Export Partner</fullName>
+                <default>false</default>
+                <label>Export Partner</label>
+            </value>
+            <value>
+                <fullName>EOU/STP/EHTP/BTP</fullName>
+                <default>false</default>
+                <label>EOU/STP/EHTP/BTP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

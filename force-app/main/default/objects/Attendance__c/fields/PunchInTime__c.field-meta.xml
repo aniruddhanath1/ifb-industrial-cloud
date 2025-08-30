@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PunchInTime__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  ISBLANK(Punch_In_Time__c),
+  null,
+  TEXT(YEAR(DATEVALUE(Punch_In_Time__c))) &amp; &apos;-&apos; &amp;
+  LPAD(TEXT(MONTH(DATEVALUE(Punch_In_Time__c))), 2, &apos;0&apos;) &amp; &apos;-&apos; &amp;
+  LPAD(TEXT(DAY(DATEVALUE(Punch_In_Time__c))), 2, &apos;0&apos;) &amp; &apos;T&apos; &amp;
+  LPAD(TEXT(VALUE(MID(TEXT(Punch_In_Time__c + (5/24) + (30/1440)), 12, 2))), 2, &apos;0&apos;) &amp; &apos;:&apos; &amp;
+  LPAD(TEXT(VALUE(MID(TEXT(Punch_In_Time__c + (5/24) + (30/1440)), 15, 2))), 2, &apos;0&apos;) &amp; &apos;:&apos; &amp;
+  LPAD(TEXT(VALUE(MID(TEXT(Punch_In_Time__c + (5/24) + (30/1440)), 18, 2))), 2, &apos;0&apos;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>PunchInTime</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

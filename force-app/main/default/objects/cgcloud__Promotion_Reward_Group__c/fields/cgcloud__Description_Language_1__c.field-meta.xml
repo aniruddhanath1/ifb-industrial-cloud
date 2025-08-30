@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Description_Language_1__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Holds the description of language 1.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Defines BBCode text that can be maintained to display bold text.</inlineHelpText>
+    <label>Description Language 1</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

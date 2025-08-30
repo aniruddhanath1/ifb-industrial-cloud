@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Allowed_Orderer_Types__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Allowed Orderer Types</description>
+    <label>Allowed Orderer Types</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Direct</fullName>
+                <default>false</default>
+                <label>Direct</label>
+            </value>
+            <value>
+                <fullName>Indirect</fullName>
+                <default>false</default>
+                <label>Indirect</label>
+            </value>
+            <value>
+                <fullName>Replenishment</fullName>
+                <default>false</default>
+                <label>Replenishment</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

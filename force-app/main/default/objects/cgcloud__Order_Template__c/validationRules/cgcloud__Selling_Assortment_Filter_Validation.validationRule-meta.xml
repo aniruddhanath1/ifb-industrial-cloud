@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Selling_Assortment_Filter_Validation</fullName>
+    <active>true</active>
+    <description>Selling Assortment Filter on Order Template can&apos;t be activated if the Customer Selling Assortment isn&apos;t activated.</description>
+    <errorConditionFormula>IF(AND( cgcloud__Customer_Selling_Assortment__c = false,  cgcloud__Selling_Assortment_Filter__c = true), true,false)</errorConditionFormula>
+    <errorDisplayField>cgcloud__Selling_Assortment_Filter__c</errorDisplayField>
+    <errorMessage>Selling Assortment Filter on Order Template can&apos;t be activated if the Customer Selling Assortment isn&apos;t activated.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,436 @@
+<apex:page controller="PDFGenerate" renderAs="pdf" applyHtmlTag="false" showHeader="false" standardStylesheets="false" >
+    <head>
+        <style type="text/css" media="print">
+            @page { 
+            size: A4 landscape;
+            margin-top: 110px;
+            margin-bottom: 90px;
+            padding: 0px;
+            @top-center {
+            content: element(header);
+            }
+            @bottom-left {
+            content: element(footer);
+            }
+            }
+            * {
+            font-family: "Verdana", "sans-serif";
+            }
+            .alphabetic-list {
+            list-style-type: lower-alpha;
+            }
+            .ulist {
+            list-style-type: none;
+            }
+            .headcellstyle {
+            font-size: 12px;
+            background: rgb(102, 102, 102);
+            color: white;
+            padding: 4px 0px;
+            height: 18pt;
+            vertical-align: center;
+            text-align: center;
+            border-image: initial;
+            }
+            .cellstyle {
+            font-size: 10px;
+            padding: 4px;
+            height: 18pt;
+            vertical-align: top;
+            border-image: initial;
+            }
+            .parastyle {
+            margin: 0px;
+            }
+            table tr {
+            page-break-inside: avoid;
+            }
+            div.header {
+            padding: 10px;
+            position: running(header);
+            }
+            div.footer {
+            display: block;
+            padding: 5px;
+            position: running(footer);
+            }
+            .pagenumber:before {
+            content: counter(page);
+            }
+            .pagecount:before {
+            content: counter(pages);
+            }
+            .customPanel {
+            width: 100%;
+            }
+        </style>
+        
+    </head>
+    
+    <body style="font-size: 12px">
+        <div class="header">
+            <div>
+                <table style="width:100%; padding-bottom: 15px;">
+                    <tr>
+    <!-- Left side: Blue Sheet title -->
+    <td colspan="1" style="font-size: 40px; font-family: sans-serif; text-align: left; border-bottom: 1px solid #000;">
+        <strong>Blue Sheet</strong>
+    </td>
+    <!-- Right side: Account Name and Opportunity Name in small text -->
+    <td colspan="1" style="font-family: sans-serif; text-align: right; border-bottom: 1px solid #000;">
+        <div style="display: flex; flex-direction: column; align-items: flex-end;">
+            <p style="display: flex; flex-wrap: nowrap; font-size: 15px;">
+                <b>Account Name: </b> {!opportunity.Account.Name}
+            </p>
+            <p style="display: flex; flex-wrap: nowrap; font-size: 15px;">
+                <b>Opportunity Name: </b> {!opportunity.Name}
+            </p>
+        </div>
+    </td>
+</tr>
+
+                </table>
+            </div>
+            
+        </div>
+        <div class="footer">
+            <table style="width:100%;padding-button:30px;">
+                <tr>
+                    <td style="width:85%;font-size:12px;">
+                    </td>
+                    <td style="width:15%;font-size:12px;">
+                        <div>Page <span class="pagenumber"/> of <span class="pagecount"/></div>
+                    </td>
+                </tr>  
+            </table>      
+        </div>
+        
+        
+        <div  class="content" Style="width:100%;">
+            <div  class="section">
+                <table>
+                    <tbody>
+                        <td>
+                            <div>
+                                <table style="width: 100%; border: 1px solid black; border-collapse: collapse;">
+                                    <!-- Date and Last Updated Row -->
+                                    <tr>
+                                        <th colspan="2" style="padding: 5px; border: 1px solid black;">
+                                            Date:
+                                        </th>
+                                        <td style="padding: 5px; border: 1px solid black;">
+                                            <apex:outputText value="{0, date, M'/'d'/'yyyy}">
+                                                <apex:param value="{!BlueSheetCreatedDateIST}" />
+                                            </apex:outputText>
+                                        </td>
+                                        <td style="padding: 5px; border: 1px solid black;">
+                                            <b>Last Updated:</b>
+                                            <apex:outputText value="{0, date, M'/'d'/'yyyy}">
+                                                <apex:param value="{!BlueSheetLastModifiedDateIST}" />
+                                            </apex:outputText>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Sales Person Row -->
+                                    <tr>
+                                        <th colspan="3" style="padding: 5px; border: 1px solid black;">
+                                            Sales Person:
+                                        </th>
+                                        <td style="padding: 5px; border: 1px solid black;">
+                                            {!opportunity.Sales_Person_Involved_Name__c}
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Current Volume Row -->
+                                    <tr>
+                                        <th colspan="3" style="padding: 5px; border: 1px solid black;">
+                                            Current Volume:
+                                        </th>
+                                        <td style="padding: 5px; border: 1px solid black;">
+                                            {!opportunity.CurrentVolume__c}
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Total Potential Volume Row -->
+                                    <tr>
+                                        <th colspan="3" style="padding: 5px; border: 1px solid black;">
+                                            Total Potential Volume:
+                                        </th>
+                                        <td style="padding: 5px; border: 1px solid black;">
+                                            {!opportunity.TotalPotentialVolume__c}
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                <table style="width:100%; border: 1px solid black; border-collapse: collapse;">
+                                    <!-- Header Row -->
+                                    <tr style="background-color: lightblue; text-align: center;">
+                                        <th colspan="4" style="font-size: 14px; padding: 10px; border: 1px solid black;">
+                                            <strong>SINGLE SALES OBJECTIVE</strong>
+                                        </th>
+                                    </tr>
+                                    
+                                    <!-- Product/Service Row -->
+                                    <tr>
+                                        <th style="width: 25%; text-align: left; padding: 5px; border: 1px solid black;">
+                                            Product/Service
+                                        </th>
+                                        <td colspan="3" style="padding: 5px; border: 1px solid black;">
+                                            {!opportunity.Product_Service__c}
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Sales Revenue/Units Row -->
+                                    <tr>
+                                        <th style="text-align: left; padding: 5px; border: 1px solid black;">
+                                            Sales Revenue/Units
+                                        </th>
+                                        <td colspan="3" style="padding: 5px; border: 1px solid black;">
+                                            {!opportunity.SalesRevenueUnits__c}
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Close Date Row -->
+                                    <tr>
+                                        <th style="text-align: left; padding: 5px; border: 1px solid black;">
+                                            Close Date
+                                        </th>
+                                        <td colspan="3" style="padding: 5px; border: 1px solid black;">
+                                            <apex:outputText value="{0, date, M'/'d'/'yyyy}">
+                                                <apex:param value="{!opportunity.CloseDate}" />
+                                            </apex:outputText>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <table style="width:100%; border: 1px solid black; border-collapse: collapse;">
+                                    <tr>
+                                        <th style="width: 25%; text-align: left; padding: 5px; border: 1px solid black;">
+                                            Red Flag <apex:image value="{!$Resource.RedFlag}" 
+                                    alt="Flag Image" 
+                                    style="width: 15px; height: 15px; float: right;"/>
+                                        </th>
+                                        <td colspan="3" style="padding: 5px; border: 1px solid black;">
+                                            Uncovered Base, New Players/Reorganization, Uncertainty/Lack of Data
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 25%; text-align: left; padding: 5px; border: 1px solid black;">
+                                            Strengths <apex:image value="{!$Resource.Strengths}" 
+                                    alt="Flag Image" 
+                                    style="width: 15px; height: 15px; float: right;"/>
+                                        </th>
+                                        <td colspan="3" style="padding: 5px; border: 1px solid black;">
+                                            Areas of differentiation; Opportunities to improve your position
+                                        </td>
+                                    </tr>
+                                    <tr style="background-color: lightblue; text-align: center;">
+                                        <th colspan="2" style="font-size: 14px; padding: 10px; border: 1px solid black;">
+                                            ADEQUACY OF CURRENT POSITION
+                                        </th>
+                                        <td colspan="2" style="padding: 5px; border: 1px solid black;">
+                                            {!opportunity.Adequacy_of_current_position__c}
+                                        </td>
+                                    </tr>
+                                    <!-- Header Row -->
+                                    <tr style="background-color: lightblue; text-align: center;">
+                                        <th colspan="4" style="font-size: 14px; padding: 10px; border: 1px solid black;">
+                                            <strong>COMPETITION</strong>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 25%; text-align: left; padding: 5px; border: 1px solid black;">
+                                            Competition Type
+                                        </th>
+                                        <td colspan="3" style="padding: 5px; border: 1px solid black;">
+                                            {!opportunity.Competition_Type__c}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 25%; text-align: left; padding: 5px; border: 1px solid black;">
+                                            Specify Competitor(s)
+                                        </th>
+                                        <td colspan="3" style="padding: 5px; border: 1px solid black;">
+                                            {!opportunity.Specify_Cometitor_s__c}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 25%; text-align: left; padding: 5px; border: 1px solid black;">
+                                            My Position vs. Competition
+                                        </th>
+                                        <td colspan="3" style="padding: 5px; border: 1px solid black;">
+                                            {!opportunity.My_Position_vs_Competition__c}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 25%; text-align: left; padding: 5px; border: 1px solid black;">
+                                            Place in Sales Funnel
+                                        </th>
+                                        <td colspan="3" style="padding: 5px; border: 1px solid black;">
+                                            {!opportunity.Place_in_Sales_Funnel__c}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 25%; text-align: left; padding: 5px; border: 1px solid black;">
+                                            Timing for Priorities
+                                        </th>
+                                        <td colspan="3" style="padding: 5px; border: 1px solid black;">
+                                            {!opportunity.Timing_for_Priorities__c}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tbody>
+                </table>
+                
+            </div>
+            <div class="section" style="page-break-inside: avoid;">
+                <table style="width: 100%; border: 1px solid #808080; border-collapse: collapse; margin-top: 10px;">
+                    <thead>
+                        <tr>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">Ideal Customer Criteria</th>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">Match to Criteria</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <apex:repeat value="{!blueSheets}" var="row">
+                            <tr style="display: {!IF(AND(ISBLANK(row.Match_to_Criteria_5_to_5__c), row.Type__c != 'Ideal Customer Criteria'), 'none', 'table-row')}">
+                                <td style="border: 1px solid #808080; padding: 4px;">{!row.Ideal_Customer_Criteria__c}</td>
+                                <td style="border: 1px solid #808080; padding: 4px;">{!row.Match_to_Criteria_5_to_5__c}<apex:image value="{!IF(row.flag__c == 'Strength', 
+                                                URLFOR($Resource.Strengths), 
+                                                URLFOR($Resource.RedFlag))}" 
+                                    alt="Flag Image" 
+                                    style="width: 15px; height: 15px; float: right;"/></td>
+                                
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </div>
+            <div class="section" style="page-break-inside: avoid;">
+                <table style="width: 100%; border: 1px solid #808080; border-collapse: collapse; margin-top: 10px;">
+                    <thead>
+                        <tr>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">Buying Influences Involved</th>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">Role</th>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">Degree of Influence</th>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">Mode</th>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">Buying Influence Key Win-Results</th>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">Rating</th>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">Evidence to support your Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <apex:repeat value="{!blueSheets}" var="row">
+                            <tr style="display: {!IF(AND(ISBLANK(row.Degree_Of_Influence__c), row.Type__c != 'Buying Influences Involved'), 'none', 'table-row')}">
+                                <td style="border: 1px solid #808080; padding: 4px;">{!row.Buying_Influence_Name__c}</td>
+                                <td style="border: 1px solid #808080; padding: 4px;">{!row.Role__c}</td>
+                                <td style="border: 1px solid #808080; padding: 4px;">{!row.Degree_Of_Influence__c}</td>
+                                <td style="border: 1px solid #808080; padding: 4px;">{!row.Mode__c}</td>
+                                <td style="border: 1px solid #808080; padding: 4px;">{!row.Buying_Influence_Key_Win_Results__c}</td>
+                                <td style="border: 1px solid #808080; padding: 4px;">{!row.Rating_5_to_5__c}</td>
+                                <td style="border: 1px solid #808080; padding: 4px;">{!row.Evidence_to_support_your_Rating__c}<apex:image value="{!IF(row.flag__c == 'Strength', 
+                                                URLFOR($Resource.Strengths), 
+                                                URLFOR($Resource.RedFlag))}" 
+                                    alt="Flag Image" 
+                                    style="width: 15px; height: 15px; float: right;"/></td>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </div>
+            <div class="section" style="page-break-inside: avoid;">
+                <table style="width: 100%; border: 1px solid black; border-collapse: collapse; margin-top: 10px;">
+                    <thead>
+                        <tr>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">
+                                SUMMARY OF MY POSITION TODAY
+                            </th>
+                            <th rowspan="2" style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">
+                                POSSIBLE ACTIONS
+                            </th>
+                            <th colspan="3" style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">
+                                BEST ACTION PLAN
+                            </th>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">
+                                STRENGTHS
+                            </th>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">
+                                What
+                            </th>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">
+                                Who
+                            </th>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">
+                                When
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <apex:repeat value="{!blueSheets}" var="row">
+                            <tr style="display: {!IF(row.Type__c != 'Strength', 'none', 'table-row')}">
+                                <td style="border: 1px solid #808080; padding: 4px;">{!row.Summary_Of_My_Position_Today__c}</td>
+                                <td style="border: 1px solid #808080; padding: 4px;">{!row.Possible_Actions__c}</td>
+                                <td style="border: 1px solid #808080; padding: 4px;">{!row.What__c}</td>
+                                <td style="border: 1px solid #808080; padding: 4px;">{!row.who_Name__c}</td>
+                                <td style="border: 1px solid #808080; padding: 4px;">
+                                    <apex:outputText value="{0, date, MMMM d',' yyyy}">
+                                        <apex:param value="{!row.When__c}" />
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section" style="page-break-inside: avoid;">
+                <table style="width: 100%; border: 1px solid black; border-collapse: collapse; margin-top: 10px;">
+                    <thead>
+                        <tr>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">
+                                SUMMARY OF MY POSITION TODAY
+                            </th>
+                            <th rowspan="2" style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">
+                                POSSIBLE ACTIONS
+                            </th>
+                            <th colspan="3" style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">
+                                BEST ACTION PLAN
+                            </th>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">
+                                RED FLAGS
+                            </th>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">
+                                Information Needed
+                            </th>
+                            <th style="border: 1px solid #808080; padding: 4px; background-color: #787a7c; color: #FFFFFF;">
+                                From Whom
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <apex:repeat value="{!blueSheets}" var="row">
+                            <tr style="display: {!IF(row.Type__c != 'Red Flag', 'none', 'table-row')}">
+                                <td style="border: 1px solid #808080; padding: 4px;">{!row.Summary_Of_My_Position_Today__c}</td>
+                                <td style="border: 1px solid #808080; padding: 4px;">{!row.Possible_Actions__c}</td>
+                                <td style="border: 1px solid #808080; padding: 4px;">{!row.Information_Needed__c}</td>
+                                <td style="border: 1px solid #808080; padding: 4px;">{!row.Whom_Name__c}</td>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        
+    </body>
+</apex:page>

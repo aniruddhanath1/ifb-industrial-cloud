@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Sub_Query_Source__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The sub query necessary to populate the multi-select picklist. Query condition field needs a corresponding &apos;{0}&apos; symbol to signify where to capture user selected options if a Sub Query Source is specified.
+
+      The first field = Picklist Value, second field = Picklist Label. All other fields are ignored.
+
+      Limit is 200 rows for data specified by this subquery. As such the LIMIT command is prohibited.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>If Sub Query Source is a SOQL query, first field = Picklist Value, second field = Picklist Label.
+
+      If &apos;Manual Picklist Value Entry&apos; is checked, enter each picklist value in this box and terminate it with the &apos;Enter&apos; key.</inlineHelpText>
+    <label>Sub Query Source</label>
+    <length>32768</length>
+    <type>LongTextArea</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

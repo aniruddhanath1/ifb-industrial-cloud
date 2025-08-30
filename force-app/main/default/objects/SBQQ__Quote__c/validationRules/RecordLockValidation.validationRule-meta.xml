@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RecordLockValidation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+				NOT(
+				    OR(
+          $User.Bypass_Validation_Rules__c = TRUE,
+          CONTAINS($Profile.Name, &quot;Admin&quot;),
+          CONTAINS($Profile.Name, &quot;Validator&quot;)
+        )
+				),
+				NOT(ISCHANGED(SBQQ__Status__c)),
+    ISPICKVAL(SBQQ__Status__c , &quot;Approved&quot;),
+    NOT(ISCHANGED(SBQQ__Primary__c)),
+    NOT(ISCHANGED(Customer_Quote_Approval__c)),
+    NOT(ISCHANGED(Discount_Include_Doc__c)),
+    !BypassValidationCheckbox__c 
+)</errorConditionFormula>
+    <errorMessage>The record is locked. You can&apos;t edit the record.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Split_ratio_validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>Not(REGEX(Payment_Split_ratio__c,&quot;^(\\d+(:\\d+)+)$&quot;))</errorConditionFormula>
+    <errorDisplayField>Payment_Split_ratio__c</errorDisplayField>
+    <errorMessage>Payment Split Ratio must be in the format 40:30, 20:30:10, etc. And total should be 100</errorMessage>
+</ValidationRule>

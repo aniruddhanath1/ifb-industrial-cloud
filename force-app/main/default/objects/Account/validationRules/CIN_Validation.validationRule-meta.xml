@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CIN_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISBLANK(  CIN_Number__c )),
+NOT(REGEX(CIN_Number__c , &quot;^[A-Z]{1}[0-9]{5}[A-Z]{2}[0-9]{4}[A-Z]{3}[0-9]{6}$&quot;)),
+!$User.Bypass_Validation_Rules__c,
+NOT(CONTAINS($Profile.Name, &apos;Admin&apos;))
+)</errorConditionFormula>
+    <errorDisplayField>CIN_Number__c</errorDisplayField>
+    <errorMessage>Please Enter Correct CIN No</errorMessage>
+</ValidationRule>

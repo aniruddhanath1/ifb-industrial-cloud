@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Query_Condition__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This is the contents of the query condition associated with the filter.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>This is the condition expression after the WHERE clause of the SOQL query. All Filter&apos;s Query Condition will be appended an &apos;AND&apos; qualifier if there&apos;s more than one filter, and a bracket ().</inlineHelpText>
+    <label>Query Condition</label>
+    <length>32768</length>
+    <type>LongTextArea</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

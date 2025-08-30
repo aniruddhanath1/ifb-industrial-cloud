@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Unique_Field_Display__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <deprecated>false</deprecated>
+    <description>Technical field to check that only one active record can have used for display as ‘Yes’ Consists of :  - Order_Item_Template.Id  - Active (&apos;True&apos;,&apos;False&apos;)  - User_For_Display (&apos;True&apos;,&apos;False&apos;)</description>
+    <externalId>false</externalId>
+    <label>Unique Field Display</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

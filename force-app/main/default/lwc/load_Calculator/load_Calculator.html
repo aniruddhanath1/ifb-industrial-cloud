@@ -1,0 +1,671 @@
+<template>
+    <lightning-card>
+        <lightning-button if:true={isMobileApp} variant="base" label="Close" title="Primary action" onclick={handleClose}  class="slds-m-left_x-small"></lightning-button>
+        
+        <div class="slds-text-align_center slds-m-bottom_medium bottom-boundary headerdiv">
+            <h1 class="slds-text-heading_medium"> Load Calculator</h1>
+        </div>
+    
+        <div class="slds-m-around_medium" if:true={ILM}>
+    
+            <lightning-combobox
+                label="Vertical"
+                value={vertical}
+                placeholder="Select Vertical"
+                options={verticalOptions}
+                onchange={handleVerticalChange}
+                if:true={opportunityTable}>
+            </lightning-combobox>
+    
+            <lightning-dual-listbox
+                name="linen"
+                label="Linen"
+                source-label="Available"
+                selected-label="Selected"
+                field-level-help="Select the linen types"
+                options={linenOptions}
+                value={selectedLinen}
+                onchange={handleLinenChange}
+                if:true={opportunityTable}>
+            </lightning-dual-listbox>
+    
+            <div class="slds-grid slds-grid_align-end slds-m-top_small">
+                <lightning-button variant="brand" label="Next" title="Primary action" onclick={handleClick} class="slds-m-left_x-small" if:true={opportunityTable}></lightning-button>
+            </div>
+    
+            <lightning-card title="" if:true={MetadataTable} class="responsive-card">
+                <div class="slds-m-around_medium custom-container">
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered custom-table">
+                        <thead class="custom-thead">
+                            <tr class="custom-row">
+                                <th scope="col" class="custom-header">
+                                    <div class="slds-truncate custom-truncate" title="Vertical">Vertical</div>
+                                </th>
+                                <th scope="col" class="custom-header">
+                                    <div class="slds-truncate custom-truncate" title="Linen">Linen</div>
+                                </th>
+                                <th scope="col" class="custom-header">
+                                    <div class="slds-truncate custom-truncate" title="Weight">Weight (KG)</div>
+                                </th>
+                                <th scope="col" class="custom-header">
+                                    <div class="slds-truncate custom-truncate" title="No. Of linen">No. Of Linen / Property / Day </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="custom-tbody">
+                            <template for:each={metadata} for:item="row" >
+                                <tr key={row.id} class="custom-row" style="width:100vw;">
+                                    <th scope="row" data-label="Vertical" class="custom-cell">
+                                        <div class="slds-truncate custom-truncate" title={row.Vertical__c}>{row.Vertical__c}</div>
+                                    </th>
+                                    <th scope="row" data-label="Linen" class="custom-cell">
+                                        <div class="slds-truncate custom-truncate" title={row.Linen__c}>{row.Linen__c}</div>
+                                    </th>
+                                    <th scope="row" data-label="Weight (KG)" class="custom-cell">
+                                        <div class="slds-truncate custom-truncate" title={row.Linen_Weight_in_Kg__c}>{row.Linen_Weight_in_Kg__c}</div>
+                                    </th>
+                                    <td data-label="No. Of Linen / Room / Day" class="custom-cell">
+                                        <lightning-input
+                                            type="number"
+                                            data-id={row.Id}
+                                            data-weight={row.Linen_Weight_in_Kg__c}
+                                            data-label={row.Linen__c}
+                                            data-vertical={row.Vertical__c}
+                                            onchange={handleInputChange}
+                                            class="custom-input">
+                                        </lightning-input>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="totals-container">
+                    <div class="totals" >
+                        <b>Total Wash Load of the Property Per Day (kg)- {totalWashingload}</b>
+                    </div>
+                    <div class="totals" >
+                        <b>Total Dry Load of the Property Per Day (kg)- {totalDryingLoad}</b>
+                    </div>
+                    <div class="totals" >
+                        <b>No. of Ironing Sheet Per Day - {totalFlatIronerLoad}</b>
+                    </div>
+                    <div class="totals" >
+                        <b>No. of Unshaped Garments Per Day - {totalUnshapedGarmentsLoad}</b>
+                    </div>
+                    <div class="totals" >
+                        <b>Dry cleaning Load (kg)- {totalDrycleaningLoad}</b>
+                    </div>
+                    
+                </div>
+                
+                <div class="slds-grid slds-grid_align-end slds-m-top_small">
+                    <lightning-button variant="brand" label="Back" onclick={handleBack} class="slds-m-left_x-small"></lightning-button>    
+                    <lightning-button variant="brand" label="Calculate" onclick={handleCalculate} class="slds-m-left_x-small"></lightning-button>
+                </div>
+            </lightning-card>
+        
+            <!-- Load Calculation Section -->
+            <lightning-card title="Load Calculation" if:true={loadTable} class="responsive-card">
+                <div class="slds-m-around_medium responsive-table">
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <tbody>
+                            <tr>
+                                <td>Total Wash Load of the Property Per Day (kg)- {totalWashingload}</td>
+                                <td>Total Dry Load of the Property Per Day (kg)- {totalDryingLoad}</td>
+                                <td>No. of Ironing Sheet Per Day - {totalFlatIronerLoad}</td>
+                                <td>No. of Unshaped Garments Per Day (kg)- {totalUnshapedGarmentsLoad}</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <lightning-input 
+                                        label="Please enter Occupancy in % for Washing" 
+                                        type="number" 
+                                        value={occupancywash} 
+                                        onchange={handleOccupancyChangeWashing}>
+                                    </lightning-input>
+                                </td>
+                                <td>
+                                    <lightning-input 
+                                        label="Please enter Occupancy in % for Drying" 
+                                        type="number" 
+                                        value={numOfRoomsWash} 
+                                        onchange={handleOccupancyChangeDrying}>
+                                    </lightning-input>
+                                </td>
+                                <td>
+                                    <lightning-input 
+                                        label="Please enter Occupancy in % for Ironing" 
+                                        type="number" 
+                                        value={numOfRoomsWash} 
+                                        onchange={handleOccupancyChangeIroning}>
+                                    </lightning-input>
+                                </td>
+                                <td>
+                                    <lightning-input 
+                                        label="Please enter Occupancy in % for Unshaped Garments" 
+                                        type="number" 
+                                        value={numOfRoomsWash} 
+                                        onchange={handleOccupancyChangeUnshapedGarments}>
+                                    </lightning-input>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <lightning-input 
+                                        label="Please enter No of Cycles in a shift in a day" 
+                                        type="number" 
+                                        value={numOfCyclesWash} 
+                                        onchange={handleNumOfCyclesChange}>
+                                    </lightning-input>
+                                </td>
+                                <td>
+                                    <lightning-input 
+                                        label="Please enter No of Cycles" 
+                                        type="number" 
+                                        value={numOfRoomsWash} 
+                                        onchange={handleNumOfCycleChangeDrying}>
+                                    </lightning-input>
+                                </td>
+                                <td>
+                                    <lightning-input 
+                                        label="Please enter No of Hours" 
+                                        type="number" 
+                                        value={numOfRoomsWash} 
+                                        onchange={handleNumOfCycleChangeIroning}>
+                                    </lightning-input>
+                                </td>
+                                <td>
+                                    <lightning-input 
+                                        label="Please enter No of Hours" 
+                                        type="number" 
+                                        value={numOfRoomsWash} 
+                                        onchange={handleNumOfCycleChangeUnshapedGermaents}>
+                                    </lightning-input>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Total Load per Cycle Washing (kg)- {totalLoadPerCycleForWashing}</td>
+                                <td>Total Load per Cycle Drying (kg)- {totalLoadPerCycleForDrying}</td>
+                                <td>Total no. of ironing sheet  per hour (Hrs)- {totalLoadPerCycleForIroning}</td>
+                                <td>Total no. of ironing sheet  per hour for Unshaped Garments (Hrs)- {totalLoadPerCycleUnshapedGarments}</td>
+                            </tr> 
+                            <tr>
+                                <td>
+                                   Washing Machine Capacity :- {washingMachineCapacity}
+                                </td>
+                                <td>
+                                   Drying Machine Capacity :- {DryingMachineCapacity}
+                                </td>
+                                <td>
+                                    Ironing Machine Capacity :- {IroningMachineCapacity}
+                                </td>
+                                <td>
+                                    Unshaped Garments Machine Capacity :- {UnshapedGarmentsMachineCapacity}
+                                </td>
+                            </tr>
+                            <tr if:true={unshapedSelected}>
+                                <td>VIT Table</td>
+                                <td>Efficiency/hour</td>
+                                <td>
+                                    20 pcs
+                                </td>
+                            </tr>
+                            <tr if:true={unshapedSelected}>
+                                <td>No. of Tables required :- </td>
+                                <td>{tableRequired}</td>
+                            </tr>
+                            <tr if:true={unshapedSelected}>
+                                <td>IFBP</td>
+                                <td>Efficiency/hour</td>
+                                <td>
+                                    50 pcs
+                                </td>
+                            </tr>
+                            <tr if:true={unshapedSelected}>
+                                <td>No. of Machines required :- </td>
+                                <td>{MachineRequired}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="slds-m-around_medium responsive-table">
+                    <div class="centered-input-container">
+                        <lightning-input 
+                                        label="Total No. of rooms" 
+                                        type="number" 
+                                        value={numOfCyclesWash} 
+                                        onchange={handleGuestChange}
+                                        class="responsive-input">
+                        </lightning-input>
+                    </div>
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Total Guest laundry load per day (kg)- 
+                                    <div class="text-wrapper">{totalGuestLaundaryLoadPerDay}</div>
+                                </td>
+                                <td>
+                                    Total Guest laundry load per cycle (kg)- 
+                                    <div class="text-wrapper">{totalLoadGuestCycle}</div>
+                                </td>
+                                <td>
+                                    Guest Laundry Machine Capacity (kg)- 
+                                    <div class="text-wrapper">{totalGuestMachineCapacity}</div>
+                                </td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                    
+                </div>
+                <lightning-card class="responsive-card">
+                    <div class="slds-m-around_medium responsive-table" if:true={bedsheetSelected}>
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                            <tbody>
+                                <tr>
+                                    <td>No. of Single Bed sheets :- </td>
+                                    <td>{singleBedSheet}</td>
+                                </tr>
+                                <tr>
+                                    <td>No. of Double bed Sheets :- </td>
+                                    <td>{doubleBedSheet}</td>
+                                </tr>
+                                <tr>
+                                    <td>Ironing single sheets / day :- </td>
+                                    <td>{IroningSingleSeetPerDay}</td>
+                                </tr>
+                                <tr>
+                                    <td>Ironing Double bed sheets / day :- </td>
+                                    <td>{IroningDoubleSeetPerDay}</td>
+                                </tr>
+                                <tr>
+                                    <td>No. of Ironing hours :- </td>
+                                    <td>
+                                        <lightning-input 
+                                            label="No. of Ironing hours" 
+                                            type="number" 
+                                            value={numOfCyclesWash} 
+                                            onchange={HandleBedSheet}
+                                            class="responsive-input">
+                                        </lightning-input>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <lightning-input 
+                                            label="Size" 
+                                            type="number" 
+                                            step="0.01"
+                                            value={numOfCyclesWash} 
+                                            onchange={handleBedSize}
+                                            class="responsive-input">
+                                        </lightning-input>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>No. of Single sheets / hr :- </td>
+                                    <td>{singleSheetPerHour}</td>
+                                </tr>
+                                <tr>
+                                    <td>No. of Double bed Sheets/hr :- </td>
+                                    <td>{doubleSheetPerHour}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </lightning-card>
+                <lightning-card  class="responsive-card">
+                    <div class="slds-grid slds-grid_align-end slds-m-top_small">
+                        
+                        <lightning-button variant="brand" label="Save" onclick={handleSave} class="slds-m-left_x-small"></lightning-button>
+                    </div>
+                </lightning-card>
+            </lightning-card>  
+            <!-- Guest Laundry Load Section -->
+           
+        
+        </div>
+    </lightning-card>
+    
+    
+    <lightning-spinner if:true={loading} alternative-text="Loading" size="medium"></lightning-spinner>
+    <lightning-quick-action-panel if:true={IDW}>
+    
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+            name="IDW Products"
+            label="IDW Products"
+            source-label="Available"
+            selected-label="Selected"
+            field-level-help="Select the IDW Products"
+            options={IdwProductOptions}
+            value={selectedIDWPRoduct}
+            onchange={handleIWDProductChange}
+            if:true={IDW}>
+        </lightning-combobox>
+        <br>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered responsive-table">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Model">Model</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Unit">Unit</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Value">Value</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr if:true={hideGlass}>
+                        <td data-label="Model" class="slds-truncate">
+                            <div class="slds-truncate" title="Model">Glass height</div>
+                        </td>
+                        <td data-label="Unit" class="slds-text-align_center slds-truncate">
+                            <div class="slds-truncate" title="Unit" align="left">CM</div>
+                        </td>
+                        <td data-label="Value">
+                            <lightning-input
+                                type="number"
+                                label=""
+                                data-id="maxHeightGlasses"
+                                step="0.01"
+                                onchange={handleIDWProductValueChange}
+                                class="responsive-input">
+                            </lightning-input>
+                        </td>
+                    </tr>
+                    <tr if:true={hideGlass}>
+                        <td data-label="Model" class="slds-truncate">
+                            <div class="slds-truncate" title="Model">Diameter of glass</div>
+                        </td>
+                        <td data-label="Unit" class="slds-text-align_center slds-truncate">
+                            <div class="slds-truncate" title="Unit" align="left">CM</div>
+                        </td>
+                        <td data-label="Value">
+                            <lightning-input
+                                type="number"
+                                label=""
+                                data-id="glassDiameter"
+                                step="0.01"
+                                onchange={handleIDWProductValueChange}
+                                class="responsive-input">
+                            </lightning-input>
+                        </td>
+                    </tr>
+                    <tr if:true={hideGlass}>
+                        <td data-label="Model" class="slds-truncate">
+                            <div class="slds-truncate" title="Model">No. of glass in a day</div>
+                        </td>
+                        <td data-label="Unit" class="slds-text-align_center slds-truncate">
+                            <div class="slds-truncate" title="Unit" align="left">--</div>
+                        </td>
+                        <td data-label="Value">
+                            <lightning-input
+                                type="number"
+                                label=""
+                                data-id="glassInDay"
+                                step="0.01"
+                                onchange={handleIDWProductValueChange}
+                                class="responsive-input">
+                            </lightning-input>
+                        </td>
+                    </tr>
+                    <tr if:true={hideGlass}>
+                        <td data-label="Model" class="slds-truncate">
+                            <div class="slds-truncate" title="Model">Hours - washing in a day</div>
+                        </td>
+                        <td data-label="Unit" class="slds-text-align_center slds-truncate">
+                            <div class="slds-truncate" title="Unit" align="left">Hour</div>
+                        </td>
+                        <td data-label="Value">
+                            <lightning-input
+                                type="number"
+                                label=""
+                                data-id="HoursWashing"
+                                step="0.01"
+                                onchange={handleIDWProductValueChange}
+                                class="responsive-input">
+                            </lightning-input>
+                        </td>
+                    </tr>
+                    <tr if:true={hideGlass}>
+                        <td data-label="Model" class="slds-truncate">
+                            <div class="slds-truncate" title="Model">No. of glasses per hour</div>
+                        </td>
+                        <td data-label="Unit" class="slds-text-align_center slds-truncate">
+                            <div class="slds-truncate" title="Unit" align="left">--</div>
+                        </td>
+                        <td data-label="Value">
+                            <lightning-input
+                                type="number"
+                                label=""
+                                data-id="glassesPerHour"
+                                step="0.01"
+                                onchange={handleIDWProductValueChange}
+                                class="responsive-input">
+                            </lightning-input>
+                        </td>
+                    </tr>
+                    <tr if:true={hideGlass}>
+                        <td data-label="Model" class="slds-truncate">
+                            <div class="slds-truncate" title="Model">Peak load</div>
+                        </td>
+                        <td data-label="Unit" class="slds-text-align_center slds-truncate">
+                            <div class="slds-truncate" title="Unit" align="left">Glasses/hour</div>
+                        </td>
+                        <td data-label="Value">
+                            <lightning-input
+                                type="number"
+                                label=""
+                                data-id="GlassPeakLoad"
+                                step="0.01"
+                                onchange={handleIDWProductValueChange}
+                                class="responsive-input">
+                            </lightning-input>
+                        </td>
+                    </tr>
+                    <tr if:true={showCheckbox}>
+                        <td data-label="Model" class="slds-truncate">
+                            <div class="slds-truncate" title="Model">Plate Diameter</div>
+                        </td>
+                        <td data-label="Unit" class="slds-text-align_center slds-truncate">
+                            <div class="slds-truncate" title="Unit" align="left">CM</div>
+                        </td>
+                        <td data-label="Value">
+                            <lightning-input
+                                type="number"
+                                label=""
+                                data-id="plateDiameter"
+                                step="0.01"
+                                onchange={handleIDWProductValueChange}
+                                class="responsive-input"
+                                required>
+                            </lightning-input>
+                        </td>
+                    </tr>
+                    <tr if:true={showCheckbox}>
+                        <td data-label="Model" class="slds-truncate">
+                            <div class="slds-truncate" title="Model">Peak load</div>
+                        </td>
+                        <td data-label="Unit" class="slds-text-align_center slds-truncate">
+                            <div class="slds-truncate" title="Unit" align="left">Plates/hour</div>
+                        </td>
+                        <td data-label="Value">
+                            <lightning-input
+                                type="number"
+                                label=""
+                                data-id="PlatePeakLoad"
+                                step="0.01"
+                                onchange={handleIDWProductValueChange}
+                                class="responsive-input"
+                                required>
+                            </lightning-input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="Model" class="slds-truncate">
+                            <div class="slds-truncate" title="Model">Continuous load</div>
+                        </td>
+                        <td data-label="Unit" class="slds-text-align_center slds-truncate">
+                            <div class="slds-truncate" title="Unit" align="left">Yes/No</div>
+                        </td>
+                        <td data-label="Value">
+                            <lightning-combobox
+                                label="Continuous load"
+                                data-id="ContinuousLoad"
+                                onchange={handleIDWProductValueChange}
+                                options={continousLoadOptions}
+                                class="responsive-combobox"
+                                required
+                                >
+                            </lightning-combobox>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered responsive-table" if:true={hideGlass}>
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            Possible basket sizes
+                        </th>
+                        <th scope="col">
+                            35*35
+                        </th>
+                        <th scope="col">
+                            40*40
+                        </th>
+                        <th scope="col">
+                            50*50
+                        </th>
+                        <th>
+                            50*60
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Glass in Line
+                        </td>
+                        <td>
+                            {glassLine35}
+                        </td>
+                        <td>
+                            {glassLine40}
+                        </td>
+                        <td>
+                            {glassLine50}
+                        </td>
+                        <td>
+                            {glassLine60}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Glasses per basket
+                        </td>
+                        <td>
+                            {glassbasket35}
+                        </td>
+                        <td>
+                            {glassbasket40}
+                        </td>
+                        <td>
+                            {glassbasket50}
+                        </td>
+                        <td>
+                            {glassbasket60}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Baskets per hour
+                        </td>
+                        <td>
+                            30
+                        </td>
+                        <td>
+                            30
+                        </td>
+                        <td>
+                            50
+                        </td>
+                        <td>
+                            60
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Glasses per hour
+                        </td>
+                        <td>
+                            {glasshour35}
+                        </td>
+                        <td>
+                            {glasshour40}
+                        </td>
+                        <td>
+                            {glasshour50}
+                        </td>
+                        <td>
+                            {glasshour60}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Choice
+                        </td>
+                        <td>
+                            {choice35}
+                        </td>
+                        <td>
+                            {choice40}
+                        </td>
+                        <td>
+                            {choice50}
+                        </td>
+                        <td>
+                            {choice60}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered responsive-table" if:true={showCheckbox}>
+                <thead>
+                    <tr>
+                        <th>No. of plates per basket</th>
+                        <th>{pleatPerBasket}</th>
+                    </tr>
+                    <tr>
+                        <th>Capacity</th>
+                        <th>{CapacityPlates}</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+    
+        <div class="slds-grid slds-grid_align-end slds-m-top_small">
+            
+            <lightning-button variant="brand" label="Save" title="Primary action" onclick={handleSaveIDW} class="slds-m-left_x-small"></lightning-button>
+            <lightning-button variant="brand" label="Calculate" title="Primary action" onclick={handleCalculateIDW} class="slds-m-left_x-small"></lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+    
+    
+    
+    
+    
+        
+        <c-recommendation-Product-Table record-id={recordId} if:true={IsChildVisible} onclosechild={handleCloseChild}></c-recommendation-Product-Table> 
+    
+</template>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Site_Readiness_Approval_Status__c</fullName>
+    <label>Site Readiness Approval Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Approved by NSM</fullName>
+                <default>false</default>
+                <label>Approved by NSM</label>
+            </value>
+            <value>
+                <fullName>Pending by NSM</fullName>
+                <default>false</default>
+                <label>Pending by NSM</label>
+            </value>
+            <value>
+                <fullName>Rejected by NSM</fullName>
+                <default>false</default>
+                <label>Rejected by NSM</label>
+            </value>
+            <value>
+                <fullName>Auto Approved</fullName>
+                <default>false</default>
+                <label>Auto Approved</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

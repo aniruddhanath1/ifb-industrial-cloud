@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__TPO_Discount__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Stores discount used for Uplift Prediction.</description>
+    <inlineHelpText>Stores discount used for Uplift Prediction.</inlineHelpText>
+    <label>TPO Discount</label>
+    <precision>7</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

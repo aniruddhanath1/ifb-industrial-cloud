@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__TFD_Commit_Date_Offset__c</fullName>
+    <defaultValue>0</defaultValue>
+    <deprecated>false</deprecated>
+    <description>The offset used to calculate &apos;Commit Date&apos; from &apos;Date From&apos;, if the Timeframe
+Determination Policy is not Manual.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Defines the offset used to calculate the &apos;Commit Date&apos; from &apos;In-Store Date From&apos; if Timeframe Determination Policy is &apos;Automatic Simple&apos;. Negative values are used to define an earlier date.</inlineHelpText>
+    <label>Commit Date Offset</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

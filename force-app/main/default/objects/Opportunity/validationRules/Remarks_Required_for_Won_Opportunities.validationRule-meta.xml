@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Remarks_Required_for_Won_Opportunities</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(StageName, &quot;Closed Won&quot;),
+    INCLUDES(Reasons_for_Closed_Won__c, &quot;Others&quot;),
+    ISBLANK(Reason_if_others__c),
+				!$User.Bypass_Validation_Rules__c,
+    NOT(CONTAINS($Profile.Name, &apos;Admin&apos;))
+)</errorConditionFormula>
+    <errorDisplayField>Reason_if_others__c</errorDisplayField>
+    <errorMessage>Remark required if Opportunity is Closed Won and Reason is other</errorMessage>
+</ValidationRule>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_type_of_Account__c</fullName>
+    <label>Sub type of Account</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Key Account - High Value Customers</fullName>
+                <default>false</default>
+                <label>Key Account - High Value Customers</label>
+            </value>
+            <value>
+                <fullName>PAN India Presence</fullName>
+                <default>false</default>
+                <label>PAN India Presence</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

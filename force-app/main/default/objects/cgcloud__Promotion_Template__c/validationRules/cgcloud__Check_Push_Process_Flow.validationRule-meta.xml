@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Check_Push_Process_Flow</fullName>
+    <active>true</active>
+    <description>Pushable promotion must have process to calculate.</description>
+    <errorConditionFormula>AND( 
+cgcloud__Is_Pushable__c, 
+ISPICKVAL(cgcloud__Push_Process_Flow__c, &apos;&apos;)
+)</errorConditionFormula>
+    <errorDisplayField>cgcloud__Push_Process_Flow__c</errorDisplayField>
+    <errorMessage>Pushable promotion must have process to calculate.</errorMessage>
+</ValidationRule>

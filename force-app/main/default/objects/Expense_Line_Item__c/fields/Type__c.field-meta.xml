@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Travel Expense</fullName>
+                <default>false</default>
+                <label>Travel Expense</label>
+            </value>
+            <value>
+                <fullName>Food Expense</fullName>
+                <default>false</default>
+                <label>Food Expense</label>
+            </value>
+            <value>
+                <fullName>Accommodation Expense</fullName>
+                <default>false</default>
+                <label>Accommodation Expense</label>
+            </value>
+            <value>
+                <fullName>Miscellaneous Expense</fullName>
+                <default>false</default>
+                <label>Miscellaneous Expense</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

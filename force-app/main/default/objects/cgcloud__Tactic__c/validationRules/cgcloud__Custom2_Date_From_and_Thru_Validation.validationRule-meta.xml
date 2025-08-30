@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Custom2_Date_From_and_Thru_Validation</fullName>
+    <active>true</active>
+    <description>Custom2 Date From can&apos;t be later than Custom2 Date Thru</description>
+    <errorConditionFormula>cgcloud__Custom2_Date_From__c  &gt;  cgcloud__Custom2_Date_Thru__c</errorConditionFormula>
+    <errorMessage>Custom2 Date From can&apos;t be later than Custom2 Date Thru.</errorMessage>
+</ValidationRule>

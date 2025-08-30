@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Unique_Inventory_Templates__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <deprecated>false</deprecated>
+    <description>Technical field to check uniqueness for combination of order template, inventory control template and inventory transaction template. -Inventory_Control_Template.Id  -Inventory_Transaction_Template.Id</description>
+    <externalId>false</externalId>
+    <label>Unique Inventory Templates</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

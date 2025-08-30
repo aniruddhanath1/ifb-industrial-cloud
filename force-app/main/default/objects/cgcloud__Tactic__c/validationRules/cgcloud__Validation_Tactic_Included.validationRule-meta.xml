@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Validation_Tactic_Included</fullName>
+    <active>true</active>
+    <description>The tactic can&apos;t be excluded if the promotion related is defined as sellable promotion</description>
+    <errorConditionFormula>AND(ISPICKVAL(cgcloud__Promotion__r.cgcloud__Promotion_Template__r.cgcloud__Promotion_Type__c, &apos;SellablePromotion&apos; ) ,isChanged(cgcloud__Included__c),cgcloud__Included__c == false)</errorConditionFormula>
+    <errorMessage>The tactic can&apos;t be excluded if the promotion related is defined as sellable promotion.</errorMessage>
+</ValidationRule>

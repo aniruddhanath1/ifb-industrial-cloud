@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Currency_Must_be_INR_for_India_and_Nepal</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ValidationBypass__c),NOT(ISPICKVAL(CurrencyIsoCode, &quot;INR&quot;)),OR(CONTAINS(Country,&quot;India&quot;),CONTAINS(Country,&quot;Nepal&quot;)))</errorConditionFormula>
+    <errorMessage>Currency Must be INR for India and Nepal</errorMessage>
+</ValidationRule>

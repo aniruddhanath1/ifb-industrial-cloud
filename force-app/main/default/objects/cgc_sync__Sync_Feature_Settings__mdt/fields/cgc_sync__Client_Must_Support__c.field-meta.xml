@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Client_Must_Support__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If enabled the client must support this feature, otherwise a the client software must be updated</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Enable this option to force the client software to be updated if this feature is not supported by the client</inlineHelpText>
+    <label>Client Must Support</label>
+    <type>Checkbox</type>
+</CustomField>

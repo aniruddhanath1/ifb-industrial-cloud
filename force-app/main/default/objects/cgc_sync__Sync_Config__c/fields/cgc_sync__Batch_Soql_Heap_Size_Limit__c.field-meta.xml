@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Batch_Soql_Heap_Size_Limit__c</fullName>
+    <defaultValue>5242500</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Stores the batch SOQL heap size limit in bytes.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Value in bytes. Lower limit 2097152 (2 MB). Upper limit 6291456 (6 MB). Recommended value 5242500 (5 MB).</inlineHelpText>
+    <label>Batch Soql Heap Size Limit</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

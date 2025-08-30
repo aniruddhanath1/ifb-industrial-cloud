@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__Trade_Calendar_Color__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Specifies the color of the promotion in Trade Calendar.</description>
+    <label>Trade Calendar Color</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>cgcloud__Color_Codes</valueSetName>
+    </valueSet>
+</CustomField>

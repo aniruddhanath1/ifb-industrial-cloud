@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgcloud__CalculationMode_UIType_Combination</fullName>
+    <active>true</active>
+    <description>Verify that the Calculation Mode and UI Type is a valid combination</description>
+    <errorConditionFormula>AND(ISPICKVAL(cgcloud__UI_Type__c ,&quot;SmartUI&quot;),ISPICKVAL(cgcloud__Calculation_Mode__c,&quot;&quot;))</errorConditionFormula>
+    <errorDisplayField>cgcloud__Calculation_Mode__c</errorDisplayField>
+    <errorMessage>Select a calculation mode value when the UI type is Smart UI</errorMessage>
+</ValidationRule>

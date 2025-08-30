@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Follow_Up_Date_Change_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(PRIORVALUE(Next_Follow_up_Date_Time__c)!= Next_Follow_up_Date_Time__c,ISCHANGED(Next_Follow_up_Date_Time__c),
+ISBLANK( text( Rescheduling_reasons__c ) ))</errorConditionFormula>
+    <errorDisplayField>Rescheduling_reasons__c</errorDisplayField>
+    <errorMessage>If the Next Follow-Up Date changes Resheduling Reason field fill to  Mandatory</errorMessage>
+</ValidationRule>

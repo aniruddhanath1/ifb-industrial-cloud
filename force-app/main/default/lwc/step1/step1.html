@@ -1,0 +1,61 @@
+<template>
+    <lightning-card footer="" title="">
+        <h1 class="slds-text-heading_medium">{welcome_text}</h1>
+        <div>
+            <img src={yourday_img} alt="Yourday">
+        </div>
+        <div class="c-container">
+            <p class="c-description">Step 1</p>
+            <ul class="slds-list_dotted">
+                <li>Open the Sales Rep Cockpit landing page</li>
+                <li>Highlight the Summary card and the Reporting card</li>
+            </ul>
+        </div>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-text-body_regular c-feature-desc">
+                    <p>
+                        <lightning-formatted-text value="Chantelle is a field sales rep who's responsible for the sales and merchandising activities in her territory. In the past, she manually performed these tasks, which was  inconvenient and not focused on driving value for the retailer."></lightning-formatted-text>
+                    </p><br />
+                    <p>
+                        <lightning-formatted-text value="With Salesforce, Chantelle has a data-driven selling tool that allows her to switch between being an order taker and an order maker. Let's take a look."></lightning-formatted-text>
+                    </p><br />
+                    <p>
+                        <lightning-formatted-text value="As Chantelle starts the day, she grabs her iPad and launches Salesforce Consumer Goods Cloud, a mobile app."></lightning-formatted-text>
+                    </p><br />
+                    <p>
+                        <lightning-formatted-text value="This app contains all key customer and selling information, and it's available to Chantelle even when she's offline."></lightning-formatted-text>
+                    </p><br />
+                    <p>
+                        <lightning-formatted-text value="On the configurable Homepage, view the exact information that you need to execute the perfect store visit. The data needed can either reside in Salesforce or be leveraged from the legacy data and apps integrated through Mulesoft."></lightning-formatted-text>
+                    </p><br />
+                    <p>
+                        <lightning-formatted-text value="See a high-level overview of the current day on the Summary card. The Summary card shows the number of customer visits, and tasks and activities to complete during store visit."></lightning-formatted-text>
+                    </p><br />
+                    <p>
+                        <lightning-formatted-text value="The card on the right shows the high-level KPIs that focus on sales and visit compliance."></lightning-formatted-text>
+                    </p>
+                    <p>
+                        <lightning-formatted-text value="This helps in:"></lightning-formatted-text>
+                    </p>
+                    <ul class="slds-list_dotted">
+                        <li>Open the Sales Rep Cockpit landing page</li>
+                        <li>Highlight the Summary card and the Reporting card</li>
+                    </ul><br />
+                    <p>
+                        <lightning-formatted-text value="Chantelle can't wait to get back online and share her results via Slack!"></lightning-formatted-text>
+                    </p><br />
+                    <div>
+                        <img src={yourday2_img} alt="Yourday 2">
+                    </div><br />
+                    <div>
+                        <img src={yourday3_img} alt="Yourday 3">
+                    </div><br />
+                    <div>
+                        <img src={yourday4_img} alt="Yourday 4">
+                    </div><br />
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

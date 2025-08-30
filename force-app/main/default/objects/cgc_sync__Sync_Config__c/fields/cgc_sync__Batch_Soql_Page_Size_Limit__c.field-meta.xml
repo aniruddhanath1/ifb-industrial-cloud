@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cgc_sync__Batch_Soql_Page_Size_Limit__c</fullName>
+    <defaultValue>5000</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Stores the batch SOQL page size limit in bytes.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Maximum allowed page size. Lower limit 1000. Upper limit 50000. Recommended value 5000.</inlineHelpText>
+    <label>Batch Soql Page Size Limit</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
