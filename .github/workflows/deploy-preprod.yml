@@ -23,6 +23,12 @@ jobs:
         run: |
           npm install --global sfdx-cli
 
+      - name: Debug Username
+        run: echo "Username: $SF_PREPROD_USERNAME"
+
+      - name: Debug Server Key
+        run: echo "Server Key: $SF_PREPROD_SERVER_KEY"
+
       - name: Authenticate to Salesforce (JWT)
         run: |
           echo "$SF_PREPROD_SERVER_KEY" > ./keys/preprod/preprod-server-private.key
@@ -31,7 +37,7 @@ jobs:
             --jwtkeyfile ./keys/preprod/preprod-server-private.key \
             --username "$SF_PREPROD_USERNAME" \
             --instanceurl "$SF_PREPROD_INSTANCE_URL" \
-            --setdefaultdevhubusername
+            --setdefaultusername
         env:
           SF_PREPROD_CLIENT_ID: ${{ secrets.SF_PREPROD_CLIENT_ID }}
           SF_PREPROD_SERVER_KEY: ${{ secrets.SF_PREPROD_SERVER_KEY }}
